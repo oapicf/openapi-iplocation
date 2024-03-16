@@ -1,0 +1,14 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+compile-mono.sh
+docs/DefaultApi.md
+docs/Get200Response.md
+docs/Get400Response.md
+src/main/CsharpDotNet2/Org/OpenAPITools/Api/DefaultApi.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/ApiClient.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/ApiException.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/Configuration.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/Get200Response.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/Get400Response.cs
+vendor/packages.config

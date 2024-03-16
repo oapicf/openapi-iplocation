@@ -1,0 +1,70 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "openapi_server Get200Response"
+package     = openapi_server
+version     = "1.0"
+description = "Defines a Get200Response"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  Get200Response {
+    title = Get200Response
+    description = Get200Response
+    derivedFrom = Root
+    properties {
+        ip {
+          type =  
+          description = "IPv4 or IPv6 address used to lookup geolocation."
+          optional = false
+        }
+        ip_number {
+          type =  
+          description = "IP number in long integer."
+          optional = false
+        }
+        ip_version {
+          type =  
+          description = "IP version either 4 or 6."
+          optional = false
+        }
+        country_name {
+          type =  
+          description = "Full name of the IP country."
+          optional = false
+        }
+        country_code2 {
+          type =  
+          description = "ISO ALPHA-2 Country Code."
+          optional = false
+        }
+        isp {
+          type =  
+          description = "Internet Service Provider (ISP) who owns the IP address."
+          optional = false
+        }
+        response_code {
+          type =  
+          description = "Response status code to indicate success or failed completion of the API call."
+          optional = false
+        }
+        response_message {
+          type =  
+          description = "Response message to indicate success or failed completion of the API call."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  Get200Response {
+    title = Get200Response
+    description = Get200Response
+    implements = openapi_server.resourceTypes.Get200Response
+
+  }
+}

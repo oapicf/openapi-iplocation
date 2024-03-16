@@ -1,0 +1,33 @@
+package org.openapitools.api;
+
+import org.openapitools.model.Get200Response;
+import org.openapitools.model.Get400Response;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+
+import io.swagger.annotations.*;
+
+import java.io.InputStream;
+import java.util.Map;
+import java.util.List;
+import javax.validation.constraints.*;
+import javax.validation.Valid;
+
+@Path("")
+@Api(description = "the default API")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-04-02T00:25:03.682575Z[Etc/UTC]")
+public class DefaultApi {
+
+    @GET
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Get geolocation of an IP address", notes = "Retrieve geolocation of an IP address. ", response = Get200Response.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully processed the request.", response = Get200Response.class),
+        @ApiResponse(code = 400, message = "Failed to complete the request.", response = Get400Response.class),
+        @ApiResponse(code = 404, message = "Command not found.", response = Get400Response.class)
+    })
+    public Response rootGet(@QueryParam("ip") @NotNull  @ApiParam("An IPv4 or IPv6 address that you would like to lookup.")  Object ip,@QueryParam("format")  @ApiParam("Output format, the following formats are supported: plain xml json jsonp php csv serialized")  Object format,@QueryParam("delimiter")  @ApiParam("Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.")  Object delimiter) {
+        return Response.ok().entity("magic!").build();
+    }
+}

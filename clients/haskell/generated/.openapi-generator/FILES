@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+README.md
+Setup.hs
+iplocation.net.cabal
+lib/Iplocation.net/API.hs
+lib/Iplocation.net/Types.hs
+stack.yaml

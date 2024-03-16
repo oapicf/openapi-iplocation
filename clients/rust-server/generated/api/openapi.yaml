@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  contact:
+    email: blah@cliffano.com
+    name: Cliffano Subagio
+    url: https://github.com/cliffano/openapi-iplocation
+  title: iplocation.net API
+  version: 0.9.0-pre.0
+servers:
+- url: https://api.iplocation.net
+paths:
+  /:
+    get:
+      description: |
+        Retrieve geolocation of an IP address.
+      parameters:
+      - description: An IPv4 or IPv6 address that you would like to lookup.
+        explode: true
+        in: query
+        name: ip
+        required: true
+        schema: {}
+        style: form
+      - description: "Output format, the following formats are supported: plain xml\
+          \ json jsonp php csv serialized"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema: {}
+        style: form
+      - description: "Delimiter between proxies. Can be used only with format plain.\
+          \ The following types are supported: 1 for \"\\n\", 2 for \"<br>\"."
+        explode: true
+        in: query
+        name: delimiter
+        required: false
+        schema: {}
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/__get_200_response'
+          description: Successfully processed the request.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/__get_400_response'
+          description: Failed to complete the request.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/__get_400_response'
+          description: Command not found.
+      summary: Get geolocation of an IP address
+components:
+  schemas:
+    __get_400_response:
+      properties:
+        response_code:
+          description: Response status code to indicate success or failed completion
+            of the API call.
+        response_message:
+          description: Response message to indicate success or failed completion of
+            the API call.
+    __get_200_response:
+      example:
+        response_code: ""
+        ip_version: ""
+        response_message: ""
+        ip: ""
+        isp: ""
+        country_name: ""
+        country_code2: ""
+        ip_number: ""
+      properties:
+        ip:
+          description: IPv4 or IPv6 address used to lookup geolocation.
+        ip_number:
+          description: IP number in long integer.
+        ip_version:
+          description: IP version either 4 or 6.
+        country_name:
+          description: Full name of the IP country.
+        country_code2:
+          description: ISO ALPHA-2 Country Code.
+        isp:
+          description: Internet Service Provider (ISP) who owns the IP address.
+        response_code:
+          description: Response status code to indicate success or failed completion
+            of the API call.
+        response_message:
+          description: Response message to indicate success or failed completion of
+            the API call.
+

@@ -1,0 +1,9 @@
+spec_uri: specification/iplocation.yml
+version: 0.9.0-pre.0
+contact:
+  name: OpenAPI Clients Factory
+  url: https://github.com/oapicf/openapi-iplocation
+  email: blah+oapicf@cliffano.com
+base_dir:
+  github_actions: /home/runner/work/openapi-iplocation/openapi-iplocation
+  local: /Users/cliffano/dev/workspace-studio/openapi-iplocation

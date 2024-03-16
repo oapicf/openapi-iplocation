@@ -1,0 +1,5 @@
+.openapi-generator-ignore
+Apis/DefaultApi.md
+Models/__get_200_response.md
+Models/__get_400_response.md
+README.md

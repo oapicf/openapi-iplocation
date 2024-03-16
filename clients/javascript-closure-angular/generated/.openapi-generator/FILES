@@ -1,0 +1,4 @@
+.openapi-generator-ignore
+API/Client/DefaultApi.js
+API/Client/Get200Response.js
+API/Client/Get400Response.js

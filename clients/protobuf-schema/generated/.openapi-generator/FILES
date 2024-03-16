@@ -1,0 +1,5 @@
+.openapi-generator-ignore
+README.md
+models/get200_response.proto
+models/get400_response.proto
+services/default_service.proto

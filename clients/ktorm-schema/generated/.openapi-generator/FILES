@@ -1,0 +1,9 @@
+.openapi-generator-ignore
+README.md
+build.gradle
+docs/Get200Response.md
+docs/Get400Response.md
+ktorm_schema.sql
+settings.gradle
+src/main/kotlin/org/openapitools/database/models/Get200Response.kt
+src/main/kotlin/org/openapitools/database/models/Get400Response.kt

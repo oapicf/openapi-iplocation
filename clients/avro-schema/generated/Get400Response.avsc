@@ -1,0 +1,21 @@
+{
+  "namespace": "model",
+  "type": "record",
+  "doc": "",
+  "name": "Get400Response",
+  "fields": [
+    {
+      "name": "response_code",
+      "type": ["null", "model.AnyType"],
+      "doc": "Response status code to indicate success or failed completion of the API call.",
+      "default": null
+    },
+    {
+      "name": "response_message",
+      "type": ["null", "model.AnyType"],
+      "doc": "Response message to indicate success or failed completion of the API call.",
+      "default": null
+    }
+  ]
+
+}

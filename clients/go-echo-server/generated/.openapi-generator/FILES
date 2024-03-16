@@ -1,0 +1,11 @@
+.docs/api/openapi.yaml
+.openapi-generator-ignore
+Dockerfile
+README.md
+go.mod
+handlers/api_default.go
+handlers/container.go
+main.go
+models/hello-world.go
+models/model___get_200_response.go
+models/model___get_400_response.go

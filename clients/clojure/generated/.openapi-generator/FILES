@@ -1,0 +1,8 @@
+.gitignore
+.openapi-generator-ignore
+git_push.sh
+project.clj
+src/iplocation/net_api/api/default.clj
+src/iplocation/net_api/core.clj
+src/iplocation/net_api/specs/_get_200_response.clj
+src/iplocation/net_api/specs/_get_400_response.clj

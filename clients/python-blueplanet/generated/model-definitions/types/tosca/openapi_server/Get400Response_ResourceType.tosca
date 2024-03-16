@@ -1,0 +1,40 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "openapi_server Get400Response"
+package     = openapi_server
+version     = "1.0"
+description = "Defines a Get400Response"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  Get400Response {
+    title = Get400Response
+    description = Get400Response
+    derivedFrom = Root
+    properties {
+        response_code {
+          type =  
+          description = "Response status code to indicate success or failed completion of the API call."
+          optional = false
+        }
+        response_message {
+          type =  
+          description = "Response message to indicate success or failed completion of the API call."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  Get400Response {
+    title = Get400Response
+    description = Get400Response
+    implements = openapi_server.resourceTypes.Get400Response
+
+  }
+}

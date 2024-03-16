@@ -1,0 +1,16 @@
+.openapi-generator-ignore
+OpenAPI.Build.cs
+Private/OpenAPIBaseModel.cpp
+Private/OpenAPIDefaultApi.cpp
+Private/OpenAPIDefaultApiOperations.cpp
+Private/OpenAPIGet200Response.cpp
+Private/OpenAPIGet400Response.cpp
+Private/OpenAPIHelpers.cpp
+Private/OpenAPIModule.cpp
+Private/OpenAPIModule.h
+Public/OpenAPIBaseModel.h
+Public/OpenAPIDefaultApi.h
+Public/OpenAPIDefaultApiOperations.h
+Public/OpenAPIGet200Response.h
+Public/OpenAPIGet400Response.h
+Public/OpenAPIHelpers.h

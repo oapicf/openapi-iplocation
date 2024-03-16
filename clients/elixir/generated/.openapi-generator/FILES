@@ -1,0 +1,14 @@
+.formatter.exs
+.gitignore
+.openapi-generator-ignore
+README.md
+config/config.exs
+config/runtime.exs
+lib/iplocation_net_api/api/default.ex
+lib/iplocation_net_api/connection.ex
+lib/iplocation_net_api/deserializer.ex
+lib/iplocation_net_api/model/__get_200_response.ex
+lib/iplocation_net_api/model/__get_400_response.ex
+lib/iplocation_net_api/request_builder.ex
+mix.exs
+test/test_helper.exs

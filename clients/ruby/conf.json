@@ -1,0 +1,10 @@
+{
+  "gemName": "openapi_iplocation",
+  "moduleName": "OpenApiIplocationClient",
+  "gemVersion": "0.9.0-pre.0",
+  "gemAuthor": "Cliffano Subagio",
+  "gemAuthorEmail": "blah@cliffano.com",
+  "gemHomepage": "https://github.com/cliffano/openapi-iplocation",
+  "gemLicense": "MIT",
+  "gemRequiredRubyVersion": ">= 2.0"
+}

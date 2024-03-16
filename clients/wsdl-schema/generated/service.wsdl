@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="http://localhost/soap/ServiceV1/model" xmlns:wsdl="http://localhost/soap/ServiceV1/service" targetNamespace="http://localhost/soap/ServiceV1/service" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://localhost/soap/ServiceV1/model" targetNamespace="http://localhost/soap/ServiceV1/model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Get_RequestMessage" type="schemas:Get_RequestMessage" />
+      <xs:element name="Get_ResponseMessage" type="schemas:Get_ResponseMessage" />
+      <xs:element name="Get_400" type="schemas:__get_400_response">
+        <xs:annotation>
+          <xs:documentation>Failed to complete the request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Get_404" type="schemas:__get_400_response">
+        <xs:annotation>
+          <xs:documentation>Command not found.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="Get200Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ip" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>IPv4 or IPv6 address used to lookup geolocation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ip_number" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>IP number in long integer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ip_version" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>IP version either 4 or 6.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_name" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Full name of the IP country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_code2" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>ISO ALPHA-2 Country Code.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="isp" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Internet Service Provider (ISP) who owns the IP address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="response_code" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Response status code to indicate success or failed completion of the API call.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="response_message" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Response message to indicate success or failed completion of the API call.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Get400Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="response_code" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Response status code to indicate success or failed completion of the API call.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="response_message" type="xs:AnyType">
+            <xs:annotation>
+              <xs:documentation>Response message to indicate success or failed completion of the API call.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Get_RequestMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="ip" type="xs:oas_any_type_not_mapped">
+            <xs:annotation>
+              <xs:documentation>An IPv4 or IPv6 address that you would like to lookup.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="format" type="xs:oas_any_type_not_mapped">
+            <xs:annotation>
+              <xs:documentation>Output format, the following formats are supported: plain xml json jsonp php csv serialized</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="delimiter" type="xs:oas_any_type_not_mapped">
+            <xs:annotation>
+              <xs:documentation>Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Get_ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="__get_200_response" type="schemas:__get_200_response">
+            <xs:annotation>
+              <xs:documentation>Successfully processed the request.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="Get_RequestMessage">
+    <part name="Get_RequestMessage" element="schemas:Get_RequestMessage" />
+  </message>
+  <message name="Get_ResponseMessage">
+    <part name="Get_ResponseMessage" element="schemas:Get_ResponseMessage" />
+  </message>
+  <message name="Get_400">
+    <part name="Get_400" element="schemas:Get_400" />
+  </message>
+  <message name="Get_404">
+    <part name="Get_404" element="schemas:Get_404" />
+  </message>
+  <portType name="ServiceV1_PortType">
+    <operation name="Get">
+      <documentation>Retrieve geolocation of an IP address. </documentation>
+      <input message="wsdl:Get_RequestMessage" />
+      <output message="wsdl:Get_ResponseMessage">
+        <documentation>Successfully processed the request.</documentation>
+      </output>
+      <fault name="Get_400" message="wsdl:Get_400">
+        <documentation>Failed to complete the request.</documentation>
+      </fault>
+      <fault name="Get_404" message="wsdl:Get_404">
+        <documentation>Command not found.</documentation>
+      </fault>
+    </operation>
+  </portType>
+  <binding name="ServiceV1_Binding" type="wsdl:ServiceV1_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Get">
+      <soap:operation soapAction="Get" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="Get_400">
+        <soap:fault use="literal" name="Get_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="Get_404">
+        <soap:fault use="literal" name="Get_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="ServiceV1">
+    <documentation>No description provided</documentation>
+    <port name="default_Port" binding="wsdl:ServiceV1_Binding">
+      <soap:address location="http://localhost/soap/ServiceV1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

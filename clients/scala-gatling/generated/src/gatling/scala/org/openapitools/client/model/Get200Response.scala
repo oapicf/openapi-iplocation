@@ -1,0 +1,30 @@
+
+package org.openapitools.client.model
+
+
+case class Get200Response (
+    /* IPv4 or IPv6 address used to lookup geolocation. */
+    _ip: Option[AnyType],
+    /* IP number in long integer. */
+    _ipNumber: Option[AnyType],
+    /* IP version either 4 or 6. */
+    _ipVersion: Option[AnyType],
+    /* Full name of the IP country. */
+    _countryName: Option[AnyType],
+    /* ISO ALPHA-2 Country Code. */
+    _countryCode2: Option[AnyType],
+    /* Internet Service Provider (ISP) who owns the IP address. */
+    _isp: Option[AnyType],
+    /* Response status code to indicate success or failed completion of the API call. */
+    _responseCode: Option[AnyType],
+    /* Response message to indicate success or failed completion of the API call. */
+    _responseMessage: Option[AnyType]
+)
+object Get200Response {
+    def toStringBody(var_ip: Object, var_ipNumber: Object, var_ipVersion: Object, var_countryName: Object, var_countryCode2: Object, var_isp: Object, var_responseCode: Object, var_responseMessage: Object) =
+        s"""
+        | {
+        | "ip":$var_ip,"ipNumber":$var_ipNumber,"ipVersion":$var_ipVersion,"countryName":$var_countryName,"countryCode2":$var_countryCode2,"isp":$var_isp,"responseCode":$var_responseCode,"responseMessage":$var_responseMessage
+        | }
+        """.stripMargin
+}

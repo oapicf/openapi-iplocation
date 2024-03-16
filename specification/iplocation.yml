@@ -1,0 +1,90 @@
+openapi: 3.1.0
+info:
+  title: iplocation.net API
+  version: 0.9.0-pre.0
+servers:
+  - url: https://api.iplocation.net
+paths:
+  /:
+    get:
+      summary: Get geolocation of an IP address
+      description: |
+        Retrieve geolocation of an IP address.
+      parameters:
+        - name: ip
+          in: query
+          description: An IPv4 or IPv6 address that you would like to lookup.
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: "Output format, the following formats are supported: plain xml json jsonp php csv serialized"
+          required: false
+          default: 'json'
+          schema:
+            type: string
+        - name: delimiter
+          in: query
+          description: 'Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for "\n", 2 for "<br>".'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully processed the request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ip:
+                    type: string
+                    description: 	IPv4 or IPv6 address used to lookup geolocation.
+                  ip_number:
+                    type: int64
+                    description: IP number in long integer.
+                  ip_version:
+                    type: integer
+                    description: IP version either 4 or 6.
+                  country_name:
+                    type: string
+                    description: Full name of the IP country.
+                  country_code2:
+                    type: string
+                    description: ISO ALPHA-2 Country Code.
+                  isp:
+                    type: string
+                    description: Internet Service Provider (ISP) who owns the IP address.
+                  response_code:
+                    type: string
+                    description: Response status code to indicate success or failed completion of the API call.
+                  response_message:
+                    type: string
+                    description: Response message to indicate success or failed completion of the API call.
+        '400':
+          description: Failed to complete the request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response_code:
+                    type: string
+                    description: Response status code to indicate success or failed completion of the API call.
+                  response_message:
+                    type: string
+                    description: Response message to indicate success or failed completion of the API call.
+        '404':
+          description: Command not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response_code:
+                    type: string
+                    description: Response status code to indicate success or failed completion of the API call.
+                  response_message:
+                    type: string
+                    description: Response message to indicate success or failed completion of the API call.

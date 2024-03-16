@@ -1,0 +1,4 @@
+.openapi-generator-ignore
+openapi2graphql/api/default_api.graphql
+openapi2graphql/model/__get_200_response.graphql
+openapi2graphql/model/__get_400_response.graphql

@@ -1,0 +1,23 @@
+@startuml
+
+title iplocation.net API Schemas Diagram
+
+entity Get200Response {
+    ip: OasAnyTypeNotMapped
+    ip_number: OasAnyTypeNotMapped
+    ip_version: OasAnyTypeNotMapped
+    country_name: OasAnyTypeNotMapped
+    country_code2: OasAnyTypeNotMapped
+    isp: OasAnyTypeNotMapped
+    response_code: OasAnyTypeNotMapped
+    response_message: OasAnyTypeNotMapped
+}
+
+entity Get400Response {
+    response_code: OasAnyTypeNotMapped
+    response_message: OasAnyTypeNotMapped
+}
+
+
+
+@enduml

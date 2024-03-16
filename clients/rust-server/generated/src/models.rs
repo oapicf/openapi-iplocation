@@ -1,0 +1,337 @@
+#![allow(unused_qualifications)]
+
+use crate::models;
+#[cfg(any(feature = "client", feature = "server"))]
+use crate::header;
+
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+#[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
+pub struct Get200Response {
+    /// IPv4 or IPv6 address used to lookup geolocation.
+    #[serde(rename = "ip")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub ip: Option<serde_json::Value>,
+
+    /// IP number in long integer.
+    #[serde(rename = "ip_number")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub ip_number: Option<serde_json::Value>,
+
+    /// IP version either 4 or 6.
+    #[serde(rename = "ip_version")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub ip_version: Option<serde_json::Value>,
+
+    /// Full name of the IP country.
+    #[serde(rename = "country_name")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub country_name: Option<serde_json::Value>,
+
+    /// ISO ALPHA-2 Country Code.
+    #[serde(rename = "country_code2")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub country_code2: Option<serde_json::Value>,
+
+    /// Internet Service Provider (ISP) who owns the IP address.
+    #[serde(rename = "isp")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub isp: Option<serde_json::Value>,
+
+    /// Response status code to indicate success or failed completion of the API call.
+    #[serde(rename = "response_code")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub response_code: Option<serde_json::Value>,
+
+    /// Response message to indicate success or failed completion of the API call.
+    #[serde(rename = "response_message")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub response_message: Option<serde_json::Value>,
+
+}
+
+impl Get200Response {
+    #[allow(clippy::new_without_default)]
+    pub fn new() -> Get200Response {
+        Get200Response {
+            ip: None,
+            ip_number: None,
+            ip_version: None,
+            country_name: None,
+            country_code2: None,
+            isp: None,
+            response_code: None,
+            response_message: None,
+        }
+    }
+}
+
+/// Converts the Get200Response value to the Query Parameters representation (style=form, explode=false)
+/// specified in https://swagger.io/docs/specification/serialization/
+/// Should be implemented in a serde serializer
+impl std::string::ToString for Get200Response {
+    fn to_string(&self) -> String {
+        let params: Vec<Option<String>> = vec![
+            // Skipping ip in query parameter serialization
+
+            // Skipping ip_number in query parameter serialization
+
+            // Skipping ip_version in query parameter serialization
+
+            // Skipping country_name in query parameter serialization
+
+            // Skipping country_code2 in query parameter serialization
+
+            // Skipping isp in query parameter serialization
+
+            // Skipping response_code in query parameter serialization
+
+            // Skipping response_message in query parameter serialization
+
+        ];
+
+        params.into_iter().flatten().collect::<Vec<_>>().join(",")
+    }
+}
+
+/// Converts Query Parameters representation (style=form, explode=false) to a Get200Response value
+/// as specified in https://swagger.io/docs/specification/serialization/
+/// Should be implemented in a serde deserializer
+impl std::str::FromStr for Get200Response {
+    type Err = String;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        /// An intermediate representation of the struct to use for parsing.
+        #[derive(Default)]
+        #[allow(dead_code)]
+        struct IntermediateRep {
+            pub ip: Vec<serde_json::Value>,
+            pub ip_number: Vec<serde_json::Value>,
+            pub ip_version: Vec<serde_json::Value>,
+            pub country_name: Vec<serde_json::Value>,
+            pub country_code2: Vec<serde_json::Value>,
+            pub isp: Vec<serde_json::Value>,
+            pub response_code: Vec<serde_json::Value>,
+            pub response_message: Vec<serde_json::Value>,
+        }
+
+        let mut intermediate_rep = IntermediateRep::default();
+
+        // Parse into intermediate representation
+        let mut string_iter = s.split(',');
+        let mut key_result = string_iter.next();
+
+        while key_result.is_some() {
+            let val = match string_iter.next() {
+                Some(x) => x,
+                None => return std::result::Result::Err("Missing value while parsing Get200Response".to_string())
+            };
+
+            if let Some(key) = key_result {
+                #[allow(clippy::match_single_binding)]
+                match key {
+                    #[allow(clippy::redundant_clone)]
+                    "ip" => intermediate_rep.ip.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "ip_number" => intermediate_rep.ip_number.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "ip_version" => intermediate_rep.ip_version.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "country_name" => intermediate_rep.country_name.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "country_code2" => intermediate_rep.country_code2.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "isp" => intermediate_rep.isp.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "response_code" => intermediate_rep.response_code.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "response_message" => intermediate_rep.response_message.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    _ => return std::result::Result::Err("Unexpected key while parsing Get200Response".to_string())
+                }
+            }
+
+            // Get the next key
+            key_result = string_iter.next();
+        }
+
+        // Use the intermediate representation to return the struct
+        std::result::Result::Ok(Get200Response {
+            ip: intermediate_rep.ip.into_iter().next(),
+            ip_number: intermediate_rep.ip_number.into_iter().next(),
+            ip_version: intermediate_rep.ip_version.into_iter().next(),
+            country_name: intermediate_rep.country_name.into_iter().next(),
+            country_code2: intermediate_rep.country_code2.into_iter().next(),
+            isp: intermediate_rep.isp.into_iter().next(),
+            response_code: intermediate_rep.response_code.into_iter().next(),
+            response_message: intermediate_rep.response_message.into_iter().next(),
+        })
+    }
+}
+
+// Methods for converting between header::IntoHeaderValue<Get200Response> and hyper::header::HeaderValue
+
+#[cfg(any(feature = "client", feature = "server"))]
+impl std::convert::TryFrom<header::IntoHeaderValue<Get200Response>> for hyper::header::HeaderValue {
+    type Error = String;
+
+    fn try_from(hdr_value: header::IntoHeaderValue<Get200Response>) -> std::result::Result<Self, Self::Error> {
+        let hdr_value = hdr_value.to_string();
+        match hyper::header::HeaderValue::from_str(&hdr_value) {
+             std::result::Result::Ok(value) => std::result::Result::Ok(value),
+             std::result::Result::Err(e) => std::result::Result::Err(
+                 format!("Invalid header value for Get200Response - value: {} is invalid {}",
+                     hdr_value, e))
+        }
+    }
+}
+
+#[cfg(any(feature = "client", feature = "server"))]
+impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderValue<Get200Response> {
+    type Error = String;
+
+    fn try_from(hdr_value: hyper::header::HeaderValue) -> std::result::Result<Self, Self::Error> {
+        match hdr_value.to_str() {
+             std::result::Result::Ok(value) => {
+                    match <Get200Response as std::str::FromStr>::from_str(value) {
+                        std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
+                        std::result::Result::Err(err) => std::result::Result::Err(
+                            format!("Unable to convert header value '{}' into Get200Response - {}",
+                                value, err))
+                    }
+             },
+             std::result::Result::Err(e) => std::result::Result::Err(
+                 format!("Unable to convert header: {:?} to string: {}",
+                     hdr_value, e))
+        }
+    }
+}
+
+
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+#[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
+pub struct Get400Response {
+    /// Response status code to indicate success or failed completion of the API call.
+    #[serde(rename = "response_code")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub response_code: Option<serde_json::Value>,
+
+    /// Response message to indicate success or failed completion of the API call.
+    #[serde(rename = "response_message")]
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub response_message: Option<serde_json::Value>,
+
+}
+
+impl Get400Response {
+    #[allow(clippy::new_without_default)]
+    pub fn new() -> Get400Response {
+        Get400Response {
+            response_code: None,
+            response_message: None,
+        }
+    }
+}
+
+/// Converts the Get400Response value to the Query Parameters representation (style=form, explode=false)
+/// specified in https://swagger.io/docs/specification/serialization/
+/// Should be implemented in a serde serializer
+impl std::string::ToString for Get400Response {
+    fn to_string(&self) -> String {
+        let params: Vec<Option<String>> = vec![
+            // Skipping response_code in query parameter serialization
+
+            // Skipping response_message in query parameter serialization
+
+        ];
+
+        params.into_iter().flatten().collect::<Vec<_>>().join(",")
+    }
+}
+
+/// Converts Query Parameters representation (style=form, explode=false) to a Get400Response value
+/// as specified in https://swagger.io/docs/specification/serialization/
+/// Should be implemented in a serde deserializer
+impl std::str::FromStr for Get400Response {
+    type Err = String;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        /// An intermediate representation of the struct to use for parsing.
+        #[derive(Default)]
+        #[allow(dead_code)]
+        struct IntermediateRep {
+            pub response_code: Vec<serde_json::Value>,
+            pub response_message: Vec<serde_json::Value>,
+        }
+
+        let mut intermediate_rep = IntermediateRep::default();
+
+        // Parse into intermediate representation
+        let mut string_iter = s.split(',');
+        let mut key_result = string_iter.next();
+
+        while key_result.is_some() {
+            let val = match string_iter.next() {
+                Some(x) => x,
+                None => return std::result::Result::Err("Missing value while parsing Get400Response".to_string())
+            };
+
+            if let Some(key) = key_result {
+                #[allow(clippy::match_single_binding)]
+                match key {
+                    #[allow(clippy::redundant_clone)]
+                    "response_code" => intermediate_rep.response_code.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    #[allow(clippy::redundant_clone)]
+                    "response_message" => intermediate_rep.response_message.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    _ => return std::result::Result::Err("Unexpected key while parsing Get400Response".to_string())
+                }
+            }
+
+            // Get the next key
+            key_result = string_iter.next();
+        }
+
+        // Use the intermediate representation to return the struct
+        std::result::Result::Ok(Get400Response {
+            response_code: intermediate_rep.response_code.into_iter().next(),
+            response_message: intermediate_rep.response_message.into_iter().next(),
+        })
+    }
+}
+
+// Methods for converting between header::IntoHeaderValue<Get400Response> and hyper::header::HeaderValue
+
+#[cfg(any(feature = "client", feature = "server"))]
+impl std::convert::TryFrom<header::IntoHeaderValue<Get400Response>> for hyper::header::HeaderValue {
+    type Error = String;
+
+    fn try_from(hdr_value: header::IntoHeaderValue<Get400Response>) -> std::result::Result<Self, Self::Error> {
+        let hdr_value = hdr_value.to_string();
+        match hyper::header::HeaderValue::from_str(&hdr_value) {
+             std::result::Result::Ok(value) => std::result::Result::Ok(value),
+             std::result::Result::Err(e) => std::result::Result::Err(
+                 format!("Invalid header value for Get400Response - value: {} is invalid {}",
+                     hdr_value, e))
+        }
+    }
+}
+
+#[cfg(any(feature = "client", feature = "server"))]
+impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderValue<Get400Response> {
+    type Error = String;
+
+    fn try_from(hdr_value: hyper::header::HeaderValue) -> std::result::Result<Self, Self::Error> {
+        match hdr_value.to_str() {
+             std::result::Result::Ok(value) => {
+                    match <Get400Response as std::str::FromStr>::from_str(value) {
+                        std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
+                        std::result::Result::Err(err) => std::result::Result::Err(
+                            format!("Unable to convert header value '{}' into Get400Response - {}",
+                                value, err))
+                    }
+             },
+             std::result::Result::Err(e) => std::result::Result::Err(
+                 format!("Unable to convert header: {:?} to string: {}",
+                     hdr_value, e))
+        }
+    }
+}
+
