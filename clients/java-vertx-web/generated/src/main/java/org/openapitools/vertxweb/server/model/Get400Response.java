@@ -3,38 +3,37 @@ package org.openapitools.vertxweb.server.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Get400Response   {
   
-  private Object responseCode = null;
-  private Object responseMessage = null;
+  private String responseCode;
+  private String responseMessage;
 
   public Get400Response () {
 
   }
 
-  public Get400Response (Object responseCode, Object responseMessage) {
+  public Get400Response (String responseCode, String responseMessage) {
     this.responseCode = responseCode;
     this.responseMessage = responseMessage;
   }
 
     
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
     
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

@@ -53,7 +53,7 @@ object DefaultApi {
         * @return An endpoint representing a Get200Response
         */
         private def rootGet(da: DataAccessor): Endpoint[Get200Response] =
-        get("" :: param("ip").map(_.toAnyType) :: paramOption("format").map(_.map(_.toAnyType)) :: paramOption("delimiter").map(_.map(_.toAnyType))) { (ip: AnyType, format: Option[AnyType], delimiter: Option[AnyType]) =>
+        get("" :: param("ip") :: paramOption("format") :: paramOption("delimiter")) { (ip: String, format: Option[String], delimiter: Option[String]) =>
           da.Default_rootGet(ip, format, delimiter) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)

@@ -9,9 +9,10 @@
 --
 --  Then, you can drop this edit note comment.
 --  ------------ EDIT NOTE ------------
-with {{openApiPackageName}.Servers;
+with Swagger.Servers;
 with .Models;
 with .Skeletons;
+
 package .Servers is
    pragma Warnings (Off, "*use clause for package*");
    use .Models;
@@ -23,11 +24,11 @@ package .Servers is
    overriding
    procedure Root_Get
       (Server : in out Server_Type;
-       Ip : in .Models.AnyType_Type;
-       Format : in .Models.AnyType_Type;
-       Delimiter : in .Models.AnyType_Type;
+       Ip : in Swagger.UString;
+       Format : in Swagger.Nullable_UString;
+       Delimiter : in Swagger.Nullable_UString;
        Result  : out .Models.Get200Response_Type;
-       Context : in out {{openApiPackageName}.Servers.Context_Type);
+       Context : in out Swagger.Servers.Context_Type);
 
    package Server_Impl is
       new .Skeletons.Shared_Instance (Server_Type);

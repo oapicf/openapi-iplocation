@@ -30,9 +30,9 @@ $apiInstance = new OpenAPI\Client\Api\DefaultApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$ip = NULL; // mixed | An IPv4 or IPv6 address that you would like to lookup.
-$format = NULL; // mixed | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-$delimiter = NULL; // mixed | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+$ip = 'ip_example'; // string | An IPv4 or IPv6 address that you would like to lookup.
+$format = 'format_example'; // string | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+$delimiter = 'delimiter_example'; // string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
 
 try {
     $result = $apiInstance->rootGet($ip, $format, $delimiter);
@@ -46,9 +46,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ip** | [**mixed**](../Model/.md)| An IPv4 or IPv6 address that you would like to lookup. | |
-| **format** | [**mixed**](../Model/.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
-| **delimiter** | [**mixed**](../Model/.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
+| **ip** | **string**| An IPv4 or IPv6 address that you would like to lookup. | |
+| **format** | **string**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
+| **delimiter** | **string**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
 
 ### Return type
 

@@ -1,0 +1,9 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+composer.json
+src/App/ApiClient.php
+src/App/ApiClientFactory.php
+src/App/DTO/Get200Response.php
+src/App/DTO/Get400Response.php
+src/App/DTO/RootGETParameterData.php

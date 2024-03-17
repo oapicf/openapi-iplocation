@@ -1,16 +1,14 @@
 (ns iplocation/net-api.specs.-get-400-response
   (:require [clojure.spec.alpha :as s]
             [spec-tools.data-spec :as ds]
-            [iplocation/net-api.specs. :refer :all]
-            [iplocation/net-api.specs. :refer :all]
             )
   (:import (java.io File)))
 
 
 (def -get-400-response-data
   {
-   (ds/opt :response_code) any-type-spec
-   (ds/opt :response_message) any-type-spec
+   (ds/opt :response_code) string?
+   (ds/opt :response_message) string?
    })
 
 (def -get-400-response-spec

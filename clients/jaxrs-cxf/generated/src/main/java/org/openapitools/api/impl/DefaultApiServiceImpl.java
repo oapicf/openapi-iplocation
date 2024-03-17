@@ -30,7 +30,7 @@ public class DefaultApiServiceImpl implements DefaultApi {
      * Retrieve geolocation of an IP address. 
      *
      */
-    public Get200Response rootGet(Object ip, Object format, Object delimiter) {
+    public Get200Response rootGet(String ip, String format, String delimiter) {
         // TODO: Implement...
 
         return null;

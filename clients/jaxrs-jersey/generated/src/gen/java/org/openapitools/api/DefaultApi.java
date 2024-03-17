@@ -30,7 +30,7 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the default API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2023-04-02T00:24:57.504654Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-03-16T21:36:17.215606986Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class DefaultApi  {
    private final DefaultApiService delegate;
 
@@ -65,7 +65,7 @@ public class DefaultApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Failed to complete the request.", response = Get400Response.class),
         @io.swagger.annotations.ApiResponse(code = 404, message = "Command not found.", response = Get400Response.class)
     })
-    public Response rootGet(@ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.", required = true) @QueryParam("ip") @NotNull @Valid  Object ip,@ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized") @QueryParam("format") @Valid  Object format,@ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".") @QueryParam("delimiter") @Valid  Object delimiter,@Context SecurityContext securityContext)
+    public Response rootGet(@ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.", required = true) @QueryParam("ip") @NotNull  String ip,@ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized") @QueryParam("format")  String format,@ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".") @QueryParam("delimiter")  String delimiter,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.rootGet(ip, format, delimiter, securityContext);
     }

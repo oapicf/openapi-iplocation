@@ -20,6 +20,7 @@ import static play.mvc.Results.unauthorized;
 import play.libs.Files.TemporaryFile;
 
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 @SuppressWarnings("RedundantThrows")
 public abstract class DefaultApiControllerImpInterface {
@@ -27,7 +28,7 @@ public abstract class DefaultApiControllerImpInterface {
     @Inject private SecurityAPIUtils securityAPIUtils;
     private ObjectMapper mapper = new ObjectMapper();
 
-    public Result rootGetHttp(Http.Request request, @NotNull Object ip, Object format, Object delimiter) throws Exception {
+    public Result rootGetHttp(Http.Request request, @NotNull String ip, String format, String delimiter) throws Exception {
         Get200Response obj = rootGet(request, ip, format, delimiter);
 
         if (configuration.getBoolean("useOutputBeanValidation")) {
@@ -40,6 +41,6 @@ public abstract class DefaultApiControllerImpInterface {
 
     }
 
-    public abstract Get200Response rootGet(Http.Request request, @NotNull Object ip, Object format, Object delimiter) throws Exception;
+    public abstract Get200Response rootGet(Http.Request request, @NotNull String ip, String format, String delimiter) throws Exception;
 
 }

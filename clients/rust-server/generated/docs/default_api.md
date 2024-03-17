@@ -17,7 +17,7 @@ Retrieve geolocation of an IP address.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-  **ip** | [****](.md)| An IPv4 or IPv6 address that you would like to lookup. | 
+  **ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. | 
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -25,9 +25,9 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [****](.md)| An IPv4 or IPv6 address that you would like to lookup. | 
- **format** | [****](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | 
- **delimiter** | [****](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". | 
+ **ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. | 
+ **format** | **String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | 
+ **delimiter** | **String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". | 
 
 ### Return type
 

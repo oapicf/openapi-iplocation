@@ -7,6 +7,7 @@ authors     = ["F. Bar (foo@bar.baz)"]
 
 imports {
   Root = tosca.resourceTypes.Root
+  Int64 = openapi_server.resourceTypes.Int64
 }
 resourceTypes {
 
@@ -16,42 +17,42 @@ resourceTypes {
     derivedFrom = Root
     properties {
         ip {
-          type =  
+          type =  string
           description = "IPv4 or IPv6 address used to lookup geolocation."
           optional = false
         }
         ip_number {
-          type =  
+          type = Int64
           description = "IP number in long integer."
           optional = false
         }
         ip_version {
-          type =  
+          type =  integer
           description = "IP version either 4 or 6."
           optional = false
         }
         country_name {
-          type =  
+          type =  string
           description = "Full name of the IP country."
           optional = false
         }
         country_code2 {
-          type =  
+          type =  string
           description = "ISO ALPHA-2 Country Code."
           optional = false
         }
         isp {
-          type =  
+          type =  string
           description = "Internet Service Provider (ISP) who owns the IP address."
           optional = false
         }
         response_code {
-          type =  
+          type =  string
           description = "Response status code to indicate success or failed completion of the API call."
           optional = false
         }
         response_message {
-          type =  
+          type =  string
           description = "Response message to indicate success or failed completion of the API call."
           optional = false
         }

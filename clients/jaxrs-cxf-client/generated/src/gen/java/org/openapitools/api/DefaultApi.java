@@ -42,5 +42,5 @@ public interface DefaultApi  {
         @ApiResponse(code = 200, message = "Successfully processed the request.", response = Get200Response.class),
         @ApiResponse(code = 400, message = "Failed to complete the request.", response = Get400Response.class),
         @ApiResponse(code = 404, message = "Command not found.", response = Get400Response.class) })
-    public Get200Response rootGet(@QueryParam("ip") Object ip, @QueryParam("format") Object format, @QueryParam("delimiter") Object delimiter);
+    public Get200Response rootGet(@QueryParam("ip") String ip, @QueryParam("format") String format, @QueryParam("delimiter") String delimiter);
 }

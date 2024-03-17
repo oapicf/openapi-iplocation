@@ -1,10 +1,10 @@
-# \DefaultApi
+# \DefaultAPI
 
 All URIs are relative to *https://api.iplocation.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RootGet**](DefaultApi.md#RootGet) | **Get** / | Get geolocation of an IP address
+[**RootGet**](DefaultAPI.md#RootGet) | **Get** / | Get geolocation of an IP address
 
 
 
@@ -22,26 +22,26 @@ Get geolocation of an IP address
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/oapicf/openapi-iplocation"
 )
 
 func main() {
-    ip := TODO // interface{} | An IPv4 or IPv6 address that you would like to lookup.
-    format := TODO // interface{} | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
-    delimiter := TODO // interface{} | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
+	ip := "ip_example" // string | An IPv4 or IPv6 address that you would like to lookup.
+	format := "format_example" // string | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+	delimiter := "delimiter_example" // string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.RootGet(context.Background()).Ip(ip).Format(format).Delimiter(delimiter).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.RootGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RootGet`: Get200Response
-    fmt.Fprintf(os.Stdout, "Response from `DefaultApi.RootGet`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.RootGet(context.Background()).Ip(ip).Format(format).Delimiter(delimiter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.RootGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RootGet`: Get200Response
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.RootGet`: %v\n", resp)
 }
 ```
 
@@ -56,9 +56,9 @@ Other parameters are passed through a pointer to a apiRootGetRequest struct via 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**interface{}**](interface{}.md) | An IPv4 or IPv6 address that you would like to lookup. | 
- **format** | [**interface{}**](interface{}.md) | Output format, the following formats are supported: plain xml json jsonp php csv serialized | 
- **delimiter** | [**interface{}**](interface{}.md) | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | 
+ **ip** | **string** | An IPv4 or IPv6 address that you would like to lookup. | 
+ **format** | **string** | Output format, the following formats are supported: plain xml json jsonp php csv serialized | 
+ **delimiter** | **string** | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | 
 
 ### Return type
 

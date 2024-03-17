@@ -2,9 +2,9 @@
   "openapi" : "3.1.0",
   "info" : {
     "contact" : {
-      "email" : "blah@cliffano.com",
-      "name" : "Cliffano Subagio",
-      "url" : "https://github.com/cliffano/openapi-iplocation"
+      "email" : "blah+oapicf@cliffano.com",
+      "name" : "OpenAPI Clients Factory",
+      "url" : "https://github.com/oapicf/openapi-iplocation"
     },
     "title" : "iplocation.net API",
     "version" : "0.9.0-pre.0"
@@ -22,7 +22,9 @@
           "in" : "query",
           "name" : "ip",
           "required" : true,
-          "schema" : { },
+          "schema" : {
+            "type" : "string"
+          },
           "style" : "form"
         }, {
           "description" : "Output format, the following formats are supported: plain xml json jsonp php csv serialized",
@@ -30,7 +32,9 @@
           "in" : "query",
           "name" : "format",
           "required" : false,
-          "schema" : { },
+          "schema" : {
+            "type" : "string"
+          },
           "style" : "form"
         }, {
           "description" : "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".",
@@ -38,7 +42,9 @@
           "in" : "query",
           "name" : "delimiter",
           "required" : false,
-          "schema" : { },
+          "schema" : {
+            "type" : "string"
+          },
           "style" : "form"
         } ],
         "responses" : {
@@ -83,50 +89,64 @@
   "components" : {
     "schemas" : {
       "__get_400_response" : {
+        "example" : {
+          "response_code" : "response_code",
+          "response_message" : "response_message"
+        },
         "properties" : {
           "response_code" : {
-            "description" : "Response status code to indicate success or failed completion of the API call."
+            "description" : "Response status code to indicate success or failed completion of the API call.",
+            "type" : "string"
           },
           "response_message" : {
-            "description" : "Response message to indicate success or failed completion of the API call."
+            "description" : "Response message to indicate success or failed completion of the API call.",
+            "type" : "string"
           }
         }
       },
       "__get_200_response" : {
         "example" : {
-          "response_code" : "",
-          "ip_version" : "",
-          "response_message" : "",
-          "ip" : "",
-          "isp" : "",
-          "country_name" : "",
-          "country_code2" : "",
+          "response_code" : "response_code",
+          "ip_version" : 0,
+          "response_message" : "response_message",
+          "ip" : "ip",
+          "isp" : "isp",
+          "country_name" : "country_name",
+          "country_code2" : "country_code2",
           "ip_number" : ""
         },
         "properties" : {
           "ip" : {
-            "description" : "IPv4 or IPv6 address used to lookup geolocation."
+            "description" : "IPv4 or IPv6 address used to lookup geolocation.",
+            "type" : "string"
           },
           "ip_number" : {
-            "description" : "IP number in long integer."
+            "description" : "IP number in long integer.",
+            "type" : "int64"
           },
           "ip_version" : {
-            "description" : "IP version either 4 or 6."
+            "description" : "IP version either 4 or 6.",
+            "type" : "integer"
           },
           "country_name" : {
-            "description" : "Full name of the IP country."
+            "description" : "Full name of the IP country.",
+            "type" : "string"
           },
           "country_code2" : {
-            "description" : "ISO ALPHA-2 Country Code."
+            "description" : "ISO ALPHA-2 Country Code.",
+            "type" : "string"
           },
           "isp" : {
-            "description" : "Internet Service Provider (ISP) who owns the IP address."
+            "description" : "Internet Service Provider (ISP) who owns the IP address.",
+            "type" : "string"
           },
           "response_code" : {
-            "description" : "Response status code to indicate success or failed completion of the API call."
+            "description" : "Response status code to indicate success or failed completion of the API call.",
+            "type" : "string"
           },
           "response_message" : {
-            "description" : "Response message to indicate success or failed completion of the API call."
+            "description" : "Response message to indicate success or failed completion of the API call.",
+            "type" : "string"
           }
         }
       }

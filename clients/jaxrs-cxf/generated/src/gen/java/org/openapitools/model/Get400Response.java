@@ -1,7 +1,6 @@
 package org.openapitools.model;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import org.openapitools.jackson.nullable.JsonNullable;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -16,27 +15,27 @@ public class Get400Response  {
  /**
    * Response status code to indicate success or failed completion of the API call.
   **/
-  private Object responseCode = null;
+  private String responseCode;
 
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
  /**
    * Response message to indicate success or failed completion of the API call.
   **/
-  private Object responseMessage = null;
+  private String responseMessage;
  /**
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
   **/
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get400Response responseCode(Object responseCode) {
+  public Get400Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -46,15 +45,15 @@ public class Get400Response  {
    * @return responseMessage
   **/
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 
-  public Get400Response responseMessage(Object responseMessage) {
+  public Get400Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -68,8 +67,8 @@ public class Get400Response  {
       return false;
     }
     Get400Response get400Response = (Get400Response) o;
-    return Objects.equals(responseCode, get400Response.responseCode) &&
-        Objects.equals(responseMessage, get400Response.responseMessage);
+    return Objects.equals(this.responseCode, get400Response.responseCode) &&
+        Objects.equals(this.responseMessage, get400Response.responseMessage);
   }
 
   @Override

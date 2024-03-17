@@ -13,7 +13,7 @@ import org.openapitools.model.*;
 import org.openapitools.model.Get200Response;
 import org.openapitools.model.Get400Response;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2023-04-02T00:24:29.018225Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-16T21:35:42.080268873Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class DefaultController  {
   /**
    * Uncomment and implement as you see fit.  These operations will map
@@ -22,7 +22,7 @@ public class DefaultController  {
    **/
 
   /*
-    public ResponseContext rootGET(RequestContext request , Object ip, Object format, Object delimiter) {
+    public ResponseContext rootGET(RequestContext request , String ip, String format, String delimiter) {
         return new ResponseContext().status(Status.INTERNAL_SERVER_ERROR).entity( "Not implemented" );
     }
   */

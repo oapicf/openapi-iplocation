@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 bin/autodoc
+cpanfile
 docs/DefaultApi.md
 docs/Get200Response.md
 docs/Get400Response.md

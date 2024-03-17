@@ -7,7 +7,7 @@ All URIs are relative to *https://api.iplocation.net*
 | [**rootGet**](DefaultApi.md#rootGet) | **GET** / | Get geolocation of an IP address |
 
 
-<a name="rootGet"></a>
+<a id="rootGet"></a>
 # **rootGet**
 > Get200Response rootGet(ip, format, delimiter)
 
@@ -18,11 +18,11 @@ Retrieve geolocation of an IP address.
 ### Example
 ```java
 // Import classes:
-import com.cliffano.openapiiplocation.ApiClient;
-import com.cliffano.openapiiplocation.ApiException;
-import com.cliffano.openapiiplocation.Configuration;
-import com.cliffano.openapiiplocation.models.*;
-import com.cliffano.openapiiplocation.api.DefaultApi;
+import com.github.oapicf.openapiiplocation.ApiClient;
+import com.github.oapicf.openapiiplocation.ApiException;
+import com.github.oapicf.openapiiplocation.Configuration;
+import com.github.oapicf.openapiiplocation.models.*;
+import com.github.oapicf.openapiiplocation.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -30,9 +30,9 @@ public class Example {
     defaultClient.setBasePath("https://api.iplocation.net");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Object ip = null; // Object | An IPv4 or IPv6 address that you would like to lookup.
-    Object format = null; // Object | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-    Object delimiter = null; // Object | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+    String ip = "ip_example"; // String | An IPv4 or IPv6 address that you would like to lookup.
+    String format = "format_example"; // String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+    String delimiter = "delimiter_example"; // String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
     try {
       Get200Response result = apiInstance.rootGet(ip, format, delimiter);
       System.out.println(result);
@@ -51,9 +51,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ip** | [**Object**](.md)| An IPv4 or IPv6 address that you would like to lookup. | |
-| **format** | [**Object**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
-| **delimiter** | [**Object**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
+| **ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. | |
+| **format** | **String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
+| **delimiter** | **String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
 
 ### Return type
 

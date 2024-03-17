@@ -9,7 +9,7 @@ class DefaultApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def rootGet ( Object ip, Object format, Object delimiter, Closure onSuccess, Closure onFailure)  {
+    def rootGet ( String ip, String format, String delimiter, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/"
 
         // params

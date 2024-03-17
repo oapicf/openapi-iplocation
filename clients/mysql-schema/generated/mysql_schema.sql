@@ -12,7 +12,7 @@
 CREATE TABLE IF NOT EXISTS `__get_200_response` (
   `ip` TEXT DEFAULT NULL COMMENT 'IPv4 or IPv6 address used to lookup geolocation.',
   `ip_number` TEXT DEFAULT NULL COMMENT 'IP number in long integer.',
-  `ip_version` TEXT DEFAULT NULL COMMENT 'IP version either 4 or 6.',
+  `ip_version` INT DEFAULT NULL COMMENT 'IP version either 4 or 6.',
   `country_name` TEXT DEFAULT NULL COMMENT 'Full name of the IP country.',
   `country_code2` TEXT DEFAULT NULL COMMENT 'ISO ALPHA-2 Country Code.',
   `isp` TEXT DEFAULT NULL COMMENT 'Internet Service Provider (ISP) who owns the IP address.',

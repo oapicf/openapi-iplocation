@@ -13,16 +13,16 @@ Method | HTTP request | Description
 //
 // Retrieve geolocation of an IP address. 
 //
-__get_200_response_t* DefaultAPI_rootGet(apiClient_t *apiClient,  ip,  format,  delimiter);
+__get_200_response_t* DefaultAPI_rootGet(apiClient_t *apiClient, char *ip, char *format, char *delimiter);
 ```
 
 ### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
-**ip** |  | An IPv4 or IPv6 address that you would like to lookup. | 
-**format** |  | Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
-**delimiter** |  | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
+**ip** | **char \*** | An IPv4 or IPv6 address that you would like to lookup. | 
+**format** | **char \*** | Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
+**delimiter** | **char \*** | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
 
 ### Return type
 

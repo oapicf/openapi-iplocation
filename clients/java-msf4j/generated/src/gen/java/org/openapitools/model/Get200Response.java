@@ -6,38 +6,38 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
+import org.openapitools.model.Int64;
 
 /**
  * Get200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2023-04-02T00:24:35.750781Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-03-16T21:35:50.452380229Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get200Response   {
   @JsonProperty("ip")
-  private Object ip = null;
+  private String ip;
 
   @JsonProperty("ip_number")
-  private Object ipNumber = null;
+  private Int64 ipNumber = null;
 
   @JsonProperty("ip_version")
-  private Object ipVersion = null;
+  private Integer ipVersion;
 
   @JsonProperty("country_name")
-  private Object countryName = null;
+  private String countryName;
 
   @JsonProperty("country_code2")
-  private Object countryCode2 = null;
+  private String countryCode2;
 
   @JsonProperty("isp")
-  private Object isp = null;
+  private String isp;
 
   @JsonProperty("response_code")
-  private Object responseCode = null;
+  private String responseCode;
 
   @JsonProperty("response_message")
-  private Object responseMessage = null;
+  private String responseMessage;
 
-  public Get200Response ip(Object ip) {
+  public Get200Response ip(String ip) {
     this.ip = ip;
     return this;
   }
@@ -47,15 +47,15 @@ public class Get200Response   {
    * @return ip
   **/
   @ApiModelProperty(value = "IPv4 or IPv6 address used to lookup geolocation.")
-  public Object getIp() {
+  public String getIp() {
     return ip;
   }
 
-  public void setIp(Object ip) {
+  public void setIp(String ip) {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(Object ipNumber) {
+  public Get200Response ipNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
@@ -65,15 +65,15 @@ public class Get200Response   {
    * @return ipNumber
   **/
   @ApiModelProperty(value = "IP number in long integer.")
-  public Object getIpNumber() {
+  public Int64 getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Object ipNumber) {
+  public void setIpNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
   }
 
-  public Get200Response ipVersion(Object ipVersion) {
+  public Get200Response ipVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
     return this;
   }
@@ -83,15 +83,15 @@ public class Get200Response   {
    * @return ipVersion
   **/
   @ApiModelProperty(value = "IP version either 4 or 6.")
-  public Object getIpVersion() {
+  public Integer getIpVersion() {
     return ipVersion;
   }
 
-  public void setIpVersion(Object ipVersion) {
+  public void setIpVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
 
-  public Get200Response countryName(Object countryName) {
+  public Get200Response countryName(String countryName) {
     this.countryName = countryName;
     return this;
   }
@@ -101,15 +101,15 @@ public class Get200Response   {
    * @return countryName
   **/
   @ApiModelProperty(value = "Full name of the IP country.")
-  public Object getCountryName() {
+  public String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(Object countryName) {
+  public void setCountryName(String countryName) {
     this.countryName = countryName;
   }
 
-  public Get200Response countryCode2(Object countryCode2) {
+  public Get200Response countryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
     return this;
   }
@@ -119,15 +119,15 @@ public class Get200Response   {
    * @return countryCode2
   **/
   @ApiModelProperty(value = "ISO ALPHA-2 Country Code.")
-  public Object getCountryCode2() {
+  public String getCountryCode2() {
     return countryCode2;
   }
 
-  public void setCountryCode2(Object countryCode2) {
+  public void setCountryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
   }
 
-  public Get200Response isp(Object isp) {
+  public Get200Response isp(String isp) {
     this.isp = isp;
     return this;
   }
@@ -137,15 +137,15 @@ public class Get200Response   {
    * @return isp
   **/
   @ApiModelProperty(value = "Internet Service Provider (ISP) who owns the IP address.")
-  public Object getIsp() {
+  public String getIsp() {
     return isp;
   }
 
-  public void setIsp(Object isp) {
+  public void setIsp(String isp) {
     this.isp = isp;
   }
 
-  public Get200Response responseCode(Object responseCode) {
+  public Get200Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -155,15 +155,15 @@ public class Get200Response   {
    * @return responseCode
   **/
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get200Response responseMessage(Object responseMessage) {
+  public Get200Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -173,11 +173,11 @@ public class Get200Response   {
    * @return responseMessage
   **/
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

@@ -61,9 +61,9 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns OAIGet200Response*
 ///
--(NSURLSessionTask*) rootGetWithIp: (OAIAnyType*) ip
-    format: (OAIAnyType*) format
-    delimiter: (OAIAnyType*) delimiter
+-(NSURLSessionTask*) rootGetWithIp: (NSString*) ip
+    format: (NSString*) format
+    delimiter: (NSString*) delimiter
     completionHandler: (void (^)(OAIGet200Response* output, NSError* error)) handler {
     // verify the required parameter 'ip' is set
     if (ip == nil) {

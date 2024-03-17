@@ -12,6 +12,6 @@ import java.util.Map;
 
 public interface DefaultApi  {
     //GET_
-    void rootGet(Object ip, Object format, Object delimiter, Handler<AsyncResult<Get200Response>> handler);
+    void rootGet(String ip, String format, String delimiter, Handler<AsyncResult<Get200Response>> handler);
 
 }

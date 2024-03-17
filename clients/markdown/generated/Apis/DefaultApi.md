@@ -19,9 +19,9 @@ Get geolocation of an IP address
 
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ip** | [**oas_any_type_not_mapped**](../Models/.md)| An IPv4 or IPv6 address that you would like to lookup. | [default to null] |
-| **format** | [**oas_any_type_not_mapped**](../Models/.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] [default to null] |
-| **delimiter** | [**oas_any_type_not_mapped**](../Models/.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] [default to null] |
+| **ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. | [default to null] |
+| **format** | **String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] [default to null] |
+| **delimiter** | **String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] [default to null] |
 
 ### Return type
 

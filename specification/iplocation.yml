@@ -21,7 +21,6 @@ paths:
           in: query
           description: "Output format, the following formats are supported: plain xml json jsonp php csv serialized"
           required: false
-          default: 'json'
           schema:
             type: string
         - name: delimiter

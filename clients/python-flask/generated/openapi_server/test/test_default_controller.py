@@ -1,10 +1,6 @@
-# coding: utf-8
-
-from __future__ import absolute_import
 import unittest
 
 from flask import json
-from six import BytesIO
 
 from openapi_server.models.get200_response import Get200Response  # noqa: E501
 from openapi_server.models.get400_response import Get400Response  # noqa: E501
@@ -19,9 +15,9 @@ class TestDefaultController(BaseTestCase):
 
         Get geolocation of an IP address
         """
-        query_string = [('ip', None),
-                        ('format', None),
-                        ('delimiter', None)]
+        query_string = [('ip', 'ip_example'),
+                        ('format', 'format_example'),
+                        ('delimiter', 'delimiter_example')]
         headers = { 
             'Accept': 'application/json',
         }

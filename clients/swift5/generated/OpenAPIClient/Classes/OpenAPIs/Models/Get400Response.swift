@@ -13,11 +13,11 @@ import AnyCodable
 public struct Get400Response: Codable, JSONEncodable, Hashable {
 
     /** Response status code to indicate success or failed completion of the API call. */
-    public var responseCode: AnyCodable?
+    public var responseCode: String?
     /** Response message to indicate success or failed completion of the API call. */
-    public var responseMessage: AnyCodable?
+    public var responseMessage: String?
 
-    public init(responseCode: AnyCodable? = nil, responseMessage: AnyCodable? = nil) {
+    public init(responseCode: String? = nil, responseMessage: String? = nil) {
         self.responseCode = responseCode
         self.responseMessage = responseMessage
     }

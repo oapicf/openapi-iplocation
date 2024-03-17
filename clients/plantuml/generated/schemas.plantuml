@@ -3,19 +3,19 @@
 title iplocation.net API Schemas Diagram
 
 entity Get200Response {
-    ip: OasAnyTypeNotMapped
-    ip_number: OasAnyTypeNotMapped
-    ip_version: OasAnyTypeNotMapped
-    country_name: OasAnyTypeNotMapped
-    country_code2: OasAnyTypeNotMapped
-    isp: OasAnyTypeNotMapped
-    response_code: OasAnyTypeNotMapped
-    response_message: OasAnyTypeNotMapped
+    ip: String
+    ip_number: Int64
+    ip_version: Integer
+    country_name: String
+    country_code2: String
+    isp: String
+    response_code: String
+    response_message: String
 }
 
 entity Get400Response {
-    response_code: OasAnyTypeNotMapped
-    response_message: OasAnyTypeNotMapped
+    response_code: String
+    response_message: String
 }
 
 

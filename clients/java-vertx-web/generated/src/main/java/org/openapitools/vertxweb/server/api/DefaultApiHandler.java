@@ -42,9 +42,9 @@ public class DefaultApiHandler {
         // Param extraction
         RequestParameters requestParameters = routingContext.get(ValidationHandler.REQUEST_CONTEXT_KEY);
 
-        Object ip = requestParameters.queryParameter("ip") != null ? requestParameters.queryParameter("ip").getObject() : null;
-        Object format = requestParameters.queryParameter("format") != null ? requestParameters.queryParameter("format").getObject() : null;
-        Object delimiter = requestParameters.queryParameter("delimiter") != null ? requestParameters.queryParameter("delimiter").getObject() : null;
+        String ip = requestParameters.queryParameter("ip") != null ? requestParameters.queryParameter("ip").getString() : null;
+        String format = requestParameters.queryParameter("format") != null ? requestParameters.queryParameter("format").getString() : null;
+        String delimiter = requestParameters.queryParameter("delimiter") != null ? requestParameters.queryParameter("delimiter").getString() : null;
 
         logger.debug("Parameter ip is {}", ip);
         logger.debug("Parameter format is {}", format);

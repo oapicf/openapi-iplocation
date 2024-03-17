@@ -4,7 +4,7 @@ from datetime import date, datetime
 
 from typing import List, Dict, Type
 
-from openapi_server.models.base_model_ import Model
+from openapi_server.models.base_model import Model
 from openapi_server import util
 
 
@@ -14,15 +14,15 @@ class Get400Response(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, response_code: object=None, response_message: object=None):
+    def __init__(self, response_code: str=None, response_message: str=None):
         """Get400Response - a model defined in OpenAPI
 
         :param response_code: The response_code of this Get400Response.
         :param response_message: The response_message of this Get400Response.
         """
         self.openapi_types = {
-            'response_code': object,
-            'response_message': object
+            'response_code': str,
+            'response_message': str
         }
 
         self.attribute_map = {
@@ -49,7 +49,7 @@ class Get400Response(Model):
         Response status code to indicate success or failed completion of the API call.
 
         :return: The response_code of this Get400Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_code
 
@@ -60,7 +60,7 @@ class Get400Response(Model):
         Response status code to indicate success or failed completion of the API call.
 
         :param response_code: The response_code of this Get400Response.
-        :type response_code: object
+        :type response_code: str
         """
 
         self._response_code = response_code
@@ -72,7 +72,7 @@ class Get400Response(Model):
         Response message to indicate success or failed completion of the API call.
 
         :return: The response_message of this Get400Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_message
 
@@ -83,7 +83,7 @@ class Get400Response(Model):
         Response message to indicate success or failed completion of the API call.
 
         :param response_message: The response_message of this Get400Response.
-        :type response_message: object
+        :type response_message: str
         """
 
         self._response_message = response_message

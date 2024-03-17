@@ -16,12 +16,12 @@ resourceTypes {
     derivedFrom = Root
     properties {
         response_code {
-          type =  
+          type =  string
           description = "Response status code to indicate success or failed completion of the API call."
           optional = false
         }
         response_message {
-          type =  
+          type =  string
           description = "Response message to indicate success or failed completion of the API call."
           optional = false
         }

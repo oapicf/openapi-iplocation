@@ -7,15 +7,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 import io.swagger.annotations.*;
+import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2023-04-02T00:24:59.590078Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-03-16T21:36:19.840688167Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get400Response   {
   
-  private Object responseCode = null;
-  private Object responseMessage = null;
+  private String responseCode;
+  private String responseMessage;
 
   /**
    * Response status code to indicate success or failed completion of the API call.
@@ -23,10 +24,10 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
@@ -36,10 +37,10 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 
@@ -53,8 +54,8 @@ public class Get400Response   {
       return false;
     }
     Get400Response get400Response = (Get400Response) o;
-    return Objects.equals(responseCode, get400Response.responseCode) &&
-        Objects.equals(responseMessage, get400Response.responseMessage);
+    return Objects.equals(this.responseCode, get400Response.responseCode) &&
+        Objects.equals(this.responseMessage, get400Response.responseMessage);
   }
 
   @Override

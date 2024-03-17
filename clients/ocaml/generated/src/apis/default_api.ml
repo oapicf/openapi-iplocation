@@ -9,9 +9,9 @@ let root_get ~ip ?format ?delimiter () =
     let open Lwt.Infix in
     let uri = Request.build_uri "/" in
     let headers = Request.default_headers in
-    let uri = Request.add_query_param uri "ip"  ip in
-    let uri = Request.maybe_add_query_param uri "format"  format in
-    let uri = Request.maybe_add_query_param uri "delimiter"  delimiter in
+    let uri = Request.add_query_param uri "ip" (fun x -> x) ip in
+    let uri = Request.maybe_add_query_param uri "format" (fun x -> x) format in
+    let uri = Request.maybe_add_query_param uri "delimiter" (fun x -> x) delimiter in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Model___get_200_response.of_yojson) resp body
 

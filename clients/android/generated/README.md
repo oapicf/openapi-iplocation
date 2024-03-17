@@ -64,9 +64,9 @@ public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
-        OasAnyTypeNotMapped ip = null; // OasAnyTypeNotMapped | An IPv4 or IPv6 address that you would like to lookup.
-        OasAnyTypeNotMapped format = null; // OasAnyTypeNotMapped | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-        OasAnyTypeNotMapped delimiter = null; // OasAnyTypeNotMapped | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+        String ip = null; // String | An IPv4 or IPv6 address that you would like to lookup.
+        String format = null; // String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+        String delimiter = null; // String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
         try {
             Get200Response result = apiInstance.rootGet(ip, format, delimiter);
             System.out.println(result);
@@ -105,5 +105,5 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
-blah@cliffano.com
+blah+oapicf@cliffano.com
 

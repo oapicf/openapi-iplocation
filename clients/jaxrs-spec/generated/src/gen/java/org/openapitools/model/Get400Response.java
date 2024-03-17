@@ -3,7 +3,6 @@ package org.openapitools.model;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -17,15 +16,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("__get_400_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-04-02T00:25:03.682575Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-16T21:36:25.052261614Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get400Response   {
-  private @Valid Object responseCode = null;
-  private @Valid Object responseMessage = null;
+  private @Valid String responseCode;
+  private @Valid String responseMessage;
 
   /**
    * Response status code to indicate success or failed completion of the API call.
    **/
-  public Get400Response responseCode(Object responseCode) {
+  public Get400Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -33,19 +32,19 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
 
   @JsonProperty("response_code")
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
   /**
    * Response message to indicate success or failed completion of the API call.
    **/
-  public Get400Response responseMessage(Object responseMessage) {
+  public Get400Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -53,12 +52,12 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
 
   @JsonProperty("response_message")
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

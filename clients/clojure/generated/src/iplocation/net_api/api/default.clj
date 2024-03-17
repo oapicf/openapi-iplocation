@@ -12,8 +12,8 @@
 (defn-spec root-get-with-http-info any?
   "Get geolocation of an IP address
   Retrieve geolocation of an IP address."
-  ([ip any-type-spec, ] (root-get-with-http-info ip nil))
-  ([ip any-type-spec, {:keys [format delimiter]} (s/map-of keyword? any?)]
+  ([ip string?, ] (root-get-with-http-info ip nil))
+  ([ip string?, {:keys [format delimiter]} (s/map-of keyword? any?)]
    (check-required-params ip)
    (call-api "/" :get
              {:path-params   {}
@@ -27,8 +27,8 @@
 (defn-spec root-get -get-200-response-spec
   "Get geolocation of an IP address
   Retrieve geolocation of an IP address."
-  ([ip any-type-spec, ] (root-get ip nil))
-  ([ip any-type-spec, optional-params any?]
+  ([ip string?, ] (root-get ip nil))
+  ([ip string?, optional-params any?]
    (let [res (:data (root-get-with-http-info ip optional-params))]
      (if (:decode-models *api-context*)
         (st/decode -get-200-response-spec res st/string-transformer)

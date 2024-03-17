@@ -23,14 +23,14 @@ __get_200_response::~__get_200_response()
 void
 __get_200_response::__init()
 {
-	//ip = null;
+	//ip = std::string();
 	//ip_number = null;
-	//ip_version = null;
-	//country_name = null;
-	//country_code2 = null;
-	//isp = null;
-	//response_code = null;
-	//response_message = null;
+	//ip_version = int(0);
+	//country_name = std::string();
+	//country_code2 = std::string();
+	//isp = std::string();
+	//response_code = std::string();
+	//response_message = std::string();
 }
 
 void
@@ -89,12 +89,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&ip, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&ip, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&ip);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -103,11 +100,11 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&ip_number, node, "AnyType", "");
+		if (isprimitive("Int64")) {
+			jsonToValue(&ip_number, node, "Int64", "Int64");
 		} else {
 			
-			AnyType* obj = static_cast<AnyType*> (&ip_number);
+			Int64* obj = static_cast<Int64*> (&ip_number);
 			obj->fromJson(json_to_string(node, false));
 			
 		}
@@ -117,12 +114,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&ip_version, node, "AnyType", "");
+		if (isprimitive("int")) {
+			jsonToValue(&ip_version, node, "int", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&ip_version);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -131,12 +125,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&country_name, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&country_name, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&country_name);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -145,12 +136,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&country_code2, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&country_code2, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&country_code2);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -159,12 +147,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&isp, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&isp, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&isp);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -173,12 +158,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&response_code, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&response_code, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&response_code);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -187,12 +169,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&response_message, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&response_message, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&response_message);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -208,27 +187,22 @@ __get_200_response::toJson()
 {
 	JsonObject *pJsonObject = json_object_new();
 	JsonNode *node;
-	if (isprimitive("AnyType")) {
-		AnyType obj = getIp();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getIp();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getIp());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *ipKey = "ip";
 	json_object_set_member(pJsonObject, ipKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getIpNumber();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("Int64")) {
+		Int64 obj = getIpNumber();
+		node = converttoJson(&obj, "Int64", "");
 	}
 	else {
 		
-		AnyType obj = static_cast<AnyType> (getIpNumber());
+		Int64 obj = static_cast<Int64> (getIpNumber());
 		GError *mygerror;
 		mygerror = NULL;
 		node = json_from_string(obj.toJson(), &mygerror);
@@ -236,86 +210,56 @@ __get_200_response::toJson()
 	}
 	const gchar *ip_numberKey = "ip_number";
 	json_object_set_member(pJsonObject, ip_numberKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getIpVersion();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("int")) {
+		int obj = getIpVersion();
+		node = converttoJson(&obj, "int", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getIpVersion());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *ip_versionKey = "ip_version";
 	json_object_set_member(pJsonObject, ip_versionKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getCountryName();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getCountryName();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getCountryName());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *country_nameKey = "country_name";
 	json_object_set_member(pJsonObject, country_nameKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getCountryCode2();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getCountryCode2();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getCountryCode2());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *country_code2Key = "country_code2";
 	json_object_set_member(pJsonObject, country_code2Key, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getIsp();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getIsp();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getIsp());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *ispKey = "isp";
 	json_object_set_member(pJsonObject, ispKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getResponseCode();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getResponseCode();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getResponseCode());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *response_codeKey = "response_code";
 	json_object_set_member(pJsonObject, response_codeKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getResponseMessage();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getResponseMessage();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getResponseMessage());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *response_messageKey = "response_message";
@@ -328,98 +272,98 @@ __get_200_response::toJson()
 	return ret;
 }
 
-AnyType
+std::string
 __get_200_response::getIp()
 {
 	return ip;
 }
 
 void
-__get_200_response::setIp(AnyType  ip)
+__get_200_response::setIp(std::string  ip)
 {
 	this->ip = ip;
 }
 
-AnyType
+Int64
 __get_200_response::getIpNumber()
 {
 	return ip_number;
 }
 
 void
-__get_200_response::setIpNumber(AnyType  ip_number)
+__get_200_response::setIpNumber(Int64  ip_number)
 {
 	this->ip_number = ip_number;
 }
 
-AnyType
+int
 __get_200_response::getIpVersion()
 {
 	return ip_version;
 }
 
 void
-__get_200_response::setIpVersion(AnyType  ip_version)
+__get_200_response::setIpVersion(int  ip_version)
 {
 	this->ip_version = ip_version;
 }
 
-AnyType
+std::string
 __get_200_response::getCountryName()
 {
 	return country_name;
 }
 
 void
-__get_200_response::setCountryName(AnyType  country_name)
+__get_200_response::setCountryName(std::string  country_name)
 {
 	this->country_name = country_name;
 }
 
-AnyType
+std::string
 __get_200_response::getCountryCode2()
 {
 	return country_code2;
 }
 
 void
-__get_200_response::setCountryCode2(AnyType  country_code2)
+__get_200_response::setCountryCode2(std::string  country_code2)
 {
 	this->country_code2 = country_code2;
 }
 
-AnyType
+std::string
 __get_200_response::getIsp()
 {
 	return isp;
 }
 
 void
-__get_200_response::setIsp(AnyType  isp)
+__get_200_response::setIsp(std::string  isp)
 {
 	this->isp = isp;
 }
 
-AnyType
+std::string
 __get_200_response::getResponseCode()
 {
 	return response_code;
 }
 
 void
-__get_200_response::setResponseCode(AnyType  response_code)
+__get_200_response::setResponseCode(std::string  response_code)
 {
 	this->response_code = response_code;
 }
 
-AnyType
+std::string
 __get_200_response::getResponseMessage()
 {
 	return response_message;
 }
 
 void
-__get_200_response::setResponseMessage(AnyType  response_message)
+__get_200_response::setResponseMessage(std::string  response_message)
 {
 	this->response_message = response_message;
 }

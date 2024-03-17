@@ -14,6 +14,6 @@
 // Retrieve geolocation of an IP address. 
 //
 __get_200_response_t*
-DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter );
+DefaultAPI_rootGet(apiClient_t *apiClient, char *ip, char *format, char *delimiter);
 
 

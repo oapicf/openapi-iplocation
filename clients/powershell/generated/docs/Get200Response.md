@@ -3,14 +3,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ip** | [**AnyType**](.md) | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**IpNumber** | [**AnyType**](.md) | IP number in long integer. | [optional] 
-**IpVersion** | [**AnyType**](.md) | IP version either 4 or 6. | [optional] 
-**CountryName** | [**AnyType**](.md) | Full name of the IP country. | [optional] 
-**CountryCode2** | [**AnyType**](.md) | ISO ALPHA-2 Country Code. | [optional] 
-**Isp** | [**AnyType**](.md) | Internet Service Provider (ISP) who owns the IP address. | [optional] 
-**ResponseCode** | [**AnyType**](.md) | Response status code to indicate success or failed completion of the API call. | [optional] 
-**ResponseMessage** | [**AnyType**](.md) | Response message to indicate success or failed completion of the API call. | [optional] 
+**Ip** | **String** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
+**IpNumber** | **Int64** | IP number in long integer. | [optional] 
+**IpVersion** | **Int32** | IP version either 4 or 6. | [optional] 
+**CountryName** | **String** | Full name of the IP country. | [optional] 
+**CountryCode2** | **String** | ISO ALPHA-2 Country Code. | [optional] 
+**Isp** | **String** | Internet Service Provider (ISP) who owns the IP address. | [optional] 
+**ResponseCode** | **String** | Response status code to indicate success or failed completion of the API call. | [optional] 
+**ResponseMessage** | **String** | Response message to indicate success or failed completion of the API call. | [optional] 
 
 ## Examples
 

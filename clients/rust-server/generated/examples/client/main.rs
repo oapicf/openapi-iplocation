@@ -27,6 +27,7 @@ fn main() {
         .arg(Arg::with_name("operation")
             .help("Sets the operation to run")
             .possible_values(&[
+                "RootGet",
             ])
             .required(true)
             .index(1))
@@ -70,16 +71,14 @@ fn main() {
     let mut rt = tokio::runtime::Runtime::new().unwrap();
 
     match matches.value_of("operation") {
-        /* Disabled because there's no example.
         Some("RootGet") => {
             let result = rt.block_on(client.root_get(
-                  ???,
-                  None,
-                  None
+                  "ip_example".to_string(),
+                  Some("format_example".to_string()),
+                  Some("delimiter_example".to_string())
             ));
             info!("{:?} (X-Span-ID: {:?})", result, (client.context() as &dyn Has<XSpanIdString>).get().clone());
         },
-        */
         _ => {
             panic!("Invalid operation provided")
         }

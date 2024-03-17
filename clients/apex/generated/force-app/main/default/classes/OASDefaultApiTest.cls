@@ -13,9 +13,9 @@ private class OASDefaultApiTest {
         Test.setMock(HttpCalloutMock.class, new OASResponseMock(res));
 
         Map<String, Object> params = new Map<String, Object>{
-            'ip' => '',
-            'format' => '',
-            'delimiter' => ''
+            'ip' => 'null',
+            'format' => 'null',
+            'delimiter' => 'null'
         };
 
         OASClient client;
@@ -25,6 +25,20 @@ private class OASDefaultApiTest {
         String js = '';
 
         api = new OASDefaultApi(new OASClient());
+
+        js = JSON.serialize(OASGet200Response.getExample());
+        res.setHeader('Content-Type', 'application/json');
+        res.setBody(js);
+        expectedResponse = OASGet200Response.getExample();
+        response = (OASGet200Response) api.rootGet(params);
+        System.assertEquals(expectedResponse, response);
+
+        js = JSON.serialize(OASGet200Response.getExample());
+        res.setHeader('Content-Type', 'application/json');
+        res.setBody(js);
+        expectedResponse = OASGet200Response.getExample();
+        response = (OASGet200Response) api.rootGet(params);
+        System.assertEquals(expectedResponse, response);
 
         js = JSON.serialize(OASGet200Response.getExample());
         res.setHeader('Content-Type', 'application/json');

@@ -5,7 +5,7 @@ from datetime import date, datetime  # noqa: F401
 
 from typing import List, Dict  # noqa: F401
 
-from app.openapi_server.models.base_model_ import Model
+from app.openapi_server.models.base_model import Model
 from openapi_server import util
 
 
@@ -15,17 +15,17 @@ class Get400Response(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, response_code: object=None, response_message: object=None):  # noqa: E501
+    def __init__(self, response_code: str=None, response_message: str=None):  # noqa: E501
         """Get400Response - a model defined in Swagger
 
         :param response_code: The response_code of this Get400Response.  # noqa: E501
-        :type response_code: object
+        :type response_code: str
         :param response_message: The response_message of this Get400Response.  # noqa: E501
-        :type response_message: object
+        :type response_message: str
         """
         self.swagger_types = {
-            'response_code': object,
-            'response_message': object
+            'response_code': str,
+            'response_message': str
         }
 
         self.attribute_map = {
@@ -48,47 +48,47 @@ class Get400Response(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def response_code(self) -> object:
+    def response_code(self) -> str:
         """Gets the response_code of this Get400Response.
 
         Response status code to indicate success or failed completion of the API call.  # noqa: E501
 
         :return: The response_code of this Get400Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_code
 
     @response_code.setter
-    def response_code(self, response_code: object):
+    def response_code(self, response_code: str):
         """Sets the response_code of this Get400Response.
 
         Response status code to indicate success or failed completion of the API call.  # noqa: E501
 
         :param response_code: The response_code of this Get400Response.
-        :type response_code: object
+        :type response_code: str
         """
 
         self._response_code = response_code
 
     @property
-    def response_message(self) -> object:
+    def response_message(self) -> str:
         """Gets the response_message of this Get400Response.
 
         Response message to indicate success or failed completion of the API call.  # noqa: E501
 
         :return: The response_message of this Get400Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_message
 
     @response_message.setter
-    def response_message(self, response_message: object):
+    def response_message(self, response_message: str):
         """Sets the response_message of this Get400Response.
 
         Response message to indicate success or failed completion of the API call.  # noqa: E501
 
         :param response_message: The response_message of this Get400Response.
-        :type response_message: object
+        :type response_message: str
         """
 
         self._response_message = response_message

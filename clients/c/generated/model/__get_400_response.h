@@ -15,19 +15,18 @@
 
 typedef struct __get_400_response_t __get_400_response_t;
 
-#include "any_type.h"
 
 
 
 typedef struct __get_400_response_t {
-    any_type_t *response_code; // custom
-    any_type_t *response_message; // custom
+    char *response_code; // string
+    char *response_message; // string
 
 } __get_400_response_t;
 
 __get_400_response_t *__get_400_response_create(
-    any_type_t *response_code,
-    any_type_t *response_message
+    char *response_code,
+    char *response_message
 );
 
 void __get_400_response_free(__get_400_response_t *__get_400_response);

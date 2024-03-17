@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashSet;
 
-
 /**
  * API tests for DefaultApi
  */
@@ -34,9 +33,9 @@ public class DefaultApiTest {
     @Disabled("Not Implemented")
     public void rootGetTest() {
         // given
-        Object ip = null;
-        Object _format = null;
-        Object delimiter = null;
+        String ip = "example";
+        String _format = "example";
+        String delimiter = "example";
 
         // when
         Get200Response body = api.rootGet(ip, _format, delimiter).block();

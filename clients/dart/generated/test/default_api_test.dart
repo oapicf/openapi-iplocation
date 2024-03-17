@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -21,7 +21,7 @@ void main() {
     //
     // Retrieve geolocation of an IP address. 
     //
-    //Future<Get200Response> rootGet(Object ip, { Object format, Object delimiter }) async
+    //Future<Get200Response> rootGet(String ip, { String format, String delimiter }) async
     test('test rootGet', () async {
       // TODO
     });

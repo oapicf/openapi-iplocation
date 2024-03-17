@@ -12,15 +12,16 @@ def test_root_get(client: TestClient):
 
     Get geolocation of an IP address
     """
-    params = [("ip", None),     ("format", None),     ("delimiter", None)]
+    params = [("ip", 'ip_example'),     ("format", 'format_example'),     ("delimiter", 'delimiter_example')]
     headers = {
     }
-    response = client.request(
-        "GET",
-        "/",
-        headers=headers,
-        params=params,
-    )
+    # uncomment below to make a request
+    #response = client.request(
+    #    "GET",
+    #    "/",
+    #    headers=headers,
+    #    params=params,
+    #)
 
     # uncomment below to assert the status code of the HTTP response
     #assert response.status_code == 200

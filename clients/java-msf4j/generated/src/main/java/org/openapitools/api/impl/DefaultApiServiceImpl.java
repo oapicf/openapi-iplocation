@@ -17,12 +17,12 @@ import org.wso2.msf4j.formparam.FileInfo;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2023-04-02T00:24:35.750781Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-03-16T21:35:50.452380229Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class DefaultApiServiceImpl extends DefaultApiService {
     @Override
-    public Response rootGet(Object ip
-, Object format
-, Object delimiter
+    public Response rootGet(String ip
+, String format
+, String delimiter
  ) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();

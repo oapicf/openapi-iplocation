@@ -119,14 +119,14 @@ instance Arbitrary Get200Response where
 genGet200Response :: Int -> Gen Get200Response
 genGet200Response n =
   Get200Response
-    <$> arbitraryReducedMaybe n -- get200ResponseIp :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseIpNumber :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseIpVersion :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseCountryName :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseCountryCode2 :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseIsp :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseResponseCode :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get200ResponseResponseMessage :: Maybe AnyType
+    <$> arbitraryReducedMaybe n -- get200ResponseIp :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get200ResponseIpNumber :: Maybe Int64
+    <*> arbitraryReducedMaybe n -- get200ResponseIpVersion :: Maybe Int
+    <*> arbitraryReducedMaybe n -- get200ResponseCountryName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get200ResponseCountryCode2 :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get200ResponseIsp :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get200ResponseResponseCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get200ResponseResponseMessage :: Maybe Text
   
 instance Arbitrary Get400Response where
   arbitrary = sized genGet400Response
@@ -134,8 +134,8 @@ instance Arbitrary Get400Response where
 genGet400Response :: Int -> Gen Get400Response
 genGet400Response n =
   Get400Response
-    <$> arbitraryReducedMaybe n -- get400ResponseResponseCode :: Maybe AnyType
-    <*> arbitraryReducedMaybe n -- get400ResponseResponseMessage :: Maybe AnyType
+    <$> arbitraryReducedMaybe n -- get400ResponseResponseCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- get400ResponseResponseMessage :: Maybe Text
   
 
 

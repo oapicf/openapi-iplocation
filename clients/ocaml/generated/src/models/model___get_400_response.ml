@@ -7,9 +7,9 @@
 
 type t = {
     (* Response status code to indicate success or failed completion of the API call. *)
-    response_code: Any_type.t option [@default None];
+    response_code: string option [@default None];
     (* Response message to indicate success or failed completion of the API call. *)
-    response_message: Any_type.t option [@default None];
+    response_message: string option [@default None];
 } [@@deriving yojson { strict = false }, show ];;
 
 let create () : t = {

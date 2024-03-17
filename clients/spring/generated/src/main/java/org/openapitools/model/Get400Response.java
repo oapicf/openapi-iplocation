@@ -5,9 +5,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -23,17 +20,15 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_400_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-02T00:27:25.182827Z[Etc/UTC]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-16T21:38:45.888909540Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get400Response {
 
-  @JsonProperty("response_code")
-  private JsonNullable<Object> responseCode = JsonNullable.undefined();
+  private String responseCode;
 
-  @JsonProperty("response_message")
-  private JsonNullable<Object> responseMessage = JsonNullable.undefined();
+  private String responseMessage;
 
-  public Get400Response responseCode(Object responseCode) {
-    this.responseCode = JsonNullable.of(responseCode);
+  public Get400Response responseCode(String responseCode) {
+    this.responseCode = responseCode;
     return this;
   }
 
@@ -43,16 +38,17 @@ public class Get400Response {
   */
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getResponseCode() {
+  @JsonProperty("response_code")
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(JsonNullable<Object> responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get400Response responseMessage(Object responseMessage) {
-    this.responseMessage = JsonNullable.of(responseMessage);
+  public Get400Response responseMessage(String responseMessage) {
+    this.responseMessage = responseMessage;
     return this;
   }
 
@@ -62,11 +58,12 @@ public class Get400Response {
   */
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getResponseMessage() {
+  @JsonProperty("response_message")
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(JsonNullable<Object> responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 
@@ -79,24 +76,13 @@ public class Get400Response {
       return false;
     }
     Get400Response get400Response = (Get400Response) o;
-    return equalsNullable(this.responseCode, get400Response.responseCode) &&
-        equalsNullable(this.responseMessage, get400Response.responseMessage);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.responseCode, get400Response.responseCode) &&
+        Objects.equals(this.responseMessage, get400Response.responseMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(responseCode), hashCodeNullable(responseMessage));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(responseCode, responseMessage);
   }
 
   @Override

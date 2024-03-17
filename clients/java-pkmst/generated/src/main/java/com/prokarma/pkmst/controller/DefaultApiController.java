@@ -24,7 +24,7 @@ import java.io.IOException;
  * @author pkmst
  *
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2023-04-02T00:24:38.016308Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-03-16T21:35:53.289990468Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 @Controller
 public class DefaultApiController implements DefaultApi {
     private final ObjectMapper objectMapper;
@@ -33,11 +33,21 @@ public class DefaultApiController implements DefaultApi {
         this.objectMapper = objectMapper;
     }
 
-    public ResponseEntity<Get200Response> rootGet(@ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.", required = true)  @RequestParam(value = "ip", required = true) Object ip,
-        @ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized")  @RequestParam(value = "format", required = false) Object format,
-        @ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".")  @RequestParam(value = "delimiter", required = false) Object delimiter,
+    public ResponseEntity<Get200Response> rootGet(@ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.", required = true)  @RequestParam(value = "ip", required = true) String ip,
+        @ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized")  @RequestParam(value = "format", required = false) String format,
+        @ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".")  @RequestParam(value = "delimiter", required = false) String delimiter,
         @RequestHeader(value = "Accept", required = false) String accept) throws Exception {
         // do some magic!
+
+        if (accept != null && accept.contains("application/json")) {
+            return new ResponseEntity<Get200Response>(objectMapper.readValue("", Get200Response.class), HttpStatus.OK);
+        }
+
+
+        if (accept != null && accept.contains("application/json")) {
+            return new ResponseEntity<Get200Response>(objectMapper.readValue("", Get200Response.class), HttpStatus.OK);
+        }
+
 
         if (accept != null && accept.contains("application/json")) {
             return new ResponseEntity<Get200Response>(objectMapper.readValue("", Get200Response.class), HttpStatus.OK);

@@ -19,9 +19,9 @@ feature -- Test routines
             -- Retrieve geolocation of an IP address. 
         local
             l_response: MODEL__GET_200_RESPONSE
-            l_ip: ANY
-            l_format: ANY
-            l_delimiter: ANY
+            l_ip: STRING_32
+            l_format: STRING_32
+            l_delimiter: STRING_32
         do
             -- TODO: Initialize required params.
             -- l_ip

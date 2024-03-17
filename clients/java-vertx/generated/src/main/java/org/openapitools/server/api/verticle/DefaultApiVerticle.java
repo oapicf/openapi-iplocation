@@ -40,24 +40,16 @@ public class DefaultApiVerticle extends AbstractVerticle {
             try {
                 // Workaround for #allParams section clearing the vendorExtensions map
                 String serviceId = "GET_";
-                JsonObject ipParam = message.body().getJsonObject("ip");
-                if (ipParam == null) {
+                String ipParam = message.body().getString("ip");
+                if(ipParam == null) {
                     manageError(message, new MainApiException(400, "ip is required"), serviceId);
                     return;
                 }
-                Object ip = Json.mapper.readValue(ipParam.encode(), Object.class);
-                JsonObject formatParam = message.body().getJsonObject("format");
-                if (formatParam == null) {
-                    manageError(message, new MainApiException(400, "format is required"), serviceId);
-                    return;
-                }
-                Object format = Json.mapper.readValue(formatParam.encode(), Object.class);
-                JsonObject delimiterParam = message.body().getJsonObject("delimiter");
-                if (delimiterParam == null) {
-                    manageError(message, new MainApiException(400, "delimiter is required"), serviceId);
-                    return;
-                }
-                Object delimiter = Json.mapper.readValue(delimiterParam.encode(), Object.class);
+                String ip = ipParam;
+                String formatParam = message.body().getString("format");
+                String format = (formatParam == null) ? null : formatParam;
+                String delimiterParam = message.body().getString("delimiter");
+                String delimiter = (delimiterParam == null) ? null : delimiterParam;
                 service.rootGet(ip, format, delimiter, result -> {
                     if (result.succeeded())
                         message.reply(new JsonObject(Json.encode(result.result())).encodePrettily());

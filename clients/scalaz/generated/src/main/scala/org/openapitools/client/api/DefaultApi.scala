@@ -30,7 +30,7 @@ object DefaultApi {
 
   def escape(value: String): String = URLEncoder.encode(value, "utf-8").replaceAll("\\+", "%20")
 
-  def rootGet(host: String, ip: AnyType, format: AnyType, delimiter: AnyType)(implicit ipQuery: QueryParam[AnyType], formatQuery: QueryParam[AnyType], delimiterQuery: QueryParam[AnyType]): Task[Get200Response] = {
+  def rootGet(host: String, ip: String, format: String, delimiter: String)(implicit ipQuery: QueryParam[String], formatQuery: QueryParam[String], delimiterQuery: QueryParam[String]): Task[Get200Response] = {
     implicit val returnTypeDecoder: EntityDecoder[Get200Response] = jsonOf[Get200Response]
 
     val path = "/"
@@ -58,7 +58,7 @@ class HttpServiceDefaultApi(service: HttpService) {
 
   def escape(value: String): String = URLEncoder.encode(value, "utf-8").replaceAll("\\+", "%20")
 
-  def rootGet(ip: AnyType, format: AnyType, delimiter: AnyType)(implicit ipQuery: QueryParam[AnyType], formatQuery: QueryParam[AnyType], delimiterQuery: QueryParam[AnyType]): Task[Get200Response] = {
+  def rootGet(ip: String, format: String, delimiter: String)(implicit ipQuery: QueryParam[String], formatQuery: QueryParam[String], delimiterQuery: QueryParam[String]): Task[Get200Response] = {
     implicit val returnTypeDecoder: EntityDecoder[Get200Response] = jsonOf[Get200Response]
 
     val path = "/"

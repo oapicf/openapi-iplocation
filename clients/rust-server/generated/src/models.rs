@@ -1,53 +1,56 @@
 #![allow(unused_qualifications)]
 
+use validator::Validate;
+
 use crate::models;
 #[cfg(any(feature = "client", feature = "server"))]
 use crate::header;
 
-#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get200Response {
     /// IPv4 or IPv6 address used to lookup geolocation.
     #[serde(rename = "ip")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub ip: Option<serde_json::Value>,
+    pub ip: Option<String>,
 
     /// IP number in long integer.
     #[serde(rename = "ip_number")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub ip_number: Option<serde_json::Value>,
+    pub ip_number: Option<models::Int64>,
 
     /// IP version either 4 or 6.
     #[serde(rename = "ip_version")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub ip_version: Option<serde_json::Value>,
+    pub ip_version: Option<i32>,
 
     /// Full name of the IP country.
     #[serde(rename = "country_name")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub country_name: Option<serde_json::Value>,
+    pub country_name: Option<String>,
 
     /// ISO ALPHA-2 Country Code.
     #[serde(rename = "country_code2")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub country_code2: Option<serde_json::Value>,
+    pub country_code2: Option<String>,
 
     /// Internet Service Provider (ISP) who owns the IP address.
     #[serde(rename = "isp")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub isp: Option<serde_json::Value>,
+    pub isp: Option<String>,
 
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub response_code: Option<serde_json::Value>,
+    pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub response_message: Option<serde_json::Value>,
+    pub response_message: Option<String>,
 
 }
+
 
 impl Get200Response {
     #[allow(clippy::new_without_default)]
@@ -71,21 +74,63 @@ impl Get200Response {
 impl std::string::ToString for Get200Response {
     fn to_string(&self) -> String {
         let params: Vec<Option<String>> = vec![
-            // Skipping ip in query parameter serialization
+
+            self.ip.as_ref().map(|ip| {
+                [
+                    "ip".to_string(),
+                    ip.to_string(),
+                ].join(",")
+            }),
 
             // Skipping ip_number in query parameter serialization
 
-            // Skipping ip_version in query parameter serialization
 
-            // Skipping country_name in query parameter serialization
+            self.ip_version.as_ref().map(|ip_version| {
+                [
+                    "ip_version".to_string(),
+                    ip_version.to_string(),
+                ].join(",")
+            }),
 
-            // Skipping country_code2 in query parameter serialization
 
-            // Skipping isp in query parameter serialization
+            self.country_name.as_ref().map(|country_name| {
+                [
+                    "country_name".to_string(),
+                    country_name.to_string(),
+                ].join(",")
+            }),
 
-            // Skipping response_code in query parameter serialization
 
-            // Skipping response_message in query parameter serialization
+            self.country_code2.as_ref().map(|country_code2| {
+                [
+                    "country_code2".to_string(),
+                    country_code2.to_string(),
+                ].join(",")
+            }),
+
+
+            self.isp.as_ref().map(|isp| {
+                [
+                    "isp".to_string(),
+                    isp.to_string(),
+                ].join(",")
+            }),
+
+
+            self.response_code.as_ref().map(|response_code| {
+                [
+                    "response_code".to_string(),
+                    response_code.to_string(),
+                ].join(",")
+            }),
+
+
+            self.response_message.as_ref().map(|response_message| {
+                [
+                    "response_message".to_string(),
+                    response_message.to_string(),
+                ].join(",")
+            }),
 
         ];
 
@@ -104,14 +149,14 @@ impl std::str::FromStr for Get200Response {
         #[derive(Default)]
         #[allow(dead_code)]
         struct IntermediateRep {
-            pub ip: Vec<serde_json::Value>,
-            pub ip_number: Vec<serde_json::Value>,
-            pub ip_version: Vec<serde_json::Value>,
-            pub country_name: Vec<serde_json::Value>,
-            pub country_code2: Vec<serde_json::Value>,
-            pub isp: Vec<serde_json::Value>,
-            pub response_code: Vec<serde_json::Value>,
-            pub response_message: Vec<serde_json::Value>,
+            pub ip: Vec<String>,
+            pub ip_number: Vec<models::Int64>,
+            pub ip_version: Vec<i32>,
+            pub country_name: Vec<String>,
+            pub country_code2: Vec<String>,
+            pub isp: Vec<String>,
+            pub response_code: Vec<String>,
+            pub response_message: Vec<String>,
         }
 
         let mut intermediate_rep = IntermediateRep::default();
@@ -130,21 +175,21 @@ impl std::str::FromStr for Get200Response {
                 #[allow(clippy::match_single_binding)]
                 match key {
                     #[allow(clippy::redundant_clone)]
-                    "ip" => intermediate_rep.ip.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "ip" => intermediate_rep.ip.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "ip_number" => intermediate_rep.ip_number.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "ip_number" => intermediate_rep.ip_number.push(<models::Int64 as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "ip_version" => intermediate_rep.ip_version.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "ip_version" => intermediate_rep.ip_version.push(<i32 as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "country_name" => intermediate_rep.country_name.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "country_name" => intermediate_rep.country_name.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "country_code2" => intermediate_rep.country_code2.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "country_code2" => intermediate_rep.country_code2.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "isp" => intermediate_rep.isp.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "isp" => intermediate_rep.isp.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "response_code" => intermediate_rep.response_code.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "response_code" => intermediate_rep.response_code.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "response_message" => intermediate_rep.response_message.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "response_message" => intermediate_rep.response_message.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     _ => return std::result::Result::Err("Unexpected key while parsing Get200Response".to_string())
                 }
             }
@@ -206,20 +251,21 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
 }
 
 
-#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get400Response {
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub response_code: Option<serde_json::Value>,
+    pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub response_message: Option<serde_json::Value>,
+    pub response_message: Option<String>,
 
 }
+
 
 impl Get400Response {
     #[allow(clippy::new_without_default)]
@@ -237,9 +283,21 @@ impl Get400Response {
 impl std::string::ToString for Get400Response {
     fn to_string(&self) -> String {
         let params: Vec<Option<String>> = vec![
-            // Skipping response_code in query parameter serialization
 
-            // Skipping response_message in query parameter serialization
+            self.response_code.as_ref().map(|response_code| {
+                [
+                    "response_code".to_string(),
+                    response_code.to_string(),
+                ].join(",")
+            }),
+
+
+            self.response_message.as_ref().map(|response_message| {
+                [
+                    "response_message".to_string(),
+                    response_message.to_string(),
+                ].join(",")
+            }),
 
         ];
 
@@ -258,8 +316,8 @@ impl std::str::FromStr for Get400Response {
         #[derive(Default)]
         #[allow(dead_code)]
         struct IntermediateRep {
-            pub response_code: Vec<serde_json::Value>,
-            pub response_message: Vec<serde_json::Value>,
+            pub response_code: Vec<String>,
+            pub response_message: Vec<String>,
         }
 
         let mut intermediate_rep = IntermediateRep::default();
@@ -278,9 +336,9 @@ impl std::str::FromStr for Get400Response {
                 #[allow(clippy::match_single_binding)]
                 match key {
                     #[allow(clippy::redundant_clone)]
-                    "response_code" => intermediate_rep.response_code.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "response_code" => intermediate_rep.response_code.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "response_message" => intermediate_rep.response_message.push(<serde_json::Value as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "response_message" => intermediate_rep.response_message.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     _ => return std::result::Result::Err("Unexpected key while parsing Get400Response".to_string())
                 }
             }

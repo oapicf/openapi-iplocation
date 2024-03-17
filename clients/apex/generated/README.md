@@ -45,9 +45,9 @@ Please follow the [installation](#installation) instruction and execute the foll
 OASDefaultApi api = new OASDefaultApi();
 
 Map<String, Object> params = new Map<String, Object>{
-    'ip' => '',
-    'format' => '',
-    'delimiter' => ''
+    'ip' => 'null',
+    'format' => 'null',
+    'delimiter' => 'null'
 };
 
 try {
@@ -76,10 +76,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
-Authentication schemes defined for the API:
+Endpoints do not require authorization.
+
 
 ## Author
 
-blah@cliffano.com
+blah+oapicf@cliffano.com
 

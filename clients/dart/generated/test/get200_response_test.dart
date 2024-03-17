@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -17,49 +17,49 @@ void main() {
 
   group('test Get200Response', () {
     // IPv4 or IPv6 address used to lookup geolocation.
-    // Object ip
+    // String ip
     test('to test the property `ip`', () async {
       // TODO
     });
 
     // IP number in long integer.
-    // Object ipNumber
+    // Int64 ipNumber
     test('to test the property `ipNumber`', () async {
       // TODO
     });
 
     // IP version either 4 or 6.
-    // Object ipVersion
+    // int ipVersion
     test('to test the property `ipVersion`', () async {
       // TODO
     });
 
     // Full name of the IP country.
-    // Object countryName
+    // String countryName
     test('to test the property `countryName`', () async {
       // TODO
     });
 
     // ISO ALPHA-2 Country Code.
-    // Object countryCode2
+    // String countryCode2
     test('to test the property `countryCode2`', () async {
       // TODO
     });
 
     // Internet Service Provider (ISP) who owns the IP address.
-    // Object isp
+    // String isp
     test('to test the property `isp`', () async {
       // TODO
     });
 
     // Response status code to indicate success or failed completion of the API call.
-    // Object responseCode
+    // String responseCode
     test('to test the property `responseCode`', () async {
       // TODO
     });
 
     // Response message to indicate success or failed completion of the API call.
-    // Object responseMessage
+    // String responseMessage
     test('to test the property `responseMessage`', () async {
       // TODO
     });

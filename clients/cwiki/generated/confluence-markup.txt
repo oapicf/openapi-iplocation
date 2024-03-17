@@ -30,7 +30,7 @@ h4. Parameters
 
 h5. Query Parameters
         ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
-        |ip |An IPv4 or IPv6 address that you would like to lookup. | oas_any_type_not_mapped | (/) |null |  |  ||format |Output format, the following formats are supported: plain xml json jsonp php csv serialized | oas_any_type_not_mapped | (x) |null |  |  ||delimiter |Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for &quot;\\n&quot;, 2 for &quot;&lt;br&gt;&quot;. | oas_any_type_not_mapped | (x) |null |  |  |
+        |ip |An IPv4 or IPv6 address that you would like to lookup. | String | (/) |null |  |  ||format |Output format, the following formats are supported: plain xml json jsonp php csv serialized | String | (x) |null |  |  ||delimiter |Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for &quot;\\n&quot;, 2 for &quot;&lt;br&gt;&quot;. | String | (x) |null |  |  |
 ----
 h4. Responses
 
@@ -97,14 +97,14 @@ h2. Models
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
-         |ip |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | IPv4 or IPv6 address used to lookup geolocation. |  | null
-         |ip_number |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | IP number in long integer. |  | null
-         |ip_version |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | IP version either 4 or 6. |  | null
-         |country_name |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Full name of the IP country. |  | null
-         |country_code2 |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | ISO ALPHA-2 Country Code. |  | null
-         |isp |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Internet Service Provider (ISP) who owns the IP address. |  | null
-         |response_code |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Response status code to indicate success or failed completion of the API call. |  | null
-         |response_message |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Response message to indicate success or failed completion of the API call. |  | null
+         |ip |(x) |{noformat:nopanel=true}String{noformat} | IPv4 or IPv6 address used to lookup geolocation. |  | null
+         |ip_number |(x) |{noformat:nopanel=true}int64{noformat} | IP number in long integer. |  | null
+         |ip_version |(x) |{noformat:nopanel=true}Integer{noformat} | IP version either 4 or 6. |  | null
+         |country_name |(x) |{noformat:nopanel=true}String{noformat} | Full name of the IP country. |  | null
+         |country_code2 |(x) |{noformat:nopanel=true}String{noformat} | ISO ALPHA-2 Country Code. |  | null
+         |isp |(x) |{noformat:nopanel=true}String{noformat} | Internet Service Provider (ISP) who owns the IP address. |  | null
+         |response_code |(x) |{noformat:nopanel=true}String{noformat} | Response status code to indicate success or failed completion of the API call. |  | null
+         |response_message |(x) |{noformat:nopanel=true}String{noformat} | Response message to indicate success or failed completion of the API call. |  | null
          
         {anchor:Get400ResponseModelAnchor}
         h3. Get400Response
@@ -113,6 +113,6 @@ h2. Models
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
-         |response_code |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Response status code to indicate success or failed completion of the API call. |  | null
-         |response_message |(x) |{noformat:nopanel=true}oas_any_type_not_mapped{noformat} | Response message to indicate success or failed completion of the API call. |  | null
+         |response_code |(x) |{noformat:nopanel=true}String{noformat} | Response status code to indicate success or failed completion of the API call. |  | null
+         |response_message |(x) |{noformat:nopanel=true}String{noformat} | Response message to indicate success or failed completion of the API call. |  | null
          

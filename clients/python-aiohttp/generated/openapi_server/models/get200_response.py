@@ -4,7 +4,8 @@ from datetime import date, datetime
 
 from typing import List, Dict, Type
 
-from openapi_server.models.base_model_ import Model
+from openapi_server.models.base_model import Model
+from openapi_server.models.int64 import Int64
 from openapi_server import util
 
 
@@ -14,7 +15,7 @@ class Get200Response(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, ip: object=None, ip_number: object=None, ip_version: object=None, country_name: object=None, country_code2: object=None, isp: object=None, response_code: object=None, response_message: object=None):
+    def __init__(self, ip: str=None, ip_number: Int64=None, ip_version: int=None, country_name: str=None, country_code2: str=None, isp: str=None, response_code: str=None, response_message: str=None):
         """Get200Response - a model defined in OpenAPI
 
         :param ip: The ip of this Get200Response.
@@ -27,14 +28,14 @@ class Get200Response(Model):
         :param response_message: The response_message of this Get200Response.
         """
         self.openapi_types = {
-            'ip': object,
-            'ip_number': object,
-            'ip_version': object,
-            'country_name': object,
-            'country_code2': object,
-            'isp': object,
-            'response_code': object,
-            'response_message': object
+            'ip': str,
+            'ip_number': Int64,
+            'ip_version': int,
+            'country_name': str,
+            'country_code2': str,
+            'isp': str,
+            'response_code': str,
+            'response_message': str
         }
 
         self.attribute_map = {
@@ -73,7 +74,7 @@ class Get200Response(Model):
         IPv4 or IPv6 address used to lookup geolocation.
 
         :return: The ip of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._ip
 
@@ -84,7 +85,7 @@ class Get200Response(Model):
         IPv4 or IPv6 address used to lookup geolocation.
 
         :param ip: The ip of this Get200Response.
-        :type ip: object
+        :type ip: str
         """
 
         self._ip = ip
@@ -96,7 +97,7 @@ class Get200Response(Model):
         IP number in long integer.
 
         :return: The ip_number of this Get200Response.
-        :rtype: object
+        :rtype: Int64
         """
         return self._ip_number
 
@@ -107,7 +108,7 @@ class Get200Response(Model):
         IP number in long integer.
 
         :param ip_number: The ip_number of this Get200Response.
-        :type ip_number: object
+        :type ip_number: Int64
         """
 
         self._ip_number = ip_number
@@ -119,7 +120,7 @@ class Get200Response(Model):
         IP version either 4 or 6.
 
         :return: The ip_version of this Get200Response.
-        :rtype: object
+        :rtype: int
         """
         return self._ip_version
 
@@ -130,7 +131,7 @@ class Get200Response(Model):
         IP version either 4 or 6.
 
         :param ip_version: The ip_version of this Get200Response.
-        :type ip_version: object
+        :type ip_version: int
         """
 
         self._ip_version = ip_version
@@ -142,7 +143,7 @@ class Get200Response(Model):
         Full name of the IP country.
 
         :return: The country_name of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._country_name
 
@@ -153,7 +154,7 @@ class Get200Response(Model):
         Full name of the IP country.
 
         :param country_name: The country_name of this Get200Response.
-        :type country_name: object
+        :type country_name: str
         """
 
         self._country_name = country_name
@@ -165,7 +166,7 @@ class Get200Response(Model):
         ISO ALPHA-2 Country Code.
 
         :return: The country_code2 of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._country_code2
 
@@ -176,7 +177,7 @@ class Get200Response(Model):
         ISO ALPHA-2 Country Code.
 
         :param country_code2: The country_code2 of this Get200Response.
-        :type country_code2: object
+        :type country_code2: str
         """
 
         self._country_code2 = country_code2
@@ -188,7 +189,7 @@ class Get200Response(Model):
         Internet Service Provider (ISP) who owns the IP address.
 
         :return: The isp of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._isp
 
@@ -199,7 +200,7 @@ class Get200Response(Model):
         Internet Service Provider (ISP) who owns the IP address.
 
         :param isp: The isp of this Get200Response.
-        :type isp: object
+        :type isp: str
         """
 
         self._isp = isp
@@ -211,7 +212,7 @@ class Get200Response(Model):
         Response status code to indicate success or failed completion of the API call.
 
         :return: The response_code of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_code
 
@@ -222,7 +223,7 @@ class Get200Response(Model):
         Response status code to indicate success or failed completion of the API call.
 
         :param response_code: The response_code of this Get200Response.
-        :type response_code: object
+        :type response_code: str
         """
 
         self._response_code = response_code
@@ -234,7 +235,7 @@ class Get200Response(Model):
         Response message to indicate success or failed completion of the API call.
 
         :return: The response_message of this Get200Response.
-        :rtype: object
+        :rtype: str
         """
         return self._response_message
 
@@ -245,7 +246,7 @@ class Get200Response(Model):
         Response message to indicate success or failed completion of the API call.
 
         :param response_message: The response_message of this Get200Response.
-        :type response_message: object
+        :type response_message: str
         """
 
         self._response_message = response_message

@@ -12,13 +12,13 @@ package org.openapitools.server.model
  * @param responseMessage Response message to indicate success or failed completion of the API call. for example: ''null''
 */
 final case class Get200Response (
-  ip: Option[AnyType] = None,
-  ipNumber: Option[AnyType] = None,
-  ipVersion: Option[AnyType] = None,
-  countryName: Option[AnyType] = None,
-  countryCode2: Option[AnyType] = None,
-  isp: Option[AnyType] = None,
-  responseCode: Option[AnyType] = None,
-  responseMessage: Option[AnyType] = None
+  ip: Option[String] = None,
+  ipNumber: Option[Int64] = None,
+  ipVersion: Option[Int] = None,
+  countryName: Option[String] = None,
+  countryCode2: Option[String] = None,
+  isp: Option[String] = None,
+  responseCode: Option[String] = None,
+  responseMessage: Option[String] = None
 )
 

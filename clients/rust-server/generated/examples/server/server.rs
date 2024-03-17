@@ -106,13 +106,12 @@ impl<C> Api<C> for Server<C> where C: Has<XSpanIdString> + Send + Sync
     /// Get geolocation of an IP address
     async fn root_get(
         &self,
-        ip: serde_json::Value,
-        format: Option<serde_json::Value>,
-        delimiter: Option<serde_json::Value>,
+        ip: String,
+        format: Option<String>,
+        delimiter: Option<String>,
         context: &C) -> Result<RootGetResponse, ApiError>
     {
-        let context = context.clone();
-        info!("root_get({:?}, {:?}, {:?}) - X-Span-ID: {:?}", ip, format, delimiter, context.get().0.clone());
+        info!("root_get(\"{}\", {:?}, {:?}) - X-Span-ID: {:?}", ip, format, delimiter, context.get().0.clone());
         Err(ApiError("Generic failure".into()))
     }
 

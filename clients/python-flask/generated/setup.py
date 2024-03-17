@@ -1,5 +1,3 @@
-# coding: utf-8
-
 import sys
 from setuptools import setup, find_packages
 
@@ -23,7 +21,7 @@ setup(
     name=NAME,
     version=VERSION,
     description="iplocation.net API",
-    author_email="blah@cliffano.com",
+    author_email="blah+oapicf@cliffano.com",
     url="",
     keywords=["OpenAPI", "iplocation.net API"],
     install_requires=REQUIRES,

@@ -6,9 +6,10 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: 0.9.0-pre.0
 - Package version: 0.9.0-pre.0
-- Build date: 2023-04-02T00:24:04.685490Z[Etc/UTC]
+- Build date: 2024-03-16T21:35:08.358247986Z[Etc/UTC]
+- Generator version: 7.4.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
-For more information, please visit [https://github.com/cliffano/openapi-iplocation](https://github.com/cliffano/openapi-iplocation)
+For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)
 
 ## Requirements
 
@@ -34,9 +35,9 @@ Then, run:
 
 ```groovy
 def apiInstance = new DefaultApi()
-def ip = null // Object | An IPv4 or IPv6 address that you would like to lookup.
-def format = null // Object | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-def delimiter = null // Object | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+def ip = "ip_example" // String | An IPv4 or IPv6 address that you would like to lookup.
+def format = "format_example" // String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+def delimiter = "delimiter_example" // String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
 
 apiInstance.rootGet(ip, format, delimiter)
     {

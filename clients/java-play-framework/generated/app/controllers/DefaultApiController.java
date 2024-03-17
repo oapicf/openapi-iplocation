@@ -20,11 +20,12 @@ import openapitools.OpenAPIUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 import com.typesafe.config.Config;
 
 import openapitools.OpenAPIUtils.ApiAction;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2023-04-02T00:24:40.469244Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-03-16T21:35:56.187171885Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class DefaultApiController extends Controller {
     private final DefaultApiControllerImpInterface imp;
     private final ObjectMapper mapper;
@@ -40,21 +41,21 @@ public class DefaultApiController extends Controller {
     @ApiAction
     public Result rootGet(Http.Request request) throws Exception {
         String valueip = request.getQueryString("ip");
-        Object ip;
+        String ip;
         if (valueip != null) {
             ip = valueip;
         } else {
             throw new IllegalArgumentException("'ip' parameter is required");
         }
         String valueformat = request.getQueryString("format");
-        Object format;
+        String format;
         if (valueformat != null) {
             format = valueformat;
         } else {
             format = null;
         }
         String valuedelimiter = request.getQueryString("delimiter");
-        Object delimiter;
+        String delimiter;
         if (valuedelimiter != null) {
             delimiter = valuedelimiter;
         } else {

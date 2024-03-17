@@ -9,7 +9,7 @@
 
 
 #include <string>
-#include "AnyType.h"
+#include "Int64.h"
 #include "Object.h"
 
 /** \defgroup Models Data Structures for API
@@ -48,70 +48,70 @@ public:
 
 	/*! \brief Get IPv4 or IPv6 address used to lookup geolocation.
 	 */
-	AnyType getIp();
+	std::string getIp();
 
 	/*! \brief Set IPv4 or IPv6 address used to lookup geolocation.
 	 */
-	void setIp(AnyType  ip);
+	void setIp(std::string  ip);
 	/*! \brief Get IP number in long integer.
 	 */
-	AnyType getIpNumber();
+	Int64 getIpNumber();
 
 	/*! \brief Set IP number in long integer.
 	 */
-	void setIpNumber(AnyType  ip_number);
+	void setIpNumber(Int64  ip_number);
 	/*! \brief Get IP version either 4 or 6.
 	 */
-	AnyType getIpVersion();
+	int getIpVersion();
 
 	/*! \brief Set IP version either 4 or 6.
 	 */
-	void setIpVersion(AnyType  ip_version);
+	void setIpVersion(int  ip_version);
 	/*! \brief Get Full name of the IP country.
 	 */
-	AnyType getCountryName();
+	std::string getCountryName();
 
 	/*! \brief Set Full name of the IP country.
 	 */
-	void setCountryName(AnyType  country_name);
+	void setCountryName(std::string  country_name);
 	/*! \brief Get ISO ALPHA-2 Country Code.
 	 */
-	AnyType getCountryCode2();
+	std::string getCountryCode2();
 
 	/*! \brief Set ISO ALPHA-2 Country Code.
 	 */
-	void setCountryCode2(AnyType  country_code2);
+	void setCountryCode2(std::string  country_code2);
 	/*! \brief Get Internet Service Provider (ISP) who owns the IP address.
 	 */
-	AnyType getIsp();
+	std::string getIsp();
 
 	/*! \brief Set Internet Service Provider (ISP) who owns the IP address.
 	 */
-	void setIsp(AnyType  isp);
+	void setIsp(std::string  isp);
 	/*! \brief Get Response status code to indicate success or failed completion of the API call.
 	 */
-	AnyType getResponseCode();
+	std::string getResponseCode();
 
 	/*! \brief Set Response status code to indicate success or failed completion of the API call.
 	 */
-	void setResponseCode(AnyType  response_code);
+	void setResponseCode(std::string  response_code);
 	/*! \brief Get Response message to indicate success or failed completion of the API call.
 	 */
-	AnyType getResponseMessage();
+	std::string getResponseMessage();
 
 	/*! \brief Set Response message to indicate success or failed completion of the API call.
 	 */
-	void setResponseMessage(AnyType  response_message);
+	void setResponseMessage(std::string  response_message);
 
 private:
-	AnyType ip;
-	AnyType ip_number;
-	AnyType ip_version;
-	AnyType country_name;
-	AnyType country_code2;
-	AnyType isp;
-	AnyType response_code;
-	AnyType response_message;
+	std::string ip;
+	Int64 ip_number;
+	int ip_version;
+	std::string country_name;
+	std::string country_code2;
+	std::string isp;
+	std::string response_code;
+	std::string response_message;
 	void __init();
 	void __cleanup();
 

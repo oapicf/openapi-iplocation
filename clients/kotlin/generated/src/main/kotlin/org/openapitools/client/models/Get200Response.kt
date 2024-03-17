@@ -15,8 +15,10 @@
 
 package org.openapitools.client.models
 
+import org.openapitools.client.models.Int64
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 
@@ -36,35 +38,35 @@ data class Get200Response (
 
     /* IPv4 or IPv6 address used to lookup geolocation. */
     @Json(name = "ip")
-    val ip: kotlin.Any? = null,
+    val ip: kotlin.String? = null,
 
     /* IP number in long integer. */
     @Json(name = "ip_number")
-    val ipNumber: kotlin.Any? = null,
+    val ipNumber: Int64? = null,
 
     /* IP version either 4 or 6. */
     @Json(name = "ip_version")
-    val ipVersion: kotlin.Any? = null,
+    val ipVersion: kotlin.Int? = null,
 
     /* Full name of the IP country. */
     @Json(name = "country_name")
-    val countryName: kotlin.Any? = null,
+    val countryName: kotlin.String? = null,
 
     /* ISO ALPHA-2 Country Code. */
     @Json(name = "country_code2")
-    val countryCode2: kotlin.Any? = null,
+    val countryCode2: kotlin.String? = null,
 
     /* Internet Service Provider (ISP) who owns the IP address. */
     @Json(name = "isp")
-    val isp: kotlin.Any? = null,
+    val isp: kotlin.String? = null,
 
     /* Response status code to indicate success or failed completion of the API call. */
     @Json(name = "response_code")
-    val responseCode: kotlin.Any? = null,
+    val responseCode: kotlin.String? = null,
 
     /* Response message to indicate success or failed completion of the API call. */
     @Json(name = "response_message")
-    val responseMessage: kotlin.Any? = null
+    val responseMessage: kotlin.String? = null
 
 )
 

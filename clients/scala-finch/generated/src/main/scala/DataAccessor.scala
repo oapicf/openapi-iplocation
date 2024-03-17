@@ -18,6 +18,6 @@ trait DataAccessor {
         * 
         * @return A Get200Response
         */
-        def Default_rootGet(ip: AnyType, format: Option[AnyType], delimiter: Option[AnyType]): Either[CommonError,Get200Response] = Left(TODO)
+        def Default_rootGet(ip: String, format: Option[String], delimiter: Option[String]): Either[CommonError,Get200Response] = Left(TODO)
 
 }

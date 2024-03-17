@@ -60,9 +60,9 @@ public class DefaultControllerTest {
     @Disabled("Not Implemented")
     void rootGetMethodTest() {
         // given
-        Object ip = null;
-        Object _format = null;
-        Object delimiter = null;
+        String ip = "example";
+        String _format = "example";
+        String delimiter = "example";
 
         // when
         Get200Response result = controller.rootGet(ip, _format, delimiter).block();
@@ -85,9 +85,9 @@ public class DefaultControllerTest {
         MutableHttpRequest<?> request = HttpRequest.GET(uri)
             .accept("application/json");
         request.getParameters()
-            .add("ip", String.valueOf(null)) // The query parameter format should be 
-            .add("format", String.valueOf(null)) // The query parameter format should be 
-            .add("delimiter", String.valueOf(null)); // The query parameter format should be 
+            .add("ip", "example") // The query parameter format should be 
+            .add("format", "example") // The query parameter format should be 
+            .add("delimiter", "example"); // The query parameter format should be 
 
         // when
         HttpResponse<?> response = client.toBlocking().exchange(request, Get200Response.class);

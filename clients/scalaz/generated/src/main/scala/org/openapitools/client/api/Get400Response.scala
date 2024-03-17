@@ -13,9 +13,9 @@ import Get400Response._
 
 case class Get400Response (
   /* Response status code to indicate success or failed completion of the API call. */
-  responseCode: Option[AnyType],
+  responseCode: Option[String],
 /* Response message to indicate success or failed completion of the API call. */
-  responseMessage: Option[AnyType])
+  responseMessage: Option[String])
 
 object Get400Response {
   import DateTimeCodecs._

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**rootGet**](DefaultApi.md#rootGet) | **GET** / | Get geolocation of an IP address
 
 
-<a name="rootGet"></a>
+<a id="rootGet"></a>
 # **rootGet**
 > Get200Response rootGet(ip, format, delimiter)
 
@@ -22,9 +22,9 @@ Retrieve geolocation of an IP address.
 //import org.openapitools.client.models.*
 
 val apiInstance = DefaultApi()
-val ip : kotlin.Any =  // kotlin.Any | An IPv4 or IPv6 address that you would like to lookup.
-val format : kotlin.Any =  // kotlin.Any | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-val delimiter : kotlin.Any =  // kotlin.Any | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+val ip : kotlin.String = ip_example // kotlin.String | An IPv4 or IPv6 address that you would like to lookup.
+val format : kotlin.String = format_example // kotlin.String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+val delimiter : kotlin.String = delimiter_example // kotlin.String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
 try {
     val result : Get200Response = apiInstance.rootGet(ip, format, delimiter)
     println(result)
@@ -41,9 +41,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**kotlin.Any**](.md)| An IPv4 or IPv6 address that you would like to lookup. |
- **format** | [**kotlin.Any**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
- **delimiter** | [**kotlin.Any**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
+ **ip** | **kotlin.String**| An IPv4 or IPv6 address that you would like to lookup. |
+ **format** | **kotlin.String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
+ **delimiter** | **kotlin.String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
 
 ### Return type
 

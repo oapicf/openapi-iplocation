@@ -8,13 +8,13 @@ void main() {
 
   group(Get400Response, () {
     // Response status code to indicate success or failed completion of the API call.
-    // JsonObject responseCode
+    // String responseCode
     test('to test the property `responseCode`', () async {
       // TODO
     });
 
     // Response message to indicate success or failed completion of the API call.
-    // JsonObject responseMessage
+    // String responseMessage
     test('to test the property `responseMessage`', () async {
       // TODO
     });

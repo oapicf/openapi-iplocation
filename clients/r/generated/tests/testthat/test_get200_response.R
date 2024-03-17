@@ -6,7 +6,7 @@ context("Test Get200Response")
 model_instance <- Get200Response$new()
 
 test_that("ip", {
-  # tests for the property `ip` (AnyType)
+  # tests for the property `ip` (character)
   # IPv4 or IPv6 address used to lookup geolocation.
 
   # uncomment below to test the property
@@ -14,7 +14,7 @@ test_that("ip", {
 })
 
 test_that("ip_number", {
-  # tests for the property `ip_number` (AnyType)
+  # tests for the property `ip_number` (Int64)
   # IP number in long integer.
 
   # uncomment below to test the property
@@ -22,7 +22,7 @@ test_that("ip_number", {
 })
 
 test_that("ip_version", {
-  # tests for the property `ip_version` (AnyType)
+  # tests for the property `ip_version` (integer)
   # IP version either 4 or 6.
 
   # uncomment below to test the property
@@ -30,7 +30,7 @@ test_that("ip_version", {
 })
 
 test_that("country_name", {
-  # tests for the property `country_name` (AnyType)
+  # tests for the property `country_name` (character)
   # Full name of the IP country.
 
   # uncomment below to test the property
@@ -38,7 +38,7 @@ test_that("country_name", {
 })
 
 test_that("country_code2", {
-  # tests for the property `country_code2` (AnyType)
+  # tests for the property `country_code2` (character)
   # ISO ALPHA-2 Country Code.
 
   # uncomment below to test the property
@@ -46,7 +46,7 @@ test_that("country_code2", {
 })
 
 test_that("isp", {
-  # tests for the property `isp` (AnyType)
+  # tests for the property `isp` (character)
   # Internet Service Provider (ISP) who owns the IP address.
 
   # uncomment below to test the property
@@ -54,7 +54,7 @@ test_that("isp", {
 })
 
 test_that("response_code", {
-  # tests for the property `response_code` (AnyType)
+  # tests for the property `response_code` (character)
   # Response status code to indicate success or failed completion of the API call.
 
   # uncomment below to test the property
@@ -62,7 +62,7 @@ test_that("response_code", {
 })
 
 test_that("response_message", {
-  # tests for the property `response_message` (AnyType)
+  # tests for the property `response_message` (character)
   # Response message to indicate success or failed completion of the API call.
 
   # uncomment below to test the property

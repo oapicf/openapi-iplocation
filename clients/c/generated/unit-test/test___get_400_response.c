@@ -22,13 +22,13 @@ __get_400_response_t* instantiate___get_400_response(int include_optional) {
   __get_400_response_t* __get_400_response = NULL;
   if (include_optional) {
     __get_400_response = __get_400_response_create(
-      null,
-      null
+      "0",
+      "0"
     );
   } else {
     __get_400_response = __get_400_response_create(
-      null,
-      null
+      "0",
+      "0"
     );
   }
 

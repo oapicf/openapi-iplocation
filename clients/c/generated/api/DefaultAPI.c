@@ -17,7 +17,7 @@
 // Retrieve geolocation of an IP address. 
 //
 __get_200_response_t*
-DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter )
+DefaultAPI_rootGet(apiClient_t *apiClient, char *ip, char *format, char *delimiter)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -36,37 +36,37 @@ DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter )
 
     // query parameters
     char *keyQuery_ip = NULL;
-     valueQuery_ip ;
+    char * valueQuery_ip = NULL;
     keyValuePair_t *keyPairQuery_ip = 0;
     if (ip)
     {
         keyQuery_ip = strdup("ip");
-        valueQuery_ip = (ip);
-        keyPairQuery_ip = keyValuePair_create(keyQuery_ip, &valueQuery_ip);
+        valueQuery_ip = strdup((ip));
+        keyPairQuery_ip = keyValuePair_create(keyQuery_ip, valueQuery_ip);
         list_addElement(localVarQueryParameters,keyPairQuery_ip);
     }
 
     // query parameters
     char *keyQuery_format = NULL;
-     valueQuery_format ;
+    char * valueQuery_format = NULL;
     keyValuePair_t *keyPairQuery_format = 0;
     if (format)
     {
         keyQuery_format = strdup("format");
-        valueQuery_format = (format);
-        keyPairQuery_format = keyValuePair_create(keyQuery_format, &valueQuery_format);
+        valueQuery_format = strdup((format));
+        keyPairQuery_format = keyValuePair_create(keyQuery_format, valueQuery_format);
         list_addElement(localVarQueryParameters,keyPairQuery_format);
     }
 
     // query parameters
     char *keyQuery_delimiter = NULL;
-     valueQuery_delimiter ;
+    char * valueQuery_delimiter = NULL;
     keyValuePair_t *keyPairQuery_delimiter = 0;
     if (delimiter)
     {
         keyQuery_delimiter = strdup("delimiter");
-        valueQuery_delimiter = (delimiter);
-        keyPairQuery_delimiter = keyValuePair_create(keyQuery_delimiter, &valueQuery_delimiter);
+        valueQuery_delimiter = strdup((delimiter));
+        keyPairQuery_delimiter = keyValuePair_create(keyQuery_delimiter, valueQuery_delimiter);
         list_addElement(localVarQueryParameters,keyPairQuery_delimiter);
     }
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -116,6 +116,10 @@ DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter )
         free(keyQuery_ip);
         keyQuery_ip = NULL;
     }
+    if(valueQuery_ip){
+        free(valueQuery_ip);
+        valueQuery_ip = NULL;
+    }
     if(keyPairQuery_ip){
         keyValuePair_free(keyPairQuery_ip);
         keyPairQuery_ip = NULL;
@@ -124,6 +128,10 @@ DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter )
         free(keyQuery_format);
         keyQuery_format = NULL;
     }
+    if(valueQuery_format){
+        free(valueQuery_format);
+        valueQuery_format = NULL;
+    }
     if(keyPairQuery_format){
         keyValuePair_free(keyPairQuery_format);
         keyPairQuery_format = NULL;
@@ -131,6 +139,10 @@ DefaultAPI_rootGet(apiClient_t *apiClient,  ip ,  format ,  delimiter )
     if(keyQuery_delimiter){
         free(keyQuery_delimiter);
         keyQuery_delimiter = NULL;
+    }
+    if(valueQuery_delimiter){
+        free(valueQuery_delimiter);
+        valueQuery_delimiter = NULL;
     }
     if(keyPairQuery_delimiter){
         keyValuePair_free(keyPairQuery_delimiter);

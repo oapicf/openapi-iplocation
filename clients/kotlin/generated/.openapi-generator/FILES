@@ -29,3 +29,6 @@ src/main/kotlin/org/openapitools/client/infrastructure/URIAdapter.kt
 src/main/kotlin/org/openapitools/client/infrastructure/UUIDAdapter.kt
 src/main/kotlin/org/openapitools/client/models/Get200Response.kt
 src/main/kotlin/org/openapitools/client/models/Get400Response.kt
+src/test/kotlin/org/openapitools/client/apis/DefaultApiTest.kt
+src/test/kotlin/org/openapitools/client/models/Get200ResponseTest.kt
+src/test/kotlin/org/openapitools/client/models/Get400ResponseTest.kt

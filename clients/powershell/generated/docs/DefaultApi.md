@@ -1,4 +1,4 @@
-# PSOpenAPITools.PSOpenAPITools/Api.DefaultApi
+# PSOpenAPITools.PSOpenAPITools\Api.DefaultApi
 
 All URIs are relative to *https://api.iplocation.net*
 
@@ -7,12 +7,12 @@ Method | HTTP request | Description
 [**Invoke-RootGet**](DefaultApi.md#Invoke-RootGet) | **GET** / | Get geolocation of an IP address
 
 
-<a name="Invoke-RootGet"></a>
+<a id="Invoke-RootGet"></a>
 # **Invoke-RootGet**
 > Get200Response Invoke-RootGet<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ip] <PSCustomObject><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Format] <PSCustomObject><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Delimiter] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ip] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Format] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Delimiter] <String><br>
 
 Get geolocation of an IP address
 
@@ -20,9 +20,9 @@ Retrieve geolocation of an IP address.
 
 ### Example
 ```powershell
-$Ip =  # AnyType | An IPv4 or IPv6 address that you would like to lookup.
-$Format =  # AnyType | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
-$Delimiter =  # AnyType | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for ""\n"", 2 for ""<br>"". (optional)
+$Ip = "MyIp" # String | An IPv4 or IPv6 address that you would like to lookup.
+$Format = "MyFormat" # String | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+$Delimiter = "MyDelimiter" # String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for ""\n"", 2 for ""<br>"". (optional)
 
 # Get geolocation of an IP address
 try {
@@ -37,9 +37,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Ip** | [**AnyType**](AnyType.md)| An IPv4 or IPv6 address that you would like to lookup. | 
- **Format** | [**AnyType**](AnyType.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
- **Delimiter** | [**AnyType**](AnyType.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for &quot;&quot;\n&quot;&quot;, 2 for &quot;&quot;&lt;br&gt;&quot;&quot;. | [optional] 
+ **Ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. | 
+ **Format** | **String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
+ **Delimiter** | **String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for &quot;&quot;\n&quot;&quot;, 2 for &quot;&quot;&lt;br&gt;&quot;&quot;. | [optional] 
 
 ### Return type
 

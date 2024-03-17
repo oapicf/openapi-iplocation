@@ -17,11 +17,11 @@ package body .Servers is
    overriding
    procedure Root_Get
       (Server : in out Server_Type;
-       Ip : in .Models.AnyType_Type;
-       Format : in .Models.AnyType_Type;
-       Delimiter : in .Models.AnyType_Type;
+       Ip : in Swagger.UString;
+       Format : in Swagger.Nullable_UString;
+       Delimiter : in Swagger.Nullable_UString;
        Result  : out .Models.Get200Response_Type;
-       Context : in out {{openApiPackageName}.Servers.Context_Type) is
+       Context : in out Swagger.Servers.Context_Type) is
    begin
       null;
    end Root_Get;

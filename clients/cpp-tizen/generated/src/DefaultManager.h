@@ -36,7 +36,7 @@ public:
  * \param userData The user data to be passed to the callback function.
  */
 bool rootGetSync(char * accessToken,
-	AnyType ip, AnyType format, AnyType delimiter, 
+	std::string ip, std::string format, std::string delimiter, 
 	void(* handler)(__get_200_response, Error, void* )
 	, void* userData);
 
@@ -51,7 +51,7 @@ bool rootGetSync(char * accessToken,
  * \param userData The user data to be passed to the callback function.
  */
 bool rootGetAsync(char * accessToken,
-	AnyType ip, AnyType format, AnyType delimiter, 
+	std::string ip, std::string format, std::string delimiter, 
 	void(* handler)(__get_200_response, Error, void* )
 	, void* userData);
 

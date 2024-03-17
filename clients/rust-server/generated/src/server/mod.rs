@@ -143,12 +143,12 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
             hyper::Method::GET if path.matched(paths::ID_) => {
                 // Query parameters (note that non-required or collection query parameters will ignore garbage values, rather than causing a 400 response)
                 let query_params = form_urlencoded::parse(uri.query().unwrap_or_default().as_bytes()).collect::<Vec<_>>();
-                let param_ip = query_params.iter().filter(|e| e.0 == "ip").map(|e| e.1.to_owned())
+                let param_ip = query_params.iter().filter(|e| e.0 == "ip").map(|e| e.1.clone())
                     .next();
                 let param_ip = match param_ip {
                     Some(param_ip) => {
                         let param_ip =
-                            <serde_json::Value as std::str::FromStr>::from_str
+                            <String as std::str::FromStr>::from_str
                                 (&param_ip);
                         match param_ip {
                             Ok(param_ip) => Some(param_ip),
@@ -167,12 +167,12 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                         .body(Body::from("Missing required query parameter ip"))
                         .expect("Unable to create Bad Request response for missing query parameter ip")),
                 };
-                let param_format = query_params.iter().filter(|e| e.0 == "format").map(|e| e.1.to_owned())
+                let param_format = query_params.iter().filter(|e| e.0 == "format").map(|e| e.1.clone())
                     .next();
                 let param_format = match param_format {
                     Some(param_format) => {
                         let param_format =
-                            <serde_json::Value as std::str::FromStr>::from_str
+                            <String as std::str::FromStr>::from_str
                                 (&param_format);
                         match param_format {
                             Ok(param_format) => Some(param_format),
@@ -184,12 +184,12 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                     },
                     None => None,
                 };
-                let param_delimiter = query_params.iter().filter(|e| e.0 == "delimiter").map(|e| e.1.to_owned())
+                let param_delimiter = query_params.iter().filter(|e| e.0 == "delimiter").map(|e| e.1.clone())
                     .next();
                 let param_delimiter = match param_delimiter {
                     Some(param_delimiter) => {
                         let param_delimiter =
-                            <serde_json::Value as std::str::FromStr>::from_str
+                            <String as std::str::FromStr>::from_str
                                 (&param_delimiter);
                         match param_delimiter {
                             Ok(param_delimiter) => Some(param_delimiter),
@@ -224,8 +224,8 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                         CONTENT_TYPE,
                                                         HeaderValue::from_str("application/json")
                                                             .expect("Unable to create Content-Type header for ROOT_GET_SUCCESSFULLY_PROCESSED_THE_REQUEST"));
-                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
-                                                    *response.body_mut() = Body::from(body);
+                                                    let body_content = serde_json::to_string(&body).expect("impossible to fail to serialize");
+                                                    *response.body_mut() = Body::from(body_content);
                                                 },
                                                 RootGetResponse::FailedToCompleteTheRequest
                                                     (body)
@@ -235,8 +235,8 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                         CONTENT_TYPE,
                                                         HeaderValue::from_str("application/json")
                                                             .expect("Unable to create Content-Type header for ROOT_GET_FAILED_TO_COMPLETE_THE_REQUEST"));
-                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
-                                                    *response.body_mut() = Body::from(body);
+                                                    let body_content = serde_json::to_string(&body).expect("impossible to fail to serialize");
+                                                    *response.body_mut() = Body::from(body_content);
                                                 },
                                                 RootGetResponse::CommandNotFound
                                                     (body)
@@ -246,8 +246,8 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                         CONTENT_TYPE,
                                                         HeaderValue::from_str("application/json")
                                                             .expect("Unable to create Content-Type header for ROOT_GET_COMMAND_NOT_FOUND"));
-                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
-                                                    *response.body_mut() = Body::from(body);
+                                                    let body_content = serde_json::to_string(&body).expect("impossible to fail to serialize");
+                                                    *response.body_mut() = Body::from(body_content);
                                                 },
                                             },
                                             Err(_) => {

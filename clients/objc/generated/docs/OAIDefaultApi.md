@@ -9,9 +9,9 @@ Method | HTTP request | Description
 
 # **rootGet**
 ```objc
--(NSURLSessionTask*) rootGetWithIp: (OAIAnyType*) ip
-    format: (OAIAnyType*) format
-    delimiter: (OAIAnyType*) delimiter
+-(NSURLSessionTask*) rootGetWithIp: (NSString*) ip
+    format: (NSString*) format
+    delimiter: (NSString*) delimiter
         completionHandler: (void (^)(OAIGet200Response* output, NSError* error)) handler;
 ```
 
@@ -22,9 +22,9 @@ Retrieve geolocation of an IP address.
 ### Example
 ```objc
 
-OAIAnyType* ip = [[OAIAnyType alloc] init]; // An IPv4 or IPv6 address that you would like to lookup.
-OAIAnyType* format = [[OAIAnyType alloc] init]; // Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
-OAIAnyType* delimiter = [[OAIAnyType alloc] init]; // Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
+NSString* ip = @"ip_example"; // An IPv4 or IPv6 address that you would like to lookup.
+NSString* format = @"format_example"; // Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+NSString* delimiter = @"delimiter_example"; // Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
 
 OAIDefaultApi*apiInstance = [[OAIDefaultApi alloc] init];
 
@@ -46,9 +46,9 @@ OAIDefaultApi*apiInstance = [[OAIDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**OAIAnyType***](.md)| An IPv4 or IPv6 address that you would like to lookup. | 
- **format** | [**OAIAnyType***](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
- **delimiter** | [**OAIAnyType***](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
+ **ip** | **NSString***| An IPv4 or IPv6 address that you would like to lookup. | 
+ **format** | **NSString***| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
+ **delimiter** | **NSString***| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
 
 ### Return type
 

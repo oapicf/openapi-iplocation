@@ -1,4 +1,4 @@
-import { ResponseContext, RequestContext, HttpFile } from '../http/http';
+import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
@@ -28,7 +28,7 @@ export class ObservableDefaultApi {
      * @param format Output format, the following formats are supported: plain xml json jsonp php csv serialized
      * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
-    public rootGet(ip: any, format?: any, delimiter?: any, _options?: Configuration): Observable<Get200Response> {
+    public rootGetWithHttpInfo(ip: string, format?: string, delimiter?: string, _options?: Configuration): Observable<HttpInfo<Get200Response>> {
         const requestContextPromise = this.requestFactory.rootGet(ip, format, delimiter, _options);
 
         // build promise chain
@@ -43,8 +43,19 @@ export class ObservableDefaultApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.rootGet(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.rootGetWithHttpInfo(rsp)));
             }));
+    }
+
+    /**
+     * Retrieve geolocation of an IP address. 
+     * Get geolocation of an IP address
+     * @param ip An IPv4 or IPv6 address that you would like to lookup.
+     * @param format Output format, the following formats are supported: plain xml json jsonp php csv serialized
+     * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
+     */
+    public rootGet(ip: string, format?: string, delimiter?: string, _options?: Configuration): Observable<Get200Response> {
+        return this.rootGetWithHttpInfo(ip, format, delimiter, _options).pipe(map((apiResponse: HttpInfo<Get200Response>) => apiResponse.data));
     }
 
 }

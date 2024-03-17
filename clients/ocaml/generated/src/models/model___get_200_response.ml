@@ -7,21 +7,21 @@
 
 type t = {
     (* IPv4 or IPv6 address used to lookup geolocation. *)
-    ip: Any_type.t option [@default None];
+    ip: string option [@default None];
     (* IP number in long integer. *)
-    ip_number: Any_type.t option [@default None];
+    ip_number: Int64.t option [@default None];
     (* IP version either 4 or 6. *)
-    ip_version: Any_type.t option [@default None];
+    ip_version: int32 option [@default None];
     (* Full name of the IP country. *)
-    country_name: Any_type.t option [@default None];
+    country_name: string option [@default None];
     (* ISO ALPHA-2 Country Code. *)
-    country_code2: Any_type.t option [@default None];
+    country_code2: string option [@default None];
     (* Internet Service Provider (ISP) who owns the IP address. *)
-    isp: Any_type.t option [@default None];
+    isp: string option [@default None];
     (* Response status code to indicate success or failed completion of the API call. *)
-    response_code: Any_type.t option [@default None];
+    response_code: string option [@default None];
     (* Response message to indicate success or failed completion of the API call. *)
-    response_message: Any_type.t option [@default None];
+    response_message: string option [@default None];
 } [@@deriving yojson { strict = false }, show ];;
 
 let create () : t = {

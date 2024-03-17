@@ -5,9 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import org.openapitools.model.Int64;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -23,35 +21,27 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-02T00:27:25.182827Z[Etc/UTC]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-16T21:38:45.888909540Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get200Response {
 
-  @JsonProperty("ip")
-  private JsonNullable<Object> ip = JsonNullable.undefined();
+  private String ip;
 
-  @JsonProperty("ip_number")
-  private JsonNullable<Object> ipNumber = JsonNullable.undefined();
+  private Int64 ipNumber = null;
 
-  @JsonProperty("ip_version")
-  private JsonNullable<Object> ipVersion = JsonNullable.undefined();
+  private Integer ipVersion;
 
-  @JsonProperty("country_name")
-  private JsonNullable<Object> countryName = JsonNullable.undefined();
+  private String countryName;
 
-  @JsonProperty("country_code2")
-  private JsonNullable<Object> countryCode2 = JsonNullable.undefined();
+  private String countryCode2;
 
-  @JsonProperty("isp")
-  private JsonNullable<Object> isp = JsonNullable.undefined();
+  private String isp;
 
-  @JsonProperty("response_code")
-  private JsonNullable<Object> responseCode = JsonNullable.undefined();
+  private String responseCode;
 
-  @JsonProperty("response_message")
-  private JsonNullable<Object> responseMessage = JsonNullable.undefined();
+  private String responseMessage;
 
-  public Get200Response ip(Object ip) {
-    this.ip = JsonNullable.of(ip);
+  public Get200Response ip(String ip) {
+    this.ip = ip;
     return this;
   }
 
@@ -61,16 +51,17 @@ public class Get200Response {
   */
   
   @Schema(name = "ip", description = "IPv4 or IPv6 address used to lookup geolocation.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getIp() {
+  @JsonProperty("ip")
+  public String getIp() {
     return ip;
   }
 
-  public void setIp(JsonNullable<Object> ip) {
+  public void setIp(String ip) {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(Object ipNumber) {
-    this.ipNumber = JsonNullable.of(ipNumber);
+  public Get200Response ipNumber(Int64 ipNumber) {
+    this.ipNumber = ipNumber;
     return this;
   }
 
@@ -78,18 +69,19 @@ public class Get200Response {
    * IP number in long integer.
    * @return ipNumber
   */
-  
+  @Valid 
   @Schema(name = "ip_number", description = "IP number in long integer.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getIpNumber() {
+  @JsonProperty("ip_number")
+  public Int64 getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(JsonNullable<Object> ipNumber) {
+  public void setIpNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
   }
 
-  public Get200Response ipVersion(Object ipVersion) {
-    this.ipVersion = JsonNullable.of(ipVersion);
+  public Get200Response ipVersion(Integer ipVersion) {
+    this.ipVersion = ipVersion;
     return this;
   }
 
@@ -99,16 +91,17 @@ public class Get200Response {
   */
   
   @Schema(name = "ip_version", description = "IP version either 4 or 6.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getIpVersion() {
+  @JsonProperty("ip_version")
+  public Integer getIpVersion() {
     return ipVersion;
   }
 
-  public void setIpVersion(JsonNullable<Object> ipVersion) {
+  public void setIpVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
 
-  public Get200Response countryName(Object countryName) {
-    this.countryName = JsonNullable.of(countryName);
+  public Get200Response countryName(String countryName) {
+    this.countryName = countryName;
     return this;
   }
 
@@ -118,16 +111,17 @@ public class Get200Response {
   */
   
   @Schema(name = "country_name", description = "Full name of the IP country.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getCountryName() {
+  @JsonProperty("country_name")
+  public String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(JsonNullable<Object> countryName) {
+  public void setCountryName(String countryName) {
     this.countryName = countryName;
   }
 
-  public Get200Response countryCode2(Object countryCode2) {
-    this.countryCode2 = JsonNullable.of(countryCode2);
+  public Get200Response countryCode2(String countryCode2) {
+    this.countryCode2 = countryCode2;
     return this;
   }
 
@@ -137,16 +131,17 @@ public class Get200Response {
   */
   
   @Schema(name = "country_code2", description = "ISO ALPHA-2 Country Code.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getCountryCode2() {
+  @JsonProperty("country_code2")
+  public String getCountryCode2() {
     return countryCode2;
   }
 
-  public void setCountryCode2(JsonNullable<Object> countryCode2) {
+  public void setCountryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
   }
 
-  public Get200Response isp(Object isp) {
-    this.isp = JsonNullable.of(isp);
+  public Get200Response isp(String isp) {
+    this.isp = isp;
     return this;
   }
 
@@ -156,16 +151,17 @@ public class Get200Response {
   */
   
   @Schema(name = "isp", description = "Internet Service Provider (ISP) who owns the IP address.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getIsp() {
+  @JsonProperty("isp")
+  public String getIsp() {
     return isp;
   }
 
-  public void setIsp(JsonNullable<Object> isp) {
+  public void setIsp(String isp) {
     this.isp = isp;
   }
 
-  public Get200Response responseCode(Object responseCode) {
-    this.responseCode = JsonNullable.of(responseCode);
+  public Get200Response responseCode(String responseCode) {
+    this.responseCode = responseCode;
     return this;
   }
 
@@ -175,16 +171,17 @@ public class Get200Response {
   */
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getResponseCode() {
+  @JsonProperty("response_code")
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(JsonNullable<Object> responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get200Response responseMessage(Object responseMessage) {
-    this.responseMessage = JsonNullable.of(responseMessage);
+  public Get200Response responseMessage(String responseMessage) {
+    this.responseMessage = responseMessage;
     return this;
   }
 
@@ -194,11 +191,12 @@ public class Get200Response {
   */
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  public JsonNullable<Object> getResponseMessage() {
+  @JsonProperty("response_message")
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(JsonNullable<Object> responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 
@@ -211,30 +209,19 @@ public class Get200Response {
       return false;
     }
     Get200Response get200Response = (Get200Response) o;
-    return equalsNullable(this.ip, get200Response.ip) &&
-        equalsNullable(this.ipNumber, get200Response.ipNumber) &&
-        equalsNullable(this.ipVersion, get200Response.ipVersion) &&
-        equalsNullable(this.countryName, get200Response.countryName) &&
-        equalsNullable(this.countryCode2, get200Response.countryCode2) &&
-        equalsNullable(this.isp, get200Response.isp) &&
-        equalsNullable(this.responseCode, get200Response.responseCode) &&
-        equalsNullable(this.responseMessage, get200Response.responseMessage);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.ip, get200Response.ip) &&
+        Objects.equals(this.ipNumber, get200Response.ipNumber) &&
+        Objects.equals(this.ipVersion, get200Response.ipVersion) &&
+        Objects.equals(this.countryName, get200Response.countryName) &&
+        Objects.equals(this.countryCode2, get200Response.countryCode2) &&
+        Objects.equals(this.isp, get200Response.isp) &&
+        Objects.equals(this.responseCode, get200Response.responseCode) &&
+        Objects.equals(this.responseMessage, get200Response.responseMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(ip), hashCodeNullable(ipNumber), hashCodeNullable(ipVersion), hashCodeNullable(countryName), hashCodeNullable(countryCode2), hashCodeNullable(isp), hashCodeNullable(responseCode), hashCodeNullable(responseMessage));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(ip, ipNumber, ipVersion, countryName, countryCode2, isp, responseCode, responseMessage);
   }
 
   @Override

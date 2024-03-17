@@ -22,7 +22,7 @@ open class DefaultAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func rootGet(ip: AnyCodable, format: AnyCodable? = nil, delimiter: AnyCodable? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Get200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func rootGet(ip: String, format: String? = nil, delimiter: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Get200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return rootGetWithRequestBuilder(ip: ip, format: format, delimiter: delimiter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -42,7 +42,7 @@ open class DefaultAPI {
      - parameter delimiter: (query) Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. (optional)
      - returns: RequestBuilder<Get200Response> 
      */
-    open class func rootGetWithRequestBuilder(ip: AnyCodable, format: AnyCodable? = nil, delimiter: AnyCodable? = nil) -> RequestBuilder<Get200Response> {
+    open class func rootGetWithRequestBuilder(ip: String, format: String? = nil, delimiter: String? = nil) -> RequestBuilder<Get200Response> {
         let localVariablePath = "/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

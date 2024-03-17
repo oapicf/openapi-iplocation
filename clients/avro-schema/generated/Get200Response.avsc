@@ -6,49 +6,49 @@
   "fields": [
     {
       "name": "ip",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "IPv4 or IPv6 address used to lookup geolocation.",
       "default": null
     },
     {
       "name": "ip_number",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "model.Int64"],
       "doc": "IP number in long integer.",
       "default": null
     },
     {
       "name": "ip_version",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "int"],
       "doc": "IP version either 4 or 6.",
       "default": null
     },
     {
       "name": "country_name",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "Full name of the IP country.",
       "default": null
     },
     {
       "name": "country_code2",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "ISO ALPHA-2 Country Code.",
       "default": null
     },
     {
       "name": "isp",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "Internet Service Provider (ISP) who owns the IP address.",
       "default": null
     },
     {
       "name": "response_code",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "Response status code to indicate success or failed completion of the API call.",
       "default": null
     },
     {
       "name": "response_message",
-      "type": ["null", "model.AnyType"],
+      "type": ["null", "string"],
       "doc": "Response message to indicate success or failed completion of the API call.",
       "default": null
     }

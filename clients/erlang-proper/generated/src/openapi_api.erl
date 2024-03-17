@@ -7,7 +7,7 @@
 
 %% @doc Get geolocation of an IP address
 %% Retrieve geolocation of an IP address. 
--spec root_get(openapi_any_type:openapi_any_type()) ->
+-spec root_get(binary()) ->
   openapi_utils:response().
 root_get(Ip) ->
   Method      = get,

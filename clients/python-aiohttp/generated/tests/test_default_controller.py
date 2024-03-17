@@ -8,14 +8,16 @@ from openapi_server.models.get200_response import Get200Response
 from openapi_server.models.get400_response import Get400Response
 
 
+pytestmark = pytest.mark.asyncio
+
 async def test_root_get(client):
     """Test case for root_get
 
     Get geolocation of an IP address
     """
-    params = [('ip', None),
-                    ('format', None),
-                    ('delimiter', None)]
+    params = [('ip', 'ip_example'),
+                    ('format', 'format_example'),
+                    ('delimiter', 'delimiter_example')]
     headers = { 
         'Accept': 'application/json',
     }

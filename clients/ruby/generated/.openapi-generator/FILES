@@ -21,8 +21,6 @@ lib/openapi_iplocation/models/get400_response.rb
 lib/openapi_iplocation/version.rb
 openapi_iplocation.gemspec
 spec/api/default_api_spec.rb
-spec/api_client_spec.rb
-spec/configuration_spec.rb
 spec/models/get200_response_spec.rb
 spec/models/get400_response_spec.rb
 spec/spec_helper.rb

@@ -15,5 +15,5 @@
     ]},
     {modules, []},
     {licenses, []},
-    {links, ["https://github.com/cliffano/openapi-iplocation"]}
+    {links, ["https://github.com/oapicf/openapi-iplocation"]}
 ]}.

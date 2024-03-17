@@ -24,7 +24,7 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the default API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2023-04-02T00:25:01.657618Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-03-16T21:36:22.449370904Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public interface DefaultApi  {
 
     @GET
@@ -38,5 +38,5 @@ public interface DefaultApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Failed to complete the request.", response = Get400Response.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Command not found.", response = Get400Response.class) })
-    public Response rootGet( @NotNull @QueryParam("ip") Object ip, @QueryParam("format") Object format, @QueryParam("delimiter") Object delimiter,@Context SecurityContext securityContext);
+    public Response rootGet( @NotNull @QueryParam("ip") String ip, @QueryParam("format") String format, @QueryParam("delimiter") String delimiter,@Context SecurityContext securityContext);
 }

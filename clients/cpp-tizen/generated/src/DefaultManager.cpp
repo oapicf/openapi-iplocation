@@ -114,7 +114,7 @@ static bool rootGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, 
 }
 
 static bool rootGetHelper(char * accessToken,
-	AnyType ip, AnyType format, AnyType delimiter, 
+	std::string ip, std::string format, std::string delimiter, 
 	void(* handler)(__get_200_response, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -132,18 +132,18 @@ static bool rootGetHelper(char * accessToken,
 	string itemAtq;
 	
 
-	itemAtq = stringify(&ip, "AnyType");
+	itemAtq = stringify(&ip, "std::string");
 	queryParams.insert(pair<string, string>("ip", itemAtq));
 
 
-	itemAtq = stringify(&format, "AnyType");
+	itemAtq = stringify(&format, "std::string");
 	queryParams.insert(pair<string, string>("format", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("format");
 	}
 
 
-	itemAtq = stringify(&delimiter, "AnyType");
+	itemAtq = stringify(&delimiter, "std::string");
 	queryParams.insert(pair<string, string>("delimiter", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("delimiter");
@@ -203,7 +203,7 @@ static bool rootGetHelper(char * accessToken,
 
 
 bool DefaultManager::rootGetAsync(char * accessToken,
-	AnyType ip, AnyType format, AnyType delimiter, 
+	std::string ip, std::string format, std::string delimiter, 
 	void(* handler)(__get_200_response, Error, void* )
 	, void* userData)
 {
@@ -213,7 +213,7 @@ bool DefaultManager::rootGetAsync(char * accessToken,
 }
 
 bool DefaultManager::rootGetSync(char * accessToken,
-	AnyType ip, AnyType format, AnyType delimiter, 
+	std::string ip, std::string format, std::string delimiter, 
 	void(* handler)(__get_200_response, Error, void* )
 	, void* userData)
 {

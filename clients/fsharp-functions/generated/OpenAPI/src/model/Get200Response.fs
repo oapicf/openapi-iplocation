@@ -3,7 +3,6 @@ namespace OpenAPI.Model
 open System
 open System.Collections.Generic
 open Newtonsoft.Json
-open OpenAPI.Model.AnyType
 
 module Get200Response =
 
@@ -12,21 +11,21 @@ module Get200Response =
   [<CLIMutable>]
   type Get200Response = {
     [<JsonProperty(PropertyName = "ip")>]
-    Ip : AnyType;
+    Ip : string;
     [<JsonProperty(PropertyName = "ip_number")>]
-    IpNumber : AnyType;
+    IpNumber : Int64;
     [<JsonProperty(PropertyName = "ip_version")>]
-    IpVersion : AnyType;
+    IpVersion : int;
     [<JsonProperty(PropertyName = "country_name")>]
-    CountryName : AnyType;
+    CountryName : string;
     [<JsonProperty(PropertyName = "country_code2")>]
-    CountryCode2 : AnyType;
+    CountryCode2 : string;
     [<JsonProperty(PropertyName = "isp")>]
-    Isp : AnyType;
+    Isp : string;
     [<JsonProperty(PropertyName = "response_code")>]
-    ResponseCode : AnyType;
+    ResponseCode : string;
     [<JsonProperty(PropertyName = "response_message")>]
-    ResponseMessage : AnyType;
+    ResponseMessage : string;
   }
 
   //#endregion

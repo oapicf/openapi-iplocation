@@ -20,7 +20,7 @@ interface DefaultApi  {
     fun init(vertx:Vertx,config:JsonObject)
     /* rootGet
      * Get geolocation of an IP address */
-    suspend fun rootGet(ip:kotlin.Any?,format:kotlin.Any?,delimiter:kotlin.Any?,context:OperationRequest):Response<Get200Response>
+    suspend fun rootGet(ip:kotlin.String?,format:kotlin.String?,delimiter:kotlin.String?,context:OperationRequest):Response<Get200Response>
     companion object {
         const val address = "DefaultApi-service"
         suspend fun createRouterFactory(vertx: Vertx,path:String): io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory {

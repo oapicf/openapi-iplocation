@@ -22,10 +22,10 @@ require 'time'
 require 'openapi_iplocation'
 
 api_instance = OpenApiIplocationClient::DefaultApi.new
-ip = TODO # Object | An IPv4 or IPv6 address that you would like to lookup.
+ip = 'ip_example' # String | An IPv4 or IPv6 address that you would like to lookup.
 opts = {
-  format: TODO, # Object | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-  delimiter: TODO # Object | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+  format: 'format_example', # String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+  delimiter: 'delimiter_example' # String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
 }
 
 begin
@@ -59,9 +59,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **ip** | [**Object**](.md) | An IPv4 or IPv6 address that you would like to lookup. |  |
-| **format** | [**Object**](.md) | Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
-| **delimiter** | [**Object**](.md) | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
+| **ip** | **String** | An IPv4 or IPv6 address that you would like to lookup. |  |
+| **format** | **String** | Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
+| **delimiter** | **String** | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
 
 ### Return type
 

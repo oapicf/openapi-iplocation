@@ -7,7 +7,7 @@ import play.api.mvc._
 import model.Get200Response
 import model.Get400Response
 
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2023-04-02T00:27:18.710311Z[Etc/UTC]")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-03-16T21:38:36.552147004Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 @Singleton
 class DefaultApiController @Inject()(cc: ControllerComponents, api: DefaultApi) extends AbstractController(cc) {
   /**
@@ -16,14 +16,14 @@ class DefaultApiController @Inject()(cc: ControllerComponents, api: DefaultApi) 
   def rootGet(): Action[AnyContent] = Action { request =>
     def executeApi(): Get200Response = {
       val ip = request.getQueryString("ip")
-        .map(value => )
         .getOrElse {
           throw new OpenApiExceptions.MissingRequiredParameterException("ip", "query string")
         }
+        
       val format = request.getQueryString("format")
-        .map(value => )
+        
       val delimiter = request.getQueryString("delimiter")
-        .map(value => )
+        
       api.rootGet(ip, format, delimiter)
     }
 

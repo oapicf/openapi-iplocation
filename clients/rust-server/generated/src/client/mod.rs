@@ -382,9 +382,9 @@ impl<S, C> Api<C> for Client<S, C> where
 
     async fn root_get(
         &self,
-        param_ip: serde_json::Value,
-        param_format: Option<serde_json::Value>,
-        param_delimiter: Option<serde_json::Value>,
+        param_ip: String,
+        param_format: Option<String>,
+        param_delimiter: Option<String>,
         context: &C) -> Result<RootGetResponse, ApiError>
     {
         let mut client_service = self.client_service.clone();
@@ -397,14 +397,14 @@ impl<S, C> Api<C> for Client<S, C> where
         let query_string = {
             let mut query_string = form_urlencoded::Serializer::new("".to_owned());
                 query_string.append_pair("ip",
-                    &param_ip.to_string());
+                    &param_ip);
             if let Some(param_format) = param_format {
                 query_string.append_pair("format",
-                    &param_format.to_string());
+                    &param_format);
             }
             if let Some(param_delimiter) = param_delimiter {
                 query_string.append_pair("delimiter",
-                    &param_delimiter.to_string());
+                    &param_delimiter);
             }
             query_string.finish()
         };

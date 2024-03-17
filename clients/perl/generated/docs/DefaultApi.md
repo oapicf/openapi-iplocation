@@ -26,9 +26,9 @@ use WWW::OpenAPIClient::DefaultApi;
 my $api_instance = WWW::OpenAPIClient::DefaultApi->new(
 );
 
-my $ip = new WWW::OpenAPIClient.AnyType(); # AnyType | An IPv4 or IPv6 address that you would like to lookup.
-my $format = new WWW::OpenAPIClient.AnyType(); # AnyType | Output format, the following formats are supported: plain xml json jsonp php csv serialized
-my $delimiter = new WWW::OpenAPIClient.AnyType(); # AnyType | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+my $ip = "ip_example"; # string | An IPv4 or IPv6 address that you would like to lookup.
+my $format = "format_example"; # string | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+my $delimiter = "delimiter_example"; # string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
 
 eval {
     my $result = $api_instance->root_get(ip => $ip, format => $format, delimiter => $delimiter);
@@ -43,9 +43,9 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**AnyType**](.md)| An IPv4 or IPv6 address that you would like to lookup. | 
- **format** | [**AnyType**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
- **delimiter** | [**AnyType**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
+ **ip** | **string**| An IPv4 or IPv6 address that you would like to lookup. | 
+ **format** | **string**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
+ **delimiter** | **string**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
 
 ### Return type
 

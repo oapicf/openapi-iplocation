@@ -3,25 +3,25 @@ package org.openapitools.server.api.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
+import org.openapitools.server.api.model.Int64;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Get200Response   {
   
-  private Object ip = null;
-  private Object ipNumber = null;
-  private Object ipVersion = null;
-  private Object countryName = null;
-  private Object countryCode2 = null;
-  private Object isp = null;
-  private Object responseCode = null;
-  private Object responseMessage = null;
+  private String ip;
+  private Int64 ipNumber = null;
+  private Integer ipVersion;
+  private String countryName;
+  private String countryCode2;
+  private String isp;
+  private String responseCode;
+  private String responseMessage;
 
   public Get200Response () {
 
   }
 
-  public Get200Response (Object ip, Object ipNumber, Object ipVersion, Object countryName, Object countryCode2, Object isp, Object responseCode, Object responseMessage) {
+  public Get200Response (String ip, Int64 ipNumber, Integer ipVersion, String countryName, String countryCode2, String isp, String responseCode, String responseMessage) {
     this.ip = ip;
     this.ipNumber = ipNumber;
     this.ipVersion = ipVersion;
@@ -34,73 +34,73 @@ public class Get200Response   {
 
     
   @JsonProperty("ip")
-  public Object getIp() {
+  public String getIp() {
     return ip;
   }
-  public void setIp(Object ip) {
+  public void setIp(String ip) {
     this.ip = ip;
   }
 
     
   @JsonProperty("ip_number")
-  public Object getIpNumber() {
+  public Int64 getIpNumber() {
     return ipNumber;
   }
-  public void setIpNumber(Object ipNumber) {
+  public void setIpNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
   }
 
     
   @JsonProperty("ip_version")
-  public Object getIpVersion() {
+  public Integer getIpVersion() {
     return ipVersion;
   }
-  public void setIpVersion(Object ipVersion) {
+  public void setIpVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
 
     
   @JsonProperty("country_name")
-  public Object getCountryName() {
+  public String getCountryName() {
     return countryName;
   }
-  public void setCountryName(Object countryName) {
+  public void setCountryName(String countryName) {
     this.countryName = countryName;
   }
 
     
   @JsonProperty("country_code2")
-  public Object getCountryCode2() {
+  public String getCountryCode2() {
     return countryCode2;
   }
-  public void setCountryCode2(Object countryCode2) {
+  public void setCountryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
   }
 
     
   @JsonProperty("isp")
-  public Object getIsp() {
+  public String getIsp() {
     return isp;
   }
-  public void setIsp(Object isp) {
+  public void setIsp(String isp) {
     this.isp = isp;
   }
 
     
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
     
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

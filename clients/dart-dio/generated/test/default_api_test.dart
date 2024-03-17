@@ -11,7 +11,7 @@ void main() {
     //
     // Retrieve geolocation of an IP address. 
     //
-    //Future<Get200Response> rootGet(JsonObject ip, { JsonObject format, JsonObject delimiter }) async
+    //Future<Get200Response> rootGet(String ip, { String format, String delimiter }) async
     test('test rootGet', () async {
       // TODO
     });

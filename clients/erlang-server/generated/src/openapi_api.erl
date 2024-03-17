@@ -56,6 +56,7 @@ request_param_info('RootGet', 'ip') ->
     #{
         source => qs_val  ,
         rules => [
+            {type, 'binary'},
             required
         ]
     };
@@ -64,6 +65,7 @@ request_param_info('RootGet', 'format') ->
     #{
         source => qs_val  ,
         rules => [
+            {type, 'binary'},
             not_required
         ]
     };
@@ -72,6 +74,7 @@ request_param_info('RootGet', 'delimiter') ->
     #{
         source => qs_val  ,
         rules => [
+            {type, 'binary'},
             not_required
         ]
     };

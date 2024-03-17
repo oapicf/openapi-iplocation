@@ -22,25 +22,25 @@ __get_200_response_t* instantiate___get_200_response(int include_optional) {
   __get_200_response_t* __get_200_response = NULL;
   if (include_optional) {
     __get_200_response = __get_200_response_create(
+      "0",
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      56,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
     );
   } else {
     __get_200_response = __get_200_response_create(
+      "0",
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      56,
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
     );
   }
 

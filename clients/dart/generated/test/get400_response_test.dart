@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -17,13 +17,13 @@ void main() {
 
   group('test Get400Response', () {
     // Response status code to indicate success or failed completion of the API call.
-    // Object responseCode
+    // String responseCode
     test('to test the property `responseCode`', () async {
       // TODO
     });
 
     // Response message to indicate success or failed completion of the API call.
-    // Object responseMessage
+    // String responseMessage
     test('to test the property `responseMessage`', () async {
       // TODO
     });

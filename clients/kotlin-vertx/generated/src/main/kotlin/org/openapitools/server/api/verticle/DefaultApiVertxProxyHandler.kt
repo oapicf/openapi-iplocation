@@ -20,7 +20,7 @@ import org.openapitools.server.api.model.Get200Response
 import org.openapitools.server.api.model.Get400Response
 
 class DefaultApiVertxProxyHandler(private val vertx: Vertx, private val service: DefaultApi, topLevel: Boolean, private val timeoutSeconds: Long) : ProxyHandler() {
-    private val timerID: Long
+    private lateinit var timerID: Long
     private var lastAccessed: Long = 0
     init {
         try {
@@ -67,15 +67,12 @@ class DefaultApiVertxProxyHandler(private val vertx: Vertx, private val service:
         
                 "rootGet" -> {
                     val params = context.params
-                    val ipParam = ApiHandlerUtils.searchJsonObjectInJson(params,"ip")
-                    if (ipParam == null) {
+                    val ip = ApiHandlerUtils.searchStringInJson(params,"ip")
+                    if(ip == null){
                         throw IllegalArgumentException("ip is required")
                     }
-                    val ip = Gson().fromJson(ipParam.encode(), kotlin.Any::class.java)
-                    val formatParam = ApiHandlerUtils.searchJsonObjectInJson(params,"format")
-                    val format = if(formatParam ==null) null else Gson().fromJson(formatParam.encode(), kotlin.Any::class.java)
-                    val delimiterParam = ApiHandlerUtils.searchJsonObjectInJson(params,"delimiter")
-                    val delimiter = if(delimiterParam ==null) null else Gson().fromJson(delimiterParam.encode(), kotlin.Any::class.java)
+                    val format = ApiHandlerUtils.searchStringInJson(params,"format")
+                    val delimiter = ApiHandlerUtils.searchStringInJson(params,"delimiter")
                     GlobalScope.launch(vertx.dispatcher()){
                         val result = service.rootGet(ip,format,delimiter,context)
                         val payload = JsonObject(Json.encode(result.payload)).toBuffer()

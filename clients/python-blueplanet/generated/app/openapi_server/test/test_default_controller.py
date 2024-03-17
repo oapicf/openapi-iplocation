@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 
 from flask import json
-from six import BytesIO
+from io import BytesIO
 
 from app.openapi_server.models.get200_response import Get200Response  # noqa: E501
 from app.openapi_server.models.get400_response import Get400Response  # noqa: E501
@@ -18,9 +18,9 @@ class TestDefaultController(BaseTestCase):
 
         Get geolocation of an IP address
         """
-        query_string = [('ip', None),
-                        ('format', None),
-                        ('delimiter', None)]
+        query_string = [('ip', 'ip_example'),
+                        ('format', 'format_example'),
+                        ('delimiter', 'delimiter_example')]
         response = self.client.open(
             '/',
             method='GET',

@@ -6,7 +6,7 @@ context("Test Get400Response")
 model_instance <- Get400Response$new()
 
 test_that("response_code", {
-  # tests for the property `response_code` (AnyType)
+  # tests for the property `response_code` (character)
   # Response status code to indicate success or failed completion of the API call.
 
   # uncomment below to test the property
@@ -14,7 +14,7 @@ test_that("response_code", {
 })
 
 test_that("response_message", {
-  # tests for the property `response_message` (AnyType)
+  # tests for the property `response_message` (character)
   # Response message to indicate success or failed completion of the API call.
 
   # uncomment below to test the property

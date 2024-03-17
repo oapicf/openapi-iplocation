@@ -14,10 +14,11 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2023-04-02T00:24:57.504654Z[Etc/UTC]")
+import javax.validation.Valid;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-03-16T21:36:17.215606986Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class DefaultApiServiceImpl extends DefaultApiService {
     @Override
-    public Response rootGet( @NotNull Object ip, Object format, Object delimiter, SecurityContext securityContext) throws NotFoundException {
+    public Response rootGet( @NotNull String ip, String format, String delimiter, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

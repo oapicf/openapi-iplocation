@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResponseCode** | Pointer to **interface{}** | Response status code to indicate success or failed completion of the API call. | [optional] 
-**ResponseMessage** | Pointer to **interface{}** | Response message to indicate success or failed completion of the API call. | [optional] 
+**ResponseCode** | Pointer to **string** | Response status code to indicate success or failed completion of the API call. | [optional] 
+**ResponseMessage** | Pointer to **string** | Response message to indicate success or failed completion of the API call. | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResponseCode
 
-`func (o *Get400Response) GetResponseCode() interface{}`
+`func (o *Get400Response) GetResponseCode() string`
 
 GetResponseCode returns the ResponseCode field if non-nil, zero value otherwise.
 
 ### GetResponseCodeOk
 
-`func (o *Get400Response) GetResponseCodeOk() (*interface{}, bool)`
+`func (o *Get400Response) GetResponseCodeOk() (*string, bool)`
 
 GetResponseCodeOk returns a tuple with the ResponseCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponseCode
 
-`func (o *Get400Response) SetResponseCode(v interface{})`
+`func (o *Get400Response) SetResponseCode(v string)`
 
 SetResponseCode sets ResponseCode field to given value.
 
@@ -51,32 +51,22 @@ SetResponseCode sets ResponseCode field to given value.
 
 HasResponseCode returns a boolean if a field has been set.
 
-### SetResponseCodeNil
-
-`func (o *Get400Response) SetResponseCodeNil(b bool)`
-
- SetResponseCodeNil sets the value for ResponseCode to be an explicit nil
-
-### UnsetResponseCode
-`func (o *Get400Response) UnsetResponseCode()`
-
-UnsetResponseCode ensures that no value is present for ResponseCode, not even an explicit nil
 ### GetResponseMessage
 
-`func (o *Get400Response) GetResponseMessage() interface{}`
+`func (o *Get400Response) GetResponseMessage() string`
 
 GetResponseMessage returns the ResponseMessage field if non-nil, zero value otherwise.
 
 ### GetResponseMessageOk
 
-`func (o *Get400Response) GetResponseMessageOk() (*interface{}, bool)`
+`func (o *Get400Response) GetResponseMessageOk() (*string, bool)`
 
 GetResponseMessageOk returns a tuple with the ResponseMessage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponseMessage
 
-`func (o *Get400Response) SetResponseMessage(v interface{})`
+`func (o *Get400Response) SetResponseMessage(v string)`
 
 SetResponseMessage sets ResponseMessage field to given value.
 
@@ -86,16 +76,6 @@ SetResponseMessage sets ResponseMessage field to given value.
 
 HasResponseMessage returns a boolean if a field has been set.
 
-### SetResponseMessageNil
-
-`func (o *Get400Response) SetResponseMessageNil(b bool)`
-
- SetResponseMessageNil sets the value for ResponseMessage to be an explicit nil
-
-### UnsetResponseMessage
-`func (o *Get400Response) UnsetResponseMessage()`
-
-UnsetResponseMessage ensures that no value is present for ResponseMessage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

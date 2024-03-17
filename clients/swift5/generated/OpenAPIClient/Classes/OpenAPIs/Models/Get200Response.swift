@@ -13,23 +13,23 @@ import AnyCodable
 public struct Get200Response: Codable, JSONEncodable, Hashable {
 
     /** IPv4 or IPv6 address used to lookup geolocation. */
-    public var ip: AnyCodable?
+    public var ip: String?
     /** IP number in long integer. */
-    public var ipNumber: AnyCodable?
+    public var ipNumber: ModelInt64?
     /** IP version either 4 or 6. */
-    public var ipVersion: AnyCodable?
+    public var ipVersion: Int?
     /** Full name of the IP country. */
-    public var countryName: AnyCodable?
+    public var countryName: String?
     /** ISO ALPHA-2 Country Code. */
-    public var countryCode2: AnyCodable?
+    public var countryCode2: String?
     /** Internet Service Provider (ISP) who owns the IP address. */
-    public var isp: AnyCodable?
+    public var isp: String?
     /** Response status code to indicate success or failed completion of the API call. */
-    public var responseCode: AnyCodable?
+    public var responseCode: String?
     /** Response message to indicate success or failed completion of the API call. */
-    public var responseMessage: AnyCodable?
+    public var responseMessage: String?
 
-    public init(ip: AnyCodable? = nil, ipNumber: AnyCodable? = nil, ipVersion: AnyCodable? = nil, countryName: AnyCodable? = nil, countryCode2: AnyCodable? = nil, isp: AnyCodable? = nil, responseCode: AnyCodable? = nil, responseMessage: AnyCodable? = nil) {
+    public init(ip: String? = nil, ipNumber: ModelInt64? = nil, ipVersion: Int? = nil, countryName: String? = nil, countryCode2: String? = nil, isp: String? = nil, responseCode: String? = nil, responseMessage: String? = nil) {
         self.ip = ip
         self.ipNumber = ipNumber
         self.ipVersion = ipVersion

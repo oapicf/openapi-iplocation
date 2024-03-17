@@ -1,4 +1,4 @@
-import { ResponseContext, RequestContext, HttpFile } from '../http/http';
+import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
 import { Get200Response } from '../models/Get200Response';
@@ -10,22 +10,22 @@ import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/De
 export interface DefaultApiRootGetRequest {
     /**
      * An IPv4 or IPv6 address that you would like to lookup.
-     * @type any
+     * @type string
      * @memberof DefaultApirootGet
      */
-    ip: any
+    ip: string
     /**
      * Output format, the following formats are supported: plain xml json jsonp php csv serialized
-     * @type any
+     * @type string
      * @memberof DefaultApirootGet
      */
-    format?: any
+    format?: string
     /**
      * Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
-     * @type any
+     * @type string
      * @memberof DefaultApirootGet
      */
-    delimiter?: any
+    delimiter?: string
 }
 
 export class ObjectDefaultApi {
@@ -33,6 +33,15 @@ export class ObjectDefaultApi {
 
     public constructor(configuration: Configuration, requestFactory?: DefaultApiRequestFactory, responseProcessor?: DefaultApiResponseProcessor) {
         this.api = new ObservableDefaultApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Retrieve geolocation of an IP address. 
+     * Get geolocation of an IP address
+     * @param param the request object
+     */
+    public rootGetWithHttpInfo(param: DefaultApiRootGetRequest, options?: Configuration): Promise<HttpInfo<Get200Response>> {
+        return this.api.rootGetWithHttpInfo(param.ip, param.format, param.delimiter,  options).toPromise();
     }
 
     /**

@@ -2,7 +2,15 @@ package org.openapitools.model
 
 import java.util.Objects
 import com.fasterxml.jackson.annotation.JsonProperty
-import javax.validation.constraints.*
+import org.openapitools.model.Int64
+import javax.validation.constraints.DecimalMax
+import javax.validation.constraints.DecimalMin
+import javax.validation.constraints.Email
+import javax.validation.constraints.Max
+import javax.validation.constraints.Min
+import javax.validation.constraints.NotNull
+import javax.validation.constraints.Pattern
+import javax.validation.constraints.Size
 import javax.validation.Valid
 import io.swagger.v3.oas.annotations.media.Schema
 
@@ -19,37 +27,30 @@ import io.swagger.v3.oas.annotations.media.Schema
  */
 data class Get200Response(
 
-    @field:Valid
     @Schema(example = "null", description = "IPv4 or IPv6 address used to lookup geolocation.")
-    @get:JsonProperty("ip") val ip: kotlin.Any? = null,
+    @get:JsonProperty("ip") val ip: kotlin.String? = null,
 
     @field:Valid
     @Schema(example = "null", description = "IP number in long integer.")
-    @get:JsonProperty("ip_number") val ipNumber: kotlin.Any? = null,
+    @get:JsonProperty("ip_number") val ipNumber: Int64? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "IP version either 4 or 6.")
-    @get:JsonProperty("ip_version") val ipVersion: kotlin.Any? = null,
+    @get:JsonProperty("ip_version") val ipVersion: kotlin.Int? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "Full name of the IP country.")
-    @get:JsonProperty("country_name") val countryName: kotlin.Any? = null,
+    @get:JsonProperty("country_name") val countryName: kotlin.String? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "ISO ALPHA-2 Country Code.")
-    @get:JsonProperty("country_code2") val countryCode2: kotlin.Any? = null,
+    @get:JsonProperty("country_code2") val countryCode2: kotlin.String? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "Internet Service Provider (ISP) who owns the IP address.")
-    @get:JsonProperty("isp") val isp: kotlin.Any? = null,
+    @get:JsonProperty("isp") val isp: kotlin.String? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "Response status code to indicate success or failed completion of the API call.")
-    @get:JsonProperty("response_code") val responseCode: kotlin.Any? = null,
+    @get:JsonProperty("response_code") val responseCode: kotlin.String? = null,
 
-    @field:Valid
     @Schema(example = "null", description = "Response message to indicate success or failed completion of the API call.")
-    @get:JsonProperty("response_message") val responseMessage: kotlin.Any? = null
+    @get:JsonProperty("response_message") val responseMessage: kotlin.String? = null
 ) {
 
 }

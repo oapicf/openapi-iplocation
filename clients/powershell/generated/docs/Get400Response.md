@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResponseCode** | [**AnyType**](.md) | Response status code to indicate success or failed completion of the API call. | [optional] 
-**ResponseMessage** | [**AnyType**](.md) | Response message to indicate success or failed completion of the API call. | [optional] 
+**ResponseCode** | **String** | Response status code to indicate success or failed completion of the API call. | [optional] 
+**ResponseMessage** | **String** | Response message to indicate success or failed completion of the API call. | [optional] 
 
 ## Examples
 

@@ -42,7 +42,7 @@ class DefaultApi implements DefaultApiInterface
     /**
      * Implementation of DefaultApiInterface#rootGet
      */
-    public function rootGet($ip, ?$format, ?$delimiter, int &$responseCode, array &$responseHeaders): array|object|null
+    public function rootGet(string $ip, ?string $format, ?string $delimiter, int &$responseCode, array &$responseHeaders): array|object|null
     {
         // Implement the operation ...
     }
@@ -55,9 +55,9 @@ class DefaultApi implements DefaultApiInterface
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**AnyType**](../Model/.md)| An IPv4 or IPv6 address that you would like to lookup. |
- **format** | [**AnyType**](../Model/.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
- **delimiter** | [**AnyType**](../Model/.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
+ **ip** | **string**| An IPv4 or IPv6 address that you would like to lookup. |
+ **format** | **string**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
+ **delimiter** | **string**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
 
 ### Return type
 

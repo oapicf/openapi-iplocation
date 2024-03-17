@@ -21,9 +21,9 @@ library(openapi)
 # Get geolocation of an IP address
 #
 # prepare function argument(s)
-var_ip <- TODO # AnyType | An IPv4 or IPv6 address that you would like to lookup.
-var_format <- TODO # AnyType | Output format, the following formats are supported: plain xml json jsonp php csv serialized (Optional)
-var_delimiter <- TODO # AnyType | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (Optional)
+var_ip <- "ip_example" # character | An IPv4 or IPv6 address that you would like to lookup.
+var_format <- "format_example" # character | Output format, the following formats are supported: plain xml json jsonp php csv serialized (Optional)
+var_delimiter <- "delimiter_example" # character | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (Optional)
 
 api_instance <- DefaultApi$new()
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
@@ -36,9 +36,9 @@ dput(result)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**AnyType**](.md)| An IPv4 or IPv6 address that you would like to lookup. | 
- **format** | [**AnyType**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
- **delimiter** | [**AnyType**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
+ **ip** | **character**| An IPv4 or IPv6 address that you would like to lookup. | 
+ **format** | **character**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] 
+ **delimiter** | **character**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] 
 
 ### Return type
 

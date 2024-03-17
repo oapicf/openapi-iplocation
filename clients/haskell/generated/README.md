@@ -50,7 +50,7 @@ main = do
   manager <- newManager tlsManagerSettings
 
   -- Create the client (all endpoint functions will be available)
-  Iplocation.netBackend{..} <- API.createIplocation.netClient
+  let Iplocation.netBackend{..} = API.createIplocation.netClient
 
   -- Any Iplocation.net API call can go here, e.g. here we call `getSomeEndpoint`
   API.callIplocation.net (mkClientEnv manager url) getSomeEndpoint

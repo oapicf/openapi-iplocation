@@ -23,8 +23,8 @@ __get_400_response::~__get_400_response()
 void
 __get_400_response::__init()
 {
-	//response_code = null;
-	//response_message = null;
+	//response_code = std::string();
+	//response_message = std::string();
 }
 
 void
@@ -53,12 +53,9 @@ __get_400_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&response_code, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&response_code, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&response_code);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -67,12 +64,9 @@ __get_400_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("AnyType")) {
-			jsonToValue(&response_message, node, "AnyType", "");
+		if (isprimitive("std::string")) {
+			jsonToValue(&response_message, node, "std::string", "");
 		} else {
-			
-			AnyType* obj = static_cast<AnyType*> (&response_message);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -88,30 +82,20 @@ __get_400_response::toJson()
 {
 	JsonObject *pJsonObject = json_object_new();
 	JsonNode *node;
-	if (isprimitive("AnyType")) {
-		AnyType obj = getResponseCode();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getResponseCode();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getResponseCode());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *response_codeKey = "response_code";
 	json_object_set_member(pJsonObject, response_codeKey, node);
-	if (isprimitive("AnyType")) {
-		AnyType obj = getResponseMessage();
-		node = converttoJson(&obj, "AnyType", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getResponseMessage();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		AnyType obj = static_cast<AnyType> (getResponseMessage());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *response_messageKey = "response_message";
@@ -124,26 +108,26 @@ __get_400_response::toJson()
 	return ret;
 }
 
-AnyType
+std::string
 __get_400_response::getResponseCode()
 {
 	return response_code;
 }
 
 void
-__get_400_response::setResponseCode(AnyType  response_code)
+__get_400_response::setResponseCode(std::string  response_code)
 {
 	this->response_code = response_code;
 }
 
-AnyType
+std::string
 __get_400_response::getResponseMessage()
 {
 	return response_message;
 }
 
 void
-__get_400_response::setResponseMessage(AnyType  response_message)
+__get_400_response::setResponseMessage(std::string  response_message)
 {
 	this->response_message = response_message;
 }

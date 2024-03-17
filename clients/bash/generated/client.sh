@@ -8,6 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
+# ! Generator version: 7.4.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -18,7 +19,7 @@
 # 
 #
 # CONTACT:
-# blah@cliffano.com
+# blah+oapicf@cliffano.com
 #
 # MORE INFORMATION:
 # 
@@ -257,20 +258,24 @@ header_arguments_to_curl() {
 #
 ##############################################################################
 body_parameters_to_json() {
-    local body_json="-d '{"
-    local count=0
-    for key in "${!body_parameters[@]}"; do
-        if [[ $((count++)) -gt 0 ]]; then
-            body_json+=", "
-        fi
-        body_json+="\"${key}\": ${body_parameters[${key}]}"
-    done
-    body_json+="}'"
-
-    if [[ "${#body_parameters[@]}" -eq 0 ]]; then
-        echo ""
+    if [[ $RAW_BODY == "1" ]]; then
+        echo "-d '${body_parameters["RAW_BODY"]}'"
     else
-        echo "${body_json}"
+        local body_json="-d '{"
+        local count=0
+        for key in "${!body_parameters[@]}"; do
+            if [[ $((count++)) -gt 0 ]]; then
+                body_json+=", "
+            fi
+            body_json+="\"${key}\": ${body_parameters[${key}]}"
+        done
+        body_json+="}'"
+
+        if [[ "${#body_parameters[@]}" -eq 0 ]]; then
+            echo ""
+        else
+            echo "${body_json}"
+        fi
     fi
 }
 
@@ -534,7 +539,7 @@ print_about() {
     echo -e "${BOLD}${WHITE}iplocation.net API command line client (API version 0.9.0-pre.0)${OFF}"
     echo ""
     echo -e "License: "
-    echo -e "Contact: blah@cliffano.com"
+    echo -e "Contact: blah+oapicf@cliffano.com"
     echo ""
 read -r -d '' appdescription <<EOF
 
@@ -567,11 +572,11 @@ print_rootGet_help() {
     echo -e "Retrieve geolocation of an IP address." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}ip${OFF} ${BLUE}[AnyType]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - An IPv4 or IPv6 address that you would like to lookup.${YELLOW} Specify as: ip=value${OFF}" \
+    echo -e "  * ${GREEN}ip${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - An IPv4 or IPv6 address that you would like to lookup.${YELLOW} Specify as: ip=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}format${OFF} ${BLUE}[AnyType]${OFF} ${CYAN}(default: null)${OFF} - Output format, the following formats are supported: plain xml json jsonp php csv serialized${YELLOW} Specify as: format=value${OFF}" \
+    echo -e "  * ${GREEN}format${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Output format, the following formats are supported: plain xml json jsonp php csv serialized${YELLOW} Specify as: format=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}delimiter${OFF} ${BLUE}[AnyType]${OFF} ${CYAN}(default: null)${OFF} - Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".${YELLOW} Specify as: delimiter=value${OFF}" \
+    echo -e "  * ${GREEN}delimiter${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".${YELLOW} Specify as: delimiter=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -726,6 +731,16 @@ case $key in
     if [[ "$operation" ]]; then
         IFS='==' read -r body_key sep body_value <<< "$key"
         body_parameters[${body_key}]="\"${body_value}\""
+    fi
+    ;;
+    --body=*)
+    # Parse value of body as argument and convert it into only
+    # the raw body content
+    if [[ "$operation" ]]; then
+        IFS='--body=' read -r body_value <<< "$key"
+        body_value=${body_value##--body=}
+        body_parameters["RAW_BODY"]="${body_value}"
+        RAW_BODY=1
     fi
     ;;
     *:=*)

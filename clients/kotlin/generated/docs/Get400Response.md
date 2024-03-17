@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**responseCode** | [**kotlin.Any**](.md) | Response status code to indicate success or failed completion of the API call. |  [optional]
-**responseMessage** | [**kotlin.Any**](.md) | Response message to indicate success or failed completion of the API call. |  [optional]
+**responseCode** | **kotlin.String** | Response status code to indicate success or failed completion of the API call. |  [optional]
+**responseMessage** | **kotlin.String** | Response message to indicate success or failed completion of the API call. |  [optional]
 
 
 

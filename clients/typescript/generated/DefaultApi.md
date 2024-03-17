@@ -23,12 +23,12 @@ const configuration = .createConfiguration();
 const apiInstance = new .DefaultApi(configuration);
 
 let body:.DefaultApiRootGetRequest = {
-  // any | An IPv4 or IPv6 address that you would like to lookup.
-  ip: null,
-  // any | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
-  format: null,
-  // any | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
-  delimiter: null,
+  // string | An IPv4 or IPv6 address that you would like to lookup.
+  ip: "ip_example",
+  // string | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+  format: "format_example",
+  // string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
+  delimiter: "delimiter_example",
 };
 
 apiInstance.rootGet(body).then((data:any) => {
@@ -41,9 +41,9 @@ apiInstance.rootGet(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | **any** | An IPv4 or IPv6 address that you would like to lookup. | defaults to undefined
- **format** | **any** | Output format, the following formats are supported: plain xml json jsonp php csv serialized | (optional) defaults to undefined
- **delimiter** | **any** | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | (optional) defaults to undefined
+ **ip** | [**string**] | An IPv4 or IPv6 address that you would like to lookup. | defaults to undefined
+ **format** | [**string**] | Output format, the following formats are supported: plain xml json jsonp php csv serialized | (optional) defaults to undefined
+ **delimiter** | [**string**] | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | (optional) defaults to undefined
 
 
 ### Return type

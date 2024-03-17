@@ -12,5 +12,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface DefaultApi  {
-    Future<ApiResponse<Get200Response>> rootGet(Object ip, Object format, Object delimiter);
+    Future<ApiResponse<Get200Response>> rootGet(String ip, String format, String delimiter);
 }

@@ -1,15 +1,15 @@
 = iplocation.net API
-blah@cliffano.com
+blah+oapicf@cliffano.com
 0.9.0-pre.0
 :toc: left
 :numbered:
-:toclevels: 3
+:toclevels: 4
 :source-highlighter: highlightjs
 :keywords: openapi, rest, iplocation.net API
 :specDir: 
 :snippetDir: 
 :generator-template: v1 2019-12-20
-:info-url: https://github.com/cliffano/openapi-iplocation
+:info-url: https://github.com/oapicf/openapi-iplocation
 :app-name: iplocation.net API
 
 [abstract]
@@ -88,7 +88,7 @@ Retrieve geolocation of an IP address.
 
 ===== Responses
 
-.http response codes
+.HTTP Response Codes
 [cols="2,3,1"]
 |===
 | Code | Message | Datatype
@@ -141,60 +141,70 @@ endif::internal-generation[]
 
 
 
+
 [.fields-Get200Response]
-[cols="2,1,2,4,1"]
+[cols="2,1,1,2,4,1"]
 |===
-| Field Name| Required| Type| Description| Format
+| Field Name| Required| Nullable | Type| Description | Format
 
 | ip
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | IPv4 or IPv6 address used to lookup geolocation.
-|  
+|     
 
 | ip_number
 | 
-| oas_any_type_not_mapped 
+| 
+|   int64  
 | IP number in long integer.
-|  
+|     
 
 | ip_version
 | 
-| oas_any_type_not_mapped 
+| 
+|   Integer  
 | IP version either 4 or 6.
-|  
+|     
 
 | country_name
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Full name of the IP country.
-|  
+|     
 
 | country_code2
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | ISO ALPHA-2 Country Code.
-|  
+|     
 
 | isp
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Internet Service Provider (ISP) who owns the IP address.
-|  
+|     
 
 | response_code
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Response status code to indicate success or failed completion of the API call.
-|  
+|     
 
 | response_message
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Response message to indicate success or failed completion of the API call.
-|  
+|     
 
 |===
+
 
 
 [#Get400Response]
@@ -202,23 +212,27 @@ endif::internal-generation[]
 
 
 
+
 [.fields-Get400Response]
-[cols="2,1,2,4,1"]
+[cols="2,1,1,2,4,1"]
 |===
-| Field Name| Required| Type| Description| Format
+| Field Name| Required| Nullable | Type| Description | Format
 
 | response_code
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Response status code to indicate success or failed completion of the API call.
-|  
+|     
 
 | response_message
 | 
-| oas_any_type_not_mapped 
+| 
+|   String  
 | Response message to indicate success or failed completion of the API call.
-|  
+|     
 
 |===
+
 
 

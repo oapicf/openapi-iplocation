@@ -1,6 +1,6 @@
 package org.openapitools.model;
 
-import org.openapitools.jackson.nullable.JsonNullable;
+import org.openapitools.model.Int64;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
@@ -13,63 +13,63 @@ public class Get200Response  {
  /**
    * IPv4 or IPv6 address used to lookup geolocation.
   **/
-  private Object ip = null;
+  private String ip;
 
   @ApiModelProperty(value = "IP number in long integer.")
  /**
    * IP number in long integer.
   **/
-  private Object ipNumber = null;
+  private Int64 ipNumber = null;
 
   @ApiModelProperty(value = "IP version either 4 or 6.")
  /**
    * IP version either 4 or 6.
   **/
-  private Object ipVersion = null;
+  private Integer ipVersion;
 
   @ApiModelProperty(value = "Full name of the IP country.")
  /**
    * Full name of the IP country.
   **/
-  private Object countryName = null;
+  private String countryName;
 
   @ApiModelProperty(value = "ISO ALPHA-2 Country Code.")
  /**
    * ISO ALPHA-2 Country Code.
   **/
-  private Object countryCode2 = null;
+  private String countryCode2;
 
   @ApiModelProperty(value = "Internet Service Provider (ISP) who owns the IP address.")
  /**
    * Internet Service Provider (ISP) who owns the IP address.
   **/
-  private Object isp = null;
+  private String isp;
 
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
  /**
    * Response status code to indicate success or failed completion of the API call.
   **/
-  private Object responseCode = null;
+  private String responseCode;
 
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
  /**
    * Response message to indicate success or failed completion of the API call.
   **/
-  private Object responseMessage = null;
+  private String responseMessage;
  /**
    * IPv4 or IPv6 address used to lookup geolocation.
    * @return ip
   **/
   @JsonProperty("ip")
-  public Object getIp() {
+  public String getIp() {
     return ip;
   }
 
-  public void setIp(Object ip) {
+  public void setIp(String ip) {
     this.ip = ip;
   }
 
-  public Get200Response ip(Object ip) {
+  public Get200Response ip(String ip) {
     this.ip = ip;
     return this;
   }
@@ -79,15 +79,15 @@ public class Get200Response  {
    * @return ipNumber
   **/
   @JsonProperty("ip_number")
-  public Object getIpNumber() {
+  public Int64 getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Object ipNumber) {
+  public void setIpNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
   }
 
-  public Get200Response ipNumber(Object ipNumber) {
+  public Get200Response ipNumber(Int64 ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
@@ -97,15 +97,15 @@ public class Get200Response  {
    * @return ipVersion
   **/
   @JsonProperty("ip_version")
-  public Object getIpVersion() {
+  public Integer getIpVersion() {
     return ipVersion;
   }
 
-  public void setIpVersion(Object ipVersion) {
+  public void setIpVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
 
-  public Get200Response ipVersion(Object ipVersion) {
+  public Get200Response ipVersion(Integer ipVersion) {
     this.ipVersion = ipVersion;
     return this;
   }
@@ -115,15 +115,15 @@ public class Get200Response  {
    * @return countryName
   **/
   @JsonProperty("country_name")
-  public Object getCountryName() {
+  public String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(Object countryName) {
+  public void setCountryName(String countryName) {
     this.countryName = countryName;
   }
 
-  public Get200Response countryName(Object countryName) {
+  public Get200Response countryName(String countryName) {
     this.countryName = countryName;
     return this;
   }
@@ -133,15 +133,15 @@ public class Get200Response  {
    * @return countryCode2
   **/
   @JsonProperty("country_code2")
-  public Object getCountryCode2() {
+  public String getCountryCode2() {
     return countryCode2;
   }
 
-  public void setCountryCode2(Object countryCode2) {
+  public void setCountryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
   }
 
-  public Get200Response countryCode2(Object countryCode2) {
+  public Get200Response countryCode2(String countryCode2) {
     this.countryCode2 = countryCode2;
     return this;
   }
@@ -151,15 +151,15 @@ public class Get200Response  {
    * @return isp
   **/
   @JsonProperty("isp")
-  public Object getIsp() {
+  public String getIsp() {
     return isp;
   }
 
-  public void setIsp(Object isp) {
+  public void setIsp(String isp) {
     this.isp = isp;
   }
 
-  public Get200Response isp(Object isp) {
+  public Get200Response isp(String isp) {
     this.isp = isp;
     return this;
   }
@@ -169,15 +169,15 @@ public class Get200Response  {
    * @return responseCode
   **/
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get200Response responseCode(Object responseCode) {
+  public Get200Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -187,15 +187,15 @@ public class Get200Response  {
    * @return responseMessage
   **/
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 
-  public Get200Response responseMessage(Object responseMessage) {
+  public Get200Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -209,14 +209,14 @@ public class Get200Response  {
       return false;
     }
     Get200Response get200Response = (Get200Response) o;
-    return Objects.equals(ip, get200Response.ip) &&
-        Objects.equals(ipNumber, get200Response.ipNumber) &&
-        Objects.equals(ipVersion, get200Response.ipVersion) &&
-        Objects.equals(countryName, get200Response.countryName) &&
-        Objects.equals(countryCode2, get200Response.countryCode2) &&
-        Objects.equals(isp, get200Response.isp) &&
-        Objects.equals(responseCode, get200Response.responseCode) &&
-        Objects.equals(responseMessage, get200Response.responseMessage);
+    return Objects.equals(this.ip, get200Response.ip) &&
+        Objects.equals(this.ipNumber, get200Response.ipNumber) &&
+        Objects.equals(this.ipVersion, get200Response.ipVersion) &&
+        Objects.equals(this.countryName, get200Response.countryName) &&
+        Objects.equals(this.countryCode2, get200Response.countryCode2) &&
+        Objects.equals(this.isp, get200Response.isp) &&
+        Objects.equals(this.responseCode, get200Response.responseCode) &&
+        Objects.equals(this.responseMessage, get200Response.responseMessage);
   }
 
   @Override

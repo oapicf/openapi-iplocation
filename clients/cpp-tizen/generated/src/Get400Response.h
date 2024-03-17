@@ -9,7 +9,6 @@
 
 
 #include <string>
-#include "AnyType.h"
 #include "Object.h"
 
 /** \defgroup Models Data Structures for API
@@ -48,22 +47,22 @@ public:
 
 	/*! \brief Get Response status code to indicate success or failed completion of the API call.
 	 */
-	AnyType getResponseCode();
+	std::string getResponseCode();
 
 	/*! \brief Set Response status code to indicate success or failed completion of the API call.
 	 */
-	void setResponseCode(AnyType  response_code);
+	void setResponseCode(std::string  response_code);
 	/*! \brief Get Response message to indicate success or failed completion of the API call.
 	 */
-	AnyType getResponseMessage();
+	std::string getResponseMessage();
 
 	/*! \brief Set Response message to indicate success or failed completion of the API call.
 	 */
-	void setResponseMessage(AnyType  response_message);
+	void setResponseMessage(std::string  response_message);
 
 private:
-	AnyType response_code;
-	AnyType response_message;
+	std::string response_code;
+	std::string response_message;
 	void __init();
 	void __cleanup();
 

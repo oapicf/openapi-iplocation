@@ -5,8 +5,8 @@
 -export_type([openapi___get_400_response/0]).
 
 -type openapi___get_400_response() ::
-    #{ 'response_code' => openapi_any_type:openapi_any_type(),
-       'response_message' => openapi_any_type:openapi_any_type()
+    #{ 'response_code' => binary(),
+       'response_message' => binary()
      }.
 
 encode(#{ 'response_code' := ResponseCode,

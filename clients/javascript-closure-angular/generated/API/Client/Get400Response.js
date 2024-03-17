@@ -7,14 +7,14 @@ API.Client.Get400Response = function() {}
 
 /**
  * Response status code to indicate success or failed completion of the API call.
- * @type {!API.Client.AnyType}
+ * @type {!string}
  * @export
  */
 API.Client.Get400Response.prototype.responseCode;
 
 /**
  * Response message to indicate success or failed completion of the API call.
- * @type {!API.Client.AnyType}
+ * @type {!string}
  * @export
  */
 API.Client.Get400Response.prototype.responseMessage;

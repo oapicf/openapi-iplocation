@@ -1,7 +1,7 @@
 // TODO: better import syntax?
 import {BaseAPIRequestFactory, RequiredError, COLLECTION_FORMATS} from './baseapi';
 import {Configuration} from '../configuration';
-import {RequestContext, HttpMethod, ResponseContext, HttpFile} from '../http/http';
+import {RequestContext, HttpMethod, ResponseContext, HttpFile, HttpInfo} from '../http/http';
 import {ObjectSerializer} from '../models/ObjectSerializer';
 import {ApiException} from './exception';
 import {canConsumeForm, isCodeInRange} from '../util';
@@ -23,7 +23,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
      * @param format Output format, the following formats are supported: plain xml json jsonp php csv serialized
      * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
-    public async rootGet(ip: any, format?: any, delimiter?: any, _options?: Configuration): Promise<RequestContext> {
+    public async rootGet(ip: string, format?: string, delimiter?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'ip' is not null or undefined
@@ -43,17 +43,17 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
         // Query Params
         if (ip !== undefined) {
-            requestContext.setQueryParam("ip", ObjectSerializer.serialize(ip, "any", ""));
+            requestContext.setQueryParam("ip", ObjectSerializer.serialize(ip, "string", ""));
         }
 
         // Query Params
         if (format !== undefined) {
-            requestContext.setQueryParam("format", ObjectSerializer.serialize(format, "any", ""));
+            requestContext.setQueryParam("format", ObjectSerializer.serialize(format, "string", ""));
         }
 
         // Query Params
         if (delimiter !== undefined) {
-            requestContext.setQueryParam("delimiter", ObjectSerializer.serialize(delimiter, "any", ""));
+            requestContext.setQueryParam("delimiter", ObjectSerializer.serialize(delimiter, "string", ""));
         }
 
 
@@ -77,14 +77,14 @@ export class DefaultApiResponseProcessor {
      * @params response Response returned by the server for a request to rootGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async rootGet(response: ResponseContext): Promise<Get200Response > {
+     public async rootGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Get200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: Get200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "Get200Response", ""
             ) as Get200Response;
-            return body;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
             const body: Get400Response = ObjectSerializer.deserialize(
@@ -107,7 +107,7 @@ export class DefaultApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "Get200Response", ""
             ) as Get200Response;
-            return body;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
         throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);

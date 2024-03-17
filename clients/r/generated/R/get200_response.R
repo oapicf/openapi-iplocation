@@ -7,14 +7,14 @@
 #' @title Get200Response
 #' @description Get200Response Class
 #' @format An \code{R6Class} generator object
-#' @field ip IPv4 or IPv6 address used to lookup geolocation. \link{AnyType} [optional]
-#' @field ip_number IP number in long integer. \link{AnyType} [optional]
-#' @field ip_version IP version either 4 or 6. \link{AnyType} [optional]
-#' @field country_name Full name of the IP country. \link{AnyType} [optional]
-#' @field country_code2 ISO ALPHA-2 Country Code. \link{AnyType} [optional]
-#' @field isp Internet Service Provider (ISP) who owns the IP address. \link{AnyType} [optional]
-#' @field response_code Response status code to indicate success or failed completion of the API call. \link{AnyType} [optional]
-#' @field response_message Response message to indicate success or failed completion of the API call. \link{AnyType} [optional]
+#' @field ip IPv4 or IPv6 address used to lookup geolocation. character [optional]
+#' @field ip_number IP number in long integer. \link{Int64} [optional]
+#' @field ip_version IP version either 4 or 6. integer [optional]
+#' @field country_name Full name of the IP country. character [optional]
+#' @field country_code2 ISO ALPHA-2 Country Code. character [optional]
+#' @field isp Internet Service Provider (ISP) who owns the IP address. character [optional]
+#' @field response_code Response status code to indicate success or failed completion of the API call. character [optional]
+#' @field response_message Response message to indicate success or failed completion of the API call. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -46,7 +46,9 @@ Get200Response <- R6::R6Class(
     #' @export
     initialize = function(`ip` = NULL, `ip_number` = NULL, `ip_version` = NULL, `country_name` = NULL, `country_code2` = NULL, `isp` = NULL, `response_code` = NULL, `response_message` = NULL, ...) {
       if (!is.null(`ip`)) {
-        stopifnot(R6::is.R6(`ip`))
+        if (!(is.character(`ip`) && length(`ip`) == 1)) {
+          stop(paste("Error! Invalid data for `ip`. Must be a string:", `ip`))
+        }
         self$`ip` <- `ip`
       }
       if (!is.null(`ip_number`)) {
@@ -54,27 +56,39 @@ Get200Response <- R6::R6Class(
         self$`ip_number` <- `ip_number`
       }
       if (!is.null(`ip_version`)) {
-        stopifnot(R6::is.R6(`ip_version`))
+        if (!(is.numeric(`ip_version`) && length(`ip_version`) == 1)) {
+          stop(paste("Error! Invalid data for `ip_version`. Must be an integer:", `ip_version`))
+        }
         self$`ip_version` <- `ip_version`
       }
       if (!is.null(`country_name`)) {
-        stopifnot(R6::is.R6(`country_name`))
+        if (!(is.character(`country_name`) && length(`country_name`) == 1)) {
+          stop(paste("Error! Invalid data for `country_name`. Must be a string:", `country_name`))
+        }
         self$`country_name` <- `country_name`
       }
       if (!is.null(`country_code2`)) {
-        stopifnot(R6::is.R6(`country_code2`))
+        if (!(is.character(`country_code2`) && length(`country_code2`) == 1)) {
+          stop(paste("Error! Invalid data for `country_code2`. Must be a string:", `country_code2`))
+        }
         self$`country_code2` <- `country_code2`
       }
       if (!is.null(`isp`)) {
-        stopifnot(R6::is.R6(`isp`))
+        if (!(is.character(`isp`) && length(`isp`) == 1)) {
+          stop(paste("Error! Invalid data for `isp`. Must be a string:", `isp`))
+        }
         self$`isp` <- `isp`
       }
       if (!is.null(`response_code`)) {
-        stopifnot(R6::is.R6(`response_code`))
+        if (!(is.character(`response_code`) && length(`response_code`) == 1)) {
+          stop(paste("Error! Invalid data for `response_code`. Must be a string:", `response_code`))
+        }
         self$`response_code` <- `response_code`
       }
       if (!is.null(`response_message`)) {
-        stopifnot(R6::is.R6(`response_message`))
+        if (!(is.character(`response_message`) && length(`response_message`) == 1)) {
+          stop(paste("Error! Invalid data for `response_message`. Must be a string:", `response_message`))
+        }
         self$`response_message` <- `response_message`
       }
     },
@@ -89,7 +103,7 @@ Get200Response <- R6::R6Class(
       Get200ResponseObject <- list()
       if (!is.null(self$`ip`)) {
         Get200ResponseObject[["ip"]] <-
-          self$`ip`$toJSON()
+          self$`ip`
       }
       if (!is.null(self$`ip_number`)) {
         Get200ResponseObject[["ip_number"]] <-
@@ -97,27 +111,27 @@ Get200Response <- R6::R6Class(
       }
       if (!is.null(self$`ip_version`)) {
         Get200ResponseObject[["ip_version"]] <-
-          self$`ip_version`$toJSON()
+          self$`ip_version`
       }
       if (!is.null(self$`country_name`)) {
         Get200ResponseObject[["country_name"]] <-
-          self$`country_name`$toJSON()
+          self$`country_name`
       }
       if (!is.null(self$`country_code2`)) {
         Get200ResponseObject[["country_code2"]] <-
-          self$`country_code2`$toJSON()
+          self$`country_code2`
       }
       if (!is.null(self$`isp`)) {
         Get200ResponseObject[["isp"]] <-
-          self$`isp`$toJSON()
+          self$`isp`
       }
       if (!is.null(self$`response_code`)) {
         Get200ResponseObject[["response_code"]] <-
-          self$`response_code`$toJSON()
+          self$`response_code`
       }
       if (!is.null(self$`response_message`)) {
         Get200ResponseObject[["response_message"]] <-
-          self$`response_message`$toJSON()
+          self$`response_message`
       }
       Get200ResponseObject
     },
@@ -132,44 +146,30 @@ Get200Response <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`ip`)) {
-        ip_object <- AnyType$new()
-        ip_object$fromJSON(jsonlite::toJSON(this_object$ip, auto_unbox = TRUE, digits = NA))
-        self$`ip` <- ip_object
+        self$`ip` <- this_object$`ip`
       }
       if (!is.null(this_object$`ip_number`)) {
-        ip_number_object <- AnyType$new()
-        ip_number_object$fromJSON(jsonlite::toJSON(this_object$ip_number, auto_unbox = TRUE, digits = NA))
-        self$`ip_number` <- ip_number_object
+        `ip_number_object` <- Int64$new()
+        `ip_number_object`$fromJSON(jsonlite::toJSON(this_object$`ip_number`, auto_unbox = TRUE, digits = NA))
+        self$`ip_number` <- `ip_number_object`
       }
       if (!is.null(this_object$`ip_version`)) {
-        ip_version_object <- AnyType$new()
-        ip_version_object$fromJSON(jsonlite::toJSON(this_object$ip_version, auto_unbox = TRUE, digits = NA))
-        self$`ip_version` <- ip_version_object
+        self$`ip_version` <- this_object$`ip_version`
       }
       if (!is.null(this_object$`country_name`)) {
-        country_name_object <- AnyType$new()
-        country_name_object$fromJSON(jsonlite::toJSON(this_object$country_name, auto_unbox = TRUE, digits = NA))
-        self$`country_name` <- country_name_object
+        self$`country_name` <- this_object$`country_name`
       }
       if (!is.null(this_object$`country_code2`)) {
-        country_code2_object <- AnyType$new()
-        country_code2_object$fromJSON(jsonlite::toJSON(this_object$country_code2, auto_unbox = TRUE, digits = NA))
-        self$`country_code2` <- country_code2_object
+        self$`country_code2` <- this_object$`country_code2`
       }
       if (!is.null(this_object$`isp`)) {
-        isp_object <- AnyType$new()
-        isp_object$fromJSON(jsonlite::toJSON(this_object$isp, auto_unbox = TRUE, digits = NA))
-        self$`isp` <- isp_object
+        self$`isp` <- this_object$`isp`
       }
       if (!is.null(this_object$`response_code`)) {
-        response_code_object <- AnyType$new()
-        response_code_object$fromJSON(jsonlite::toJSON(this_object$response_code, auto_unbox = TRUE, digits = NA))
-        self$`response_code` <- response_code_object
+        self$`response_code` <- this_object$`response_code`
       }
       if (!is.null(this_object$`response_message`)) {
-        response_message_object <- AnyType$new()
-        response_message_object$fromJSON(jsonlite::toJSON(this_object$response_message, auto_unbox = TRUE, digits = NA))
-        self$`response_message` <- response_message_object
+        self$`response_message` <- this_object$`response_message`
       }
       self
     },
@@ -185,9 +185,9 @@ Get200Response <- R6::R6Class(
         if (!is.null(self$`ip`)) {
           sprintf(
           '"ip":
-          %s
-          ',
-          jsonlite::toJSON(self$`ip`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`ip`
           )
         },
         if (!is.null(self$`ip_number`)) {
@@ -201,49 +201,49 @@ Get200Response <- R6::R6Class(
         if (!is.null(self$`ip_version`)) {
           sprintf(
           '"ip_version":
-          %s
-          ',
-          jsonlite::toJSON(self$`ip_version`$toJSON(), auto_unbox = TRUE, digits = NA)
+            %d
+                    ',
+          self$`ip_version`
           )
         },
         if (!is.null(self$`country_name`)) {
           sprintf(
           '"country_name":
-          %s
-          ',
-          jsonlite::toJSON(self$`country_name`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`country_name`
           )
         },
         if (!is.null(self$`country_code2`)) {
           sprintf(
           '"country_code2":
-          %s
-          ',
-          jsonlite::toJSON(self$`country_code2`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`country_code2`
           )
         },
         if (!is.null(self$`isp`)) {
           sprintf(
           '"isp":
-          %s
-          ',
-          jsonlite::toJSON(self$`isp`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`isp`
           )
         },
         if (!is.null(self$`response_code`)) {
           sprintf(
           '"response_code":
-          %s
-          ',
-          jsonlite::toJSON(self$`response_code`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`response_code`
           )
         },
         if (!is.null(self$`response_message`)) {
           sprintf(
           '"response_message":
-          %s
-          ',
-          jsonlite::toJSON(self$`response_message`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`response_message`
           )
         }
       )
@@ -260,14 +260,14 @@ Get200Response <- R6::R6Class(
     #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`ip` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$ip, auto_unbox = TRUE, digits = NA))
-      self$`ip_number` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$ip_number, auto_unbox = TRUE, digits = NA))
-      self$`ip_version` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$ip_version, auto_unbox = TRUE, digits = NA))
-      self$`country_name` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$country_name, auto_unbox = TRUE, digits = NA))
-      self$`country_code2` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$country_code2, auto_unbox = TRUE, digits = NA))
-      self$`isp` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$isp, auto_unbox = TRUE, digits = NA))
-      self$`response_code` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$response_code, auto_unbox = TRUE, digits = NA))
-      self$`response_message` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$response_message, auto_unbox = TRUE, digits = NA))
+      self$`ip` <- this_object$`ip`
+      self$`ip_number` <- Int64$new()$fromJSON(jsonlite::toJSON(this_object$`ip_number`, auto_unbox = TRUE, digits = NA))
+      self$`ip_version` <- this_object$`ip_version`
+      self$`country_name` <- this_object$`country_name`
+      self$`country_code2` <- this_object$`country_code2`
+      self$`isp` <- this_object$`isp`
+      self$`response_code` <- this_object$`response_code`
+      self$`response_message` <- this_object$`response_message`
       self
     },
     #' Validate JSON input with respect to Get200Response

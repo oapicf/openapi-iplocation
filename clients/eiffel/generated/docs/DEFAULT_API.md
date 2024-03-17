@@ -8,7 +8,7 @@ Feature | HTTP request | Description
 
 
 # **root_get**
-> root_get (ip: ANY ; format:  detachable ANY ; delimiter:  detachable ANY ): detachable MODEL__GET_200_RESPONSE
+> root_get (ip: STRING_32 ; format:  detachable STRING_32 ; delimiter:  detachable STRING_32 ): detachable MODEL__GET_200_RESPONSE
 
 
 Get geolocation of an IP address
@@ -20,9 +20,9 @@ Retrieve geolocation of an IP address.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**ANY**](.md)| An IPv4 or IPv6 address that you would like to lookup. | [default to null]
- **format** | [**ANY**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] [default to null]
- **delimiter** | [**ANY**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] [default to null]
+ **ip** | **STRING_32**| An IPv4 or IPv6 address that you would like to lookup. | [default to null]
+ **format** | **STRING_32**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] [default to null]
+ **delimiter** | **STRING_32**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] [default to null]
 
 ### Return type
 

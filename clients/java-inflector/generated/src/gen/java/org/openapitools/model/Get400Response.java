@@ -6,24 +6,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2023-04-02T00:24:29.018225Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-16T21:35:42.080268873Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Get400Response   {
   @JsonProperty("response_code")
-  private Object responseCode = null;
+  private String responseCode;
 
   @JsonProperty("response_message")
-  private Object responseMessage = null;
+  private String responseMessage;
 
   /**
    * Response status code to indicate success or failed completion of the API call.
    **/
-  public Get400Response responseCode(Object responseCode) {
+  public Get400Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -31,17 +30,17 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
   @JsonProperty("response_code")
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
   /**
    * Response message to indicate success or failed completion of the API call.
    **/
-  public Get400Response responseMessage(Object responseMessage) {
+  public Get400Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -49,10 +48,10 @@ public class Get400Response   {
   
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
   @JsonProperty("response_message")
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

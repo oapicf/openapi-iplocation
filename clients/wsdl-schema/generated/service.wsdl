@@ -16,42 +16,42 @@
       </xs:element>
       <xs:complexType name="Get200Response">
         <xs:sequence>
-          <xs:element minOccurs="0" name="ip" type="xs:AnyType">
+          <xs:element minOccurs="0" name="ip" type="xs:string">
             <xs:annotation>
               <xs:documentation>IPv4 or IPv6 address used to lookup geolocation.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="ip_number" type="xs:AnyType">
+          <xs:element minOccurs="0" name="ip_number" type="xs:int64">
             <xs:annotation>
               <xs:documentation>IP number in long integer.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="ip_version" type="xs:AnyType">
+          <xs:element minOccurs="0" name="ip_version" type="xs:integer">
             <xs:annotation>
               <xs:documentation>IP version either 4 or 6.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="country_name" type="xs:AnyType">
+          <xs:element minOccurs="0" name="country_name" type="xs:string">
             <xs:annotation>
               <xs:documentation>Full name of the IP country.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="country_code2" type="xs:AnyType">
+          <xs:element minOccurs="0" name="country_code2" type="xs:string">
             <xs:annotation>
               <xs:documentation>ISO ALPHA-2 Country Code.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="isp" type="xs:AnyType">
+          <xs:element minOccurs="0" name="isp" type="xs:string">
             <xs:annotation>
               <xs:documentation>Internet Service Provider (ISP) who owns the IP address.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="response_code" type="xs:AnyType">
+          <xs:element minOccurs="0" name="response_code" type="xs:string">
             <xs:annotation>
               <xs:documentation>Response status code to indicate success or failed completion of the API call.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="response_message" type="xs:AnyType">
+          <xs:element minOccurs="0" name="response_message" type="xs:string">
             <xs:annotation>
               <xs:documentation>Response message to indicate success or failed completion of the API call.</xs:documentation>
             </xs:annotation>
@@ -60,12 +60,12 @@
       </xs:complexType>
       <xs:complexType name="Get400Response">
         <xs:sequence>
-          <xs:element minOccurs="0" name="response_code" type="xs:AnyType">
+          <xs:element minOccurs="0" name="response_code" type="xs:string">
             <xs:annotation>
               <xs:documentation>Response status code to indicate success or failed completion of the API call.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="response_message" type="xs:AnyType">
+          <xs:element minOccurs="0" name="response_message" type="xs:string">
             <xs:annotation>
               <xs:documentation>Response message to indicate success or failed completion of the API call.</xs:documentation>
             </xs:annotation>
@@ -74,17 +74,17 @@
       </xs:complexType>
       <xs:complexType name="Get_RequestMessage">
         <xs:sequence>
-          <xs:element minOccurs="1" name="ip" type="xs:oas_any_type_not_mapped">
+          <xs:element minOccurs="1" name="ip" type="xs:string">
             <xs:annotation>
               <xs:documentation>An IPv4 or IPv6 address that you would like to lookup.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="format" type="xs:oas_any_type_not_mapped">
+          <xs:element minOccurs="0" name="format" type="xs:string">
             <xs:annotation>
               <xs:documentation>Output format, the following formats are supported: plain xml json jsonp php csv serialized</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="delimiter" type="xs:oas_any_type_not_mapped">
+          <xs:element minOccurs="0" name="delimiter" type="xs:string">
             <xs:annotation>
               <xs:documentation>Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.</xs:documentation>
             </xs:annotation>

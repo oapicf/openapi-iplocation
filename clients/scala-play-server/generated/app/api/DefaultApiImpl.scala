@@ -6,12 +6,12 @@ import model.Get400Response
 /**
   * Provides a default implementation for [[DefaultApi]].
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2023-04-02T00:27:18.710311Z[Etc/UTC]")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-03-16T21:38:36.552147004Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 class DefaultApiImpl extends DefaultApi {
   /**
     * @inheritdoc
     */
-  override def rootGet(ip: OasAnyTypeNotMapped, format: Option[OasAnyTypeNotMapped], delimiter: Option[OasAnyTypeNotMapped]): Get200Response = {
+  override def rootGet(ip: String, format: Option[String], delimiter: Option[String]): Get200Response = {
     // TODO: Implement better logic
 
     Get200Response(None, None, None, None, None, None, None, None)

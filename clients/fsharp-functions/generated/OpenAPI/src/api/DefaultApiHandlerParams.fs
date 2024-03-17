@@ -11,13 +11,13 @@ module DefaultApiHandlerParams =
     //#region Query parameters
     [<CLIMutable>]
     type RootGetQueryParams = {
-      ip : AnyType ;
+      ip : string ;
 
 
-      format : AnyType option;
+      format : string option;
 
 
-      delimiter : AnyType option;
+      delimiter : string option;
 
     }
     //#endregion

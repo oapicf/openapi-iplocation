@@ -35,7 +35,7 @@ Note that the class needs to be annotated with one of Micronaut's [scope annotat
 
 More information can be found inside [Inversion of Control guide section](https://docs.micronaut.io/latest/guide/#ioc).
 
-<a name="rootGet"></a>
+<a id="rootGet"></a>
 # **rootGet**
 ```java
 Mono<Get200Response> DefaultApi.rootGet(ip_formatdelimiter)
@@ -48,9 +48,9 @@ Retrieve geolocation of an IP address.
 ### Parameters
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ip** | [**Object**](.md)| An IPv4 or IPv6 address that you would like to lookup. | |
-| **_format** | [**Object**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional parameter] |
-| **delimiter** | [**Object**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional parameter] |
+| **ip** | `String`| An IPv4 or IPv6 address that you would like to lookup. | |
+| **_format** | `String`| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional parameter] |
+| **delimiter** | `String`| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional parameter] |
 
 
 ### Return type

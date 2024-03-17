@@ -1,27 +1,27 @@
 package apimodels;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.*;
 import java.util.Set;
 import javax.validation.*;
 import java.util.Objects;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 /**
  * Get400Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2023-04-02T00:24:40.469244Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-03-16T21:35:56.187171885Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Get400Response   {
   @JsonProperty("response_code")
   
-  private Object responseCode = null;
+  private String responseCode;
 
   @JsonProperty("response_message")
   
-  private Object responseMessage = null;
+  private String responseMessage;
 
-  public Get400Response responseCode(Object responseCode) {
+  public Get400Response responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -30,15 +30,15 @@ public class Get400Response   {
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
   **/
-  public Object getResponseCode() {
+  public String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(Object responseCode) {
+  public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get400Response responseMessage(Object responseMessage) {
+  public Get400Response responseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -47,11 +47,11 @@ public class Get400Response   {
    * Response message to indicate success or failed completion of the API call.
    * @return responseMessage
   **/
-  public Object getResponseMessage() {
+  public String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(Object responseMessage) {
+  public void setResponseMessage(String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

@@ -15,31 +15,31 @@
 
 typedef struct __get_200_response_t __get_200_response_t;
 
-#include "any_type.h"
+#include "int64.h"
 
 
 
 typedef struct __get_200_response_t {
-    any_type_t *ip; // custom
-    any_type_t *ip_number; // custom
-    any_type_t *ip_version; // custom
-    any_type_t *country_name; // custom
-    any_type_t *country_code2; // custom
-    any_type_t *isp; // custom
-    any_type_t *response_code; // custom
-    any_type_t *response_message; // custom
+    char *ip; // string
+    int64_t *ip_number; // custom
+    int ip_version; //numeric
+    char *country_name; // string
+    char *country_code2; // string
+    char *isp; // string
+    char *response_code; // string
+    char *response_message; // string
 
 } __get_200_response_t;
 
 __get_200_response_t *__get_200_response_create(
-    any_type_t *ip,
-    any_type_t *ip_number,
-    any_type_t *ip_version,
-    any_type_t *country_name,
-    any_type_t *country_code2,
-    any_type_t *isp,
-    any_type_t *response_code,
-    any_type_t *response_message
+    char *ip,
+    int64_t *ip_number,
+    int ip_version,
+    char *country_name,
+    char *country_code2,
+    char *isp,
+    char *response_code,
+    char *response_message
 );
 
 void __get_200_response_free(__get_200_response_t *__get_200_response);

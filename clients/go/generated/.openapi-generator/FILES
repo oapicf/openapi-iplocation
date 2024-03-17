@@ -6,7 +6,7 @@ api/openapi.yaml
 api_default.go
 client.go
 configuration.go
-docs/DefaultApi.md
+docs/DefaultAPI.md
 docs/Get200Response.md
 docs/Get400Response.md
 git_push.sh

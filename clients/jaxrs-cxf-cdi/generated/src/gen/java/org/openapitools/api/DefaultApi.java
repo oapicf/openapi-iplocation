@@ -21,13 +21,14 @@ import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 import java.util.Map;
 import java.util.List;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 @Path("")
 @RequestScoped
 
 @Api(description = "the default API")
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2023-04-02T00:24:55.075139Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-03-16T21:36:14.583579239Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 
 public class DefaultApi  {
 
@@ -45,7 +46,7 @@ public class DefaultApi  {
         @ApiResponse(code = 200, message = "Successfully processed the request.", response = Get200Response.class),
         @ApiResponse(code = 400, message = "Failed to complete the request.", response = Get400Response.class),
         @ApiResponse(code = 404, message = "Command not found.", response = Get400Response.class) })
-    public Response rootGet( @NotNull @ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.",required=true)  @QueryParam("ip") Object ip, @ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized")  @QueryParam("format") Object format, @ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".")  @QueryParam("delimiter") Object delimiter) {
+    public Response rootGet( @NotNull @ApiParam(value = "An IPv4 or IPv6 address that you would like to lookup.",required=true)  @QueryParam("ip") String ip, @ApiParam(value = "Output format, the following formats are supported: plain xml json jsonp php csv serialized")  @QueryParam("format") String format, @ApiParam(value = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".")  @QueryParam("delimiter") String delimiter) {
         return delegate.rootGet(ip, format, delimiter, securityContext);
     }
 }

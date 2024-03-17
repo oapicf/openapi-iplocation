@@ -5,7 +5,7 @@ import io.finch.circe._
 import io.circe.generic.semiauto._
 import io.circe.java8.time._
 import org.openapitools._
-import org.openapitools.models.AnyType
+import org.openapitools.models.Int64
 
 /**
  * 
@@ -18,14 +18,14 @@ import org.openapitools.models.AnyType
  * @param responseUnderscorecode Response status code to indicate success or failed completion of the API call.
  * @param responseUnderscoremessage Response message to indicate success or failed completion of the API call.
  */
-case class Get200Response(ip: Option[AnyType],
-                ipUnderscorenumber: Option[AnyType],
-                ipUnderscoreversion: Option[AnyType],
-                countryUnderscorename: Option[AnyType],
-                countryUnderscorecode2: Option[AnyType],
-                isp: Option[AnyType],
-                responseUnderscorecode: Option[AnyType],
-                responseUnderscoremessage: Option[AnyType]
+case class Get200Response(ip: Option[String],
+                ipUnderscorenumber: Option[Int64],
+                ipUnderscoreversion: Option[Int],
+                countryUnderscorename: Option[String],
+                countryUnderscorecode2: Option[String],
+                isp: Option[String],
+                responseUnderscorecode: Option[String],
+                responseUnderscoremessage: Option[String]
                 )
 
 object Get200Response {

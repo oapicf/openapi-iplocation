@@ -13,21 +13,21 @@ import Get200Response._
 
 case class Get200Response (
   /* IPv4 or IPv6 address used to lookup geolocation. */
-  ip: Option[AnyType],
+  ip: Option[String],
 /* IP number in long integer. */
-  ipNumber: Option[AnyType],
+  ipNumber: Option[Int64],
 /* IP version either 4 or 6. */
-  ipVersion: Option[AnyType],
+  ipVersion: Option[Integer],
 /* Full name of the IP country. */
-  countryName: Option[AnyType],
+  countryName: Option[String],
 /* ISO ALPHA-2 Country Code. */
-  countryCode2: Option[AnyType],
+  countryCode2: Option[String],
 /* Internet Service Provider (ISP) who owns the IP address. */
-  isp: Option[AnyType],
+  isp: Option[String],
 /* Response status code to indicate success or failed completion of the API call. */
-  responseCode: Option[AnyType],
+  responseCode: Option[String],
 /* Response message to indicate success or failed completion of the API call. */
-  responseMessage: Option[AnyType])
+  responseMessage: Option[String])
 
 object Get200Response {
   import DateTimeCodecs._

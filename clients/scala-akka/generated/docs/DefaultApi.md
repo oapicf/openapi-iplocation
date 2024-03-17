@@ -38,11 +38,11 @@ object Example extends App {
 
     val apiInvoker = ApiInvoker()
     val apiInstance = DefaultApi("https://api.iplocation.net")
-    val ip: AnyType =  // AnyType | An IPv4 or IPv6 address that you would like to lookup.
+    val ip: String = ip_example // String | An IPv4 or IPv6 address that you would like to lookup.
 
-    val format: AnyType =  // AnyType | Output format, the following formats are supported: plain xml json jsonp php csv serialized
+    val format: String = format_example // String | Output format, the following formats are supported: plain xml json jsonp php csv serialized
 
-    val delimiter: AnyType =  // AnyType | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
+    val delimiter: String = delimiter_example // String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
     
     val request = apiInstance.rootGet(ip, format, delimiter)
     val response = apiInvoker.execute(request)
@@ -72,9 +72,9 @@ object Example extends App {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | [**AnyType**](.md)| An IPv4 or IPv6 address that you would like to lookup. |
- **format** | [**AnyType**](.md)| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
- **delimiter** | [**AnyType**](.md)| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
+ **ip** | **String**| An IPv4 or IPv6 address that you would like to lookup. |
+ **format** | **String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
+ **delimiter** | **String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
 
 ### Return type
 

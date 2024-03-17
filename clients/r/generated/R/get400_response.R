@@ -7,8 +7,8 @@
 #' @title Get400Response
 #' @description Get400Response Class
 #' @format An \code{R6Class} generator object
-#' @field response_code Response status code to indicate success or failed completion of the API call. \link{AnyType} [optional]
-#' @field response_message Response message to indicate success or failed completion of the API call. \link{AnyType} [optional]
+#' @field response_code Response status code to indicate success or failed completion of the API call. character [optional]
+#' @field response_message Response message to indicate success or failed completion of the API call. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -28,11 +28,15 @@ Get400Response <- R6::R6Class(
     #' @export
     initialize = function(`response_code` = NULL, `response_message` = NULL, ...) {
       if (!is.null(`response_code`)) {
-        stopifnot(R6::is.R6(`response_code`))
+        if (!(is.character(`response_code`) && length(`response_code`) == 1)) {
+          stop(paste("Error! Invalid data for `response_code`. Must be a string:", `response_code`))
+        }
         self$`response_code` <- `response_code`
       }
       if (!is.null(`response_message`)) {
-        stopifnot(R6::is.R6(`response_message`))
+        if (!(is.character(`response_message`) && length(`response_message`) == 1)) {
+          stop(paste("Error! Invalid data for `response_message`. Must be a string:", `response_message`))
+        }
         self$`response_message` <- `response_message`
       }
     },
@@ -47,11 +51,11 @@ Get400Response <- R6::R6Class(
       Get400ResponseObject <- list()
       if (!is.null(self$`response_code`)) {
         Get400ResponseObject[["response_code"]] <-
-          self$`response_code`$toJSON()
+          self$`response_code`
       }
       if (!is.null(self$`response_message`)) {
         Get400ResponseObject[["response_message"]] <-
-          self$`response_message`$toJSON()
+          self$`response_message`
       }
       Get400ResponseObject
     },
@@ -66,14 +70,10 @@ Get400Response <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`response_code`)) {
-        response_code_object <- AnyType$new()
-        response_code_object$fromJSON(jsonlite::toJSON(this_object$response_code, auto_unbox = TRUE, digits = NA))
-        self$`response_code` <- response_code_object
+        self$`response_code` <- this_object$`response_code`
       }
       if (!is.null(this_object$`response_message`)) {
-        response_message_object <- AnyType$new()
-        response_message_object$fromJSON(jsonlite::toJSON(this_object$response_message, auto_unbox = TRUE, digits = NA))
-        self$`response_message` <- response_message_object
+        self$`response_message` <- this_object$`response_message`
       }
       self
     },
@@ -89,17 +89,17 @@ Get400Response <- R6::R6Class(
         if (!is.null(self$`response_code`)) {
           sprintf(
           '"response_code":
-          %s
-          ',
-          jsonlite::toJSON(self$`response_code`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`response_code`
           )
         },
         if (!is.null(self$`response_message`)) {
           sprintf(
           '"response_message":
-          %s
-          ',
-          jsonlite::toJSON(self$`response_message`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`response_message`
           )
         }
       )
@@ -116,8 +116,8 @@ Get400Response <- R6::R6Class(
     #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`response_code` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$response_code, auto_unbox = TRUE, digits = NA))
-      self$`response_message` <- AnyType$new()$fromJSON(jsonlite::toJSON(this_object$response_message, auto_unbox = TRUE, digits = NA))
+      self$`response_code` <- this_object$`response_code`
+      self$`response_message` <- this_object$`response_message`
       self
     },
     #' Validate JSON input with respect to Get400Response

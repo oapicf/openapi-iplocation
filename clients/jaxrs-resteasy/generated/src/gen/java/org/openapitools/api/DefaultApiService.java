@@ -12,11 +12,13 @@ import org.openapitools.api.NotFoundException;
 
 import java.io.InputStream;
 
+import javax.validation.constraints.*;
+import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2023-04-02T00:24:59.590078Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-03-16T21:36:19.840688167Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public interface DefaultApiService {
-      Response rootGet(Object ip,Object format,Object delimiter,SecurityContext securityContext)
+      Response rootGet(String ip,String format,String delimiter,SecurityContext securityContext)
       throws NotFoundException;
 }

@@ -5,14 +5,14 @@
 -export_type([openapi___get_200_response/0]).
 
 -type openapi___get_200_response() ::
-    #{ 'ip' => openapi_any_type:openapi_any_type(),
-       'ip_number' => openapi_any_type:openapi_any_type(),
-       'ip_version' => openapi_any_type:openapi_any_type(),
-       'country_name' => openapi_any_type:openapi_any_type(),
-       'country_code2' => openapi_any_type:openapi_any_type(),
-       'isp' => openapi_any_type:openapi_any_type(),
-       'response_code' => openapi_any_type:openapi_any_type(),
-       'response_message' => openapi_any_type:openapi_any_type()
+    #{ 'ip' => binary(),
+       'ip_number' => openapi_int64:openapi_int64(),
+       'ip_version' => integer(),
+       'country_name' => binary(),
+       'country_code2' => binary(),
+       'isp' => binary(),
+       'response_code' => binary(),
+       'response_message' => binary()
      }.
 
 encode(#{ 'ip' := Ip,

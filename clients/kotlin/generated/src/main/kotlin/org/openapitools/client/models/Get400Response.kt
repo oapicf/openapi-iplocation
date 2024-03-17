@@ -17,6 +17,7 @@ package org.openapitools.client.models
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 
@@ -30,11 +31,11 @@ data class Get400Response (
 
     /* Response status code to indicate success or failed completion of the API call. */
     @Json(name = "response_code")
-    val responseCode: kotlin.Any? = null,
+    val responseCode: kotlin.String? = null,
 
     /* Response message to indicate success or failed completion of the API call. */
     @Json(name = "response_message")
-    val responseMessage: kotlin.Any? = null
+    val responseMessage: kotlin.String? = null
 
 )
 

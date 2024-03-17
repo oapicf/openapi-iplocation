@@ -3,7 +3,6 @@ namespace OpenAPI.Model
 open System
 open System.Collections.Generic
 open Newtonsoft.Json
-open OpenAPI.Model.AnyType
 
 module Get400Response =
 
@@ -12,9 +11,9 @@ module Get400Response =
   [<CLIMutable>]
   type Get400Response = {
     [<JsonProperty(PropertyName = "response_code")>]
-    ResponseCode : AnyType;
+    ResponseCode : string;
     [<JsonProperty(PropertyName = "response_message")>]
-    ResponseMessage : AnyType;
+    ResponseMessage : string;
   }
 
   //#endregion

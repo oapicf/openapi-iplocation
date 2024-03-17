@@ -9,8 +9,8 @@
 -export_type([openapi___get_400_response/0]).
 
 -type openapi___get_400_response() ::
-  [ {'response_code', openapi_any_type:openapi_any_type() }
-  | {'response_message', openapi_any_type:openapi_any_type() }
+  [ {'response_code', binary() }
+  | {'response_message', binary() }
   ].
 
 
@@ -18,8 +18,8 @@ openapi___get_400_response() ->
     openapi___get_400_response([]).
 
 openapi___get_400_response(Fields) ->
-  Default = [ {'response_code', openapi_any_type:openapi_any_type() }
-            , {'response_message', openapi_any_type:openapi_any_type() }
+  Default = [ {'response_code', binary() }
+            , {'response_message', binary() }
             ],
   lists:ukeymerge(1, lists:sort(Fields), lists:sort(Default)).
 

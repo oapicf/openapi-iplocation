@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **response_code** | **Object** | Response status code to indicate success or failed completion of the API call. | [optional] |
-| **response_message** | **Object** | Response message to indicate success or failed completion of the API call. | [optional] |
+| **response_code** | **String** | Response status code to indicate success or failed completion of the API call. | [optional] |
+| **response_message** | **String** | Response message to indicate success or failed completion of the API call. | [optional] |
 
 ## Example
 

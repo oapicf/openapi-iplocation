@@ -65,5 +65,5 @@ root_get(Ip) ->
   openapi_api:root_get(Ip).
 
 root_get_args(_S) ->
-  [openapi_any_type:openapi_any_type()].
+  [binary()].
 

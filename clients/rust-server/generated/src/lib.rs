@@ -1,6 +1,6 @@
 #![allow(missing_docs, trivial_casts, unused_variables, unused_mut, unused_imports, unused_extern_crates, non_camel_case_types)]
 #![allow(unused_imports, unused_attributes)]
-#![allow(clippy::derive_partial_eq_without_eq, clippy::blacklisted_name)]
+#![allow(clippy::derive_partial_eq_without_eq, clippy::disallowed_names)]
 
 use async_trait::async_trait;
 use futures::Stream;
@@ -41,9 +41,9 @@ pub trait Api<C: Send + Sync> {
     /// Get geolocation of an IP address
     async fn root_get(
         &self,
-        ip: serde_json::Value,
-        format: Option<serde_json::Value>,
-        delimiter: Option<serde_json::Value>,
+        ip: String,
+        format: Option<String>,
+        delimiter: Option<String>,
         context: &C) -> Result<RootGetResponse, ApiError>;
 
 }
@@ -60,9 +60,9 @@ pub trait ApiNoContext<C: Send + Sync> {
     /// Get geolocation of an IP address
     async fn root_get(
         &self,
-        ip: serde_json::Value,
-        format: Option<serde_json::Value>,
-        delimiter: Option<serde_json::Value>,
+        ip: String,
+        format: Option<String>,
+        delimiter: Option<String>,
         ) -> Result<RootGetResponse, ApiError>;
 
 }
@@ -93,9 +93,9 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
     /// Get geolocation of an IP address
     async fn root_get(
         &self,
-        ip: serde_json::Value,
-        format: Option<serde_json::Value>,
-        delimiter: Option<serde_json::Value>,
+        ip: String,
+        format: Option<String>,
+        delimiter: Option<String>,
         ) -> Result<RootGetResponse, ApiError>
     {
         let context = self.context().clone();

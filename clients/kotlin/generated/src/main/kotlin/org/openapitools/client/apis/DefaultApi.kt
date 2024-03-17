@@ -61,7 +61,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun rootGet(ip: kotlin.Any, format: kotlin.Any? = null, delimiter: kotlin.Any? = null) : Get200Response {
+    fun rootGet(ip: kotlin.String, format: kotlin.String? = null, delimiter: kotlin.String? = null) : Get200Response {
         val localVarResponse = rootGetWithHttpInfo(ip = ip, format = format, delimiter = delimiter)
 
         return when (localVarResponse.responseType) {
@@ -74,7 +74,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
             }
             ResponseType.ServerError -> {
                 val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
             }
         }
     }
@@ -91,7 +91,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun rootGetWithHttpInfo(ip: kotlin.Any, format: kotlin.Any?, delimiter: kotlin.Any?) : ApiResponse<Get200Response?> {
+    fun rootGetWithHttpInfo(ip: kotlin.String, format: kotlin.String?, delimiter: kotlin.String?) : ApiResponse<Get200Response?> {
         val localVariableConfig = rootGetRequestConfig(ip = ip, format = format, delimiter = delimiter)
 
         return request<Unit, Get200Response>(
@@ -107,7 +107,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. (optional)
      * @return RequestConfig
      */
-    fun rootGetRequestConfig(ip: kotlin.Any, format: kotlin.Any?, delimiter: kotlin.Any?) : RequestConfig<Unit> {
+    fun rootGetRequestConfig(ip: kotlin.String, format: kotlin.String?, delimiter: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

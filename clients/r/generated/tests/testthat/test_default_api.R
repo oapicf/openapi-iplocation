@@ -10,9 +10,9 @@ test_that("RootGet", {
   # base path: https://api.iplocation.net
   # Get geolocation of an IP address
   # Retrieve geolocation of an IP address. 
-  # @param ip AnyType An IPv4 or IPv6 address that you would like to lookup.
-  # @param format AnyType Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
-  # @param delimiter AnyType Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
+  # @param ip character An IPv4 or IPv6 address that you would like to lookup.
+  # @param format character Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+  # @param delimiter character Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
   # @return [Get200Response]
 
   # uncomment below to test the operation

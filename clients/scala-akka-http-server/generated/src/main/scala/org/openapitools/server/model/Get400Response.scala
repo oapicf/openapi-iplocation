@@ -6,7 +6,7 @@ package org.openapitools.server.model
  * @param responseMessage Response message to indicate success or failed completion of the API call. for example: ''null''
 */
 final case class Get400Response (
-  responseCode: Option[AnyType] = None,
-  responseMessage: Option[AnyType] = None
+  responseCode: Option[String] = None,
+  responseMessage: Option[String] = None
 )
 

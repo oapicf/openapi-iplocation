@@ -11,8 +11,9 @@ LONG DESCRIPTION
 
     - API version: 0.9.0-pre.0
     - SDK version: 0.1.2
+    - Generator version: 7.4.0
     - Build package: org.openapitools.codegen.languages.PowerShellClientCodegen
-    For more information, please visit [https://github.com/cliffano/openapi-iplocation](https://github.com/cliffano/openapi-iplocation)
+    For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)
 
     Frameworks supported:
 
