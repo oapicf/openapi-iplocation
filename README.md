@@ -6,7 +6,7 @@
 OpenAPI iplocation
 ------------------
 
-OpenAPI iplocation is an OpenAPI v3 specification and a set of generated API clients for [iplocation](https://iplocation.net/)
+OpenAPI iplocation is an OpenAPI v3 specification and a set of generated API clients for [iplocation.net](https://iplocation.net/)
 
 The API clients are generated using [OpenAPI Generator](https://openapi-generator.tech/).
 
