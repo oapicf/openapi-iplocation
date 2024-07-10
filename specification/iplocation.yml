@@ -1,8 +1,10 @@
 openapi: 3.1.0
 info:
   title: iplocation.net API
-  version: 0.9.0-pre.0
-  description: OpenAPI v3 specification and a set of generated API clients for iplocation.net
+  version: 1.0.0
+  description: >-
+    OpenAPI v3 specification and a set of generated API clients for
+    iplocation.net
   license:
     identifier: MIT
     name: MIT
@@ -27,13 +29,17 @@ paths:
             type: string
         - name: format
           in: query
-          description: "Output format, the following formats are supported: plain xml json jsonp php csv serialized"
+          description: >-
+            Output format, the following formats are supported: plain xml json
+            jsonp php csv serialized
           required: false
           schema:
             type: string
         - name: delimiter
           in: query
-          description: 'Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for "\n", 2 for "<br>".'
+          description: >-
+            Delimiter between proxies. Can be used only with format plain. The
+            following types are supported: 1 for "\n", 2 for "<br>".
           required: false
           schema:
             type: string
@@ -47,7 +53,7 @@ paths:
                 properties:
                   ip:
                     type: string
-                    description: 	IPv4 or IPv6 address used to lookup geolocation.
+                    description: IPv4 or IPv6 address used to lookup geolocation.
                   ip_number:
                     type: string
                     description: IP number in long integer (represented as string).
@@ -65,10 +71,14 @@ paths:
                     description: Internet Service Provider (ISP) who owns the IP address.
                   response_code:
                     type: string
-                    description: Response status code to indicate success or failed completion of the API call.
+                    description: >-
+                      Response status code to indicate success or failed
+                      completion of the API call.
                   response_message:
                     type: string
-                    description: Response message to indicate success or failed completion of the API call.
+                    description: >-
+                      Response message to indicate success or failed completion
+                      of the API call.
         '400':
           description: Failed to complete the request.
           content:
@@ -78,10 +88,14 @@ paths:
                 properties:
                   response_code:
                     type: string
-                    description: Response status code to indicate success or failed completion of the API call.
+                    description: >-
+                      Response status code to indicate success or failed
+                      completion of the API call.
                   response_message:
                     type: string
-                    description: Response message to indicate success or failed completion of the API call.
+                    description: >-
+                      Response message to indicate success or failed completion
+                      of the API call.
         '404':
           description: Command not found.
           content:
@@ -91,7 +105,11 @@ paths:
                 properties:
                   response_code:
                     type: string
-                    description: Response status code to indicate success or failed completion of the API call.
+                    description: >-
+                      Response status code to indicate success or failed
+                      completion of the API call.
                   response_message:
                     type: string
-                    description: Response message to indicate success or failed completion of the API call.
+                    description: >-
+                      Response message to indicate success or failed completion
+                      of the API call.
