@@ -2,6 +2,13 @@ openapi: 3.1.0
 info:
   title: iplocation.net API
   version: 0.9.0-pre.0
+  description: OpenAPI v3 specification and a set of generated API clients for iplocation.net
+  license:
+    name: MIT
+  contact:
+    name: OpenAPI Clients Factory
+    url: https://github.com/oapicf/openapi-iplocation
+    email: blah+oapicf@cliffano.com
 servers:
   - url: https://api.iplocation.net
 paths:
@@ -41,8 +48,8 @@ paths:
                     type: string
                     description: 	IPv4 or IPv6 address used to lookup geolocation.
                   ip_number:
-                    type: int64
-                    description: IP number in long integer.
+                    type: string
+                    description: IP number in long integer (represented as string).
                   ip_version:
                     type: integer
                     description: IP version either 4 or 6.
