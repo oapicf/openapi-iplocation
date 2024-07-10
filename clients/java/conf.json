@@ -1,6 +1,6 @@
 {
   "artifactId": "openapiiplocation",
-  "artifactVersion": "1.0.0",
+  "artifactVersion": "1.0.1-pre.0",
   "artifactUrl": "https://github.com/oapicf/openapi-iplocation",
   "artifactDescription": "iplocation.net API client generated from Open API specification",
   "groupId": "com.github.oapicf",
