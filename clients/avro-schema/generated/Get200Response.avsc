@@ -12,8 +12,8 @@
     },
     {
       "name": "ip_number",
-      "type": ["null", "model.Int64"],
-      "doc": "IP number in long integer.",
+      "type": ["null", "string"],
+      "doc": "IP number in long integer (represented as string).",
       "default": null
     },
     {

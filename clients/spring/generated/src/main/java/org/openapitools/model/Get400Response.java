@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_400_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-16T21:38:45.888909540Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-10T08:39:07.979223726Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get400Response {
 
   private String responseCode;

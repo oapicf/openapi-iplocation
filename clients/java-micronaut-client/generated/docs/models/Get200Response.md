@@ -9,7 +9,7 @@ The class is defined in **[Get200Response.java](../../src/main/java/org/openapit
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | `String` | IPv4 or IPv6 address used to lookup geolocation. |  [optional property]
-**ipNumber** | `Int64` | IP number in long integer. |  [optional property]
+**ipNumber** | `String` | IP number in long integer (represented as string). |  [optional property]
 **ipVersion** | `Integer` | IP version either 4 or 6. |  [optional property]
 **countryName** | `String` | Full name of the IP country. |  [optional property]
 **countryCode2** | `String` | ISO ALPHA-2 Country Code. |  [optional property]

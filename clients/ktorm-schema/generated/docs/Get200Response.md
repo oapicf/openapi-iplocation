@@ -6,7 +6,7 @@
 Name | Mapping | SQL Type | Default | Type | Description | Notes
 ---- | ------- | -------- | ------- | ---- | ----------- | -----
 **ip** | ip | text |  | **kotlin.String** | IPv4 or IPv6 address used to lookup geolocation. |  [optional]
-**ipNumber** | ip_number | long |  | [**Int64**](Int64.md) | IP number in long integer. |  [optional] [foreignkey]
+**ipNumber** | ip_number | text |  | **kotlin.String** | IP number in long integer (represented as string). |  [optional]
 **ipVersion** | ip_version | int |  | **kotlin.Int** | IP version either 4 or 6. |  [optional]
 **countryName** | country_name | text |  | **kotlin.String** | Full name of the IP country. |  [optional]
 **countryCode2** | country_code2 | text |  | **kotlin.String** | ISO ALPHA-2 Country Code. |  [optional]

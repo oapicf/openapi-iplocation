@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **string** |  | [optional] [default to null]
-**ipUnderscorenumber** | [**Int64**](Int64.md) |  | [optional] [default to null]
+**ipUnderscorenumber** | **string** |  | [optional] [default to null]
 **ipUnderscoreversion** | **integer** |  | [optional] [default to null]
 **countryUnderscorename** | **string** |  | [optional] [default to null]
 **countryUnderscorecode2** | **string** |  | [optional] [default to null]

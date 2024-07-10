@@ -8,8 +8,8 @@
 type t = {
     (* IPv4 or IPv6 address used to lookup geolocation. *)
     ip: string option [@default None];
-    (* IP number in long integer. *)
-    ip_number: Int64.t option [@default None];
+    (* IP number in long integer (represented as string). *)
+    ip_number: string option [@default None];
     (* IP version either 4 or 6. *)
     ip_version: int32 option [@default None];
     (* Full name of the IP country. *)

@@ -15,7 +15,6 @@
 
 package org.openapitools.client.models
 
-import org.openapitools.client.models.Int64
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,7 +23,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param ip IPv4 or IPv6 address used to lookup geolocation.
- * @param ipNumber IP number in long integer.
+ * @param ipNumber IP number in long integer (represented as string).
  * @param ipVersion IP version either 4 or 6.
  * @param countryName Full name of the IP country.
  * @param countryCode2 ISO ALPHA-2 Country Code.
@@ -40,9 +39,9 @@ data class Get200Response (
     @Json(name = "ip")
     val ip: kotlin.String? = null,
 
-    /* IP number in long integer. */
+    /* IP number in long integer (represented as string). */
     @Json(name = "ip_number")
-    val ipNumber: Int64? = null,
+    val ipNumber: kotlin.String? = null,
 
     /* IP version either 4 or 6. */
     @Json(name = "ip_version")

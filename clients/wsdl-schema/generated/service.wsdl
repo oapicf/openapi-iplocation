@@ -21,9 +21,9 @@
               <xs:documentation>IPv4 or IPv6 address used to lookup geolocation.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element minOccurs="0" name="ip_number" type="xs:int64">
+          <xs:element minOccurs="0" name="ip_number" type="xs:string">
             <xs:annotation>
-              <xs:documentation>IP number in long integer.</xs:documentation>
+              <xs:documentation>IP number in long integer (represented as string).</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element minOccurs="0" name="ip_version" type="xs:integer">
@@ -148,7 +148,7 @@
     </operation>
   </binding>
   <service name="ServiceV1">
-    <documentation>No description provided</documentation>
+    <documentation>OpenAPI v3 specification and a set of generated API clients for iplocation.net</documentation>
     <port name="default_Port" binding="wsdl:ServiceV1_Binding">
       <soap:address location="http://localhost/soap/ServiceV1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>

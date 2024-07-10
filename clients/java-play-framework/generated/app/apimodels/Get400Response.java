@@ -10,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Get400Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-03-16T21:35:56.187171885Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-07-10T08:34:00.476674879Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Get400Response   {
   @JsonProperty("response_code")

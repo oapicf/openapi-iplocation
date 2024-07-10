@@ -15,13 +15,12 @@
 
 typedef struct __get_200_response_t __get_200_response_t;
 
-#include "int64.h"
 
 
 
 typedef struct __get_200_response_t {
     char *ip; // string
-    int64_t *ip_number; // custom
+    char *ip_number; // string
     int ip_version; //numeric
     char *country_name; // string
     char *country_code2; // string
@@ -33,7 +32,7 @@ typedef struct __get_200_response_t {
 
 __get_200_response_t *__get_200_response_create(
     char *ip,
-    int64_t *ip_number,
+    char *ip_number,
     int ip_version,
     char *country_name,
     char *country_code2,

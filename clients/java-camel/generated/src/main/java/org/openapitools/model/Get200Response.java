@@ -5,7 +5,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import org.openapitools.model.Int64;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,12 +20,12 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-03-16T21:36:06.539924902Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-07-10T08:34:18.533971208Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get200Response {
 
   private String ip;
 
-  private Int64 ipNumber = null;
+  private String ipNumber;
 
   private Integer ipVersion;
 
@@ -60,23 +59,23 @@ public class Get200Response {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
 
   /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    * @return ipNumber
   */
-  @Valid 
-  @Schema(name = "ip_number", description = "IP number in long integer.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  
+  @Schema(name = "ip_number", description = "IP number in long integer (represented as string).", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

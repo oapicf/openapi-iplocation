@@ -7,7 +7,7 @@
 
 __get_200_response_t *__get_200_response_create(
     char *ip,
-    int64_t *ip_number,
+    char *ip_number,
     int ip_version,
     char *country_name,
     char *country_code2,
@@ -42,7 +42,7 @@ void __get_200_response_free(__get_200_response_t *__get_200_response) {
         __get_200_response->ip = NULL;
     }
     if (__get_200_response->ip_number) {
-        int64_free(__get_200_response->ip_number);
+        free(__get_200_response->ip_number);
         __get_200_response->ip_number = NULL;
     }
     if (__get_200_response->country_name) {
@@ -81,13 +81,8 @@ cJSON *__get_200_response_convertToJSON(__get_200_response_t *__get_200_response
 
     // __get_200_response->ip_number
     if(__get_200_response->ip_number) {
-    cJSON *ip_number_local_JSON = int64_convertToJSON(__get_200_response->ip_number);
-    if(ip_number_local_JSON == NULL) {
-        goto fail; // custom
-    }
-    cJSON_AddItemToObject(item, "ip_number", ip_number_local_JSON);
-    if(item->child == NULL) {
-        goto fail;
+    if(cJSON_AddStringToObject(item, "ip_number", __get_200_response->ip_number) == NULL) {
+    goto fail; //String
     }
     }
 
@@ -151,9 +146,6 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     __get_200_response_t *__get_200_response_local_var = NULL;
 
-    // define the local variable for __get_200_response->ip_number
-    int64_t *ip_number_local_nonprim = NULL;
-
     // __get_200_response->ip
     cJSON *ip = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "ip");
     if (ip) { 
@@ -166,7 +158,10 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
     // __get_200_response->ip_number
     cJSON *ip_number = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "ip_number");
     if (ip_number) { 
-    ip_number_local_nonprim = int64_parseFromJSON(ip_number); //custom
+    if(!cJSON_IsString(ip_number) && !cJSON_IsNull(ip_number))
+    {
+    goto end; //String
+    }
     }
 
     // __get_200_response->ip_version
@@ -226,7 +221,7 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     __get_200_response_local_var = __get_200_response_create (
         ip && !cJSON_IsNull(ip) ? strdup(ip->valuestring) : NULL,
-        ip_number ? ip_number_local_nonprim : NULL,
+        ip_number && !cJSON_IsNull(ip_number) ? strdup(ip_number->valuestring) : NULL,
         ip_version ? ip_version->valuedouble : 0,
         country_name && !cJSON_IsNull(country_name) ? strdup(country_name->valuestring) : NULL,
         country_code2 && !cJSON_IsNull(country_code2) ? strdup(country_code2->valuestring) : NULL,
@@ -237,10 +232,6 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     return __get_200_response_local_var;
 end:
-    if (ip_number_local_nonprim) {
-        int64_free(ip_number_local_nonprim);
-        ip_number_local_nonprim = NULL;
-    }
     return NULL;
 
 }

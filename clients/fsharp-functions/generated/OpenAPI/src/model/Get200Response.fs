@@ -13,7 +13,7 @@ module Get200Response =
     [<JsonProperty(PropertyName = "ip")>]
     Ip : string;
     [<JsonProperty(PropertyName = "ip_number")>]
-    IpNumber : Int64;
+    IpNumber : string;
     [<JsonProperty(PropertyName = "ip_version")>]
     IpVersion : int;
     [<JsonProperty(PropertyName = "country_name")>]

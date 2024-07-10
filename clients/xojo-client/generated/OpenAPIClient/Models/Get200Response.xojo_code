@@ -11,9 +11,9 @@ Protected Class Get200Response
 
 	#tag Property, Flags = &h0
 		#tag Note
-			IP number in long integer.
+			IP number in long integer (represented as string).
 		#tag EndNote
-		ip_number As Xoson.O.OptionalInt64
+		ip_number As Xoson.O.OptionalString
 	#tag EndProperty
 
 
@@ -114,7 +114,7 @@ Protected Class Get200Response
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
-			Type="Int64"
+			Type="String"
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty

@@ -13,8 +13,8 @@ void main() {
       // TODO
     });
 
-    // IP number in long integer.
-    // Int64 ipNumber
+    // IP number in long integer (represented as string).
+    // String ipNumber
     test('to test the property `ipNumber`', () async {
       // TODO
     });

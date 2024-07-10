@@ -3,7 +3,6 @@ package org.openapitools.model;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.model.Int64;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -17,16 +16,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("__get_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-16T21:36:25.052261614Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-07-10T08:34:49.486806086Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get200Response   {
-  private @Valid String ip;
-  private @Valid Int64 ipNumber = null;
-  private @Valid Integer ipVersion;
-  private @Valid String countryName;
-  private @Valid String countryCode2;
-  private @Valid String isp;
-  private @Valid String responseCode;
-  private @Valid String responseMessage;
+  private String ip;
+  private String ipNumber;
+  private Integer ipVersion;
+  private String countryName;
+  private String countryCode2;
+  private String isp;
+  private String responseCode;
+  private String responseMessage;
 
   /**
    * IPv4 or IPv6 address used to lookup geolocation.
@@ -49,22 +48,22 @@ public class Get200Response   {
   }
 
   /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    **/
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
 
   
-  @ApiModelProperty(value = "IP number in long integer.")
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
 
   @JsonProperty("ip_number")
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

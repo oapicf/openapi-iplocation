@@ -2,7 +2,6 @@ package org.openapitools.model
 
 import java.util.Objects
 import com.fasterxml.jackson.annotation.JsonProperty
-import org.openapitools.model.Int64
 import javax.validation.constraints.DecimalMax
 import javax.validation.constraints.DecimalMin
 import javax.validation.constraints.Email
@@ -17,7 +16,7 @@ import io.swagger.v3.oas.annotations.media.Schema
 /**
  * 
  * @param ip IPv4 or IPv6 address used to lookup geolocation.
- * @param ipNumber IP number in long integer.
+ * @param ipNumber IP number in long integer (represented as string).
  * @param ipVersion IP version either 4 or 6.
  * @param countryName Full name of the IP country.
  * @param countryCode2 ISO ALPHA-2 Country Code.
@@ -30,9 +29,8 @@ data class Get200Response(
     @Schema(example = "null", description = "IPv4 or IPv6 address used to lookup geolocation.")
     @get:JsonProperty("ip") val ip: kotlin.String? = null,
 
-    @field:Valid
-    @Schema(example = "null", description = "IP number in long integer.")
-    @get:JsonProperty("ip_number") val ipNumber: Int64? = null,
+    @Schema(example = "null", description = "IP number in long integer (represented as string).")
+    @get:JsonProperty("ip_number") val ipNumber: kotlin.String? = null,
 
     @Schema(example = "null", description = "IP version either 4 or 6.")
     @get:JsonProperty("ip_version") val ipVersion: kotlin.Int? = null,

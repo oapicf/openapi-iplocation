@@ -23,7 +23,7 @@ __get_200_response_t* instantiate___get_200_response(int include_optional) {
   if (include_optional) {
     __get_200_response = __get_200_response_create(
       "0",
-      null,
+      "0",
       56,
       "0",
       "0",
@@ -34,7 +34,7 @@ __get_200_response_t* instantiate___get_200_response(int include_optional) {
   } else {
     __get_200_response = __get_200_response_create(
       "0",
-      null,
+      "0",
       56,
       "0",
       "0",

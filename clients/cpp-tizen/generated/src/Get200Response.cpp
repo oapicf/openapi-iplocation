@@ -24,7 +24,7 @@ void
 __get_200_response::__init()
 {
 	//ip = std::string();
-	//ip_number = null;
+	//ip_number = std::string();
 	//ip_version = int(0);
 	//country_name = std::string();
 	//country_code2 = std::string();
@@ -100,12 +100,9 @@ __get_200_response::fromJson(char* jsonStr)
 	if (node !=NULL) {
 	
 
-		if (isprimitive("Int64")) {
-			jsonToValue(&ip_number, node, "Int64", "Int64");
+		if (isprimitive("std::string")) {
+			jsonToValue(&ip_number, node, "std::string", "");
 		} else {
-			
-			Int64* obj = static_cast<Int64*> (&ip_number);
-			obj->fromJson(json_to_string(node, false));
 			
 		}
 	}
@@ -196,16 +193,11 @@ __get_200_response::toJson()
 	}
 	const gchar *ipKey = "ip";
 	json_object_set_member(pJsonObject, ipKey, node);
-	if (isprimitive("Int64")) {
-		Int64 obj = getIpNumber();
-		node = converttoJson(&obj, "Int64", "");
+	if (isprimitive("std::string")) {
+		std::string obj = getIpNumber();
+		node = converttoJson(&obj, "std::string", "");
 	}
 	else {
-		
-		Int64 obj = static_cast<Int64> (getIpNumber());
-		GError *mygerror;
-		mygerror = NULL;
-		node = json_from_string(obj.toJson(), &mygerror);
 		
 	}
 	const gchar *ip_numberKey = "ip_number";
@@ -284,14 +276,14 @@ __get_200_response::setIp(std::string  ip)
 	this->ip = ip;
 }
 
-Int64
+std::string
 __get_200_response::getIpNumber()
 {
 	return ip_number;
 }
 
 void
-__get_200_response::setIpNumber(Int64  ip_number)
+__get_200_response::setIpNumber(std::string  ip_number)
 {
 	this->ip_number = ip_number;
 }

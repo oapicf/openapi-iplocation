@@ -9,7 +9,7 @@ use WWW::OpenAPIClient::Object::Get200Response;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **string** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**ip_number** | [**Int64**](Int64.md) | IP number in long integer. | [optional] 
+**ip_number** | **string** | IP number in long integer (represented as string). | [optional] 
 **ip_version** | **int** | IP version either 4 or 6. | [optional] 
 **country_name** | **string** | Full name of the IP country. | [optional] 
 **country_code2** | **string** | ISO ALPHA-2 Country Code. | [optional] 

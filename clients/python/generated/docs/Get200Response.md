@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **str** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**ip_number** | [**Int64**](Int64.md) | IP number in long integer. | [optional] 
+**ip_number** | **str** | IP number in long integer (represented as string). | [optional] 
 **ip_version** | **int** | IP version either 4 or 6. | [optional] 
 **country_name** | **str** | Full name of the IP country. | [optional] 
 **country_code2** | **str** | ISO ALPHA-2 Country Code. | [optional] 
@@ -29,7 +29,7 @@ print(Get200Response.to_json())
 # convert the object into a dict
 get200_response_dict = get200_response_instance.to_dict()
 # create an instance of Get200Response from a dict
-get200_response_form_dict = get200_response.from_dict(get200_response_dict)
+get200_response_from_dict = Get200Response.from_dict(get200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

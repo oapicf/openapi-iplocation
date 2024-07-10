@@ -18,11 +18,10 @@ class Get200Response
     public $ip;
 
     /**
-     * IP number in long integer.
+     * IP number in long integer (represented as string).
      * @DTA\Data(field="ip_number", nullable=true)
-     * @DTA\Strategy(name="Object", options={"type":Int64::class})
-     * @DTA\Validator(name="TypeCompliant", options={"type":Int64::class})
-     * @var Int64|null
+     * @DTA\Validator(name="Scalar", options={"type":"string"})
+     * @var string|null
      */
     public $ip_number;
 

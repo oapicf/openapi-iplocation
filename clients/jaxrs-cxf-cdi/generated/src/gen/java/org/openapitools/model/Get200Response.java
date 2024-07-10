@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.model.Int64;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -19,7 +18,7 @@ public class Get200Response   {
   
   private String ip;
 
-  private Int64 ipNumber = null;
+  private String ipNumber;
 
   private Integer ipVersion;
 
@@ -53,20 +52,20 @@ public class Get200Response   {
 
 
   /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    **/
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
 
   
-  @ApiModelProperty(value = "IP number in long integer.")
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

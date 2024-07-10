@@ -14,8 +14,8 @@ public struct Get200Response: Codable, JSONEncodable, Hashable {
 
     /** IPv4 or IPv6 address used to lookup geolocation. */
     public var ip: String?
-    /** IP number in long integer. */
-    public var ipNumber: ModelInt64?
+    /** IP number in long integer (represented as string). */
+    public var ipNumber: String?
     /** IP version either 4 or 6. */
     public var ipVersion: Int?
     /** Full name of the IP country. */
@@ -29,7 +29,7 @@ public struct Get200Response: Codable, JSONEncodable, Hashable {
     /** Response message to indicate success or failed completion of the API call. */
     public var responseMessage: String?
 
-    public init(ip: String? = nil, ipNumber: ModelInt64? = nil, ipVersion: Int? = nil, countryName: String? = nil, countryCode2: String? = nil, isp: String? = nil, responseCode: String? = nil, responseMessage: String? = nil) {
+    public init(ip: String? = nil, ipNumber: String? = nil, ipVersion: Int? = nil, countryName: String? = nil, countryCode2: String? = nil, isp: String? = nil, responseCode: String? = nil, responseMessage: String? = nil) {
         self.ip = ip
         self.ipNumber = ipNumber
         self.ipVersion = ipVersion

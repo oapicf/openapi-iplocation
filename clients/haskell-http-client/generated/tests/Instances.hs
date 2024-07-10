@@ -120,7 +120,7 @@ genGet200Response :: Int -> Gen Get200Response
 genGet200Response n =
   Get200Response
     <$> arbitraryReducedMaybe n -- get200ResponseIp :: Maybe Text
-    <*> arbitraryReducedMaybe n -- get200ResponseIpNumber :: Maybe Int64
+    <*> arbitraryReducedMaybe n -- get200ResponseIpNumber :: Maybe Text
     <*> arbitraryReducedMaybe n -- get200ResponseIpVersion :: Maybe Int
     <*> arbitraryReducedMaybe n -- get200ResponseCountryName :: Maybe Text
     <*> arbitraryReducedMaybe n -- get200ResponseCountryCode2 :: Maybe Text

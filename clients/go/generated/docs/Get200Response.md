@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ip** | Pointer to **string** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**IpNumber** | Pointer to **int64** | IP number in long integer. | [optional] 
+**IpNumber** | Pointer to **string** | IP number in long integer (represented as string). | [optional] 
 **IpVersion** | Pointer to **int32** | IP version either 4 or 6. | [optional] 
 **CountryName** | Pointer to **string** | Full name of the IP country. | [optional] 
 **CountryCode2** | Pointer to **string** | ISO ALPHA-2 Country Code. | [optional] 
@@ -59,20 +59,20 @@ HasIp returns a boolean if a field has been set.
 
 ### GetIpNumber
 
-`func (o *Get200Response) GetIpNumber() int64`
+`func (o *Get200Response) GetIpNumber() string`
 
 GetIpNumber returns the IpNumber field if non-nil, zero value otherwise.
 
 ### GetIpNumberOk
 
-`func (o *Get200Response) GetIpNumberOk() (*int64, bool)`
+`func (o *Get200Response) GetIpNumberOk() (*string, bool)`
 
 GetIpNumberOk returns a tuple with the IpNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpNumber
 
-`func (o *Get200Response) SetIpNumber(v int64)`
+`func (o *Get200Response) SetIpNumber(v string)`
 
 SetIpNumber sets IpNumber field to given value.
 

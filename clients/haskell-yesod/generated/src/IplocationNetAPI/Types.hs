@@ -23,7 +23,7 @@ import GHC.Generics (Generic)
 -- | 
 data Get200Response = Get200Response
   { get200ResponseIp :: Maybe Text -- ^ IPv4 or IPv6 address used to lookup geolocation.
-  , get200ResponseIpUnderscorenumber :: Maybe Int64 -- ^ IP number in long integer.
+  , get200ResponseIpUnderscorenumber :: Maybe Text -- ^ IP number in long integer (represented as string).
   , get200ResponseIpUnderscoreversion :: Maybe Int -- ^ IP version either 4 or 6.
   , get200ResponseCountryUnderscorename :: Maybe Text -- ^ Full name of the IP country.
   , get200ResponseCountryUnderscorecode2 :: Maybe Text -- ^ ISO ALPHA-2 Country Code.

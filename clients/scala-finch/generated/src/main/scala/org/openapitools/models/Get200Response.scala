@@ -5,12 +5,11 @@ import io.finch.circe._
 import io.circe.generic.semiauto._
 import io.circe.java8.time._
 import org.openapitools._
-import org.openapitools.models.Int64
 
 /**
  * 
  * @param ip IPv4 or IPv6 address used to lookup geolocation.
- * @param ipUnderscorenumber IP number in long integer.
+ * @param ipUnderscorenumber IP number in long integer (represented as string).
  * @param ipUnderscoreversion IP version either 4 or 6.
  * @param countryUnderscorename Full name of the IP country.
  * @param countryUnderscorecode2 ISO ALPHA-2 Country Code.
@@ -19,7 +18,7 @@ import org.openapitools.models.Int64
  * @param responseUnderscoremessage Response message to indicate success or failed completion of the API call.
  */
 case class Get200Response(ip: Option[String],
-                ipUnderscorenumber: Option[Int64],
+                ipUnderscorenumber: Option[String],
                 ipUnderscoreversion: Option[Int],
                 countryUnderscorename: Option[String],
                 countryUnderscorecode2: Option[String],

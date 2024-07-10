@@ -13,8 +13,8 @@ API.Client.Get200Response = function() {}
 API.Client.Get200Response.prototype.ip;
 
 /**
- * IP number in long integer.
- * @type {!API.Client.int64}
+ * IP number in long integer (represented as string).
+ * @type {!string}
  * @export
  */
 API.Client.Get200Response.prototype.ipNumber;

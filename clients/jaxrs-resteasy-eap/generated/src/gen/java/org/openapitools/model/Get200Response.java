@@ -7,16 +7,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.model.Int64;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 import io.swagger.annotations.*;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-03-16T21:36:22.449370904Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-07-10T08:34:44.659908208Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get200Response   {
   
   private String ip;
-  private Int64 ipNumber = null;
+  private String ipNumber;
   private Integer ipVersion;
   private String countryName;
   private String countryCode2;
@@ -38,15 +37,15 @@ public class Get200Response   {
   }
 
   /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    **/
   
-  @ApiModelProperty(value = "IP number in long integer.")
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

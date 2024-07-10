@@ -4,7 +4,7 @@ title iplocation.net API Schemas Diagram
 
 entity Get200Response {
     ip: String
-    ip_number: Int64
+    ip_number: String
     ip_version: Integer
     country_name: String
     country_code2: String

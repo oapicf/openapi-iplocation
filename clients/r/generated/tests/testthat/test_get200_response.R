@@ -14,8 +14,8 @@ test_that("ip", {
 })
 
 test_that("ip_number", {
-  # tests for the property `ip_number` (Int64)
-  # IP number in long integer.
+  # tests for the property `ip_number` (character)
+  # IP number in long integer (represented as string).
 
   # uncomment below to test the property
   #expect_equal(model.instance$`ip_number`, "EXPECTED_RESULT")

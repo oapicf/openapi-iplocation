@@ -23,7 +23,7 @@ print(Get400Response.to_json())
 # convert the object into a dict
 get400_response_dict = get400_response_instance.to_dict()
 # create an instance of Get400Response from a dict
-get400_response_form_dict = get400_response.from_dict(get400_response_dict)
+get400_response_from_dict = Get400Response.from_dict(get400_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

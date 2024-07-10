@@ -1,6 +1,5 @@
 package apimodels;
 
-import apimodels.Int64;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.*;
 import java.util.Set;
@@ -11,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Get200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-03-16T21:35:56.187171885Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-07-10T08:34:00.476674879Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Get200Response   {
   @JsonProperty("ip")
@@ -19,9 +18,8 @@ public class Get200Response   {
   private String ip;
 
   @JsonProperty("ip_number")
-  @Valid
-
-  private Int64 ipNumber = null;
+  
+  private String ipNumber;
 
   @JsonProperty("ip_version")
   
@@ -64,20 +62,20 @@ public class Get200Response   {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
 
    /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    * @return ipNumber
   **/
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

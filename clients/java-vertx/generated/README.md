@@ -1,2 +1,2 @@
-Project generated on : 2024-03-16T21:36:01.382117428Z[Etc/UTC]
-Generator version: 7.4.0
+Project generated on : 2024-07-10T08:34:11.143935527Z[Etc/UTC]
+Generator version: 7.6.0

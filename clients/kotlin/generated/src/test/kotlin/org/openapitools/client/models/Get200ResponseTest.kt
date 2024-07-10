@@ -19,7 +19,6 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.models.Get200Response
-import org.openapitools.client.models.Int64
 
 class Get200ResponseTest : ShouldSpec() {
     init {
@@ -32,7 +31,7 @@ class Get200ResponseTest : ShouldSpec() {
             //modelInstance.ip shouldBe ("TODO")
         }
 
-        // to test the property `ipNumber` - IP number in long integer.
+        // to test the property `ipNumber` - IP number in long integer (represented as string).
         should("test ipNumber") {
             // uncomment below to test the property
             //modelInstance.ipNumber shouldBe ("TODO")

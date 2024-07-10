@@ -15,6 +15,8 @@ void runTests(){
     RUN_TEST(test___get_200_response_ip_is_assigned_from_json);
     
     
+    RUN_TEST(test___get_200_response_ip_number_is_assigned_from_json);
+    
     
     RUN_TEST(test___get_200_response_ip_version_is_assigned_from_json);
     
@@ -46,6 +48,8 @@ void runTests(){
     
     RUN_TEST(test___get_200_response_ip_is_converted_to_json);
     
+    
+    RUN_TEST(test___get_200_response_ip_number_is_converted_to_json);
     
     
     RUN_TEST(test___get_200_response_ip_version_is_converted_to_json);

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ip** | **string** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**IpNumber** | **Int64** | IP number in long integer. | [optional] 
+**IpNumber** | **string** | IP number in long integer (represented as string). | [optional] 
 **IpVersion** | **int** | IP version either 4 or 6. | [optional] 
 **CountryName** | **string** | Full name of the IP country. | [optional] 
 **CountryCode2** | **string** | ISO ALPHA-2 Country Code. | [optional] 

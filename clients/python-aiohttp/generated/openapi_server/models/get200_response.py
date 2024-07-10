@@ -5,7 +5,6 @@ from datetime import date, datetime
 from typing import List, Dict, Type
 
 from openapi_server.models.base_model import Model
-from openapi_server.models.int64 import Int64
 from openapi_server import util
 
 
@@ -15,7 +14,7 @@ class Get200Response(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, ip: str=None, ip_number: Int64=None, ip_version: int=None, country_name: str=None, country_code2: str=None, isp: str=None, response_code: str=None, response_message: str=None):
+    def __init__(self, ip: str=None, ip_number: str=None, ip_version: int=None, country_name: str=None, country_code2: str=None, isp: str=None, response_code: str=None, response_message: str=None):
         """Get200Response - a model defined in OpenAPI
 
         :param ip: The ip of this Get200Response.
@@ -29,7 +28,7 @@ class Get200Response(Model):
         """
         self.openapi_types = {
             'ip': str,
-            'ip_number': Int64,
+            'ip_number': str,
             'ip_version': int,
             'country_name': str,
             'country_code2': str,
@@ -94,10 +93,10 @@ class Get200Response(Model):
     def ip_number(self):
         """Gets the ip_number of this Get200Response.
 
-        IP number in long integer.
+        IP number in long integer (represented as string).
 
         :return: The ip_number of this Get200Response.
-        :rtype: Int64
+        :rtype: str
         """
         return self._ip_number
 
@@ -105,10 +104,10 @@ class Get200Response(Model):
     def ip_number(self, ip_number):
         """Sets the ip_number of this Get200Response.
 
-        IP number in long integer.
+        IP number in long integer (represented as string).
 
         :param ip_number: The ip_number of this Get200Response.
-        :type ip_number: Int64
+        :type ip_number: str
         """
 
         self._ip_number = ip_number

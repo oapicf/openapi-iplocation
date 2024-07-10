@@ -3,13 +3,12 @@ package org.openapitools.vertxweb.server.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.openapitools.vertxweb.server.model.Int64;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Get200Response   {
   
   private String ip;
-  private Int64 ipNumber = null;
+  private String ipNumber;
   private Integer ipVersion;
   private String countryName;
   private String countryCode2;
@@ -21,7 +20,7 @@ public class Get200Response   {
 
   }
 
-  public Get200Response (String ip, Int64 ipNumber, Integer ipVersion, String countryName, String countryCode2, String isp, String responseCode, String responseMessage) {
+  public Get200Response (String ip, String ipNumber, Integer ipVersion, String countryName, String countryCode2, String isp, String responseCode, String responseMessage) {
     this.ip = ip;
     this.ipNumber = ipNumber;
     this.ipVersion = ipVersion;
@@ -43,10 +42,10 @@ public class Get200Response   {
 
     
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

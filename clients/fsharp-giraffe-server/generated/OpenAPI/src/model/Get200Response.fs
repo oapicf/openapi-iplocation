@@ -10,7 +10,7 @@ module Get200Response =
 
   type __get_200_response = {
     Ip : string;
-    IpNumber : Int64;
+    IpNumber : string;
     IpVersion : int;
     CountryName : string;
     CountryCode2 : string;

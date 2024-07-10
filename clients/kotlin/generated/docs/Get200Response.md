@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **kotlin.String** | IPv4 or IPv6 address used to lookup geolocation. |  [optional]
-**ipNumber** | [**Int64**](Int64.md) | IP number in long integer. |  [optional]
+**ipNumber** | **kotlin.String** | IP number in long integer (represented as string). |  [optional]
 **ipVersion** | **kotlin.Int** | IP version either 4 or 6. |  [optional]
 **countryName** | **kotlin.String** | Full name of the IP country. |  [optional]
 **countryCode2** | **kotlin.String** | ISO ALPHA-2 Country Code. |  [optional]

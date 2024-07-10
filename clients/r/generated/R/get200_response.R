@@ -8,7 +8,7 @@
 #' @description Get200Response Class
 #' @format An \code{R6Class} generator object
 #' @field ip IPv4 or IPv6 address used to lookup geolocation. character [optional]
-#' @field ip_number IP number in long integer. \link{Int64} [optional]
+#' @field ip_number IP number in long integer (represented as string). character [optional]
 #' @field ip_version IP version either 4 or 6. integer [optional]
 #' @field country_name Full name of the IP country. character [optional]
 #' @field country_code2 ISO ALPHA-2 Country Code. character [optional]
@@ -35,7 +35,7 @@ Get200Response <- R6::R6Class(
     #' Initialize a new Get200Response class.
     #'
     #' @param ip IPv4 or IPv6 address used to lookup geolocation.
-    #' @param ip_number IP number in long integer.
+    #' @param ip_number IP number in long integer (represented as string).
     #' @param ip_version IP version either 4 or 6.
     #' @param country_name Full name of the IP country.
     #' @param country_code2 ISO ALPHA-2 Country Code.
@@ -52,7 +52,9 @@ Get200Response <- R6::R6Class(
         self$`ip` <- `ip`
       }
       if (!is.null(`ip_number`)) {
-        stopifnot(R6::is.R6(`ip_number`))
+        if (!(is.character(`ip_number`) && length(`ip_number`) == 1)) {
+          stop(paste("Error! Invalid data for `ip_number`. Must be a string:", `ip_number`))
+        }
         self$`ip_number` <- `ip_number`
       }
       if (!is.null(`ip_version`)) {
@@ -107,7 +109,7 @@ Get200Response <- R6::R6Class(
       }
       if (!is.null(self$`ip_number`)) {
         Get200ResponseObject[["ip_number"]] <-
-          self$`ip_number`$toJSON()
+          self$`ip_number`
       }
       if (!is.null(self$`ip_version`)) {
         Get200ResponseObject[["ip_version"]] <-
@@ -149,9 +151,7 @@ Get200Response <- R6::R6Class(
         self$`ip` <- this_object$`ip`
       }
       if (!is.null(this_object$`ip_number`)) {
-        `ip_number_object` <- Int64$new()
-        `ip_number_object`$fromJSON(jsonlite::toJSON(this_object$`ip_number`, auto_unbox = TRUE, digits = NA))
-        self$`ip_number` <- `ip_number_object`
+        self$`ip_number` <- this_object$`ip_number`
       }
       if (!is.null(this_object$`ip_version`)) {
         self$`ip_version` <- this_object$`ip_version`
@@ -193,9 +193,9 @@ Get200Response <- R6::R6Class(
         if (!is.null(self$`ip_number`)) {
           sprintf(
           '"ip_number":
-          %s
-          ',
-          jsonlite::toJSON(self$`ip_number`$toJSON(), auto_unbox = TRUE, digits = NA)
+            "%s"
+                    ',
+          self$`ip_number`
           )
         },
         if (!is.null(self$`ip_version`)) {
@@ -261,7 +261,7 @@ Get200Response <- R6::R6Class(
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`ip` <- this_object$`ip`
-      self$`ip_number` <- Int64$new()$fromJSON(jsonlite::toJSON(this_object$`ip_number`, auto_unbox = TRUE, digits = NA))
+      self$`ip_number` <- this_object$`ip_number`
       self$`ip_version` <- this_object$`ip_version`
       self$`country_name` <- this_object$`country_name`
       self$`country_code2` <- this_object$`country_code2`

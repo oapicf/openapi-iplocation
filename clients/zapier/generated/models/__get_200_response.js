@@ -1,5 +1,4 @@
 const utils = require('../utils/utils');
-const int64 = require('../models/int64');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -10,7 +9,11 @@ module.exports = {
                 label: `IPv4 or IPv6 address used to lookup geolocation. - [${labelPrefix}ip]`,
                 type: 'string',
             },
-            ...int64.fields(`${keyPrefix}ip_number`, isInput),
+            {
+                key: `${keyPrefix}ip_number`,
+                label: `IP number in long integer (represented as string). - [${labelPrefix}ip_number]`,
+                type: 'string',
+            },
             {
                 key: `${keyPrefix}ip_version`,
                 label: `IP version either 4 or 6. - [${labelPrefix}ip_version]`,
@@ -47,7 +50,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'ip': bundle.inputData?.[`${keyPrefix}ip`],
-            'ip_number': utils.removeIfEmpty(int64.mapping(bundle, `${keyPrefix}ip_number`)),
+            'ip_number': bundle.inputData?.[`${keyPrefix}ip_number`],
             'ip_version': bundle.inputData?.[`${keyPrefix}ip_version`],
             'country_name': bundle.inputData?.[`${keyPrefix}country_name`],
             'country_code2': bundle.inputData?.[`${keyPrefix}country_code2`],

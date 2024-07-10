@@ -10,7 +10,7 @@
 
 -type openapi___get_200_response() ::
   [ {'ip', binary() }
-  | {'ip_number', openapi_int64:openapi_int64() }
+  | {'ip_number', binary() }
   | {'ip_version', integer() }
   | {'country_name', binary() }
   | {'country_code2', binary() }
@@ -25,7 +25,7 @@ openapi___get_200_response() ->
 
 openapi___get_200_response(Fields) ->
   Default = [ {'ip', binary() }
-            , {'ip_number', openapi_int64:openapi_int64() }
+            , {'ip_number', binary() }
             , {'ip_version', integer() }
             , {'country_name', binary() }
             , {'country_code2', binary() }

@@ -16,10 +16,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("__get_400_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-16T21:36:25.052261614Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-07-10T08:34:49.486806086Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get400Response   {
-  private @Valid String responseCode;
-  private @Valid String responseMessage;
+  private String responseCode;
+  private String responseMessage;
 
   /**
    * Response status code to indicate success or failed completion of the API call.

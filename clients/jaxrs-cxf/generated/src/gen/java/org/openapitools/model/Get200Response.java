@@ -1,7 +1,6 @@
 package org.openapitools.model;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import org.openapitools.model.Int64;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -18,12 +17,11 @@ public class Get200Response  {
   **/
   private String ip;
 
-  @ApiModelProperty(value = "IP number in long integer.")
-  @Valid
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
  /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
   **/
-  private Int64 ipNumber = null;
+  private String ipNumber;
 
   @ApiModelProperty(value = "IP version either 4 or 6.")
  /**
@@ -79,19 +77,19 @@ public class Get200Response  {
   }
 
  /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    * @return ipNumber
   **/
   @JsonProperty("ip_number")
-  public Int64 getIpNumber() {
+  public String getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }

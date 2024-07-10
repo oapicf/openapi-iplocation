@@ -4,6 +4,7 @@ info:
   version: 0.9.0-pre.0
   description: OpenAPI v3 specification and a set of generated API clients for iplocation.net
   license:
+    identifier: MIT
     name: MIT
   contact:
     name: OpenAPI Clients Factory

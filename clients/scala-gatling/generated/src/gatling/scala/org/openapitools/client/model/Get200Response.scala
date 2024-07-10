@@ -5,8 +5,8 @@ package org.openapitools.client.model
 case class Get200Response (
     /* IPv4 or IPv6 address used to lookup geolocation. */
     _ip: Option[String],
-    /* IP number in long integer. */
-    _ipNumber: Option[Int64],
+    /* IP number in long integer (represented as string). */
+    _ipNumber: Option[String],
     /* IP version either 4 or 6. */
     _ipVersion: Option[Integer],
     /* Full name of the IP country. */

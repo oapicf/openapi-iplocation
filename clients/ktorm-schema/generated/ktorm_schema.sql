@@ -6,7 +6,7 @@
 
 CREATE TABLE IF NOT EXISTS `__get_200_response` (
   `ip` text /*IPv4 or IPv6 address used to lookup geolocation.*/,
-  `ip_number` long /*IP number in long integer.*/,
+  `ip_number` text /*IP number in long integer (represented as string).*/,
   `ip_version` int /*IP version either 4 or 6.*/,
   `country_name` text /*Full name of the IP country.*/,
   `country_code2` text /*ISO ALPHA-2 Country Code.*/,

@@ -9,7 +9,6 @@
 
 
 #include <string>
-#include "Int64.h"
 #include "Object.h"
 
 /** \defgroup Models Data Structures for API
@@ -53,13 +52,13 @@ public:
 	/*! \brief Set IPv4 or IPv6 address used to lookup geolocation.
 	 */
 	void setIp(std::string  ip);
-	/*! \brief Get IP number in long integer.
+	/*! \brief Get IP number in long integer (represented as string).
 	 */
-	Int64 getIpNumber();
+	std::string getIpNumber();
 
-	/*! \brief Set IP number in long integer.
+	/*! \brief Set IP number in long integer (represented as string).
 	 */
-	void setIpNumber(Int64  ip_number);
+	void setIpNumber(std::string  ip_number);
 	/*! \brief Get IP version either 4 or 6.
 	 */
 	int getIpVersion();
@@ -105,7 +104,7 @@ public:
 
 private:
 	std::string ip;
-	Int64 ip_number;
+	std::string ip_number;
 	int ip_version;
 	std::string country_name;
 	std::string country_code2;

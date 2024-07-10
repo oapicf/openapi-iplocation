@@ -6,6 +6,10 @@
       "name" : "OpenAPI Clients Factory",
       "url" : "https://github.com/oapicf/openapi-iplocation"
     },
+    "description" : "OpenAPI v3 specification and a set of generated API clients for iplocation.net",
+    "license" : {
+      "name" : "MIT"
+    },
     "title" : "iplocation.net API",
     "version" : "0.9.0-pre.0"
   },
@@ -80,7 +84,7 @@
           }
         },
         "summary" : "Get geolocation of an IP address",
-        "x-accepts" : "application/json",
+        "x-accepts" : [ "application/json" ],
         "x-serviceid" : "GET_",
         "x-serviceid-varname" : "GET__SERVICE_ID"
       }
@@ -113,7 +117,7 @@
           "isp" : "isp",
           "country_name" : "country_name",
           "country_code2" : "country_code2",
-          "ip_number" : ""
+          "ip_number" : "ip_number"
         },
         "properties" : {
           "ip" : {
@@ -121,8 +125,8 @@
             "type" : "string"
           },
           "ip_number" : {
-            "description" : "IP number in long integer.",
-            "type" : "int64"
+            "description" : "IP number in long integer (represented as string).",
+            "type" : "string"
           },
           "ip_version" : {
             "description" : "IP version either 4 or 6.",

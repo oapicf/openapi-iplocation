@@ -10,17 +10,14 @@ use validator::{Validate, ValidationErrors};
 use crate::{header, types::*};
 
 #[allow(unused_imports)]
-use crate::models;
+use crate::{apis, models};
 
-use crate::{Api,
-     RootGetResponse
-};
 
 /// Setup API Server.
 pub fn new<I, A>(api_impl: I) -> Router
 where
     I: AsRef<A> + Clone + Send + Sync + 'static,
-    A: Api + 'static,
+    A: apis::default::Default + 'static,
 {
     // build our application with a route
     Router::new()
@@ -44,7 +41,6 @@ Ok((
   query_params,
 ))
 }
-
 /// RootGet - GET /
 #[tracing::instrument(skip_all)]
 async fn root_get<I, A>(
@@ -56,7 +52,7 @@ async fn root_get<I, A>(
 ) -> Result<Response, StatusCode>
 where 
     I: AsRef<A> + Send + Sync,
-    A: Api,
+    A: apis::default::Default,
 {
 
       #[allow(clippy::redundant_closure)]
@@ -86,7 +82,7 @@ where
 
   let resp = match result {
                                             Ok(rsp) => match rsp {
-                                                RootGetResponse::Status200_SuccessfullyProcessedTheRequest
+                                                apis::default::RootGetResponse::Status200_SuccessfullyProcessedTheRequest
                                                     (body)
                                                 => {
 
@@ -105,7 +101,7 @@ where
                                                       })).await.unwrap()?;
                                                   response.body(Body::from(body_content))
                                                 },
-                                                RootGetResponse::Status400_FailedToCompleteTheRequest
+                                                apis::default::RootGetResponse::Status400_FailedToCompleteTheRequest
                                                     (body)
                                                 => {
 
@@ -124,7 +120,7 @@ where
                                                       })).await.unwrap()?;
                                                   response.body(Body::from(body_content))
                                                 },
-                                                RootGetResponse::Status404_CommandNotFound
+                                                apis::default::RootGetResponse::Status404_CommandNotFound
                                                     (body)
                                                 => {
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip** | **NSString*** | IPv4 or IPv6 address used to lookup geolocation. | [optional] 
-**ipNumber** | [**OAIInt64***](OAIInt64.md) | IP number in long integer. | [optional] 
+**ipNumber** | **NSString*** | IP number in long integer (represented as string). | [optional] 
 **ipVersion** | **NSNumber*** | IP version either 4 or 6. | [optional] 
 **countryName** | **NSString*** | Full name of the IP country. | [optional] 
 **countryCode2** | **NSString*** | ISO ALPHA-2 Country Code. | [optional] 

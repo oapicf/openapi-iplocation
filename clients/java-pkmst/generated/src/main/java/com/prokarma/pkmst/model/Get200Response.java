@@ -4,7 +4,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.prokarma.pkmst.model.Int64;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 /**
@@ -16,13 +15,13 @@ import io.swagger.annotations.ApiModelProperty;
  * Get200Response
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-03-16T21:35:53.289990468Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:33:54.599947831Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Get200Response   {
   @JsonProperty("ip")
   private String ip;
 
   @JsonProperty("ip_number")
-  private Int64 ipNumber = null;
+  private String ipNumber;
 
   @JsonProperty("ip_version")
   private Integer ipVersion;
@@ -60,21 +59,21 @@ public class Get200Response   {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(Int64 ipNumber) {
+  public Get200Response ipNumber(String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
 
    /**
-   * IP number in long integer.
+   * IP number in long integer (represented as string).
    * @return ipNumber
   **/
-  @ApiModelProperty(value = "IP number in long integer.")
-  public Int64 getIpNumber() {
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
+  public String getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(Int64 ipNumber) {
+  public void setIpNumber(String ipNumber) {
     this.ipNumber = ipNumber;
   }
 

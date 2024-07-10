@@ -83,7 +83,7 @@ public class DefaultControllerTest {
         // given
         String uri = UriTemplate.of("/").expand(new HashMap<>());
         MutableHttpRequest<?> request = HttpRequest.GET(uri)
-            .accept("application/json");
+            .accept("[Ljava.lang.String;@29a23c3d");
         request.getParameters()
             .add("ip", "example") // The query parameter format should be 
             .add("format", "example") // The query parameter format should be 

@@ -5,8 +5,8 @@ type Get200Response struct {
 	// IPv4 or IPv6 address used to lookup geolocation.
 	Ip string `json:"ip,omitempty"`
 
-	// IP number in long integer.
-	IpNumber int64 `json:"ip_number,omitempty"`
+	// IP number in long integer (represented as string).
+	IpNumber string `json:"ip_number,omitempty"`
 
 	// IP version either 4 or 6.
 	IpVersion int32 `json:"ip_version,omitempty"`

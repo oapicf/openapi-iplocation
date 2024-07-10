@@ -37,10 +37,10 @@ pub struct Get200Response {
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip: Option<String>,
 
-/// IP number in long integer.
+/// IP number in long integer (represented as string).
     #[serde(rename = "ip_number")]
     #[serde(skip_serializing_if="Option::is_none")]
-    pub ip_number: Option<models::Int64>,
+    pub ip_number: Option<String>,
 
 /// IP version either 4 or 6.
     #[serde(rename = "ip_version")]
@@ -105,7 +105,13 @@ impl std::fmt::Display for Get200Response {
                 ].join(",")
             }),
 
-            // Skipping ip_number in query parameter serialization
+
+            self.ip_number.as_ref().map(|ip_number| {
+                [
+                    "ip_number".to_string(),
+                    ip_number.to_string(),
+                ].join(",")
+            }),
 
 
             self.ip_version.as_ref().map(|ip_version| {
@@ -173,7 +179,7 @@ impl std::str::FromStr for Get200Response {
         #[allow(dead_code)]
         struct IntermediateRep {
             pub ip: Vec<String>,
-            pub ip_number: Vec<models::Int64>,
+            pub ip_number: Vec<String>,
             pub ip_version: Vec<i32>,
             pub country_name: Vec<String>,
             pub country_code2: Vec<String>,
@@ -200,7 +206,7 @@ impl std::str::FromStr for Get200Response {
                     #[allow(clippy::redundant_clone)]
                     "ip" => intermediate_rep.ip.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
-                    "ip_number" => intermediate_rep.ip_number.push(<models::Int64 as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
+                    "ip_number" => intermediate_rep.ip_number.push(<String as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]
                     "ip_version" => intermediate_rep.ip_version.push(<i32 as std::str::FromStr>::from_str(val).map_err(|x| x.to_string())?),
                     #[allow(clippy::redundant_clone)]

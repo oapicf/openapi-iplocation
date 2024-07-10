@@ -6,7 +6,6 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from app.openapi_server.models.base_model import Model
-from app.openapi_server.models.int64 import Int64  # noqa: F401,E501
 from openapi_server import util
 
 
@@ -16,13 +15,13 @@ class Get200Response(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, ip: str=None, ip_number: Int64=None, ip_version: int=None, country_name: str=None, country_code2: str=None, isp: str=None, response_code: str=None, response_message: str=None):  # noqa: E501
+    def __init__(self, ip: str=None, ip_number: str=None, ip_version: int=None, country_name: str=None, country_code2: str=None, isp: str=None, response_code: str=None, response_message: str=None):  # noqa: E501
         """Get200Response - a model defined in Swagger
 
         :param ip: The ip of this Get200Response.  # noqa: E501
         :type ip: str
         :param ip_number: The ip_number of this Get200Response.  # noqa: E501
-        :type ip_number: Int64
+        :type ip_number: str
         :param ip_version: The ip_version of this Get200Response.  # noqa: E501
         :type ip_version: int
         :param country_name: The country_name of this Get200Response.  # noqa: E501
@@ -38,7 +37,7 @@ class Get200Response(Model):
         """
         self.swagger_types = {
             'ip': str,
-            'ip_number': Int64,
+            'ip_number': str,
             'ip_version': int,
             'country_name': str,
             'country_code2': str,
@@ -102,24 +101,24 @@ class Get200Response(Model):
         self._ip = ip
 
     @property
-    def ip_number(self) -> Int64:
+    def ip_number(self) -> str:
         """Gets the ip_number of this Get200Response.
 
-        IP number in long integer.  # noqa: E501
+        IP number in long integer (represented as string).  # noqa: E501
 
         :return: The ip_number of this Get200Response.
-        :rtype: Int64
+        :rtype: str
         """
         return self._ip_number
 
     @ip_number.setter
-    def ip_number(self, ip_number: Int64):
+    def ip_number(self, ip_number: str):
         """Sets the ip_number of this Get200Response.
 
-        IP number in long integer.  # noqa: E501
+        IP number in long integer (represented as string).  # noqa: E501
 
         :param ip_number: The ip_number of this Get200Response.
-        :type ip_number: Int64
+        :type ip_number: str
         """
 
         self._ip_number = ip_number
