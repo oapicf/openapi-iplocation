@@ -3,7 +3,7 @@
  *
  * OpenAPI v3 specification and a set of generated API clients for iplocation.net
  *
- * OpenAPI document version: 0.9.0-pre.0
+ * OpenAPI document version: 1.0.1-pre.0
  * Maintained by: blah+oapicf@cliffano.com
  *
  * AUTO-GENERATED FILE, DO NOT MODIFY!

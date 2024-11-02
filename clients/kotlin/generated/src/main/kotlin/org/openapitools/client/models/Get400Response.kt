@@ -37,5 +37,8 @@ data class Get400Response (
     @Json(name = "response_message")
     val responseMessage: kotlin.String? = null
 
-)
+) {
+
+
+}
 

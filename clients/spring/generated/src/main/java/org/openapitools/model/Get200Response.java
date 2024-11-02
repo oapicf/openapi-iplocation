@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-10T08:39:07.979223726Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-02T22:34:13.629797501Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Get200Response {
 
   private String ip;
@@ -47,7 +47,7 @@ public class Get200Response {
   /**
    * IPv4 or IPv6 address used to lookup geolocation.
    * @return ip
-  */
+   */
   
   @Schema(name = "ip", description = "IPv4 or IPv6 address used to lookup geolocation.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip")
@@ -67,7 +67,7 @@ public class Get200Response {
   /**
    * IP number in long integer (represented as string).
    * @return ipNumber
-  */
+   */
   
   @Schema(name = "ip_number", description = "IP number in long integer (represented as string).", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip_number")
@@ -87,7 +87,7 @@ public class Get200Response {
   /**
    * IP version either 4 or 6.
    * @return ipVersion
-  */
+   */
   
   @Schema(name = "ip_version", description = "IP version either 4 or 6.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip_version")
@@ -107,7 +107,7 @@ public class Get200Response {
   /**
    * Full name of the IP country.
    * @return countryName
-  */
+   */
   
   @Schema(name = "country_name", description = "Full name of the IP country.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("country_name")
@@ -127,7 +127,7 @@ public class Get200Response {
   /**
    * ISO ALPHA-2 Country Code.
    * @return countryCode2
-  */
+   */
   
   @Schema(name = "country_code2", description = "ISO ALPHA-2 Country Code.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("country_code2")
@@ -147,7 +147,7 @@ public class Get200Response {
   /**
    * Internet Service Provider (ISP) who owns the IP address.
    * @return isp
-  */
+   */
   
   @Schema(name = "isp", description = "Internet Service Provider (ISP) who owns the IP address.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("isp")
@@ -167,7 +167,7 @@ public class Get200Response {
   /**
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
-  */
+   */
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_code")
@@ -187,7 +187,7 @@ public class Get200Response {
   /**
    * Response message to indicate success or failed completion of the API call.
    * @return responseMessage
-  */
+   */
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_message")

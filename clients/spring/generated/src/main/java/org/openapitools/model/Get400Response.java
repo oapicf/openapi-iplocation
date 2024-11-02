@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_400_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-10T08:39:07.979223726Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-02T22:34:13.629797501Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Get400Response {
 
   private String responseCode;
@@ -35,7 +35,7 @@ public class Get400Response {
   /**
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
-  */
+   */
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_code")
@@ -55,7 +55,7 @@ public class Get400Response {
   /**
    * Response message to indicate success or failed completion of the API call.
    * @return responseMessage
-  */
+   */
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_message")

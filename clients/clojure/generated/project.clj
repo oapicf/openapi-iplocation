@@ -1,4 +1,4 @@
-(defproject iplocation/net-api "0.9.0-pre.0"
+(defproject iplocation/net-api "1.0.1-pre.0"
   :description "OpenAPI v3 specification and a set of generated API clients for iplocation.net"
   :url "https://github.com/oapicf/openapi-iplocation"
   :license {:name "MIT"}

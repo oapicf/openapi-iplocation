@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Get200Response
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:33:54.599947831Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-02T22:26:02.843268540Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Get200Response   {
   @JsonProperty("ip")
   private String ip;
@@ -46,10 +46,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * IPv4 or IPv6 address used to lookup geolocation.
    * @return ip
-  **/
+   */
   @ApiModelProperty(value = "IPv4 or IPv6 address used to lookup geolocation.")
   public String getIp() {
     return ip;
@@ -64,10 +64,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * IP number in long integer (represented as string).
    * @return ipNumber
-  **/
+   */
   @ApiModelProperty(value = "IP number in long integer (represented as string).")
   public String getIpNumber() {
     return ipNumber;
@@ -82,10 +82,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * IP version either 4 or 6.
    * @return ipVersion
-  **/
+   */
   @ApiModelProperty(value = "IP version either 4 or 6.")
   public Integer getIpVersion() {
     return ipVersion;
@@ -100,10 +100,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * Full name of the IP country.
    * @return countryName
-  **/
+   */
   @ApiModelProperty(value = "Full name of the IP country.")
   public String getCountryName() {
     return countryName;
@@ -118,10 +118,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * ISO ALPHA-2 Country Code.
    * @return countryCode2
-  **/
+   */
   @ApiModelProperty(value = "ISO ALPHA-2 Country Code.")
   public String getCountryCode2() {
     return countryCode2;
@@ -136,10 +136,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * Internet Service Provider (ISP) who owns the IP address.
    * @return isp
-  **/
+   */
   @ApiModelProperty(value = "Internet Service Provider (ISP) who owns the IP address.")
   public String getIsp() {
     return isp;
@@ -154,10 +154,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
-  **/
+   */
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
   public String getResponseCode() {
     return responseCode;
@@ -172,10 +172,10 @@ public class Get200Response   {
     return this;
   }
 
-   /**
+  /**
    * Response message to indicate success or failed completion of the API call.
    * @return responseMessage
-  **/
+   */
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
   public String getResponseMessage() {
     return responseMessage;

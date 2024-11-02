@@ -74,70 +74,54 @@ impl Get200Response {
 impl std::string::ToString for Get200Response {
     fn to_string(&self) -> String {
         let params: Vec<Option<String>> = vec![
-
             self.ip.as_ref().map(|ip| {
                 [
                     "ip".to_string(),
                     ip.to_string(),
                 ].join(",")
             }),
-
-
             self.ip_number.as_ref().map(|ip_number| {
                 [
                     "ip_number".to_string(),
                     ip_number.to_string(),
                 ].join(",")
             }),
-
-
             self.ip_version.as_ref().map(|ip_version| {
                 [
                     "ip_version".to_string(),
                     ip_version.to_string(),
                 ].join(",")
             }),
-
-
             self.country_name.as_ref().map(|country_name| {
                 [
                     "country_name".to_string(),
                     country_name.to_string(),
                 ].join(",")
             }),
-
-
             self.country_code2.as_ref().map(|country_code2| {
                 [
                     "country_code2".to_string(),
                     country_code2.to_string(),
                 ].join(",")
             }),
-
-
             self.isp.as_ref().map(|isp| {
                 [
                     "isp".to_string(),
                     isp.to_string(),
                 ].join(",")
             }),
-
-
             self.response_code.as_ref().map(|response_code| {
                 [
                     "response_code".to_string(),
                     response_code.to_string(),
                 ].join(",")
             }),
-
-
             self.response_message.as_ref().map(|response_message| {
                 [
                     "response_message".to_string(),
                     response_message.to_string(),
                 ].join(",")
             }),
-
         ];
 
         params.into_iter().flatten().collect::<Vec<_>>().join(",")
@@ -256,6 +240,51 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
     }
 }
 
+#[cfg(feature = "server")]
+impl std::convert::TryFrom<header::IntoHeaderValue<Vec<Get200Response>>> for hyper::header::HeaderValue {
+    type Error = String;
+
+    fn try_from(hdr_values: header::IntoHeaderValue<Vec<Get200Response>>) -> std::result::Result<Self, Self::Error> {
+        let hdr_values : Vec<String> = hdr_values.0.into_iter().map(|hdr_value| {
+            hdr_value.to_string()
+        }).collect();
+
+        match hyper::header::HeaderValue::from_str(&hdr_values.join(", ")) {
+           std::result::Result::Ok(hdr_value) => std::result::Result::Ok(hdr_value),
+           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {:?} into a header - {}",
+               hdr_values, e))
+        }
+    }
+}
+
+#[cfg(feature = "server")]
+impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderValue<Vec<Get200Response>> {
+    type Error = String;
+
+    fn try_from(hdr_values: hyper::header::HeaderValue) -> std::result::Result<Self, Self::Error> {
+        match hdr_values.to_str() {
+            std::result::Result::Ok(hdr_values) => {
+                let hdr_values : std::vec::Vec<Get200Response> = hdr_values
+                .split(',')
+                .filter_map(|hdr_value| match hdr_value.trim() {
+                    "" => std::option::Option::None,
+                    hdr_value => std::option::Option::Some({
+                        match <Get200Response as std::str::FromStr>::from_str(hdr_value) {
+                            std::result::Result::Ok(value) => std::result::Result::Ok(value),
+                            std::result::Result::Err(err) => std::result::Result::Err(
+                                format!("Unable to convert header value '{}' into Get200Response - {}",
+                                    hdr_value, err))
+                        }
+                    })
+                }).collect::<std::result::Result<std::vec::Vec<_>, String>>()?;
+
+                std::result::Result::Ok(header::IntoHeaderValue(hdr_values))
+            },
+            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {:?} as a string - {}",
+                hdr_values, e)),
+        }
+    }
+}
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
@@ -289,22 +318,18 @@ impl Get400Response {
 impl std::string::ToString for Get400Response {
     fn to_string(&self) -> String {
         let params: Vec<Option<String>> = vec![
-
             self.response_code.as_ref().map(|response_code| {
                 [
                     "response_code".to_string(),
                     response_code.to_string(),
                 ].join(",")
             }),
-
-
             self.response_message.as_ref().map(|response_message| {
                 [
                     "response_message".to_string(),
                     response_message.to_string(),
                 ].join(",")
             }),
-
         ];
 
         params.into_iter().flatten().collect::<Vec<_>>().join(",")
@@ -399,3 +424,48 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
     }
 }
 
+#[cfg(feature = "server")]
+impl std::convert::TryFrom<header::IntoHeaderValue<Vec<Get400Response>>> for hyper::header::HeaderValue {
+    type Error = String;
+
+    fn try_from(hdr_values: header::IntoHeaderValue<Vec<Get400Response>>) -> std::result::Result<Self, Self::Error> {
+        let hdr_values : Vec<String> = hdr_values.0.into_iter().map(|hdr_value| {
+            hdr_value.to_string()
+        }).collect();
+
+        match hyper::header::HeaderValue::from_str(&hdr_values.join(", ")) {
+           std::result::Result::Ok(hdr_value) => std::result::Result::Ok(hdr_value),
+           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {:?} into a header - {}",
+               hdr_values, e))
+        }
+    }
+}
+
+#[cfg(feature = "server")]
+impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderValue<Vec<Get400Response>> {
+    type Error = String;
+
+    fn try_from(hdr_values: hyper::header::HeaderValue) -> std::result::Result<Self, Self::Error> {
+        match hdr_values.to_str() {
+            std::result::Result::Ok(hdr_values) => {
+                let hdr_values : std::vec::Vec<Get400Response> = hdr_values
+                .split(',')
+                .filter_map(|hdr_value| match hdr_value.trim() {
+                    "" => std::option::Option::None,
+                    hdr_value => std::option::Option::Some({
+                        match <Get400Response as std::str::FromStr>::from_str(hdr_value) {
+                            std::result::Result::Ok(value) => std::result::Result::Ok(value),
+                            std::result::Result::Err(err) => std::result::Result::Err(
+                                format!("Unable to convert header value '{}' into Get400Response - {}",
+                                    hdr_value, err))
+                        }
+                    })
+                }).collect::<std::result::Result<std::vec::Vec<_>, String>>()?;
+
+                std::result::Result::Ok(header::IntoHeaderValue(hdr_values))
+            },
+            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {:?} as a string - {}",
+                hdr_values, e)),
+        }
+    }
+}

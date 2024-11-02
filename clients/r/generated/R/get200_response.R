@@ -29,8 +29,7 @@ Get200Response <- R6::R6Class(
     `isp` = NULL,
     `response_code` = NULL,
     `response_message` = NULL,
-    #' Initialize a new Get200Response class.
-    #'
+
     #' @description
     #' Initialize a new Get200Response class.
     #'
@@ -43,7 +42,6 @@ Get200Response <- R6::R6Class(
     #' @param response_code Response status code to indicate success or failed completion of the API call.
     #' @param response_message Response message to indicate success or failed completion of the API call.
     #' @param ... Other optional arguments.
-    #' @export
     initialize = function(`ip` = NULL, `ip_number` = NULL, `ip_version` = NULL, `country_name` = NULL, `country_code2` = NULL, `isp` = NULL, `response_code` = NULL, `response_message` = NULL, ...) {
       if (!is.null(`ip`)) {
         if (!(is.character(`ip`) && length(`ip`) == 1)) {
@@ -94,13 +92,11 @@ Get200Response <- R6::R6Class(
         self$`response_message` <- `response_message`
       }
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Get200Response in JSON format
-    #' @export
     toJSON = function() {
       Get200ResponseObject <- list()
       if (!is.null(self$`ip`)) {
@@ -137,14 +133,12 @@ Get200Response <- R6::R6Class(
       }
       Get200ResponseObject
     },
-    #' Deserialize JSON string into an instance of Get200Response
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Get200Response
     #'
     #' @param input_json the JSON input
     #' @return the instance of Get200Response
-    #' @export
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`ip`)) {
@@ -173,13 +167,11 @@ Get200Response <- R6::R6Class(
       }
       self
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Get200Response in JSON format
-    #' @export
     toJSONString = function() {
       jsoncontent <- c(
         if (!is.null(self$`ip`)) {
@@ -250,14 +242,12 @@ Get200Response <- R6::R6Class(
       jsoncontent <- paste(jsoncontent, collapse = ",")
       json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
     },
-    #' Deserialize JSON string into an instance of Get200Response
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Get200Response
     #'
     #' @param input_json the JSON input
     #' @return the instance of Get200Response
-    #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`ip` <- this_object$`ip`
@@ -270,53 +260,42 @@ Get200Response <- R6::R6Class(
       self$`response_message` <- this_object$`response_message`
       self
     },
-    #' Validate JSON input with respect to Get200Response
-    #'
+
     #' @description
     #' Validate JSON input with respect to Get200Response and throw an exception if invalid
     #'
     #' @param input the JSON input
-    #' @export
     validateJSON = function(input) {
       input_json <- jsonlite::fromJSON(input)
     },
-    #' To string (JSON format)
-    #'
+
     #' @description
     #' To string (JSON format)
     #'
     #' @return String representation of Get200Response
-    #' @export
     toString = function() {
       self$toJSONString()
     },
-    #' Return true if the values in all fields are valid.
-    #'
+
     #' @description
     #' Return true if the values in all fields are valid.
     #'
     #' @return true if the values in all fields are valid.
-    #' @export
     isValid = function() {
       TRUE
     },
-    #' Return a list of invalid fields (if any).
-    #'
+
     #' @description
     #' Return a list of invalid fields (if any).
     #'
     #' @return A list of invalid fields (if any).
-    #' @export
     getInvalidFields = function() {
       invalid_fields <- list()
       invalid_fields
     },
-    #' Print the object
-    #'
+
     #' @description
     #' Print the object
-    #'
-    #' @export
     print = function() {
       print(jsonlite::prettify(self$toJSONString()))
       invisible(self)

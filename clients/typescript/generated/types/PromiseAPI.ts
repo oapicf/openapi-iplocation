@@ -21,8 +21,8 @@ export class PromiseDefaultApi {
      * Retrieve geolocation of an IP address. 
      * Get geolocation of an IP address
      * @param ip An IPv4 or IPv6 address that you would like to lookup.
-     * @param format Output format, the following formats are supported: plain xml json jsonp php csv serialized
-     * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
+     * @param [format] Output format, the following formats are supported: plain xml json jsonp php csv serialized
+     * @param [delimiter] Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
     public rootGetWithHttpInfo(ip: string, format?: string, delimiter?: string, _options?: Configuration): Promise<HttpInfo<Get200Response>> {
         const result = this.api.rootGetWithHttpInfo(ip, format, delimiter, _options);
@@ -33,8 +33,8 @@ export class PromiseDefaultApi {
      * Retrieve geolocation of an IP address. 
      * Get geolocation of an IP address
      * @param ip An IPv4 or IPv6 address that you would like to lookup.
-     * @param format Output format, the following formats are supported: plain xml json jsonp php csv serialized
-     * @param delimiter Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
+     * @param [format] Output format, the following formats are supported: plain xml json jsonp php csv serialized
+     * @param [delimiter] Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
     public rootGet(ip: string, format?: string, delimiter?: string, _options?: Configuration): Promise<Get200Response> {
         const result = this.api.rootGet(ip, format, delimiter, _options);

@@ -67,5 +67,8 @@ data class Get200Response (
     @Json(name = "response_message")
     val responseMessage: kotlin.String? = null
 
-)
+) {
+
+
+}
 

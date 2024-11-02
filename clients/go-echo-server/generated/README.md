@@ -12,9 +12,9 @@ To see how to make this your own, look here:
 
 [README](https://openapi-generator.tech)
 
-- API version: 0.9.0-pre.0
-- Build date: 2024-07-10T08:32:08.478808043Z[Etc/UTC]
-- Generator version: 7.6.0
+- API version: 1.0.1-pre.0
+- Build date: 2024-11-02T22:24:45.391721045Z[Etc/UTC]
+- Generator version: 7.9.0
 For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)
 
 ### Running the server

@@ -4,8 +4,8 @@
 
 iplocation.net API
 
-- API version: 0.9.0-pre.0
-- Generator version: 7.6.0
+- API version: 1.0.1-pre.0
+- Generator version: 7.9.0
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 

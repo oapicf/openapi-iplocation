@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.6.0
+# ! Generator version: 7.9.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -475,7 +475,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-${BOLD}${WHITE}iplocation.net API command line client (API version 0.9.0-pre.0)${OFF}
+${BOLD}${WHITE}iplocation.net API command line client (API version 1.0.1-pre.0)${OFF}
 
 ${BOLD}${WHITE}Usage${OFF}
 
@@ -536,7 +536,7 @@ echo -e "              \\t\\t\\t\\t(e.g. 'https://api.iplocation.net')"
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "${BOLD}${WHITE}iplocation.net API command line client (API version 0.9.0-pre.0)${OFF}"
+    echo -e "${BOLD}${WHITE}iplocation.net API command line client (API version 1.0.1-pre.0)${OFF}"
     echo ""
     echo -e "License: MIT"
     echo -e "Contact: blah+oapicf@cliffano.com"
@@ -556,7 +556,7 @@ echo "$appdescription" | paste -sd' ' | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "${BOLD}iplocation.net API command line client (API version 0.9.0-pre.0)${OFF}"
+    echo -e "${BOLD}iplocation.net API command line client (API version 1.0.1-pre.0)${OFF}"
     echo ""
 }
 

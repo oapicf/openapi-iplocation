@@ -30,7 +30,7 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the default API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-07-10T08:34:34.467840489Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-11-02T22:26:41.607555201Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class DefaultApi  {
    private final DefaultApiService delegate;
 
@@ -41,7 +41,7 @@ public class DefaultApi  {
          String implClass = servletContext.getInitParameter("DefaultApi.implementation");
          if (implClass != null && !"".equals(implClass.trim())) {
             try {
-               delegate = (DefaultApiService) Class.forName(implClass).newInstance();
+               delegate = (DefaultApiService) Class.forName(implClass).getDeclaredConstructor().newInstance();
             } catch (Exception e) {
                throw new RuntimeException(e);
             }

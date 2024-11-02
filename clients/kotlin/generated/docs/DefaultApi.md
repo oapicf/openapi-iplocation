@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://api.iplocation.net*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**rootGet**](DefaultApi.md#rootGet) | **GET** / | Get geolocation of an IP address
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**rootGet**](DefaultApi.md#rootGet) | **GET** / | Get geolocation of an IP address |
 
 
 <a id="rootGet"></a>
@@ -38,12 +38,11 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ip** | **kotlin.String**| An IPv4 or IPv6 address that you would like to lookup. |
- **format** | **kotlin.String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional]
- **delimiter** | **kotlin.String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional]
+| **ip** | **kotlin.String**| An IPv4 or IPv6 address that you would like to lookup. | |
+| **format** | **kotlin.String**| Output format, the following formats are supported: plain xml json jsonp php csv serialized | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **delimiter** | **kotlin.String**| Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. | [optional] |
 
 ### Return type
 

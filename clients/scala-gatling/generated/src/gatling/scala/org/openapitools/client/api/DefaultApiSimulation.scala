@@ -70,8 +70,8 @@ class DefaultApiSimulation extends Simulation {
         .feed(nullQUERYFeeder)
         .exec(http("rootGet")
         .httpRequest("GET","/")
-        .queryParam("ip","${ip}")
         .queryParam("delimiter","${delimiter}")
+        .queryParam("ip","${ip}")
         .queryParam("format","${format}")
 )
 

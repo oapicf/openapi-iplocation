@@ -18,7 +18,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:iplocation_net_api, "~> 0.9.0-pre.0"}]
+  [{:iplocation_net_api, "~> 1.0.0"}]
 end
 ```
 

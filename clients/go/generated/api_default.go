@@ -3,7 +3,7 @@ iplocation.net API
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 
-API version: 0.9.0-pre.0
+API version: 1.0.1-pre.0
 Contact: blah+oapicf@cliffano.com
 */
 
@@ -93,12 +93,12 @@ func (a *DefaultAPIService) RootGetExecute(r ApiRootGetRequest) (*Get200Response
 		return localVarReturnValue, nil, reportError("ip is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ip", r.ip, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ip", r.ip, "form", "")
 	if r.format != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "form", "")
 	}
 	if r.delimiter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "delimiter", r.delimiter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "delimiter", r.delimiter, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

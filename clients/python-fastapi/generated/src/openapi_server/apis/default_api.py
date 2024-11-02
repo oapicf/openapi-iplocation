@@ -14,6 +14,7 @@ from fastapi import (  # noqa: F401
     Depends,
     Form,
     Header,
+    HTTPException,
     Path,
     Query,
     Response,
@@ -50,4 +51,6 @@ async def root_get(
     delimiter: str = Query(None, description="Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.", alias="delimiter"),
 ) -> Get200Response:
     """Retrieve geolocation of an IP address. """
-    return BaseDefaultApi.subclasses[0]().root_get(ip, format, delimiter)
+    if not BaseDefaultApi.subclasses:
+        raise HTTPException(status_code=500, detail="Not implemented")
+    return await BaseDefaultApi.subclasses[0]().root_get(ip, format, delimiter)

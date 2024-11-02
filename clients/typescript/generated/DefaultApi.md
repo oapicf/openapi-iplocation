@@ -16,24 +16,23 @@ Retrieve geolocation of an IP address.
 
 
 ```typescript
-import {  } from '';
-import * as fs from 'fs';
+import { createConfiguration, DefaultApi } from '';
+import type { DefaultApiRootGetRequest } from '';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = createConfiguration();
+const apiInstance = new DefaultApi(configuration);
 
-let body:.DefaultApiRootGetRequest = {
-  // string | An IPv4 or IPv6 address that you would like to lookup.
+const request: DefaultApiRootGetRequest = {
+    // An IPv4 or IPv6 address that you would like to lookup.
   ip: "ip_example",
-  // string | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
+    // Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional)
   format: "format_example",
-  // string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
+    // Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
   delimiter: "delimiter_example",
 };
 
-apiInstance.rootGet(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
+const data = await apiInstance.rootGet(request);
+console.log('API called successfully. Returned data:', data);
 ```
 
 

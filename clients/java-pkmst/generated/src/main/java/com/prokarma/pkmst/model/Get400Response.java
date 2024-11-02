@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Get400Response
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:33:54.599947831Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-02T22:26:02.843268540Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Get400Response   {
   @JsonProperty("response_code")
   private String responseCode;
@@ -28,10 +28,10 @@ public class Get400Response   {
     return this;
   }
 
-   /**
+  /**
    * Response status code to indicate success or failed completion of the API call.
    * @return responseCode
-  **/
+   */
   @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
   public String getResponseCode() {
     return responseCode;
@@ -46,10 +46,10 @@ public class Get400Response   {
     return this;
   }
 
-   /**
+  /**
    * Response message to indicate success or failed completion of the API call.
    * @return responseMessage
-  **/
+   */
   @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
   public String getResponseMessage() {
     return responseMessage;

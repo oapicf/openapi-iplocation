@@ -25,7 +25,7 @@ data class Get400Response(
 
     @Schema(example = "null", description = "Response message to indicate success or failed completion of the API call.")
     @get:JsonProperty("response_message") val responseMessage: kotlin.String? = null
-) {
+    ) {
 
 }
 

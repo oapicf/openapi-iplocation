@@ -1,19 +1,11 @@
-{application, openapi, [
-    {description, "OpenAPI v3 specification and a set of generated API clients for iplocation.net"},
-    {vsn, "1.0.0"},
-    {registered, []},
-    {applications, [
-        kernel,
-        stdlib,
-        ssl,
-        inets,
-        jsx,
-        jesse,
-        cowboy
-    ]},
-    {env, [
-    ]},
-    {modules, []},
-    {licenses, ["MIT"]},
-    {links, ["https://github.com/oapicf/openapi-iplocation"]}
-]}.
+{application,
+ openapi,
+ [{description,
+   "OpenAPI v3 specification and a set of generated API clients for iplocation.net"},
+  {vsn, "1.0.0"},
+  {registered, []},
+  {applications, [kernel, stdlib, public_key, ssl, inets, ranch, cowboy]},
+  {env, []},
+  {modules, []},
+  {licenses, ["MIT"]},
+  {links, ["https://github.com/oapicf/openapi-iplocation"]}]}.

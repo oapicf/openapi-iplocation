@@ -50,13 +50,13 @@ async fn root_get<I, A>(
   Query(query_params): Query<models::RootGetQueryParams>,
  State(api_impl): State<I>,
 ) -> Result<Response, StatusCode>
-where 
+where
     I: AsRef<A> + Send + Sync,
     A: apis::default::Default,
 {
 
       #[allow(clippy::redundant_closure)]
-      let validation = tokio::task::spawn_blocking(move || 
+      let validation = tokio::task::spawn_blocking(move ||
     root_get_validation(
         query_params,
     )
@@ -68,7 +68,7 @@ where
     return Response::builder()
             .status(StatusCode::BAD_REQUEST)
             .body(Body::from(validation.unwrap_err().to_string()))
-            .map_err(|_| StatusCode::BAD_REQUEST); 
+            .map_err(|_| StatusCode::BAD_REQUEST);
   };
 
   let result = api_impl.as_ref().root_get(
@@ -85,7 +85,6 @@ where
                                                 apis::default::RootGetResponse::Status200_SuccessfullyProcessedTheRequest
                                                     (body)
                                                 => {
-
                                                   let mut response = response.status(200);
                                                   {
                                                     let mut response_headers = response.headers_mut().unwrap();
@@ -104,7 +103,6 @@ where
                                                 apis::default::RootGetResponse::Status400_FailedToCompleteTheRequest
                                                     (body)
                                                 => {
-
                                                   let mut response = response.status(400);
                                                   {
                                                     let mut response_headers = response.headers_mut().unwrap();
@@ -123,7 +121,6 @@ where
                                                 apis::default::RootGetResponse::Status404_CommandNotFound
                                                     (body)
                                                 => {
-
                                                   let mut response = response.status(404);
                                                   {
                                                     let mut response_headers = response.headers_mut().unwrap();

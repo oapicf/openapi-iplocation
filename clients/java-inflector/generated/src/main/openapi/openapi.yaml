@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: iplocation.net API
-  version: 0.9.0-pre.0
+  version: 1.0.1-pre.0
 servers:
 - url: https://api.iplocation.net
 paths:

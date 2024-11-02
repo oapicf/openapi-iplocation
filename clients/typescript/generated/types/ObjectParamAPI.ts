@@ -10,18 +10,21 @@ import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/De
 export interface DefaultApiRootGetRequest {
     /**
      * An IPv4 or IPv6 address that you would like to lookup.
+     * Defaults to: undefined
      * @type string
      * @memberof DefaultApirootGet
      */
     ip: string
     /**
      * Output format, the following formats are supported: plain xml json jsonp php csv serialized
+     * Defaults to: undefined
      * @type string
      * @memberof DefaultApirootGet
      */
     format?: string
     /**
      * Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
+     * Defaults to: undefined
      * @type string
      * @memberof DefaultApirootGet
      */
