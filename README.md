@@ -24,6 +24,7 @@ Version matrix
 
 | OpenAPI iplocation Version | OpenAPI Version | OpenAPI Generator Version |
 |----------------------------|-----------------|---------------------------|
+| 1.1.0 | 3.1.0 | 7.9.0 |
 | 1.0.0 | 3.1.0 | 7.6.0 |
 
 Installation
