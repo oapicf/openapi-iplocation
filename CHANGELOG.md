@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Update all GitHub Actions workflows to latest generator template
+
 ## 1.1.0 - 2024-11-02
 ### Changed
 - Upgrade Swaggy C to 4.8.0

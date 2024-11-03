@@ -5,7 +5,7 @@ name: Publish API Documentation
       - '*'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,4 +19,4 @@ jobs:
           CACHE_DIR=/tmp gh-pages --dist doc/ --user "pakkunbot
           <blah+pakkun@cliffano.com>" --repo "https://cliffano:${{
           secrets.OAPICF_GITHUB_TOKEN
-          }}@github.com/oapicf/openapi-iplocation.git"
+          }}@github.com/oapicf/openapi-okta-ip-ranges.git"
