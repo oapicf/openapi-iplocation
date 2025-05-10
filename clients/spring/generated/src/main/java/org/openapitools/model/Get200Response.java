@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -20,24 +21,24 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-02T22:34:13.629797501Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T05:00:05.247703803Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class Get200Response {
 
-  private String ip;
+  private @Nullable String ip;
 
-  private String ipNumber;
+  private @Nullable String ipNumber;
 
-  private Integer ipVersion;
+  private @Nullable Integer ipVersion;
 
-  private String countryName;
+  private @Nullable String countryName;
 
-  private String countryCode2;
+  private @Nullable String countryCode2;
 
-  private String isp;
+  private @Nullable String isp;
 
-  private String responseCode;
+  private @Nullable String responseCode;
 
-  private String responseMessage;
+  private @Nullable String responseMessage;
 
   public Get200Response ip(String ip) {
     this.ip = ip;

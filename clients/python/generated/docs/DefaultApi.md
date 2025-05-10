@@ -12,7 +12,8 @@ Method | HTTP request | Description
 
 Get geolocation of an IP address
 
-Retrieve geolocation of an IP address. 
+Retrieve geolocation of an IP address.
+
 
 ### Example
 

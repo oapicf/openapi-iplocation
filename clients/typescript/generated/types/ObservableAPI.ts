@@ -1,5 +1,6 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, ConfigurationOptions } from '../configuration'
+import type { Middleware } from '../middleware';
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
 import { Get200Response } from '../models/Get200Response';
@@ -28,19 +29,48 @@ export class ObservableDefaultApi {
      * @param [format] Output format, the following formats are supported: plain xml json jsonp php csv serialized
      * @param [delimiter] Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
-    public rootGetWithHttpInfo(ip: string, format?: string, delimiter?: string, _options?: Configuration): Observable<HttpInfo<Get200Response>> {
-        const requestContextPromise = this.requestFactory.rootGet(ip, format, delimiter, _options);
+    public rootGetWithHttpInfo(ip: string, format?: string, delimiter?: string, _options?: ConfigurationOptions): Observable<HttpInfo<Get200Response>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
 
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.rootGet(ip, format, delimiter, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of this.configuration.middleware) {
+        for (const middleware of allMiddleware) {
             middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
         }
 
         return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
             pipe(mergeMap((response: ResponseContext) => {
                 let middlewarePostObservable = of(response);
-                for (const middleware of this.configuration.middleware) {
+                for (const middleware of allMiddleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
                 return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.rootGetWithHttpInfo(rsp)));
@@ -54,7 +84,7 @@ export class ObservableDefaultApi {
      * @param [format] Output format, the following formats are supported: plain xml json jsonp php csv serialized
      * @param [delimiter] Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      */
-    public rootGet(ip: string, format?: string, delimiter?: string, _options?: Configuration): Observable<Get200Response> {
+    public rootGet(ip: string, format?: string, delimiter?: string, _options?: ConfigurationOptions): Observable<Get200Response> {
         return this.rootGetWithHttpInfo(ip, format, delimiter, _options).pipe(map((apiResponse: HttpInfo<Get200Response>) => apiResponse.data));
     }
 

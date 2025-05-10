@@ -10,7 +10,7 @@
     <artifactId>openapi-undertow-server</artifactId>
     <packaging>jar</packaging>
     <name>openapi-undertow-server</name>
-    <version>1.0.1-pre.0</version>
+    <version>1.1.1-pre.0</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -26,7 +26,7 @@
         <version.commons.codec>1.10</version.commons.codec>
         <version.encoder>1.2</version.encoder>
         <version.metrics>3.1.2</version.metrics>
-        <version.logback>1.4.13</version.logback>
+        <version.logback>1.5.13</version.logback>
         <version.junit>4.13.2</version.junit>
         <version.mockito>2.1.0-beta.124</version.mockito>
         <version.undertow>2.3.17.Final</version.undertow>

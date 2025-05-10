@@ -5,7 +5,7 @@
 
 
 
-__get_200_response_t *__get_200_response_create(
+static __get_200_response_t *__get_200_response_create_internal(
     char *ip,
     char *ip_number,
     int ip_version,
@@ -28,12 +28,38 @@ __get_200_response_t *__get_200_response_create(
     __get_200_response_local_var->response_code = response_code;
     __get_200_response_local_var->response_message = response_message;
 
+    __get_200_response_local_var->_library_owned = 1;
     return __get_200_response_local_var;
 }
 
+__attribute__((deprecated)) __get_200_response_t *__get_200_response_create(
+    char *ip,
+    char *ip_number,
+    int ip_version,
+    char *country_name,
+    char *country_code2,
+    char *isp,
+    char *response_code,
+    char *response_message
+    ) {
+    return __get_200_response_create_internal (
+        ip,
+        ip_number,
+        ip_version,
+        country_name,
+        country_code2,
+        isp,
+        response_code,
+        response_message
+        );
+}
 
 void __get_200_response_free(__get_200_response_t *__get_200_response) {
     if(NULL == __get_200_response){
+        return ;
+    }
+    if(__get_200_response->_library_owned != 1){
+        fprintf(stderr, "WARNING: %s() does NOT free objects allocated by the user\n", "__get_200_response_free");
         return ;
     }
     listEntry_t *listEntry;
@@ -148,6 +174,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->ip
     cJSON *ip = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "ip");
+    if (cJSON_IsNull(ip)) {
+        ip = NULL;
+    }
     if (ip) { 
     if(!cJSON_IsString(ip) && !cJSON_IsNull(ip))
     {
@@ -157,6 +186,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->ip_number
     cJSON *ip_number = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "ip_number");
+    if (cJSON_IsNull(ip_number)) {
+        ip_number = NULL;
+    }
     if (ip_number) { 
     if(!cJSON_IsString(ip_number) && !cJSON_IsNull(ip_number))
     {
@@ -166,6 +198,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->ip_version
     cJSON *ip_version = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "ip_version");
+    if (cJSON_IsNull(ip_version)) {
+        ip_version = NULL;
+    }
     if (ip_version) { 
     if(!cJSON_IsNumber(ip_version))
     {
@@ -175,6 +210,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->country_name
     cJSON *country_name = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "country_name");
+    if (cJSON_IsNull(country_name)) {
+        country_name = NULL;
+    }
     if (country_name) { 
     if(!cJSON_IsString(country_name) && !cJSON_IsNull(country_name))
     {
@@ -184,6 +222,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->country_code2
     cJSON *country_code2 = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "country_code2");
+    if (cJSON_IsNull(country_code2)) {
+        country_code2 = NULL;
+    }
     if (country_code2) { 
     if(!cJSON_IsString(country_code2) && !cJSON_IsNull(country_code2))
     {
@@ -193,6 +234,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->isp
     cJSON *isp = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "isp");
+    if (cJSON_IsNull(isp)) {
+        isp = NULL;
+    }
     if (isp) { 
     if(!cJSON_IsString(isp) && !cJSON_IsNull(isp))
     {
@@ -202,6 +246,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->response_code
     cJSON *response_code = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "response_code");
+    if (cJSON_IsNull(response_code)) {
+        response_code = NULL;
+    }
     if (response_code) { 
     if(!cJSON_IsString(response_code) && !cJSON_IsNull(response_code))
     {
@@ -211,6 +258,9 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
 
     // __get_200_response->response_message
     cJSON *response_message = cJSON_GetObjectItemCaseSensitive(__get_200_responseJSON, "response_message");
+    if (cJSON_IsNull(response_message)) {
+        response_message = NULL;
+    }
     if (response_message) { 
     if(!cJSON_IsString(response_message) && !cJSON_IsNull(response_message))
     {
@@ -219,7 +269,7 @@ __get_200_response_t *__get_200_response_parseFromJSON(cJSON *__get_200_response
     }
 
 
-    __get_200_response_local_var = __get_200_response_create (
+    __get_200_response_local_var = __get_200_response_create_internal (
         ip && !cJSON_IsNull(ip) ? strdup(ip->valuestring) : NULL,
         ip_number && !cJSON_IsNull(ip_number) ? strdup(ip_number->valuestring) : NULL,
         ip_version ? ip_version->valuedouble : 0,

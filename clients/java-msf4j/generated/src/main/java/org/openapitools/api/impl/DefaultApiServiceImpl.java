@@ -17,7 +17,7 @@ import org.wso2.msf4j.formparam.FileInfo;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-11-02T22:25:59.626627641Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2025-05-10T04:58:51.795955617Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class DefaultApiServiceImpl extends DefaultApiService {
     @Override
     public Response rootGet(String ip

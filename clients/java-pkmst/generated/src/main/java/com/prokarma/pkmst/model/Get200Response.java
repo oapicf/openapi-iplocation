@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Get200Response
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-02T22:26:02.843268540Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2025-05-10T04:58:53.021070602Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class Get200Response   {
   @JsonProperty("ip")
   private String ip;

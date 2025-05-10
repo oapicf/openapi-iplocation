@@ -1,5 +1,6 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, ConfigurationOptions } from '../configuration'
+import type { Middleware } from '../middleware';
 
 import { Get200Response } from '../models/Get200Response';
 import { Get400Response } from '../models/Get400Response';
@@ -43,7 +44,7 @@ export class ObjectDefaultApi {
      * Get geolocation of an IP address
      * @param param the request object
      */
-    public rootGetWithHttpInfo(param: DefaultApiRootGetRequest, options?: Configuration): Promise<HttpInfo<Get200Response>> {
+    public rootGetWithHttpInfo(param: DefaultApiRootGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Get200Response>> {
         return this.api.rootGetWithHttpInfo(param.ip, param.format, param.delimiter,  options).toPromise();
     }
 
@@ -52,7 +53,7 @@ export class ObjectDefaultApi {
      * Get geolocation of an IP address
      * @param param the request object
      */
-    public rootGet(param: DefaultApiRootGetRequest, options?: Configuration): Promise<Get200Response> {
+    public rootGet(param: DefaultApiRootGetRequest, options?: ConfigurationOptions): Promise<Get200Response> {
         return this.api.rootGet(param.ip, param.format, param.delimiter,  options).toPromise();
     }
 

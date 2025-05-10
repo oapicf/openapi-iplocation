@@ -28,9 +28,10 @@ typedef struct __get_200_response_t {
     char *response_code; // string
     char *response_message; // string
 
+    int _library_owned; // Is the library responsible for freeing this object?
 } __get_200_response_t;
 
-__get_200_response_t *__get_200_response_create(
+__attribute__((deprecated)) __get_200_response_t *__get_200_response_create(
     char *ip,
     char *ip_number,
     int ip_version,

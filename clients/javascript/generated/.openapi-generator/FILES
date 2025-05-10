@@ -1,6 +1,5 @@
 .babelrc
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/DefaultApi.md
@@ -14,6 +13,3 @@ src/api/DefaultApi.js
 src/index.js
 src/model/Get200Response.js
 src/model/Get400Response.js
-test/api/DefaultApi.spec.js
-test/model/Get200Response.spec.js
-test/model/Get400Response.spec.js

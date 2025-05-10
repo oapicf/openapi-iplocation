@@ -1,6 +1,6 @@
 use async_trait::async_trait;
 use axum::extract::*;
-use axum_extra::extract::{CookieJar, Multipart};
+use axum_extra::extract::{CookieJar, Host};
 use bytes::Bytes;
 use http::Method;
 use serde::{Deserialize, Serialize};
@@ -28,15 +28,15 @@ pub enum RootGetResponse {
 /// Default
 #[async_trait]
 #[allow(clippy::ptr_arg)]
-pub trait Default {
+pub trait Default<E: std::fmt::Debug + Send + Sync + 'static = ()>: super::ErrorHandler<E> {
     /// Get geolocation of an IP address.
     ///
     /// RootGet - GET /
     async fn root_get(
     &self,
-    method: Method,
-    host: Host,
-    cookies: CookieJar,
-      query_params: models::RootGetQueryParams,
-    ) -> Result<RootGetResponse, String>;
+    method: &Method,
+    host: &Host,
+    cookies: &CookieJar,
+      query_params: &models::RootGetQueryParams,
+    ) -> Result<RootGetResponse, E>;
 }

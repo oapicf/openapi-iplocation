@@ -14,7 +14,7 @@ use crate::server::Authorization;
 type ServiceError = Box<dyn Error + Send + Sync + 'static>;
 
 pub const BASE_PATH: &str = "";
-pub const API_VERSION: &str = "1.0.1-pre.0";
+pub const API_VERSION: &str = "1.1.1-pre.0";
 
 mod auth;
 pub use auth::{AuthenticationApi, Claims};

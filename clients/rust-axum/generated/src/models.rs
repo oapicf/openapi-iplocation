@@ -26,53 +26,53 @@ use crate::{models, types::*};
 
 
 
-
-
-
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get200Response {
-/// IPv4 or IPv6 address used to lookup geolocation.
+    /// IPv4 or IPv6 address used to lookup geolocation.
     #[serde(rename = "ip")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip: Option<String>,
 
-/// IP number in long integer (represented as string).
+    /// IP number in long integer (represented as string).
     #[serde(rename = "ip_number")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip_number: Option<String>,
 
-/// IP version either 4 or 6.
+    /// IP version either 4 or 6.
     #[serde(rename = "ip_version")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip_version: Option<i32>,
 
-/// Full name of the IP country.
+    /// Full name of the IP country.
     #[serde(rename = "country_name")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_name: Option<String>,
 
-/// ISO ALPHA-2 Country Code.
+    /// ISO ALPHA-2 Country Code.
     #[serde(rename = "country_code2")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_code2: Option<String>,
 
-/// Internet Service Provider (ISP) who owns the IP address.
+    /// Internet Service Provider (ISP) who owns the IP address.
     #[serde(rename = "isp")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub isp: Option<String>,
 
-/// Response status code to indicate success or failed completion of the API call.
+    /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
-/// Response message to indicate success or failed completion of the API call.
+    /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
 }
+
+
+
 
 
 impl Get200Response {
@@ -282,23 +282,23 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Get200Respon
 
 
 
-
-
-
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get400Response {
-/// Response status code to indicate success or failed completion of the API call.
+    /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
-/// Response message to indicate success or failed completion of the API call.
+    /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
 }
+
+
+
 
 
 impl Get400Response {

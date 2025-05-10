@@ -2,7 +2,6 @@
 .github/workflows/r-client.yaml
 .gitignore
 .lintr
-.openapi-generator-ignore
 .travis.yml
 DESCRIPTION
 NAMESPACE
@@ -17,6 +16,3 @@ docs/Get200Response.md
 docs/Get400Response.md
 git_push.sh
 tests/testthat.R
-tests/testthat/test_default_api.R
-tests/testthat/test_get200_response.R
-tests/testthat/test_get400_response.R

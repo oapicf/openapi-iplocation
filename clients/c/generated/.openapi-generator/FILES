@@ -1,5 +1,5 @@
-.openapi-generator-ignore
 CMakeLists.txt
+Config.cmake.in
 Packing.cmake
 README.md
 api/DefaultAPI.c
@@ -19,6 +19,7 @@ model/__get_200_response.c
 model/__get_200_response.h
 model/__get_400_response.c
 model/__get_400_response.h
+model/any_type.h
 model/object.c
 model/object.h
 src/apiClient.c
@@ -26,5 +27,3 @@ src/apiKey.c
 src/binary.c
 src/list.c
 uncrustify-rules.cfg
-unit-test/test___get_200_response.c
-unit-test/test___get_400_response.c

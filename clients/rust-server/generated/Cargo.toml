@@ -1,6 +1,6 @@
 [package]
 name = "openapi_client"
-version = "1.0.1-pre.0"
+version = "1.1.1-pre.0"
 authors = ["blah+oapicf@cliffano.com"]
 description = "OpenAPI v3 specification and a set of generated API clients for iplocation.net"
 license = "MIT"

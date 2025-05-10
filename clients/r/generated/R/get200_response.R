@@ -94,10 +94,35 @@ Get200Response <- R6::R6Class(
     },
 
     #' @description
-    #' To JSON String
-    #'
-    #' @return Get200Response in JSON format
+    #' Convert to an R object. This method is deprecated. Use `toSimpleType()` instead.
     toJSON = function() {
+      .Deprecated(new = "toSimpleType", msg = "Use the '$toSimpleType()' method instead since that is more clearly named. Use '$toJSONString()' to get a JSON string")
+      return(self$toSimpleType())
+    },
+
+    #' @description
+    #' Convert to a List
+    #'
+    #' Convert the R6 object to a list to work more easily with other tooling.
+    #'
+    #' @return Get200Response as a base R list.
+    #' @examples
+    #' # convert array of Get200Response (x) to a data frame
+    #' \dontrun{
+    #' library(purrr)
+    #' library(tibble)
+    #' df <- x |> map(\(y)y$toList()) |> map(as_tibble) |> list_rbind()
+    #' df
+    #' }
+    toList = function() {
+      return(self$toSimpleType())
+    },
+
+    #' @description
+    #' Convert Get200Response to a base R type
+    #'
+    #' @return A base R type, e.g. a list or numeric/character array.
+    toSimpleType = function() {
       Get200ResponseObject <- list()
       if (!is.null(self$`ip`)) {
         Get200ResponseObject[["ip"]] <-
@@ -131,7 +156,7 @@ Get200Response <- R6::R6Class(
         Get200ResponseObject[["response_message"]] <-
           self$`response_message`
       }
-      Get200ResponseObject
+      return(Get200ResponseObject)
     },
 
     #' @description
@@ -170,77 +195,13 @@ Get200Response <- R6::R6Class(
 
     #' @description
     #' To JSON String
-    #'
+    #' 
+    #' @param ... Parameters passed to `jsonlite::toJSON`
     #' @return Get200Response in JSON format
-    toJSONString = function() {
-      jsoncontent <- c(
-        if (!is.null(self$`ip`)) {
-          sprintf(
-          '"ip":
-            "%s"
-                    ',
-          self$`ip`
-          )
-        },
-        if (!is.null(self$`ip_number`)) {
-          sprintf(
-          '"ip_number":
-            "%s"
-                    ',
-          self$`ip_number`
-          )
-        },
-        if (!is.null(self$`ip_version`)) {
-          sprintf(
-          '"ip_version":
-            %d
-                    ',
-          self$`ip_version`
-          )
-        },
-        if (!is.null(self$`country_name`)) {
-          sprintf(
-          '"country_name":
-            "%s"
-                    ',
-          self$`country_name`
-          )
-        },
-        if (!is.null(self$`country_code2`)) {
-          sprintf(
-          '"country_code2":
-            "%s"
-                    ',
-          self$`country_code2`
-          )
-        },
-        if (!is.null(self$`isp`)) {
-          sprintf(
-          '"isp":
-            "%s"
-                    ',
-          self$`isp`
-          )
-        },
-        if (!is.null(self$`response_code`)) {
-          sprintf(
-          '"response_code":
-            "%s"
-                    ',
-          self$`response_code`
-          )
-        },
-        if (!is.null(self$`response_message`)) {
-          sprintf(
-          '"response_message":
-            "%s"
-                    ',
-          self$`response_message`
-          )
-        }
-      )
-      jsoncontent <- paste(jsoncontent, collapse = ",")
-      json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
+    toJSONString = function(...) {
+      simple <- self$toSimpleType()
+      json <- jsonlite::toJSON(simple, auto_unbox = TRUE, digits = NA, ...)
+      return(as.character(jsonlite::minify(json)))
     },
 
     #' @description

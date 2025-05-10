@@ -47,6 +47,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     }
 
     /**
+     * GET /
      * Get geolocation of an IP address
      * Retrieve geolocation of an IP address. 
      * @param ip An IPv4 or IPv6 address that you would like to lookup.
@@ -80,6 +81,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     }
 
     /**
+     * GET /
      * Get geolocation of an IP address
      * Retrieve geolocation of an IP address. 
      * @param ip An IPv4 or IPv6 address that you would like to lookup.
