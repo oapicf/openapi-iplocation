@@ -6,4 +6,6 @@ contact:
   email: blah+oapicf@cliffano.com
 base_dir:
   github_actions: /home/runner/work/openapi-iplocation/openapi-iplocation
-  local: /Users/cliffano/dev/workspace-studio/openapi-iplocation
+  local: /Users/cliffano/dev/workspace-oapicf/openapi-iplocation
+  custom: >-
+    /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-iplocation/
