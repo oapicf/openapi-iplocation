@@ -12,8 +12,8 @@ server, you can easily generate a server stub.
 To see how to make this your own, look here: [README]((https://openapi-generator.tech))
 
 - API version: 1.1.1-pre.0
-- Build date: 2025-05-10T05:00:26.635955363Z[Etc/UTC]
-- Generator version: 7.12.0
+- Build date: 2026-01-24T09:30:27.183484299Z[Etc/UTC]
+- Generator version: 7.18.0
 
 For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)
 

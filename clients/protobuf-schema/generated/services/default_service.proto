@@ -19,7 +19,7 @@ import public "models/get200_response.proto";
 import public "models/get400_response.proto";
 
 service DefaultService {
-  rpc RootGet (RootGetRequest) returns (Get200Response);
+  rpc RootGet (RootGetRequest) returns (RootGetResponse);
 
 }
 
@@ -33,3 +33,10 @@ message RootGetRequest {
 
 }
 
+message RootGetResponse {
+    oneof response {
+        Get200Response get200_response_200 = 1;
+        Get400Response get400_response_400 = 2;
+        Get400Response get400_response_404 = 3;
+    }
+}

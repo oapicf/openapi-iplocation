@@ -8,52 +8,60 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Get200Response  {
   
-  @ApiModelProperty(value = "IPv4 or IPv6 address used to lookup geolocation.")
  /**
-   * IPv4 or IPv6 address used to lookup geolocation.
-  **/
+  * IPv4 or IPv6 address used to lookup geolocation.
+  */
+  @ApiModelProperty(value = "IPv4 or IPv6 address used to lookup geolocation.")
+
   private String ip;
 
-  @ApiModelProperty(value = "IP number in long integer (represented as string).")
  /**
-   * IP number in long integer (represented as string).
-  **/
+  * IP number in long integer (represented as string).
+  */
+  @ApiModelProperty(value = "IP number in long integer (represented as string).")
+
   private String ipNumber;
 
-  @ApiModelProperty(value = "IP version either 4 or 6.")
  /**
-   * IP version either 4 or 6.
-  **/
+  * IP version either 4 or 6.
+  */
+  @ApiModelProperty(value = "IP version either 4 or 6.")
+
   private Integer ipVersion;
 
-  @ApiModelProperty(value = "Full name of the IP country.")
  /**
-   * Full name of the IP country.
-  **/
+  * Full name of the IP country.
+  */
+  @ApiModelProperty(value = "Full name of the IP country.")
+
   private String countryName;
 
-  @ApiModelProperty(value = "ISO ALPHA-2 Country Code.")
  /**
-   * ISO ALPHA-2 Country Code.
-  **/
+  * ISO ALPHA-2 Country Code.
+  */
+  @ApiModelProperty(value = "ISO ALPHA-2 Country Code.")
+
   private String countryCode2;
 
-  @ApiModelProperty(value = "Internet Service Provider (ISP) who owns the IP address.")
  /**
-   * Internet Service Provider (ISP) who owns the IP address.
-  **/
+  * Internet Service Provider (ISP) who owns the IP address.
+  */
+  @ApiModelProperty(value = "Internet Service Provider (ISP) who owns the IP address.")
+
   private String isp;
 
-  @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
  /**
-   * Response status code to indicate success or failed completion of the API call.
-  **/
+  * Response status code to indicate success or failed completion of the API call.
+  */
+  @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
+
   private String responseCode;
 
-  @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
  /**
-   * Response message to indicate success or failed completion of the API call.
-  **/
+  * Response message to indicate success or failed completion of the API call.
+  */
+  @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
+
   private String responseMessage;
  /**
    * IPv4 or IPv6 address used to lookup geolocation.

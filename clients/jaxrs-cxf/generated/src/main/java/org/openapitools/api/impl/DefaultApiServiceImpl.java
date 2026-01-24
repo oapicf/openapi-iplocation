@@ -15,7 +15,6 @@ import org.apache.cxf.jaxrs.model.wadl.DocTarget;
 
 import org.apache.cxf.jaxrs.ext.multipart.*;
 
-import io.swagger.annotations.Api;
 
 /**
  * iplocation.net API

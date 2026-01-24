@@ -5,33 +5,77 @@
  *
  *)
 
-type t = {
-    (* IPv4 or IPv6 address used to lookup geolocation. *)
-    ip: string option [@default None];
-    (* IP number in long integer (represented as string). *)
-    ip_number: string option [@default None];
-    (* IP version either 4 or 6. *)
-    ip_version: int32 option [@default None];
-    (* Full name of the IP country. *)
-    country_name: string option [@default None];
-    (* ISO ALPHA-2 Country Code. *)
-    country_code2: string option [@default None];
-    (* Internet Service Provider (ISP) who owns the IP address. *)
-    isp: string option [@default None];
-    (* Response status code to indicate success or failed completion of the API call. *)
-    response_code: string option [@default None];
-    (* Response message to indicate success or failed completion of the API call. *)
-    response_message: string option [@default None];
-} [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-    ip = None;
-    ip_number = None;
-    ip_version = None;
-    country_name = None;
-    country_code2 = None;
-    isp = None;
-    response_code = None;
-    response_message = None;
-}
+
+    
+        type t = {
+                              ip: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "ip"]
+                    (** IPv4 or IPv6 address used to lookup geolocation. *)
+                                      ip_number: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "ip_number"]
+                    (** IP number in long integer (represented as string). *)
+                                      ip_version: int32
+                  
+                   option [@default None]
+                
+                
+                ; [@key "ip_version"]
+                    (** IP version either 4 or 6. *)
+                                      country_name: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "country_name"]
+                    (** Full name of the IP country. *)
+                                      country_code2: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "country_code2"]
+                    (** ISO ALPHA-2 Country Code. *)
+                                      isp: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "isp"]
+                    (** Internet Service Provider (ISP) who owns the IP address. *)
+                                      response_code: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "response_code"]
+                    (** Response status code to indicate success or failed completion of the API call. *)
+                                      response_message: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "response_message"]
+                    (** Response message to indicate success or failed completion of the API call. *)
+                } [@@deriving yojson { strict = false }, show, eq ];;
+        
+        let create () : t = {
+            ip = None;
+            ip_number = None;
+            ip_version = None;
+            country_name = None;
+            country_code2 = None;
+            isp = None;
+            response_code = None;
+            response_message = None;
+        }
+    
 

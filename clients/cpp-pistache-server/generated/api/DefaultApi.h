@@ -86,7 +86,7 @@ private:
     /// <param name="ip">An IPv4 or IPv6 address that you would like to lookup.</param>
     /// <param name="format">Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional, default to &quot;&quot;)</param>
     /// <param name="delimiter">Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;. (optional, default to &quot;&quot;)</param>
-    virtual void root_get(const std::optional<std::string> &ip, const std::optional<std::string> &format, const std::optional<std::string> &delimiter, Pistache::Http::ResponseWriter &response) = 0;
+    virtual void root_get( const std::optional<std::string> &ip, const std::optional<std::string> &format, const std::optional<std::string> &delimiter, Pistache::Http::ResponseWriter &response) = 0;
 
 };
 

@@ -7,7 +7,7 @@ All URIs are relative to *https://api.iplocation.net*
 
 | Class | Method | HTTP request | Description |
 |------------ | ------------- | ------------- | -------------|
-| *DefaultApi* | [**rootGet**](Apis/DefaultApi.md#rootget) | **GET** / | Get geolocation of an IP address |
+| *DefaultApi* | [**rootGet**](Apis/DefaultApi.md#rootGet) | **GET** / | Get geolocation of an IP address |
 
 
 <a name="documentation-for-models"></a>

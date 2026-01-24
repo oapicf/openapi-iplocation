@@ -49,11 +49,11 @@ namespace Org.OpenAPITools.Controllers
         {
 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(Get200Response));
+            // return StatusCode(200, default);
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(400, default(Get400Response));
+            // return StatusCode(400, default);
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(404, default(Get400Response));
+            // return StatusCode(404, default);
             string exampleJson = null;
             exampleJson = "{\n  \"response_code\" : \"response_code\",\n  \"ip_version\" : 0,\n  \"response_message\" : \"response_message\",\n  \"ip\" : \"ip\",\n  \"isp\" : \"isp\",\n  \"country_name\" : \"country_name\",\n  \"country_code2\" : \"country_code2\",\n  \"ip_number\" : \"ip_number\"\n}";
             exampleJson = "{\n  \"response_code\" : \"response_code\",\n  \"response_message\" : \"response_message\"\n}";
@@ -61,7 +61,7 @@ namespace Org.OpenAPITools.Controllers
             
             var example = exampleJson != null
             ? JsonConvert.DeserializeObject<Get200Response>(exampleJson)
-            : default(Get200Response);
+            : default;
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

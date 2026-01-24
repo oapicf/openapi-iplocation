@@ -18,18 +18,15 @@ import tables
 import typetraits
 import uri
 
-import ../models/model___get_200_response
-import ../models/model___get_400_response
+import ../models/model_get200response
+import ../models/model_get400response
 
 const basepath = "https://api.iplocation.net"
 
 template constructResult[T](response: Response): untyped =
   if response.code in {Http200, Http201, Http202, Http204, Http206}:
     try:
-      when name(stripGenericParams(T.typedesc).typedesc) == name(Table):
-        (some(json.to(parseJson(response.body), T.typedesc)), response)
-      else:
-        (some(marshal.to[T](response.body)), response)
+      (some(to(parseJson(response.body), T)), response)
     except JsonParsingError:
       # The server returned a malformed response though the response code is 2XX
       # TODO: need better error handling
@@ -41,12 +38,14 @@ template constructResult[T](response: Response): untyped =
 
 proc rootGet*(httpClient: HttpClient, ip: string, format: string, delimiter: string): (Option[__get_200_response], Response) =
   ## Get geolocation of an IP address
-  let query_for_api_call = encodeQuery([
-    ("ip", $ip), # An IPv4 or IPv6 address that you would like to lookup.
-    ("format", $format), # Output format, the following formats are supported: plain xml json jsonp php csv serialized
-    ("delimiter", $delimiter), # Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
-  ])
+  var query_params_list: seq[(string, string)] = @[]
+  query_params_list.add(("ip", $ip))
+  if $format != "":
+    query_params_list.add(("format", $format))
+  if $delimiter != "":
+    query_params_list.add(("delimiter", $delimiter))
+  let url_encoded_query_params = encodeQuery(query_params_list)
 
-  let response = httpClient.get(basepath & "/" & "?" & query_for_api_call)
+  let response = httpClient.get(basepath & "/" & "?" & url_encoded_query_params)
   constructResult[__get_200_response](response)
 

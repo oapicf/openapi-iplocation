@@ -25,6 +25,8 @@ pub enum RootGetResponse {
 }
 
 
+
+
 /// Default
 #[async_trait]
 #[allow(clippy::ptr_arg)]
@@ -34,6 +36,7 @@ pub trait Default<E: std::fmt::Debug + Send + Sync + 'static = ()>: super::Error
     /// RootGet - GET /
     async fn root_get(
     &self,
+    
     method: &Method,
     host: &Host,
     cookies: &CookieJar,

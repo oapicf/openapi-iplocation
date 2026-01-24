@@ -7,21 +7,80 @@ use validator::Validate;
 use crate::header;
 use crate::{models, types::*};
 
-      
+#[allow(dead_code)]
+fn from_validation_error(e: validator::ValidationError) -> validator::ValidationErrors {
+  let mut errs = validator::ValidationErrors::new();
+  errs.add("na", e);
+  errs
+}
+
+#[allow(dead_code)]
+pub fn check_xss_string(v: &str) -> std::result::Result<(), validator::ValidationError> {
+    if ammonia::is_html(v) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_vec_string(v: &[String]) -> std::result::Result<(), validator::ValidationError> {
+    if v.iter().any(|i| ammonia::is_html(i)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map_string(
+    v: &std::collections::HashMap<String, String>,
+) -> std::result::Result<(), validator::ValidationError> {
+    if v.keys().any(|k| ammonia::is_html(k)) || v.values().any(|v| ammonia::is_html(v)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map_nested<T>(
+    v: &std::collections::HashMap<String, T>,
+) -> std::result::Result<(), validator::ValidationError>
+where
+    T: validator::Validate,
+{
+    if v.keys().any(|k| ammonia::is_html(k)) || v.values().any(|v| v.validate().is_err()) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map<T>(v: &std::collections::HashMap<String, T>) -> std::result::Result<(), validator::ValidationError> {
+    if v.keys().any(|k| ammonia::is_html(k)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+
     #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
-    #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))] 
+    #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
     pub struct RootGetQueryParams {
             /// An IPv4 or IPv6 address that you would like to lookup.
                 #[serde(rename = "ip")]
-                pub ip: String,
+                    pub ip: String,
             /// Output format, the following formats are supported: plain xml json jsonp php csv serialized
                 #[serde(rename = "format")]
-                #[serde(skip_serializing_if="Option::is_none")]
-                pub format: Option<String>,
+                    #[serde(skip_serializing_if="Option::is_none")]
+                    pub format: Option<String>,
             /// Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
                 #[serde(rename = "delimiter")]
-                #[serde(skip_serializing_if="Option::is_none")]
-                pub delimiter: Option<String>,
+                    #[serde(skip_serializing_if="Option::is_none")]
+                    pub delimiter: Option<String>,
     }
 
 
@@ -31,11 +90,13 @@ use crate::{models, types::*};
 pub struct Get200Response {
     /// IPv4 or IPv6 address used to lookup geolocation.
     #[serde(rename = "ip")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip: Option<String>,
 
     /// IP number in long integer (represented as string).
     #[serde(rename = "ip_number")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip_number: Option<String>,
 
@@ -46,26 +107,31 @@ pub struct Get200Response {
 
     /// Full name of the IP country.
     #[serde(rename = "country_name")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_name: Option<String>,
 
     /// ISO ALPHA-2 Country Code.
     #[serde(rename = "country_code2")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_code2: Option<String>,
 
     /// Internet Service Provider (ISP) who owns the IP address.
     #[serde(rename = "isp")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub isp: Option<String>,
 
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
@@ -73,20 +139,18 @@ pub struct Get200Response {
 
 
 
-
-
 impl Get200Response {
     #[allow(clippy::new_without_default, clippy::too_many_arguments)]
     pub fn new() -> Get200Response {
         Get200Response {
-            ip: None,
-            ip_number: None,
-            ip_version: None,
-            country_name: None,
-            country_code2: None,
-            isp: None,
-            response_code: None,
-            response_message: None,
+ ip: None,
+ ip_number: None,
+ ip_version: None,
+ country_name: None,
+ country_code2: None,
+ isp: None,
+ response_code: None,
+ response_message: None,
         }
     }
 }
@@ -251,9 +315,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Get200Response>> for HeaderVa
         let hdr_value = hdr_value.to_string();
         match HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Get200Response - value: {} is invalid {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Invalid header value for Get200Response - value: {hdr_value} is invalid {e}"#))
         }
     }
 }
@@ -267,18 +329,13 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Get200Respon
              std::result::Result::Ok(value) => {
                     match <Get200Response as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
-                        std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Get200Response - {}",
-                                value, err))
+                        std::result::Result::Err(err) => std::result::Result::Err(format!(r#"Unable to convert header value '{value}' into Get200Response - {err}"#))
                     }
              },
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Unable to convert header: {hdr_value:?} to string: {e}"#))
         }
     }
 }
-
 
 
 
@@ -287,11 +344,13 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Get200Respon
 pub struct Get400Response {
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
@@ -299,14 +358,12 @@ pub struct Get400Response {
 
 
 
-
-
 impl Get400Response {
     #[allow(clippy::new_without_default, clippy::too_many_arguments)]
     pub fn new() -> Get400Response {
         Get400Response {
-            response_code: None,
-            response_message: None,
+ response_code: None,
+ response_message: None,
         }
     }
 }
@@ -399,9 +456,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Get400Response>> for HeaderVa
         let hdr_value = hdr_value.to_string();
         match HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Get400Response - value: {} is invalid {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Invalid header value for Get400Response - value: {hdr_value} is invalid {e}"#))
         }
     }
 }
@@ -415,17 +470,12 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Get400Respon
              std::result::Result::Ok(value) => {
                     match <Get400Response as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
-                        std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Get400Response - {}",
-                                value, err))
+                        std::result::Result::Err(err) => std::result::Result::Err(format!(r#"Unable to convert header value '{value}' into Get400Response - {err}"#))
                     }
              },
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Unable to convert header: {hdr_value:?} to string: {e}"#))
         }
     }
 }
-
 
 

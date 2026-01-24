@@ -2,6 +2,7 @@ package org.openapitools.api;
 
 import org.openapitools.model.Get200Response;
 import org.openapitools.model.Get400Response;
+import org.springframework.lang.Nullable;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-02T22:34:13.629797501Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T09:30:44.145361455Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Controller
 @RequestMapping("${openapi.iplocationNet.base-path:}")
 public class DefaultApiController implements DefaultApi {

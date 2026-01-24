@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T05:00:05.247703803Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T09:30:44.145361455Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Get200Response {
 
   private @Nullable String ip;
@@ -40,7 +40,7 @@ public class Get200Response {
 
   private @Nullable String responseMessage;
 
-  public Get200Response ip(String ip) {
+  public Get200Response ip(@Nullable String ip) {
     this.ip = ip;
     return this;
   }
@@ -52,15 +52,15 @@ public class Get200Response {
   
   @Schema(name = "ip", description = "IPv4 or IPv6 address used to lookup geolocation.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip")
-  public String getIp() {
+  public @Nullable String getIp() {
     return ip;
   }
 
-  public void setIp(String ip) {
+  public void setIp(@Nullable String ip) {
     this.ip = ip;
   }
 
-  public Get200Response ipNumber(String ipNumber) {
+  public Get200Response ipNumber(@Nullable String ipNumber) {
     this.ipNumber = ipNumber;
     return this;
   }
@@ -72,15 +72,15 @@ public class Get200Response {
   
   @Schema(name = "ip_number", description = "IP number in long integer (represented as string).", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip_number")
-  public String getIpNumber() {
+  public @Nullable String getIpNumber() {
     return ipNumber;
   }
 
-  public void setIpNumber(String ipNumber) {
+  public void setIpNumber(@Nullable String ipNumber) {
     this.ipNumber = ipNumber;
   }
 
-  public Get200Response ipVersion(Integer ipVersion) {
+  public Get200Response ipVersion(@Nullable Integer ipVersion) {
     this.ipVersion = ipVersion;
     return this;
   }
@@ -92,15 +92,15 @@ public class Get200Response {
   
   @Schema(name = "ip_version", description = "IP version either 4 or 6.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("ip_version")
-  public Integer getIpVersion() {
+  public @Nullable Integer getIpVersion() {
     return ipVersion;
   }
 
-  public void setIpVersion(Integer ipVersion) {
+  public void setIpVersion(@Nullable Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
 
-  public Get200Response countryName(String countryName) {
+  public Get200Response countryName(@Nullable String countryName) {
     this.countryName = countryName;
     return this;
   }
@@ -112,15 +112,15 @@ public class Get200Response {
   
   @Schema(name = "country_name", description = "Full name of the IP country.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("country_name")
-  public String getCountryName() {
+  public @Nullable String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(String countryName) {
+  public void setCountryName(@Nullable String countryName) {
     this.countryName = countryName;
   }
 
-  public Get200Response countryCode2(String countryCode2) {
+  public Get200Response countryCode2(@Nullable String countryCode2) {
     this.countryCode2 = countryCode2;
     return this;
   }
@@ -132,15 +132,15 @@ public class Get200Response {
   
   @Schema(name = "country_code2", description = "ISO ALPHA-2 Country Code.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("country_code2")
-  public String getCountryCode2() {
+  public @Nullable String getCountryCode2() {
     return countryCode2;
   }
 
-  public void setCountryCode2(String countryCode2) {
+  public void setCountryCode2(@Nullable String countryCode2) {
     this.countryCode2 = countryCode2;
   }
 
-  public Get200Response isp(String isp) {
+  public Get200Response isp(@Nullable String isp) {
     this.isp = isp;
     return this;
   }
@@ -152,15 +152,15 @@ public class Get200Response {
   
   @Schema(name = "isp", description = "Internet Service Provider (ISP) who owns the IP address.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("isp")
-  public String getIsp() {
+  public @Nullable String getIsp() {
     return isp;
   }
 
-  public void setIsp(String isp) {
+  public void setIsp(@Nullable String isp) {
     this.isp = isp;
   }
 
-  public Get200Response responseCode(String responseCode) {
+  public Get200Response responseCode(@Nullable String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -172,15 +172,15 @@ public class Get200Response {
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_code")
-  public String getResponseCode() {
+  public @Nullable String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(String responseCode) {
+  public void setResponseCode(@Nullable String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get200Response responseMessage(String responseMessage) {
+  public Get200Response responseMessage(@Nullable String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -192,11 +192,11 @@ public class Get200Response {
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_message")
-  public String getResponseMessage() {
+  public @Nullable String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(String responseMessage) {
+  public void setResponseMessage(@Nullable String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

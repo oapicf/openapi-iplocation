@@ -48,7 +48,7 @@ import com.github.oapicf.openapiiplocation.JSON;
 /**
  * Get400Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T04:58:44.668864573Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-24T09:29:11.917752677Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Get400Response {
   public static final String SERIALIZED_NAME_RESPONSE_CODE = "response_code";
   @SerializedName(SERIALIZED_NAME_RESPONSE_CODE)
@@ -147,12 +147,10 @@ public class Get400Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("response_code");
-    openapiFields.add("response_message");
+    openapiFields = new HashSet<String>(Arrays.asList("response_code", "response_message"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -164,7 +162,7 @@ public class Get400Response {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Get400Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Get400Response is not found in the empty JSON string", Get400Response.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Get400Response is not found in the empty JSON string", Get400Response.openapiRequiredFields.toString()));
         }
       }
 
@@ -172,15 +170,15 @@ public class Get400Response {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Get400Response.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Get400Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Get400Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("response_code") != null && !jsonObj.get("response_code").isJsonNull()) && !jsonObj.get("response_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `response_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_code").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `response_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_code").toString()));
       }
       if ((jsonObj.get("response_message") != null && !jsonObj.get("response_message").isJsonNull()) && !jsonObj.get("response_message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `response_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_message").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `response_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("response_message").toString()));
       }
   }
 

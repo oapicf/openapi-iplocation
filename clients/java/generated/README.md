@@ -2,8 +2,8 @@
 
 iplocation.net API
 - API version: 1.1.1-pre.0
-  - Build date: 2025-05-10T04:58:44.668864573Z[Etc/UTC]
-  - Generator version: 7.12.0
+  - Build date: 2026-01-24T09:29:11.917752677Z[Etc/UTC]
+  - Generator version: 7.18.0
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 

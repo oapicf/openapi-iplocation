@@ -23,84 +23,53 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
-/**
- * 
- * @export
- * @interface Get200Response
- */
 export interface Get200Response {
     /**
      * IPv4 or IPv6 address used to lookup geolocation.
-     * @type {string}
-     * @memberof Get200Response
      */
     'ip'?: string;
     /**
      * IP number in long integer (represented as string).
-     * @type {string}
-     * @memberof Get200Response
      */
     'ip_number'?: string;
     /**
      * IP version either 4 or 6.
-     * @type {number}
-     * @memberof Get200Response
      */
     'ip_version'?: number;
     /**
      * Full name of the IP country.
-     * @type {string}
-     * @memberof Get200Response
      */
     'country_name'?: string;
     /**
      * ISO ALPHA-2 Country Code.
-     * @type {string}
-     * @memberof Get200Response
      */
     'country_code2'?: string;
     /**
      * Internet Service Provider (ISP) who owns the IP address.
-     * @type {string}
-     * @memberof Get200Response
      */
     'isp'?: string;
     /**
      * Response status code to indicate success or failed completion of the API call.
-     * @type {string}
-     * @memberof Get200Response
      */
     'response_code'?: string;
     /**
      * Response message to indicate success or failed completion of the API call.
-     * @type {string}
-     * @memberof Get200Response
      */
     'response_message'?: string;
 }
-/**
- * 
- * @export
- * @interface Get400Response
- */
 export interface Get400Response {
     /**
      * Response status code to indicate success or failed completion of the API call.
-     * @type {string}
-     * @memberof Get400Response
      */
     'response_code'?: string;
     /**
      * Response message to indicate success or failed completion of the API call.
-     * @type {string}
-     * @memberof Get400Response
      */
     'response_message'?: string;
 }
 
 /**
  * DefaultApi - axios parameter creator
- * @export
  */
 export const DefaultApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -140,8 +109,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['delimiter'] = delimiter;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -156,7 +125,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 /**
  * DefaultApi - functional programming interface
- * @export
  */
 export const DefaultApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = DefaultApiAxiosParamCreator(configuration)
@@ -181,7 +149,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
 
 /**
  * DefaultApi - factory interface
- * @export
  */
 export const DefaultApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DefaultApiFp(configuration)
@@ -203,9 +170,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 
 /**
  * DefaultApi - object-oriented interface
- * @export
- * @class DefaultApi
- * @extends {BaseAPI}
  */
 export class DefaultApi extends BaseAPI {
     /**
@@ -216,7 +180,6 @@ export class DefaultApi extends BaseAPI {
      * @param {string} [delimiter] Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \&quot;\\n\&quot;, 2 for \&quot;&lt;br&gt;\&quot;.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DefaultApi
      */
     public rootGet(ip: string, format?: string, delimiter?: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).rootGet(ip, format, delimiter, options).then((request) => request(this.axios, this.basePath));

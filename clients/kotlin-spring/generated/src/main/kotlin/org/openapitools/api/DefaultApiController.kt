@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.beans.factory.annotation.Autowired
+import org.openapitools.api.DefaultApiController.Companion.BASE_PATH
 
 import javax.validation.Valid
 import javax.validation.constraints.DecimalMax
@@ -31,7 +32,7 @@ import kotlin.collections.Map
 
 @RestController
 @Validated
-@RequestMapping("\${api.base-path:}")
+@RequestMapping("\${openapi.iplocationNet.base-path:\${api.base-path:$BASE_PATH}}")
 class DefaultApiController() {
 
     @Operation(
@@ -46,10 +47,20 @@ class DefaultApiController() {
     )
     @RequestMapping(
         method = [RequestMethod.GET],
-        value = ["/"],
+        value = [PATH_ROOT_GET /* "/" */],
         produces = ["application/json"]
     )
-    fun rootGet(@NotNull @Parameter(description = "An IPv4 or IPv6 address that you would like to lookup.", required = true) @Valid @RequestParam(value = "ip", required = true) ip: kotlin.String,@Parameter(description = "Output format, the following formats are supported: plain xml json jsonp php csv serialized") @Valid @RequestParam(value = "format", required = false) format: kotlin.String?,@Parameter(description = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".") @Valid @RequestParam(value = "delimiter", required = false) delimiter: kotlin.String?): ResponseEntity<Get200Response> {
+    fun rootGet(
+        @NotNull @Parameter(description = "An IPv4 or IPv6 address that you would like to lookup.", required = true) @Valid @RequestParam(value = "ip", required = true) ip: kotlin.String,
+        @Parameter(description = "Output format, the following formats are supported: plain xml json jsonp php csv serialized") @Valid @RequestParam(value = "format", required = false) format: kotlin.String?,
+        @Parameter(description = "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".") @Valid @RequestParam(value = "delimiter", required = false) delimiter: kotlin.String?
+    ): ResponseEntity<Get200Response> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
+    companion object {
+        //for your own safety never directly reuse these path definitions in tests
+        const val BASE_PATH: String = ""
+        const val PATH_ROOT_GET: String = "/"
     }
 }

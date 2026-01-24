@@ -48,19 +48,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/__get_200_response'
+                $ref: "#/components/schemas/__get_200_response"
           description: Successfully processed the request.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/__get_400_response'
+                $ref: "#/components/schemas/__get_400_response"
           description: Failed to complete the request.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/__get_400_response'
+                $ref: "#/components/schemas/__get_400_response"
           description: Command not found.
       summary: Get geolocation of an IP address
       x-accepts:

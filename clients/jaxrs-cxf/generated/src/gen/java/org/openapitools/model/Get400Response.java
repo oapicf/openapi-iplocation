@@ -11,16 +11,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Get400Response  {
   
-  @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
  /**
-   * Response status code to indicate success or failed completion of the API call.
-  **/
+  * Response status code to indicate success or failed completion of the API call.
+  */
+  @ApiModelProperty(value = "Response status code to indicate success or failed completion of the API call.")
+
   private String responseCode;
 
-  @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
  /**
-   * Response message to indicate success or failed completion of the API call.
-  **/
+  * Response message to indicate success or failed completion of the API call.
+  */
+  @ApiModelProperty(value = "Response message to indicate success or failed completion of the API call.")
+
   private String responseMessage;
  /**
    * Response status code to indicate success or failed completion of the API call.

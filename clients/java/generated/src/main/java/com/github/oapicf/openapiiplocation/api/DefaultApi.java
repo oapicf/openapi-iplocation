@@ -90,7 +90,7 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Command not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rootGetCall(String ip, String format, String delimiter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call rootGetCall(@javax.annotation.Nonnull String ip, @javax.annotation.Nullable String format, @javax.annotation.Nullable String delimiter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +147,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call rootGetValidateBeforeCall(String ip, String format, String delimiter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call rootGetValidateBeforeCall(@javax.annotation.Nonnull String ip, @javax.annotation.Nullable String format, @javax.annotation.Nullable String delimiter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ip' is set
         if (ip == null) {
             throw new ApiException("Missing the required parameter 'ip' when calling rootGet(Async)");
@@ -174,7 +174,7 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Command not found. </td><td>  -  </td></tr>
      </table>
      */
-    public Get200Response rootGet(String ip, String format, String delimiter) throws ApiException {
+    public Get200Response rootGet(@javax.annotation.Nonnull String ip, @javax.annotation.Nullable String format, @javax.annotation.Nullable String delimiter) throws ApiException {
         ApiResponse<Get200Response> localVarResp = rootGetWithHttpInfo(ip, format, delimiter);
         return localVarResp.getData();
     }
@@ -196,7 +196,7 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Command not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Get200Response> rootGetWithHttpInfo(String ip, String format, String delimiter) throws ApiException {
+    public ApiResponse<Get200Response> rootGetWithHttpInfo(@javax.annotation.Nonnull String ip, @javax.annotation.Nullable String format, @javax.annotation.Nullable String delimiter) throws ApiException {
         okhttp3.Call localVarCall = rootGetValidateBeforeCall(ip, format, delimiter, null);
         Type localVarReturnType = new TypeToken<Get200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -220,7 +220,7 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Command not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rootGetAsync(String ip, String format, String delimiter, final ApiCallback<Get200Response> _callback) throws ApiException {
+    public okhttp3.Call rootGetAsync(@javax.annotation.Nonnull String ip, @javax.annotation.Nullable String format, @javax.annotation.Nullable String delimiter, final ApiCallback<Get200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = rootGetValidateBeforeCall(ip, format, delimiter, _callback);
         Type localVarReturnType = new TypeToken<Get200Response>(){}.getType();

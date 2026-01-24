@@ -1,5 +1,9 @@
+.openapi-generator-ignore
 apis/DefaultApi.ts
 apis/index.ts
+docs/DefaultApi.md
+docs/Get200Response.md
+docs/Get400Response.md
 index.ts
 models/Get200Response.ts
 models/Get400Response.ts

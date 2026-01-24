@@ -80,12 +80,8 @@ class DefaultController extends Controller
 
         $delimiter = $request->string('delimiter')->value();
 
-        try {
-            $apiResult = $this->api->rootGet($ip, $format, $delimiter);
-        } catch (\Exception $exception) {
-            // This shouldn't happen
-            return response()->json(['error' => $exception->getMessage()], 500);
-        }
+
+        $apiResult = $this->api->rootGet($ip, $format, $delimiter);
 
         if ($apiResult instanceof \OpenAPI\Server\Model\Get200Response) {
             return response()->json($this->serde->serialize($apiResult, format: 'array'), 200);

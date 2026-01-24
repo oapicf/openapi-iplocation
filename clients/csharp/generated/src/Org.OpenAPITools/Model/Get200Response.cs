@@ -254,8 +254,7 @@ namespace Org.OpenAPITools.Model
                             ipNumber = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "ip_version":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                ipVersion = new Option<int?>(utf8JsonReader.GetInt32());
+                            ipVersion = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "country_name":
                             countryName = new Option<string?>(utf8JsonReader.GetString()!);

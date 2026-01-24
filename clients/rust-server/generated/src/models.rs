@@ -1,51 +1,61 @@
 #![allow(unused_qualifications)]
-
+#[cfg(not(feature = "validate"))]
 use validator::Validate;
 
 use crate::models;
 #[cfg(any(feature = "client", feature = "server"))]
 use crate::header;
+#[cfg(feature = "validate")]
+use serde_valid::Validate;
 
-#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
+#[derive(Debug, Clone, PartialEq, Validate, serde::Serialize, serde::Deserialize)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get200Response {
     /// IPv4 or IPv6 address used to lookup geolocation.
     #[serde(rename = "ip")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip: Option<String>,
 
     /// IP number in long integer (represented as string).
     #[serde(rename = "ip_number")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip_number: Option<String>,
 
     /// IP version either 4 or 6.
     #[serde(rename = "ip_version")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub ip_version: Option<i32>,
 
     /// Full name of the IP country.
     #[serde(rename = "country_name")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_name: Option<String>,
 
     /// ISO ALPHA-2 Country Code.
     #[serde(rename = "country_code2")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub country_code2: Option<String>,
 
     /// Internet Service Provider (ISP) who owns the IP address.
     #[serde(rename = "isp")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub isp: Option<String>,
 
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
@@ -69,10 +79,10 @@ impl Get200Response {
 }
 
 /// Converts the Get200Response value to the Query Parameters representation (style=form, explode=false)
-/// specified in https://swagger.io/docs/specification/serialization/
+/// specified in <https://swagger.io/docs/specification/serialization/>
 /// Should be implemented in a serde serializer
-impl std::string::ToString for Get200Response {
-    fn to_string(&self) -> String {
+impl std::fmt::Display for Get200Response {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let params: Vec<Option<String>> = vec![
             self.ip.as_ref().map(|ip| {
                 [
@@ -124,12 +134,12 @@ impl std::string::ToString for Get200Response {
             }),
         ];
 
-        params.into_iter().flatten().collect::<Vec<_>>().join(",")
+        write!(f, "{}", params.into_iter().flatten().collect::<Vec<_>>().join(","))
     }
 }
 
 /// Converts Query Parameters representation (style=form, explode=false) to a Get200Response value
-/// as specified in https://swagger.io/docs/specification/serialization/
+/// as specified in <https://swagger.io/docs/specification/serialization/>
 /// Should be implemented in a serde deserializer
 impl std::str::FromStr for Get200Response {
     type Err = String;
@@ -213,8 +223,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Get200Response>> for hyper::h
         match hyper::header::HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
              std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Get200Response - value: {} is invalid {}",
-                     hdr_value, e))
+                 format!("Invalid header value for Get200Response - value: {hdr_value} is invalid {e}"))
         }
     }
 }
@@ -229,13 +238,11 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
                     match <Get200Response as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
                         std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Get200Response - {}",
-                                value, err))
+                            format!("Unable to convert header value '{value}' into Get200Response - {err}"))
                     }
              },
              std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+                 format!("Unable to convert header: {hdr_value:?} to string: {e}"))
         }
     }
 }
@@ -251,8 +258,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Vec<Get200Response>>> for hyp
 
         match hyper::header::HeaderValue::from_str(&hdr_values.join(", ")) {
            std::result::Result::Ok(hdr_value) => std::result::Result::Ok(hdr_value),
-           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {:?} into a header - {}",
-               hdr_values, e))
+           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {hdr_values:?} into a header - {e}",))
         }
     }
 }
@@ -272,30 +278,30 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
                         match <Get200Response as std::str::FromStr>::from_str(hdr_value) {
                             std::result::Result::Ok(value) => std::result::Result::Ok(value),
                             std::result::Result::Err(err) => std::result::Result::Err(
-                                format!("Unable to convert header value '{}' into Get200Response - {}",
-                                    hdr_value, err))
+                                format!("Unable to convert header value '{hdr_value}' into Get200Response - {err}"))
                         }
                     })
                 }).collect::<std::result::Result<std::vec::Vec<_>, String>>()?;
 
                 std::result::Result::Ok(header::IntoHeaderValue(hdr_values))
             },
-            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {:?} as a string - {}",
-                hdr_values, e)),
+            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {hdr_values:?} as a string - {e}")),
         }
     }
 }
 
-#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
+#[derive(Debug, Clone, PartialEq, Validate, serde::Serialize, serde::Deserialize)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Get400Response {
     /// Response status code to indicate success or failed completion of the API call.
     #[serde(rename = "response_code")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_code: Option<String>,
 
     /// Response message to indicate success or failed completion of the API call.
     #[serde(rename = "response_message")]
+
     #[serde(skip_serializing_if="Option::is_none")]
     pub response_message: Option<String>,
 
@@ -313,10 +319,10 @@ impl Get400Response {
 }
 
 /// Converts the Get400Response value to the Query Parameters representation (style=form, explode=false)
-/// specified in https://swagger.io/docs/specification/serialization/
+/// specified in <https://swagger.io/docs/specification/serialization/>
 /// Should be implemented in a serde serializer
-impl std::string::ToString for Get400Response {
-    fn to_string(&self) -> String {
+impl std::fmt::Display for Get400Response {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let params: Vec<Option<String>> = vec![
             self.response_code.as_ref().map(|response_code| {
                 [
@@ -332,12 +338,12 @@ impl std::string::ToString for Get400Response {
             }),
         ];
 
-        params.into_iter().flatten().collect::<Vec<_>>().join(",")
+        write!(f, "{}", params.into_iter().flatten().collect::<Vec<_>>().join(","))
     }
 }
 
 /// Converts Query Parameters representation (style=form, explode=false) to a Get400Response value
-/// as specified in https://swagger.io/docs/specification/serialization/
+/// as specified in <https://swagger.io/docs/specification/serialization/>
 /// Should be implemented in a serde deserializer
 impl std::str::FromStr for Get400Response {
     type Err = String;
@@ -397,8 +403,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Get400Response>> for hyper::h
         match hyper::header::HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
              std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Get400Response - value: {} is invalid {}",
-                     hdr_value, e))
+                 format!("Invalid header value for Get400Response - value: {hdr_value} is invalid {e}"))
         }
     }
 }
@@ -413,13 +418,11 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
                     match <Get400Response as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
                         std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Get400Response - {}",
-                                value, err))
+                            format!("Unable to convert header value '{value}' into Get400Response - {err}"))
                     }
              },
              std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+                 format!("Unable to convert header: {hdr_value:?} to string: {e}"))
         }
     }
 }
@@ -435,8 +438,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Vec<Get400Response>>> for hyp
 
         match hyper::header::HeaderValue::from_str(&hdr_values.join(", ")) {
            std::result::Result::Ok(hdr_value) => std::result::Result::Ok(hdr_value),
-           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {:?} into a header - {}",
-               hdr_values, e))
+           std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to convert {hdr_values:?} into a header - {e}",))
         }
     }
 }
@@ -456,16 +458,14 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
                         match <Get400Response as std::str::FromStr>::from_str(hdr_value) {
                             std::result::Result::Ok(value) => std::result::Result::Ok(value),
                             std::result::Result::Err(err) => std::result::Result::Err(
-                                format!("Unable to convert header value '{}' into Get400Response - {}",
-                                    hdr_value, err))
+                                format!("Unable to convert header value '{hdr_value}' into Get400Response - {err}"))
                         }
                     })
                 }).collect::<std::result::Result<std::vec::Vec<_>, String>>()?;
 
                 std::result::Result::Ok(header::IntoHeaderValue(hdr_values))
             },
-            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {:?} as a string - {}",
-                hdr_values, e)),
+            std::result::Result::Err(e) => std::result::Result::Err(format!("Unable to parse header: {hdr_values:?} as a string - {e}")),
         }
     }
 }

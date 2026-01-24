@@ -21,14 +21,14 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("__get_400_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T05:00:05.247703803Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T09:30:44.145361455Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Get400Response {
 
   private @Nullable String responseCode;
 
   private @Nullable String responseMessage;
 
-  public Get400Response responseCode(String responseCode) {
+  public Get400Response responseCode(@Nullable String responseCode) {
     this.responseCode = responseCode;
     return this;
   }
@@ -40,15 +40,15 @@ public class Get400Response {
   
   @Schema(name = "response_code", description = "Response status code to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_code")
-  public String getResponseCode() {
+  public @Nullable String getResponseCode() {
     return responseCode;
   }
 
-  public void setResponseCode(String responseCode) {
+  public void setResponseCode(@Nullable String responseCode) {
     this.responseCode = responseCode;
   }
 
-  public Get400Response responseMessage(String responseMessage) {
+  public Get400Response responseMessage(@Nullable String responseMessage) {
     this.responseMessage = responseMessage;
     return this;
   }
@@ -60,11 +60,11 @@ public class Get400Response {
   
   @Schema(name = "response_message", description = "Response message to indicate success or failed completion of the API call.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("response_message")
-  public String getResponseMessage() {
+  public @Nullable String getResponseMessage() {
     return responseMessage;
   }
 
-  public void setResponseMessage(String responseMessage) {
+  public void setResponseMessage(@Nullable String responseMessage) {
     this.responseMessage = responseMessage;
   }
 

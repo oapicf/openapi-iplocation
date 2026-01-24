@@ -28,18 +28,18 @@ pub enum RootGetError {
 /// Retrieve geolocation of an IP address. 
 pub async fn root_get(configuration: &configuration::Configuration, ip: &str, format: Option<&str>, delimiter: Option<&str>) -> Result<models::Get200Response, Error<RootGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_ip = ip;
-    let p_format = format;
-    let p_delimiter = delimiter;
+    let p_query_ip = ip;
+    let p_query_format = format;
+    let p_query_delimiter = delimiter;
 
     let uri_str = format!("{}/", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
-    req_builder = req_builder.query(&[("ip", &p_ip.to_string())]);
-    if let Some(ref param_value) = p_format {
+    req_builder = req_builder.query(&[("ip", &p_query_ip.to_string())]);
+    if let Some(ref param_value) = p_query_format {
         req_builder = req_builder.query(&[("format", &param_value.to_string())]);
     }
-    if let Some(ref param_value) = p_delimiter {
+    if let Some(ref param_value) = p_query_delimiter {
         req_builder = req_builder.query(&[("delimiter", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {

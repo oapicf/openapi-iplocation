@@ -22,6 +22,7 @@ using namespace org::openapitools::server::model;
 DefaultApiImpl::DefaultApiImpl(const std::shared_ptr<Pistache::Rest::Router>& rtr)
     : DefaultApi(rtr)
 {
+    
 }
 
 void DefaultApiImpl::root_get(const std::optional<std::string> &ip, const std::optional<std::string> &format, const std::optional<std::string> &delimiter, Pistache::Http::ResponseWriter &response) {

@@ -50,12 +50,27 @@ func NewDefaultAPIController(s DefaultAPIServicer, opts ...DefaultAPIOption) *De
 func (c *DefaultAPIController) Routes() Routes {
 	return Routes{
 		"RootGet": Route{
+			"RootGet",
 			strings.ToUpper("Get"),
 			"/",
 			c.RootGet,
 		},
 	}
 }
+
+// OrderedRoutes returns all the api routes in a deterministic order for the DefaultAPIController
+func (c *DefaultAPIController) OrderedRoutes() []Route {
+	return []Route{
+		Route{
+			"RootGet",
+			strings.ToUpper("Get"),
+			"/",
+			c.RootGet,
+		},
+	}
+}
+
+
 
 // RootGet - Get geolocation of an IP address
 func (c *DefaultAPIController) RootGet(w http.ResponseWriter, r *http.Request) {

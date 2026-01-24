@@ -31,7 +31,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Get400Response.JSON_PROPERTY_RESPONSE_MESSAGE
 })
 @JsonTypeName("__get_400_response")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2025-05-10T04:58:50.690519837Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2026-01-24T09:29:18.746146686Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Introspected
 public class Get400Response {
     public static final String JSON_PROPERTY_RESPONSE_CODE = "response_code";

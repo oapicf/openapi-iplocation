@@ -14,63 +14,6 @@ Get geolocation of an IP address
 
 Retrieve geolocation of an IP address. 
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class RootGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.iplocation.net";
-            var apiInstance = new DefaultApi(config);
-            var ip = "ip_example";  // string | An IPv4 or IPv6 address that you would like to lookup.
-            var format = "format_example";  // string | Output format, the following formats are supported: plain xml json jsonp php csv serialized (optional) 
-            var delimiter = "delimiter_example";  // string | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional) 
-
-            try
-            {
-                // Get geolocation of an IP address
-                Get200Response result = apiInstance.RootGet(ip, format, delimiter);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DefaultApi.RootGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RootGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get geolocation of an IP address
-    ApiResponse<Get200Response> response = apiInstance.RootGetWithHttpInfo(ip, format, delimiter);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DefaultApi.RootGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

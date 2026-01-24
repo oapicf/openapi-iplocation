@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.12.0
+# ! Generator version: 7.18.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -545,7 +545,7 @@ read -r -d '' appdescription <<EOF
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 EOF
-echo "$appdescription" | paste -sd' ' | fold -sw 80
+echo "$appdescription" | paste -sd' ' - | fold -sw 80
 }
 
 
@@ -567,25 +567,25 @@ print_version() {
 ##############################################################################
 print_rootGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}rootGet - Get geolocation of an IP address${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}rootGet - Get geolocation of an IP address${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Retrieve geolocation of an IP address." | paste -sd' ' | fold -sw 80
+    echo -e "Retrieve geolocation of an IP address." | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}ip${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - An IPv4 or IPv6 address that you would like to lookup.${YELLOW} Specify as: ip=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}format${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Output format, the following formats are supported: plain xml json jsonp php csv serialized${YELLOW} Specify as: format=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}delimiter${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".${YELLOW} Specify as: delimiter=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;Successfully processed the request.${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    echo -e "${result_color_table[${code:0:1}]}  200;Successfully processed the request.${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
     code=400
-    echo -e "${result_color_table[${code:0:1}]}  400;Failed to complete the request.${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    echo -e "${result_color_table[${code:0:1}]}  400;Failed to complete the request.${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
     code=404
-    echo -e "${result_color_table[${code:0:1}]}  404;Command not found.${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    echo -e "${result_color_table[${code:0:1}]}  404;Command not found.${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 
 

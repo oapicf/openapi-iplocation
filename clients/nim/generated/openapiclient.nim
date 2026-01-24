@@ -8,11 +8,11 @@
 #
 
 # Models
-import openapiclient/models/model___get_200_response
-import openapiclient/models/model___get_400_response
+import openapiclient/models/model_get200response
+import openapiclient/models/model_get400response
 
-export model___get_200_response
-export model___get_400_response
+export model_get200response
+export model_get400response
 
 # APIs
 import openapiclient/apis/api_default

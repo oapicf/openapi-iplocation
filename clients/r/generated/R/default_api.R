@@ -98,8 +98,17 @@ DefaultApi <- R6::R6Class(
         stop("Missing required parameter `ip`.")
       }
 
+      if (!missing(`ip`) && is.null(`ip`)) {
+        stop("Invalid value for `ip` when calling DefaultApi$RootGet, `ip` is not nullable")
+      }
 
+      if (!missing(`format`) && is.null(`format`)) {
+        stop("Invalid value for `format` when calling DefaultApi$RootGet, `format` is not nullable")
+      }
 
+      if (!missing(`delimiter`) && is.null(`delimiter`)) {
+        stop("Invalid value for `delimiter` when calling DefaultApi$RootGet, `delimiter` is not nullable")
+      }
 
       query_params[["ip"]] <- `ip`
 

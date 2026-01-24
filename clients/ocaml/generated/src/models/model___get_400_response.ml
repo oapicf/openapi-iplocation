@@ -5,15 +5,29 @@
  *
  *)
 
-type t = {
-    (* Response status code to indicate success or failed completion of the API call. *)
-    response_code: string option [@default None];
-    (* Response message to indicate success or failed completion of the API call. *)
-    response_message: string option [@default None];
-} [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-    response_code = None;
-    response_message = None;
-}
+
+    
+        type t = {
+                              response_code: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "response_code"]
+                    (** Response status code to indicate success or failed completion of the API call. *)
+                                      response_message: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "response_message"]
+                    (** Response message to indicate success or failed completion of the API call. *)
+                } [@@deriving yojson { strict = false }, show, eq ];;
+        
+        let create () : t = {
+            response_code = None;
+            response_message = None;
+        }
+    
 
