@@ -2,7 +2,6 @@
 .mvn/wrapper/MavenWrapperDownloader.java
 .mvn/wrapper/maven-wrapper.jar
 .mvn/wrapper/maven-wrapper.properties
-.openapi-generator-ignore
 README.md
 build.gradle
 docs/apis/DefaultApi.md
@@ -23,6 +22,3 @@ src/main/java/org/openapitools/model/Get200Response.java
 src/main/java/org/openapitools/model/Get400Response.java
 src/main/resources/application.yml
 src/main/resources/logback.xml
-src/test/java/org/openapitools/api/DefaultApiTest.java
-src/test/java/org/openapitools/model/Get200ResponseTest.java
-src/test/java/org/openapitools/model/Get400ResponseTest.java

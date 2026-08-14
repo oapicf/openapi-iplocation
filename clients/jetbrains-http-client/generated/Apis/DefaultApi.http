@@ -1,0 +1,6 @@
+## DefaultApi
+
+### Get geolocation of an IP address
+## Get geolocation of an IP address
+GET https://api.iplocation.net/?ip={{ip}}&format={{format}}&delimiter={{delimiter}}
+Accept: application/json

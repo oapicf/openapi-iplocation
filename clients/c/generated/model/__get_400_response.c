@@ -13,10 +13,10 @@ static __get_400_response_t *__get_400_response_create_internal(
     if (!__get_400_response_local_var) {
         return NULL;
     }
+    memset(__get_400_response_local_var, 0, sizeof(__get_400_response_t));
+    __get_400_response_local_var->_library_owned = 1;
     __get_400_response_local_var->response_code = response_code;
     __get_400_response_local_var->response_message = response_message;
-
-    __get_400_response_local_var->_library_owned = 1;
     return __get_400_response_local_var;
 }
 
@@ -24,10 +24,13 @@ __attribute__((deprecated)) __get_400_response_t *__get_400_response_create(
     char *response_code,
     char *response_message
     ) {
-    return __get_400_response_create_internal (
+    __get_400_response_t *result = __get_400_response_create_internal (
         response_code,
         response_message
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void __get_400_response_free(__get_400_response_t *__get_400_response) {
@@ -80,6 +83,10 @@ __get_400_response_t *__get_400_response_parseFromJSON(cJSON *__get_400_response
 
     __get_400_response_t *__get_400_response_local_var = NULL;
 
+    char *response_code_local_str = NULL;
+
+    char *response_message_local_str = NULL;
+
     // __get_400_response->response_code
     cJSON *response_code = cJSON_GetObjectItemCaseSensitive(__get_400_responseJSON, "response_code");
     if (cJSON_IsNull(response_code)) {
@@ -105,13 +112,28 @@ __get_400_response_t *__get_400_response_parseFromJSON(cJSON *__get_400_response
     }
 
 
+    if (response_code && !cJSON_IsNull(response_code)) response_code_local_str = strdup(response_code->valuestring);
+    if (response_message && !cJSON_IsNull(response_message)) response_message_local_str = strdup(response_message->valuestring);
+
     __get_400_response_local_var = __get_400_response_create_internal (
-        response_code && !cJSON_IsNull(response_code) ? strdup(response_code->valuestring) : NULL,
-        response_message && !cJSON_IsNull(response_message) ? strdup(response_message->valuestring) : NULL
+        response_code_local_str,
+        response_message_local_str
         );
+
+    if (!__get_400_response_local_var) {
+        goto end;
+    }
 
     return __get_400_response_local_var;
 end:
+    if (response_code_local_str) {
+        free(response_code_local_str);
+        response_code_local_str = NULL;
+    }
+    if (response_message_local_str) {
+        free(response_message_local_str);
+        response_message_local_str = NULL;
+    }
     return NULL;
 
 }

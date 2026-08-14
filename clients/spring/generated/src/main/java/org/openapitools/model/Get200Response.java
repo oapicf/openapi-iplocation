@@ -2,42 +2,51 @@ package org.openapitools.model;
 
 import java.net.URI;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
 import java.util.*;
-import javax.annotation.Generated;
+import jakarta.annotation.Generated;
 
 /**
  * Get200Response
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T09:30:44.145361455Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-14T13:19:57.575572365Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Get200Response {
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String ip;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String ipNumber;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable Integer ipVersion;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String countryName;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String countryCode2;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String isp;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String responseCode;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String responseMessage;
 
   public Get200Response ip(@Nullable String ip) {
@@ -56,6 +65,7 @@ public class Get200Response {
     return ip;
   }
 
+  @JsonProperty("ip")
   public void setIp(@Nullable String ip) {
     this.ip = ip;
   }
@@ -76,6 +86,7 @@ public class Get200Response {
     return ipNumber;
   }
 
+  @JsonProperty("ip_number")
   public void setIpNumber(@Nullable String ipNumber) {
     this.ipNumber = ipNumber;
   }
@@ -96,6 +107,7 @@ public class Get200Response {
     return ipVersion;
   }
 
+  @JsonProperty("ip_version")
   public void setIpVersion(@Nullable Integer ipVersion) {
     this.ipVersion = ipVersion;
   }
@@ -116,6 +128,7 @@ public class Get200Response {
     return countryName;
   }
 
+  @JsonProperty("country_name")
   public void setCountryName(@Nullable String countryName) {
     this.countryName = countryName;
   }
@@ -136,6 +149,7 @@ public class Get200Response {
     return countryCode2;
   }
 
+  @JsonProperty("country_code2")
   public void setCountryCode2(@Nullable String countryCode2) {
     this.countryCode2 = countryCode2;
   }
@@ -156,6 +170,7 @@ public class Get200Response {
     return isp;
   }
 
+  @JsonProperty("isp")
   public void setIsp(@Nullable String isp) {
     this.isp = isp;
   }
@@ -176,6 +191,7 @@ public class Get200Response {
     return responseCode;
   }
 
+  @JsonProperty("response_code")
   public void setResponseCode(@Nullable String responseCode) {
     this.responseCode = responseCode;
   }
@@ -196,6 +212,7 @@ public class Get200Response {
     return responseMessage;
   }
 
+  @JsonProperty("response_message")
   public void setResponseMessage(@Nullable String responseMessage) {
     this.responseMessage = responseMessage;
   }
@@ -244,11 +261,8 @@ public class Get200Response {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+  private String toIndentedString(@Nullable Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 }
 

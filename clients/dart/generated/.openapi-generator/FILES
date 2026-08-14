@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 analysis_options.yaml
@@ -20,6 +19,3 @@ lib/auth/oauth.dart
 lib/model/get200_response.dart
 lib/model/get400_response.dart
 pubspec.yaml
-test/default_api_test.dart
-test/get200_response_test.dart
-test/get400_response_test.dart

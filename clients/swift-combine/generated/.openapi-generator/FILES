@@ -1,0 +1,9 @@
+.openapi-generator-ignore
+OpenAPIClient/Package.swift
+OpenAPIClient/Sources/APIs/DefaultAPI.swift
+OpenAPIClient/Sources/Models/Get200Response.swift
+OpenAPIClient/Sources/Models/Get400Response.swift
+OpenAPIClient/Sources/Private/AnyDecodable.swift
+OpenAPIClient/Sources/Private/OpenISO8601DateFormatter.swift
+OpenAPITransport/Package.swift
+OpenAPITransport/Sources/OpenAPITransport.swift

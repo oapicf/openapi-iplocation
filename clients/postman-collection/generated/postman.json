@@ -1,0 +1,91 @@
+{
+	"info": {
+		"name": "iplocation.net API",
+		"description": {
+		    "content": "OpenAPI v3 specification and a set of generated API clients for iplocation.net",
+		    "type": "text/markdown"
+		},
+		"version": "1.2.1-pre.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "default",
+	            "description": "default tag",
+	            "item": [
+	                        {
+    "name": "/",
+                "description": "Retrieve geolocation of an IP address. ",
+                 "item": [
+                            {
+                                "name": "Get geolocation of an IP address",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        ""
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "ip",
+        "value": "ip_example",
+        "description": "An IPv4 or IPv6 address that you would like to lookup.",
+        "disabled": false
+        },
+        {
+        "key": "format",
+        "value": "format_example",
+        "description": "Output format, the following formats are supported: plain xml json jsonp php csv serialized",
+        "disabled": true
+        },
+        {
+        "key": "delimiter",
+        "value": "delimiter_example",
+        "description": "Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Retrieve geolocation of an IP address. "
+}
+                                ,"response": [
+                            ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.iplocation.net",
+			"type": "string"
+        }
+	]
+}
+

@@ -5,7 +5,7 @@
  *
  * OpenAPI v3 specification and a set of generated API clients for iplocation.net
  *
- * API version: 1.1.1-pre.0
+ * API version: 1.2.1-pre.0
  * Contact: blah+oapicf@cliffano.com
  */
 
@@ -41,7 +41,8 @@ type Get200Response struct {
 	ResponseMessage string `json:"response_message,omitempty"`
 }
 
-// AssertGet200ResponseRequired checks if the required fields are not zero-ed
+// AssertGet200ResponseRequired checks complex required fields (models, arrays, maps) and embedded parents.
+// Primitive required fields are validated for JSON request bodies in UnmarshalJSON so zero values remain valid.
 func AssertGet200ResponseRequired(obj Get200Response) error {
 	return nil
 }

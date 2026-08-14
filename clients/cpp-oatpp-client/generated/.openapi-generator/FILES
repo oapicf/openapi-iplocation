@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+CMakeLists.txt
+README.md
+api/DefaultApi.hpp
+main-api-client.cpp
+model/__get_200_response.hpp
+model/__get_400_response.hpp

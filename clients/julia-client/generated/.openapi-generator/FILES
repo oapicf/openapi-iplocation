@@ -1,0 +1,10 @@
+.openapi-generator-ignore
+README.md
+docs/DefaultApi.md
+docs/Get200Response.md
+docs/Get400Response.md
+src/APIClient.jl
+src/apis/api_DefaultApi.jl
+src/modelincludes.jl
+src/models/model_Get200Response.jl
+src/models/model_Get400Response.jl

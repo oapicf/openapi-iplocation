@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.beans.factory.annotation.Autowired
-import org.openapitools.api.DefaultApiController.Companion.BASE_PATH
 
 import javax.validation.Valid
 import javax.validation.constraints.DecimalMax
@@ -32,7 +31,7 @@ import kotlin.collections.Map
 
 @RestController
 @Validated
-@RequestMapping("\${openapi.iplocationNet.base-path:\${api.base-path:$BASE_PATH}}")
+@RequestMapping("\${api.base-path:}")
 class DefaultApiController() {
 
     @Operation(
@@ -47,7 +46,8 @@ class DefaultApiController() {
     )
     @RequestMapping(
         method = [RequestMethod.GET],
-        value = [PATH_ROOT_GET /* "/" */],
+        // "/"
+        value = [PATH_ROOT_GET],
         produces = ["application/json"]
     )
     fun rootGet(

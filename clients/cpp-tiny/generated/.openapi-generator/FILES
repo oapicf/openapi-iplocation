@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 lib/Models/Get200Response.cpp
 lib/Models/Get200Response.h

@@ -11,7 +11,7 @@
       "name" : "MIT"
     },
     "title" : "iplocation.net API",
-    "version" : "1.1.1-pre.0"
+    "version" : "1.2.1-pre.0"
   },
   "servers" : [ {
     "url" : "https://api.iplocation.net"
@@ -108,14 +108,14 @@
       },
       "__get_200_response" : {
         "example" : {
-          "response_code" : "response_code",
-          "ip_version" : 0,
-          "response_message" : "response_message",
           "ip" : "ip",
-          "isp" : "isp",
+          "ip_number" : "ip_number",
+          "ip_version" : 0,
           "country_name" : "country_name",
           "country_code2" : "country_code2",
-          "ip_number" : "ip_number"
+          "isp" : "isp",
+          "response_code" : "response_code",
+          "response_message" : "response_message"
         },
         "properties" : {
           "ip" : {

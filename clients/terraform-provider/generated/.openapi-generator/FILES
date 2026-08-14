@@ -1,0 +1,14 @@
+.gitignore
+.openapi-generator-ignore
+GNUmakefile
+README.md
+examples/provider/provider.tf
+go.mod
+internal/client/client.go
+internal/client/model___get_200_response.go
+internal/client/model___get_400_response.go
+internal/provider/default_data_source.go
+internal/provider/default_model.go
+internal/provider/default_resource.go
+internal/provider/provider.go
+main.go

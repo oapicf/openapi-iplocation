@@ -2,7 +2,7 @@
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 
-The version of the OpenAPI document: 1.1.1-pre.0
+The version of the OpenAPI document: 1.2.1-pre.0
 
 ## Building
 

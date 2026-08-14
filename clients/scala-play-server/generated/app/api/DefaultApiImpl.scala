@@ -6,7 +6,7 @@ import model.Get400Response
 /**
   * Provides a default implementation for [[DefaultApi]].
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-24T09:30:39.507460896Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-08-14T13:19:48.139008954Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 class DefaultApiImpl extends DefaultApi {
   /**
     * @inheritdoc

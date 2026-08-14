@@ -1,9 +1,9 @@
 # openapiiplocation
 
 iplocation.net API
-- API version: 1.1.1-pre.0
-  - Build date: 2026-01-24T09:29:11.917752677Z[Etc/UTC]
-  - Generator version: 7.18.0
+- API version: 1.2.1-pre.0
+  - Build date: 2026-08-14T13:17:12.327050311Z[Etc/UTC]
+  - Generator version: 7.24.0
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.oapicf</groupId>
   <artifactId>openapiiplocation</artifactId>
-  <version>1.1.1-pre.0</version>
+  <version>1.2.1-pre.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.github.oapicf:openapiiplocation:1.1.1-pre.0"
+     implementation "com.github.oapicf:openapiiplocation:1.2.1-pre.0"
   }
 ```
 
@@ -72,7 +72,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapiiplocation-1.1.1-pre.0.jar`
+* `target/openapiiplocation-1.2.1-pre.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

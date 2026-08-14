@@ -1,0 +1,10 @@
+.openapi-generator-ignore
+CMakeLists.txt
+LICENSE
+README.md
+api/CppHttplibServerapiApi.cpp
+api/CppHttplibServerapiApi.h
+models/Get200Response.cpp
+models/Get200Response.h
+models/Get400Response.cpp
+models/Get400Response.h
