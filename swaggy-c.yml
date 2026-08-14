@@ -10,3 +10,15 @@ base_dir:
   local: /Users/cliffano/dev/workspace-oapicf/openapi-iplocation
   custom: >-
     /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-iplocation/
+generator:
+  component: oag-file-spec
+  inputs:
+    project_id: openapi-iplocation
+    project_name: OpenAPI iplocation
+    project_desc: An OpenAPI v3 specification and a set of generated API clients for iplocation.net API
+    author_name: OpenAPI Clients Factory
+    author_email: blah+oapicf@cliffano.com
+    author_url: https://github.com/oapicf
+    github_id: oapicf
+    github_repo: openapi-iplocation
+    github_token_prefix: OAPICF
