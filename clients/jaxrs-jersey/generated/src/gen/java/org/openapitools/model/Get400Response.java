@@ -30,7 +30,7 @@ import javax.validation.Valid;
   Get400Response.JSON_PROPERTY_RESPONSE_CODE,
   Get400Response.JSON_PROPERTY_RESPONSE_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-08-15T01:57:36.145637752Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-08-15T04:59:46.197300340Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Get400Response   {
   public static final String JSON_PROPERTY_RESPONSE_CODE = "response_code";
   @JsonProperty(JSON_PROPERTY_RESPONSE_CODE)

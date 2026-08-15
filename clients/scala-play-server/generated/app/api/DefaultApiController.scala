@@ -7,7 +7,7 @@ import play.api.mvc._
 import model.Get200Response
 import model.Get400Response
 
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-08-15T01:59:32.063993036Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-08-15T05:01:51.243823316Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 @Singleton
 class DefaultApiController @Inject()(cc: ControllerComponents, api: DefaultApi) extends AbstractController(cc) {
   /**

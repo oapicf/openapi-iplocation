@@ -30,7 +30,7 @@ import javax.annotation.Generated;
   Get400Response.JSON_PROPERTY_RESPONSE_MESSAGE
 })
 @JsonTypeName("__get_400_response")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2026-08-15T01:57:18.310362449Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2026-08-15T04:59:26.833669632Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 @Introspected
 public class Get400Response {
     public static final String JSON_PROPERTY_RESPONSE_CODE = "response_code";
