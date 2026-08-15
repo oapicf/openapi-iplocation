@@ -85,7 +85,7 @@ __get_400_response::getResponseCode()
 }
 
 void
-__get_400_response::setResponseCode(std::string  response_code)
+__get_400_response::setResponseCode(std::string response_code)
 {
 	this->response_code = response_code;
 }
@@ -97,7 +97,7 @@ __get_400_response::getResponseMessage()
 }
 
 void
-__get_400_response::setResponseMessage(std::string  response_message)
+__get_400_response::setResponseMessage(std::string response_message)
 {
 	this->response_message = response_message;
 }

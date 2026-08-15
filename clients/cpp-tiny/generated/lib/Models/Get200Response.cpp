@@ -211,7 +211,7 @@ __get_200_response::getIp()
 }
 
 void
-__get_200_response::setIp(std::string  ip)
+__get_200_response::setIp(std::string ip)
 {
 	this->ip = ip;
 }
@@ -223,7 +223,7 @@ __get_200_response::getIpNumber()
 }
 
 void
-__get_200_response::setIpNumber(std::string  ip_number)
+__get_200_response::setIpNumber(std::string ip_number)
 {
 	this->ip_number = ip_number;
 }
@@ -235,7 +235,7 @@ __get_200_response::getIpVersion()
 }
 
 void
-__get_200_response::setIpVersion(int  ip_version)
+__get_200_response::setIpVersion(int ip_version)
 {
 	this->ip_version = ip_version;
 }
@@ -247,7 +247,7 @@ __get_200_response::getCountryName()
 }
 
 void
-__get_200_response::setCountryName(std::string  country_name)
+__get_200_response::setCountryName(std::string country_name)
 {
 	this->country_name = country_name;
 }
@@ -259,7 +259,7 @@ __get_200_response::getCountryCode2()
 }
 
 void
-__get_200_response::setCountryCode2(std::string  country_code2)
+__get_200_response::setCountryCode2(std::string country_code2)
 {
 	this->country_code2 = country_code2;
 }
@@ -271,7 +271,7 @@ __get_200_response::getIsp()
 }
 
 void
-__get_200_response::setIsp(std::string  isp)
+__get_200_response::setIsp(std::string isp)
 {
 	this->isp = isp;
 }
@@ -283,7 +283,7 @@ __get_200_response::getResponseCode()
 }
 
 void
-__get_200_response::setResponseCode(std::string  response_code)
+__get_200_response::setResponseCode(std::string response_code)
 {
 	this->response_code = response_code;
 }
@@ -295,7 +295,7 @@ __get_200_response::getResponseMessage()
 }
 
 void
-__get_200_response::setResponseMessage(std::string  response_message)
+__get_200_response::setResponseMessage(std::string response_message)
 {
 	this->response_message = response_message;
 }

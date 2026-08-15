@@ -51,14 +51,14 @@ public:
 
 	/*! \brief Set Response status code to indicate success or failed completion of the API call.
 	 */
-	void setResponseCode(std::string  response_code);
+	void setResponseCode(std::string response_code);
 	/*! \brief Get Response message to indicate success or failed completion of the API call.
 	 */
 	std::string getResponseMessage();
 
 	/*! \brief Set Response message to indicate success or failed completion of the API call.
 	 */
-	void setResponseMessage(std::string  response_message);
+	void setResponseMessage(std::string response_message);
 
 
     private:

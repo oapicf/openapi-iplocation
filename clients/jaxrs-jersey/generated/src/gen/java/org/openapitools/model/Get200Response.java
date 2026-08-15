@@ -36,7 +36,7 @@ import javax.validation.Valid;
   Get200Response.JSON_PROPERTY_RESPONSE_CODE,
   Get200Response.JSON_PROPERTY_RESPONSE_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-08-14T13:17:43.795056960Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-08-15T01:57:36.145637752Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Get200Response   {
   public static final String JSON_PROPERTY_IP = "ip";
   @JsonProperty(JSON_PROPERTY_IP)

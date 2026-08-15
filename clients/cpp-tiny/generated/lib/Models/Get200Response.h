@@ -51,56 +51,56 @@ public:
 
 	/*! \brief Set IPv4 or IPv6 address used to lookup geolocation.
 	 */
-	void setIp(std::string  ip);
+	void setIp(std::string ip);
 	/*! \brief Get IP number in long integer (represented as string).
 	 */
 	std::string getIpNumber();
 
 	/*! \brief Set IP number in long integer (represented as string).
 	 */
-	void setIpNumber(std::string  ip_number);
+	void setIpNumber(std::string ip_number);
 	/*! \brief Get IP version either 4 or 6.
 	 */
 	int getIpVersion();
 
 	/*! \brief Set IP version either 4 or 6.
 	 */
-	void setIpVersion(int  ip_version);
+	void setIpVersion(int ip_version);
 	/*! \brief Get Full name of the IP country.
 	 */
 	std::string getCountryName();
 
 	/*! \brief Set Full name of the IP country.
 	 */
-	void setCountryName(std::string  country_name);
+	void setCountryName(std::string country_name);
 	/*! \brief Get ISO ALPHA-2 Country Code.
 	 */
 	std::string getCountryCode2();
 
 	/*! \brief Set ISO ALPHA-2 Country Code.
 	 */
-	void setCountryCode2(std::string  country_code2);
+	void setCountryCode2(std::string country_code2);
 	/*! \brief Get Internet Service Provider (ISP) who owns the IP address.
 	 */
 	std::string getIsp();
 
 	/*! \brief Set Internet Service Provider (ISP) who owns the IP address.
 	 */
-	void setIsp(std::string  isp);
+	void setIsp(std::string isp);
 	/*! \brief Get Response status code to indicate success or failed completion of the API call.
 	 */
 	std::string getResponseCode();
 
 	/*! \brief Set Response status code to indicate success or failed completion of the API call.
 	 */
-	void setResponseCode(std::string  response_code);
+	void setResponseCode(std::string response_code);
 	/*! \brief Get Response message to indicate success or failed completion of the API call.
 	 */
 	std::string getResponseMessage();
 
 	/*! \brief Set Response message to indicate success or failed completion of the API call.
 	 */
-	void setResponseMessage(std::string  response_message);
+	void setResponseMessage(std::string response_message);
 
 
     private:

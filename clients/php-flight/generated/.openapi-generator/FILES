@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 Api/AbstractDefaultApi.php
 Model/Get200Response.php
 Model/Get400Response.php

@@ -14,7 +14,7 @@ To see how to make this your own, look here:
 [README]((https://openapi-generator.tech))
 
 - API version: 1.2.1-pre.0
-- Build date: 2026-08-14T13:19:31.820699374Z[Etc/UTC]
+- Build date: 2026-08-15T01:59:16.592128750Z[Etc/UTC]
 - Generator version: 7.24.0
 
 For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)

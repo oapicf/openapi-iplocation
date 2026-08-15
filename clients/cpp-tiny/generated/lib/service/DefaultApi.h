@@ -22,7 +22,7 @@ class DefaultApi : public Service {
 public:
     DefaultApi() = default;
 
-    virtual ~DefaultApi() = default;
+    virtual ~DefaultApi();
 
     /**
     * Get geolocation of an IP address.

@@ -86,15 +86,17 @@ class _$Get400ResponseSerializer implements PrimitiveSerializer<Get400Response> 
         case r'response_code':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.responseCode = valueDes;
           break;
         case r'response_message':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.responseMessage = valueDes;
           break;
         default:

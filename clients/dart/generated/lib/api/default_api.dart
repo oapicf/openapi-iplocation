@@ -32,7 +32,7 @@ class DefaultApi {
   ///
   /// * [String] delimiter:
   ///   Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
-  Future<Response> rootGetWithHttpInfo(String ip, { String? format, String? delimiter, }) async {
+  Future<Response> rootGetWithHttpInfo(String ip, { String? format, String? delimiter, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/';
 
@@ -62,6 +62,7 @@ class DefaultApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -79,8 +80,8 @@ class DefaultApi {
   ///
   /// * [String] delimiter:
   ///   Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\".
-  Future<Get200Response?> rootGet(String ip, { String? format, String? delimiter, }) async {
-    final response = await rootGetWithHttpInfo(ip,  format: format, delimiter: delimiter, );
+  Future<Get200Response?> rootGet(String ip, { String? format, String? delimiter, Future<void>? abortTrigger, }) async {
+    final response = await rootGetWithHttpInfo(ip, format: format, delimiter: delimiter, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
