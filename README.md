@@ -3,7 +3,7 @@
 <!-- END:AVATAR -->
 
 <!-- BEGIN:BADGES -->
-[![Build Status](https://github.com/oapicf/openapi-iplocation/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/oapicf/openapi-iplocation/actions/workflows/ci-workflow.yaml)
+[![Build Status](https://github.com/oapicf/openapi-iplocation/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/oapicf/iplocation/actions/workflows/ci-workflow.yaml)
 <!-- END:BADGES -->
 
 # OpenAPI iplocation

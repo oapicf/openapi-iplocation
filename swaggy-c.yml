@@ -13,7 +13,7 @@ base_dir:
 generator:
   component: oag-file-spec
   inputs:
-    project_id: openapi-iplocation
+    project_id: iplocation
     project_name: OpenAPI iplocation
     project_desc: An OpenAPI v3 specification and a set of generated API clients for iplocation.net API
     author_name: OpenAPI Clients Factory
