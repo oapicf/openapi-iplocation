@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 build.gradle
 docs/Get200Response.md

@@ -1,11 +1,7 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 git_push.sh
 shard.yml
-spec/api/root_spec.cr
-spec/models/get200_response_spec.cr
-spec/models/get400_response_spec.cr
 spec/spec_helper.cr
 src/openapi_client.cr
 src/openapi_client/api/root.cr

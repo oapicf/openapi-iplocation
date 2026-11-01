@@ -20,7 +20,7 @@ import jakarta.annotation.Generated;
  */
 
 @JsonTypeName("__get_400_response")
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2026-11-01T11:36:35.445822792Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2026-11-01T11:42:59.829206839Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get400Response {
 
   private String responseCode;

@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 pom.xml
 src/main/java/org/openapitools/OpenApiGeneratorApplication.java
@@ -9,4 +8,3 @@ src/main/java/org/openapitools/api/DefaultApiRoutesImpl.java
 src/main/java/org/openapitools/model/Get200Response.java
 src/main/java/org/openapitools/model/Get400Response.java
 src/main/resources/application.properties
-src/test/java/org/openapitools/api/DefaultApiTest.java
