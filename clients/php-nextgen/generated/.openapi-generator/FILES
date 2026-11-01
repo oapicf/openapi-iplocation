@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .phplint.yml
 .travis.yml
@@ -14,8 +15,12 @@ src/ApiException.php
 src/Configuration.php
 src/FormDataProcessor.php
 src/HeaderSelector.php
+src/Model/AnyOfInterface.php
 src/Model/Get200Response.php
 src/Model/Get400Response.php
 src/Model/ModelInterface.php
 src/Model/OneOfInterface.php
 src/ObjectSerializer.php
+tests/Api/DefaultApiTest.php
+tests/Model/Get200ResponseTest.php
+tests/Model/Get400ResponseTest.php

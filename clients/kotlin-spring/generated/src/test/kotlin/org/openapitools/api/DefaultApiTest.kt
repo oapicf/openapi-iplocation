@@ -21,6 +21,7 @@ class DefaultApiTest {
         val format: kotlin.String? = TODO()
         val delimiter: kotlin.String? = TODO()
         
+        
         val response: ResponseEntity<Get200Response> = api.rootGet(ip, format, delimiter)
 
         // TODO: test validations

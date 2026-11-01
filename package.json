@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "validator": "^13.15.26"
+    "validator": "^13.15.35"
   },
   "devDependencies": {
     "pkjutil": "^1.0.1"

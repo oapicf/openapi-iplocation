@@ -265,6 +265,7 @@ where
                             Ok(param_ip) => Some(param_ip),
                             Err(e) => return Ok(Response::builder()
                                 .status(StatusCode::BAD_REQUEST)
+                                .header(CONTENT_TYPE, mime::TEXT_PLAIN.as_ref())
                                 .body(body_from_string(format!("Couldn't parse query parameter ip - doesn't match schema: {e}")))
                                 .expect("Unable to create Bad Request response for invalid query parameter ip")),
                         }
@@ -275,6 +276,7 @@ where
                     Some(param_ip) => param_ip,
                     None => return Ok(Response::builder()
                         .status(StatusCode::BAD_REQUEST)
+                        .header(CONTENT_TYPE, mime::TEXT_PLAIN.as_ref())
                         .body(body_from_str("Missing required query parameter ip"))
                         .expect("Unable to create Bad Request response for missing query parameter ip")),
                 };
@@ -289,6 +291,7 @@ where
                             Ok(param_format) => Some(param_format),
                             Err(e) => return Ok(Response::builder()
                                 .status(StatusCode::BAD_REQUEST)
+                                .header(CONTENT_TYPE, mime::TEXT_PLAIN.as_ref())
                                 .body(body_from_string(format!("Couldn't parse query parameter format - doesn't match schema: {e}")))
                                 .expect("Unable to create Bad Request response for invalid query parameter format")),
                         }
@@ -306,6 +309,7 @@ where
                             Ok(param_delimiter) => Some(param_delimiter),
                             Err(e) => return Ok(Response::builder()
                                 .status(StatusCode::BAD_REQUEST)
+                                .header(CONTENT_TYPE, mime::TEXT_PLAIN.as_ref())
                                 .body(body_from_string(format!("Couldn't parse query parameter delimiter - doesn't match schema: {e}")))
                                 .expect("Unable to create Bad Request response for invalid query parameter delimiter")),
                         }
@@ -368,6 +372,10 @@ where
                                                 // Application code returned an error. This should not happen, as the implementation should
                                                 // return a valid response.
                                                 *response.status_mut() = StatusCode::INTERNAL_SERVER_ERROR;
+                                                response.headers_mut().insert(
+                                                    CONTENT_TYPE,
+                                                    HeaderValue::from_static("text/plain"),
+                                                );
                                                 *response.body_mut() = body_from_str("An internal error occurred");
                                             },
                                         }

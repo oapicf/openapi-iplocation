@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 docs/Get200Response.md
 docs/Get400Response.md
 docs/default_api.md

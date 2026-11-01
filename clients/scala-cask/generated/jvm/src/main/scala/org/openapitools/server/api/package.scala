@@ -2,7 +2,7 @@
  * iplocation.net API
  * OpenAPI v3 specification and a set of generated API clients for iplocation.net
  *
- * OpenAPI spec version: 1.2.1-pre.0
+ * OpenAPI spec version: 1.3.1-pre.0
  *
  * Contact: blah+oapicf@cliffano.com
  *

@@ -154,7 +154,7 @@ impl<C> Api<C> for Server<C> where C: Has<XSpanIdString> + Send + Sync
         delimiter: Option<String>,
         context: &C) -> Result<RootGetResponse, ApiError>
     {
-        info!("root_get(\"{}\", {:?}, {:?}) - X-Span-ID: {:?}", ip, format, delimiter, context.get().0.clone());
+        info!("root_get({:?}, {:?}, {:?}) - X-Span-ID: {:?}", ip, format, delimiter, context.get().0.clone());
         Err(ApiError("Api-Error: Operation is NOT implemented".into()))
     }
 

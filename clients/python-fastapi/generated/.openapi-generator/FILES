@@ -1,5 +1,6 @@
 .flake8
 .gitignore
+.openapi-generator-ignore
 Dockerfile
 README.md
 docker-compose.yaml
@@ -18,3 +19,4 @@ src/openapi_server/models/get200_response.py
 src/openapi_server/models/get400_response.py
 src/openapi_server/security_api.py
 tests/conftest.py
+tests/test_default_api.py

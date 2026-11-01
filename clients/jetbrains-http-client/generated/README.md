@@ -5,7 +5,7 @@
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 
 * API basepath : [https://api.iplocation.net](https://api.iplocation.net)
-* Version : 1.2.1-pre.0
+* Version : 1.3.1-pre.0
 
 ## Documentation for API Endpoints
 

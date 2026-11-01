@@ -1,4 +1,4 @@
-# Org.OpenAPITools - ASP.NET Core 8.0 Server
+# Org.OpenAPITools - ASP.NET Core 10.0 Server
 
 OpenAPI v3 specification and a set of generated API clients for iplocation.net
 

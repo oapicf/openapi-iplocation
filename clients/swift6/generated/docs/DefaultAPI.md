@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **rootGet**
 ```swift
-    open class func rootGet(ip: String, format: String? = nil, delimiter: String? = nil, completion: @escaping (_ data: Get200Response?, _ error: Error?) -> Void)
+    open class func rootGet(ip: String, format: String? = nil, delimiter: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> Get200Response
 ```
 
 Get geolocation of an IP address
@@ -26,15 +26,11 @@ let format = "format_example" // String | Output format, the following formats a
 let delimiter = "delimiter_example" // String | Delimiter between proxies. Can be used only with format plain. The following types are supported: 1 for \"\\n\", 2 for \"<br>\". (optional)
 
 // Get geolocation of an IP address
-DefaultAPI.rootGet(ip: ip, format: format, delimiter: delimiter) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
+do {
+    let response = try await DefaultAPI.rootGet(ip: ip, format: format, delimiter: delimiter)
+    dump(response)
+} catch {
+    print(error)
 }
 ```
 

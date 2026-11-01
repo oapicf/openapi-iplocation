@@ -4,10 +4,10 @@
 ################################################################
 
 # Swaggy C info
-SWAGGY_C_VERSION = 6.7.0
+SWAGGY_C_VERSION = 6.8.0
 
 # The version of OpenAPI Generator (https://openapi-generator.tech/) used for generating the API clients
-OPENAPI_GENERATOR_VERSION = 7.24.0
+OPENAPI_GENERATOR_VERSION = 7.26.0
 
 UPDATE_GH_ID = oapicf
 UPDATE_MAKEFILE = swaggy-c
@@ -101,14 +101,14 @@ clean:
 # Retrieve the OpenAPI Generator Docker image and npm modules
 deps:
 	docker pull openapitools/openapi-generator-cli:v$(OPENAPI_GENERATOR_VERSION)
-	npm install -g bootprint bootprint-openapi gh-pages pkjutil
+	npm install -g bootprint bootprint-openapi gh-pages
 	$(call deps_extra)
 
 deps-extra-apt:
 	apt-get install -y markdownlint
 
 deps-upgrade:
-	pkjutil upgrade-dependencies
+	echo "PLACEHOLDER"
 
 # Initialise OpenAPI specification from either a local file path or a remote URL
 # This target requires the following parameters to be supplied by user

@@ -21,7 +21,7 @@ type ClientContext = swagger::make_context_ty!(
 #[derive(Parser, Debug)]
 #[clap(
     name = "iplocation.net API",
-    version = "1.2.1-pre.0",
+    version = "1.3.1-pre.0",
     about = "CLI access to iplocation.net API"
 )]
 struct Cli {

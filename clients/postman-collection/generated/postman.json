@@ -5,7 +5,7 @@
 		    "content": "OpenAPI v3 specification and a set of generated API clients for iplocation.net",
 		    "type": "text/markdown"
 		},
-		"version": "1.2.1-pre.0",
+		"version": "1.3.1-pre.0",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

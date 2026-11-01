@@ -2,7 +2,6 @@ package org.openapitools.model;
 
 import java.net.URI;
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -22,31 +21,23 @@ import jakarta.annotation.Generated;
  */
 
 @JsonTypeName("__get_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-15T05:02:00.432570964Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-01T03:47:30.752127223Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get200Response {
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String ip;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String ipNumber;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable Integer ipVersion;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String countryName;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String countryCode2;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String isp;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String responseCode;
 
-  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String responseMessage;
 
   public Get200Response ip(@Nullable String ip) {

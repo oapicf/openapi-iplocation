@@ -70,9 +70,9 @@ class DefaultApiSimulation extends Simulation {
         .feed(nullQUERYFeeder)
         .exec(http("rootGet")
         .httpRequest("GET","/")
+        .queryParam("format","${format}")
         .queryParam("ip","${ip}")
         .queryParam("delimiter","${delimiter}")
-        .queryParam("format","${format}")
 )
 
     // Run scnrootGet with warm up and reach a constant rate for entire duration

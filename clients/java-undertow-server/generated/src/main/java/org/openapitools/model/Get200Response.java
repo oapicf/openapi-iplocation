@@ -3,7 +3,7 @@
  *
  * OpenAPI v3 specification and a set of generated API clients for iplocation.net
  *
- * OpenAPI document version: 1.2.1-pre.0
+ * OpenAPI document version: 1.3.1-pre.0
  * Maintained by: blah+oapicf@cliffano.com
  *
  * AUTO-GENERATED FILE, DO NOT MODIFY!
@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2026-08-15T04:59:35.633357025Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2026-11-01T03:44:52.612076616Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get200Response   {
   
   private String ip;
