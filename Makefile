@@ -101,14 +101,14 @@ clean:
 # Retrieve the OpenAPI Generator Docker image and npm modules
 deps:
 	docker pull openapitools/openapi-generator-cli:v$(OPENAPI_GENERATOR_VERSION)
-	npm install -g bootprint bootprint-openapi gh-pages
+	npm install -g bootprint bootprint-openapi gh-pages pkjutil
 	$(call deps_extra)
 
 deps-extra-apt:
 	apt-get install -y markdownlint
 
 deps-upgrade:
-	echo "PLACEHOLDER"
+	pkjutil upgrade-dependencies
 
 # Initialise OpenAPI specification from either a local file path or a remote URL
 # This target requires the following parameters to be supplied by user

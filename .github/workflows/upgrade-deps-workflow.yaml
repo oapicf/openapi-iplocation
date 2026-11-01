@@ -8,20 +8,19 @@ jobs:
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.OAPICF_GITHUB_TOKEN }}
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '26'
-      - run: npm install -g bob@5.3.0
-      - run: bob updep build
-      - uses: cliffano/command-docker-action@v2.0.0
+      - uses: cliffano/command-docker-action@v2.1.0
         with:
           command: 'make update-to-latest && make update-dotfiles update-partials'
-          image: cliffano/studio
-      - uses: cliffano/command-docker-action@v2.0.0
+          image: cliffano/studio:4.0.0
+      - uses: cliffano/command-docker-action@v2.1.0
+        with:
+          command: 'make deps-upgrade'
+          image: cliffano/studio:4.0.0
+      - uses: cliffano/command-docker-action@v2.1.0
         with:
           command: 'make ci'
-          image: cliffano/studio
-      - uses: cliffano/save-changes-action@v2.0.0
+          image: cliffano/studio:4.0.0
+      - uses: cliffano/save-changes-action@v2.1.0
         with:
           message: "Upgrade dependencies to latest"
-          github_token: ${{ secrets.STUDIO_GITHUB_TOKEN }}
+          github_token: ${{ secrets.OAPICF_GITHUB_TOKEN }}
