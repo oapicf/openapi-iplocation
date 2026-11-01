@@ -11,7 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2026-11-01T03:44:40.581219111Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2026-11-01T11:36:25.221122607Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get400Response   {
   @JsonProperty("response_code")
   private String responseCode;

@@ -17,7 +17,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 
 @JsonTypeName("__get_400_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2026-11-01T03:45:12.610847171Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2026-11-01T11:36:45.107864314Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get400Response   {
   private String responseCode;
   private String responseMessage;

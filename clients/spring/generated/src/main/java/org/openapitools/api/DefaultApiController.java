@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-01T03:47:30.752127223Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-01T11:38:08.628986774Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 @Controller
 @RequestMapping("${openapi.iplocationNet.base-path:}")
 public class DefaultApiController implements DefaultApi {

@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2026-11-01T03:45:10.644423955Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2026-11-01T11:36:43.880126210Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class DefaultApiServiceImpl implements DefaultApi {
       public Response rootGet(String ip,String format,String delimiter,SecurityContext securityContext) {
       // do some magic!

@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-11-01T03:45:02.582980953Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-11-01T11:36:39.044870353Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public interface DefaultApiService {
       public Response rootGet(String ip, String format, String delimiter, SecurityContext securityContext);
 }

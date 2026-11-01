@@ -4,7 +4,7 @@ import play.api.libs.json._
 import model.Get200Response
 import model.Get400Response
 
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-11-01T03:47:20.815756671Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-11-01T11:38:02.853419760Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 trait DefaultApi {
   /**
     * Get geolocation of an IP address

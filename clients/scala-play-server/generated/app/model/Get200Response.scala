@@ -13,7 +13,7 @@ import play.api.libs.json._
   * @param responseCode Response status code to indicate success or failed completion of the API call.
   * @param responseMessage Response message to indicate success or failed completion of the API call.
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-11-01T03:47:20.815756671Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-11-01T11:38:02.853419760Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 case class Get200Response(
   ip: Option[String],
   ipNumber: Option[String],

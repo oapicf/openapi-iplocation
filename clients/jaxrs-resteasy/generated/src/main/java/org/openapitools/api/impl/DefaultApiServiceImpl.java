@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @RequestScoped
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2026-11-01T03:45:08.694500115Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2026-11-01T11:36:42.695152322Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class DefaultApiServiceImpl implements DefaultApiService {
       public Response rootGet(String ip,String format,String delimiter,SecurityContext securityContext)
       throws NotFoundException {

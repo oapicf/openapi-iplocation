@@ -6,7 +6,7 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: 1.3.1-pre.0
 - Package version: 1.3.1-pre.0
-- Build date: 2026-11-01T03:44:21.045148794Z[Etc/UTC]
+- Build date: 2026-11-01T11:36:12.662974969Z[Etc/UTC]
 - Generator version: 7.26.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://github.com/oapicf/openapi-iplocation](https://github.com/oapicf/openapi-iplocation)

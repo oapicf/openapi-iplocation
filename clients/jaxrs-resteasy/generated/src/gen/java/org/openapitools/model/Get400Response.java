@@ -11,7 +11,7 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 import io.swagger.annotations.*;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2026-11-01T03:45:08.694500115Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2026-11-01T11:36:42.695152322Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Get400Response   {
   
   private String responseCode;
