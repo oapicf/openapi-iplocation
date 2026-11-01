@@ -20,7 +20,7 @@ jobs:
         with:
           command: 'make ci'
           image: cliffano/studio:4.0.0
-      - uses: cliffano/save-changes-action@v2.1.0
+      - uses: cliffano/save-changes-action@v2.0.0
         with:
           message: "Upgrade dependencies to latest"
           github_token: ${{ secrets.OAPICF_GITHUB_TOKEN }}
