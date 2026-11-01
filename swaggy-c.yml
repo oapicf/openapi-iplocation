@@ -1,6 +1,6 @@
 ---
 spec_uri: specification/iplocation.yml
-version: 1.3.1-pre.0
+version: 1.4.0
 contact:
   name: OpenAPI Clients Factory
   url: https://github.com/oapicf/openapi-iplocation
@@ -8,8 +8,7 @@ contact:
 base_dir:
   github_actions: /home/runner/work/openapi-iplocation/openapi-iplocation
   local: /Users/cliffano/dev/workspace-oapicf/openapi-iplocation
-  custom: >-
-    /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-iplocation/
+  custom: /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-iplocation/
 generator:
   component: oag-file-spec
   inputs:
