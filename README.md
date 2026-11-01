@@ -24,6 +24,7 @@ The API clients are generated using [OpenAPI Generator](https://openapi-generato
 
 | OpenAPI iplocation Version | OpenAPI Version | OpenAPI Generator Version |
 |----------------------------|-----------------|---------------------------|
+| 1.4.0 | 3.1.0 | 7.26.0 |
 | 1.3.0 | 3.1.0 | 7.24.0 |
 | 1.2.0 | 3.1.0 | 7.18.0 |
 | 1.1.0 | 3.1.0 | 7.9.0 |
